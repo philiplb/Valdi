@@ -11,8 +11,14 @@
 
 namespace Valdi\Validator;
 
+/**
+ * Validator for required values.
+ */
 class Required implements ValidatorInterface {
 
+    /**
+     * {@inheritdoc}
+     */
     public function validate($value, array $parameters) {
         return !is_null($value) && $value !== '';
     }

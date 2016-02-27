@@ -11,8 +11,23 @@
 
 namespace Valdi\Validator;
 
+/**
+ * The interface each validator has to implement.
+ */
 interface ValidatorInterface {
 
+    /**
+     * Validates the given value.
+     *
+     * @param mixed $value
+     * the value to validate
+     *
+     * @param array $parameters
+     * the other parameters the validator might need
+     *
+     * @return boolean
+     * true if the value is valid, false else
+     */
     public function validate($value, array $parameters);
 
 }

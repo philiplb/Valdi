@@ -1,0 +1,31 @@
+{
+    "name": "philiplb/valdi",
+    "description": "Super simple, yet complete, data validation.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philip Lehmann-Böhm",
+            "email": "philip@philiplb.de"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8",
+        "satooshi/php-coveralls": "1.0.1"
+    },
+    "autoload": {
+        "psr-0": { "Valdi": "src" }
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
+    }
+}

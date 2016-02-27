@@ -9,7 +9,6 @@
             "email": "philip@philiplb.de"
         }
     ],
-    "minimum-stability": "stable",
     "require": {
         "php": ">=5.3.3"
     },

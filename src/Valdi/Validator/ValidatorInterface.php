@@ -13,8 +13,6 @@ namespace Valdi\Validator;
 
 interface ValidatorInterface {
 
-    public function getType();
-
     public function validate($value, array $parameters);
 
 }

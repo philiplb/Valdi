@@ -13,10 +13,6 @@ namespace Valdi\Validator;
 
 class Required implements ValidatorInterface {
 
-    public function getType() {
-        return 'required';
-    }
-
     public function validate($value, array $parameters) {
         return !is_null($value) && $value !== '';
     }

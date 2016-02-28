@@ -56,7 +56,7 @@ class Validator {
                 $name = array_shift($parameters);
             }
             if (!array_key_exists($name, $this->availableValidators)) {
-                throw new ValidatorException('"'.$name . '" not found as available validator.');
+                throw new ValidatorException('"' . $name . '" not found as available validator.');
             }
             $valid = $this->availableValidators[$name]->validate($value, $parameters);
             if (!$valid) {
@@ -79,7 +79,7 @@ class Validator {
         foreach ($rules as $field => $fieldRules) {
             $value = isset($data[$field]) ? $data[$field] : null;
             $fieldErrors = $this->validateField($fieldRules, $value);
-            if ($fieldErrors) {
+            if (!empty($fieldErrors)) {
                 $errors[$field] = $fieldErrors;
             }
         }

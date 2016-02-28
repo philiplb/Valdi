@@ -13,6 +13,7 @@ namespace Valdi;
 
 use Valdi\Validator\ValidatorInterface;
 use Valdi\Validator\Boolean;
+use Valdi\Validator\DateTime;
 use Valdi\Validator\Email;
 use Valdi\Validator\Floating;
 use Valdi\Validator\Integer;
@@ -34,6 +35,7 @@ class Validator {
     protected function setupValidators() {
         $this->availableValidators = array(
             'boolean' => new Boolean(),
+            'datetime' => new DateTime(),
             'email' => new Email(),
             'floating' => new Floating(),
             'integer' => new Integer(),

@@ -24,10 +24,21 @@ abstract class Filter implements ValidatorInterface {
      * the filter to use
      */
     protected abstract function getFilter();
+
+    /**
+     * Gets the flags to use within the validation.
+     * See http://php.net/manual/de/filter.filters.validate.php .
+     *
+     * @return string
+     * the flags to use
+     */
+    protected function getFlags() {
+        return null;
+    }
     /**
      * {@inheritdoc}
      */
     public function validate($value, array $parameters) {
-        return filter_var($value, $this->getFilter()) !== false;
+        return filter_var($value, $this->getFilter(), $this->getFlags()) !== false;
     }
 }

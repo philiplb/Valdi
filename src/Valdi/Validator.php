@@ -46,6 +46,13 @@ class Validator {
         );
     }
 
+    protected function validateRule($name, $parameters, $value) {
+        if (!array_key_exists($name, $this->availableValidators)) {
+            throw new ValidatorException('"' . $name . '" not found as available validator.');
+        }
+        return $this->availableValidators[$name]->validate($value, $parameters);
+    }
+
     protected function validateField($fieldRules, $value) {
         $result = array();
         foreach ($fieldRules as $rule) {
@@ -55,10 +62,7 @@ class Validator {
                 $parameters = $rule;
                 $name = array_shift($parameters);
             }
-            if (!array_key_exists($name, $this->availableValidators)) {
-                throw new ValidatorException('"' . $name . '" not found as available validator.');
-            }
-            $valid = $this->availableValidators[$name]->validate($value, $parameters);
+            $valid = $this->validateRule($name, $parameters, $value);
             if (!$valid) {
                 $result[] = $name;
             }

@@ -19,7 +19,7 @@ class Integer extends Filter {
     /**
      * {@inheritdoc}
      */
-    public function getFilter() {
+    protected function getFilter() {
         return \FILTER_VALIDATE_INT;
     }
 }

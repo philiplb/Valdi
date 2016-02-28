@@ -40,6 +40,6 @@ abstract class Filter implements ValidatorInterface {
      */
     public function validate($value, array $parameters) {
         return $value === '' || $value === null ||
-        filter_var($value, $this->getFilter(), $this->getFlags()) !== false;
+            filter_var($value, $this->getFilter(), $this->getFlags()) !== false;
     }
 }

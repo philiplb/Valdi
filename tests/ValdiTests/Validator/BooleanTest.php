@@ -8,6 +8,7 @@ class BooleanTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new \Valdi\Validator\Boolean();
+        
         $this->assertTrue($validator->validate(1, array()));
         $this->assertTrue($validator->validate('1', array()));
         $this->assertTrue($validator->validate(true, array()));

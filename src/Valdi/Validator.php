@@ -12,7 +12,16 @@
 namespace Valdi;
 
 use Valdi\Validator\ValidatorInterface;
+use Valdi\Validator\Boolean;
+use Valdi\Validator\Email;
+use Valdi\Validator\Floating;
+use Valdi\Validator\Integer;
+use Valdi\Validator\IP;
+use Valdi\Validator\IPv4;
+use Valdi\Validator\IPv6;
+use Valdi\Validator\Regexp;
 use Valdi\Validator\Required;
+use Valdi\Validator\Url;
 
 /**
  * The Validator is used to chain Validators together and validate a set of data
@@ -24,7 +33,16 @@ class Validator {
 
     protected function setupValidators() {
         $this->availableValidators = array(
-            'required' => new Required()
+            'boolean' => new Boolean(),
+            'email' => new Email(),
+            'floating' => new Floating(),
+            'integer' => new Integer(),
+            'ip' => new IP(),
+            'ipv4' => new IPv4(),
+            'ipv6' => new IPv6(),
+            'regexp' => new Regexp(),
+            'required' => new Required(),
+            'url' => new Url()
         );
     }
 

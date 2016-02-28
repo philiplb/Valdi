@@ -43,6 +43,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
             $expected = '"invalid" not found as available validator.';
+            $this->assertSame($read, $expected);
         } catch (Exception $e) {
             $this->fail();
         }

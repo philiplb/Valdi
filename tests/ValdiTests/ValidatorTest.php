@@ -22,12 +22,10 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         $read = $validator->validate($validators, $data);
         $expected = array(
             'valid' => false,
-            'fields' => array(
-                'a' => array('required' => true),
+            'errors' => array(
                 'b' => array('required' => false),
                 'c' => array('required' => false),
-            ),
-            'failed' => array('b', 'c')
+            )
         );
         $this->assertSame($read, $expected);
     }

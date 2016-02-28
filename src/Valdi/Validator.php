@@ -40,22 +40,12 @@ class Validator {
             if (!array_key_exists($name, $this->availableValidators)) {
                 throw new ValidatorException('"'.$name . '" not found as available validator.');
             }
-            $result[$name] = $this->availableValidators[$name]->validate($value, $parameters);
-        }
-        return $result;
-    }
-
-    protected function gatherFailedFields($fields) {
-        $failedFields = array();
-        foreach ($fields as $field => $result) {
-            foreach ($result as $subResult) {
-                if (!$subResult) {
-                    $failedFields[] = $field;
-                    break;
-                }
+            $valid = $this->availableValidators[$name]->validate($value, $parameters);
+            if (!$valid) {
+                $result[$name] = false;
             }
         }
-        return $failedFields;
+        return $result;
     }
 
     public function __construct() {
@@ -67,16 +57,17 @@ class Validator {
     }
 
     public function validate(array $validators, array $data) {
-        $fields = array();
+        $errors = array();
         foreach ($validators as $field => $fieldValidators) {
             $value = isset($data[$field]) ? $data[$field] : null;
-            $fields[$field] = $this->validateField($fieldValidators, $value);
+            $fieldErrors = $this->validateField($fieldValidators, $value);
+            if ($fieldErrors) {
+                $fields[$field] = $fieldErrors;
+            }
         }
-        $failed = $this->gatherFailedFields($fields);
         return array(
-            'valid' => count($failed) === 0,
-            'fields' => $fields,
-            'failed' => $failed
+            'valid' => count($fields) === 0,
+            'errors' => $fields
         );
     }
 

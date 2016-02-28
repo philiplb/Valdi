@@ -14,12 +14,19 @@ namespace Valdi\Validator;
 /**
  * Validator for booleans.
  */
-class Boolean extends Filter {
+class Boolean implements ValidatorInterface {
 
     /**
      * {@inheritdoc}
      */
-    protected function getFilter() {
-        return \FILTER_VALIDATE_BOOLEAN;
+    public function validate($value, array $parameters) {
+        return in_array($value, array(
+            '', null,
+            true, false,
+            1, 0,
+            '1', '0',
+            'on', 'off',
+            'yes', 'no'
+        ), true);
     }
 }

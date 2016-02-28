@@ -15,8 +15,8 @@ class EmailTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->validate('@test.de', array()));
         $this->assertFalse($validator->validate('test', array()));
 
-        $this->assertFalse($validator->validate('', array()));
-        $this->assertFalse($validator->validate(null, array()));
+        $this->assertTrue($validator->validate('', array()));
+        $this->assertTrue($validator->validate(null, array()));
     }
 
 }

@@ -15,15 +15,15 @@ class BooleanTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->validate('on', array()));
         $this->assertTrue($validator->validate('yes', array()));
 
-        $this->assertFalse($validator->validate(0, array()));
-        $this->assertFalse($validator->validate('0', array()));
-        $this->assertFalse($validator->validate(false, array()));
-        $this->assertFalse($validator->validate('off', array()));
-        $this->assertFalse($validator->validate('no', array()));
+        $this->assertTrue($validator->validate(0, array()));
+        $this->assertTrue($validator->validate('0', array()));
+        $this->assertTrue($validator->validate(false, array()));
+        $this->assertTrue($validator->validate('off', array()));
+        $this->assertTrue($validator->validate('no', array()));
+        $this->assertTrue($validator->validate('', array()));
+        $this->assertTrue($validator->validate(null, array()));
 
         $this->assertFalse($validator->validate('test', array()));
-        $this->assertFalse($validator->validate('', array()));
-        $this->assertFalse($validator->validate(null, array()));
     }
 
 }

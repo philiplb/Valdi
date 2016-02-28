@@ -16,8 +16,9 @@ class IPv4Test extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->validate('127.0.0', array()));
 
         $this->assertFalse($validator->validate('test', array()));
-        $this->assertFalse($validator->validate('', array()));
-        $this->assertFalse($validator->validate(null, array()));
+
+        $this->assertTrue($validator->validate('', array()));
+        $this->assertTrue($validator->validate(null, array()));
     }
 
 }

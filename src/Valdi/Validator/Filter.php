@@ -23,7 +23,7 @@ abstract class Filter implements ValidatorInterface {
      * @return string
      * the filter to use
      */
-    protected abstract function getFilter();
+    abstract protected function getFilter();
 
     /**
      * Gets the flags to use within the validation.

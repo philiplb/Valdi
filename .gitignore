@@ -1,3 +1,4 @@
 /vendor/
 build
 coverageReport
+composer.lock

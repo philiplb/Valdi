@@ -46,13 +46,13 @@ class Validator {
         );
     }
 
-    protected function validateField($validators, $value) {
+    protected function validateField($fieldRules, $value) {
         $result = array();
-        foreach ($validators as $validator) {
-            $name = $validator;
+        foreach ($fieldRules as $rule) {
+            $name = $rule;
             $parameters = array();
-            if (is_array($validator)) {
-                $parameters = $validator;
+            if (is_array($rule)) {
+                $parameters = $rule;
                 $name = array_shift($parameters);
             }
             if (!array_key_exists($name, $this->availableValidators)) {
@@ -74,11 +74,11 @@ class Validator {
         $this->availableValidators[$name] = $validator;
     }
 
-    public function validate(array $validators, array $data) {
+    public function validate(array $rules, array $data) {
         $errors = array();
-        foreach ($validators as $field => $fieldValidators) {
+        foreach ($rules as $field => $fieldRules) {
             $value = isset($data[$field]) ? $data[$field] : null;
-            $fieldErrors = $this->validateField($fieldValidators, $value);
+            $fieldErrors = $this->validateField($fieldRules, $value);
             if ($fieldErrors) {
                 $errors[$field] = $fieldErrors;
             }

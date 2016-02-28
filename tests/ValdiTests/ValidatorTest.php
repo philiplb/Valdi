@@ -3,6 +3,7 @@
 namespace ValdiTests;
 
 use Valdi\Validator;
+use Valdi\ValidatorException;
 
 class RequiredTest extends \PHPUnit_Framework_TestCase {
 
@@ -29,6 +30,22 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'failed' => array('b', 'c')
         );
         $this->assertSame($read, $expected);
+    }
+
+    public function testInvalidRule() {
+        $validator = new Validator();
+        $validators = array(
+            'a' => array('invalid')
+        );
+        try {
+            $read = $validator->validate($validators, array());
+            $this->fail();
+        } catch (ValidatorException $e) {
+            $read = $e->getMessage();
+            $expected = '"invalid" not found as available validator.';
+        } catch (Exception $e) {
+            $this->fail();
+        }
     }
 
 }

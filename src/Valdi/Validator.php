@@ -36,10 +36,10 @@ class Validator {
     protected function setupValidators() {
         $this->availableValidators = array(
             'boolean' => new Boolean(),
-            'datetime' => new DateTime(),
+            'dateTime' => new DateTime(),
             'email' => new Email(),
             'floating' => new Floating(),
-            'inset' => new InSet(),
+            'inSet' => new InSet(),
             'integer' => new Integer(),
             'ip' => new IP(),
             'ipv4' => new IPv4(),

@@ -11,6 +11,7 @@
 
 namespace Valdi;
 
+use Valdi\Validator\ValidatorInterface;
 use Valdi\Validator\Required;
 
 /**

@@ -25,7 +25,13 @@ class Regexp implements ValidatorInterface {
         if (count($parameters) !== 1) {
             throw new ValidationException('"regexp" expects one parameter.');
         }
-        return $value === '' || $value === null ||
-            @preg_match($parameters[0], $value) === 1;
+        if ($value === '' || $value === null) {
+            return true;
+        }
+        // Workaround for not using '@preg_match'.
+        $oldError = error_reporting(0);
+        $regexResult = preg_match($parameters[0], $value);
+        error_reporting($oldError);
+        return $regexResult === 1;
     }
 }

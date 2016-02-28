@@ -57,8 +57,8 @@ class Validator {
         $this->setupValidators();
     }
 
-    public function addValidator(ValidatorInterface $validator) {
-        $this->validators[$validator->getType()] = $validator;
+    public function addValidator($name, ValidatorInterface $validator) {
+        $this->availableValidators[$name] = $validator;
     }
 
     public function validate(array $validators, array $data) {

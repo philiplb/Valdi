@@ -13,6 +13,10 @@ namespace Valdi;
 
 use Valdi\Validator\Required;
 
+/**
+ * The Validator is used to chain Validators together and validate a set of data
+ * with it.
+ */
 class Validator {
 
     protected $availableValidators;

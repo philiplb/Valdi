@@ -33,7 +33,7 @@ class Validator {
                 $name = array_shift($parameters);
             }
             if (!array_key_exists($name, $this->availableValidators)) {
-                throw new ValidatorException($name.' not found as available validator.');
+                throw new ValidatorException($name . ' not found as available validator.');
             }
             $result[$name] = $this->availableValidators[$name]->validate($value, $parameters);
         }

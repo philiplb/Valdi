@@ -16,6 +16,7 @@ use Valdi\Validator\Boolean;
 use Valdi\Validator\DateTime;
 use Valdi\Validator\Email;
 use Valdi\Validator\Floating;
+use Valdi\Validator\InSet;
 use Valdi\Validator\Integer;
 use Valdi\Validator\IP;
 use Valdi\Validator\IPv4;
@@ -38,6 +39,7 @@ class Validator {
             'datetime' => new DateTime(),
             'email' => new Email(),
             'floating' => new Floating(),
+            'inset' => new InSet(),
             'integer' => new Integer(),
             'ip' => new IP(),
             'ipv4' => new IPv4(),

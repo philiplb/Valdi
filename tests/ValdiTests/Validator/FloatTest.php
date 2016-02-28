@@ -2,12 +2,10 @@
 
 namespace ValdiTests\Validator;
 
-use Valdi\Validator\Float;
-
 class FloatTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidate() {
-        $validator = new Float();
+        $validator = new \Valdi\Validator\Float();
         $this->assertTrue($validator->validate(1, array()));
         $this->assertTrue($validator->validate(1.2, array()));
         $this->assertTrue($validator->validate('1', array()));

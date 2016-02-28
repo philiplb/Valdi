@@ -15,7 +15,6 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->validate('2016-02-28', array()));
         $this->assertFalse($validator->validate('test', array()));
 
-
         $this->assertTrue($validator->validate('', array()));
         $this->assertTrue($validator->validate(null, array()));
     }

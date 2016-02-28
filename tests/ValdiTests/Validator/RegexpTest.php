@@ -22,6 +22,9 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $validator->validate('test', array());
             $this->fail();
         } catch (ValidationException $e) {
+            $read = $e->getMessage();
+            $expected = '"regexp" expects one parameter.';
+            $this->assertSame($read, $expected);
         } catch (Exception $e) {
             $this->fail();
         }

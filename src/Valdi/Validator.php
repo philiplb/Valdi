@@ -62,12 +62,12 @@ class Validator {
             $value = isset($data[$field]) ? $data[$field] : null;
             $fieldErrors = $this->validateField($fieldValidators, $value);
             if ($fieldErrors) {
-                $fields[$field] = $fieldErrors;
+                $errors[$field] = $fieldErrors;
             }
         }
         return array(
-            'valid' => count($fields) === 0,
-            'errors' => $fields
+            'valid' => count($errors) === 0,
+            'errors' => $errors
         );
     }
 

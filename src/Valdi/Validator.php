@@ -60,7 +60,7 @@ class Validator {
             }
             $valid = $this->availableValidators[$name]->validate($value, $parameters);
             if (!$valid) {
-                $result[$name] = false;
+                $result[] = $name;
             }
         }
         return $result;

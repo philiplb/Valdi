@@ -22,17 +22,17 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'b' => array(array('required')),
             'c' => array('required'),
             'd' => array('required', 'integer'),
-            'e' => array('required', 'integer'),
+            'e' => array('required', 'integer', 'floating'),
             'f' => array('required', 'integer'),
         );
         $read = $validator->validate($validators, $data);
         $expected = array(
             'valid' => false,
             'errors' => array(
-                'b' => array('required' => false),
-                'c' => array('required' => false),
-                'e' => array('integer' => false),
-                'f' => array('required' => false),
+                'b' => array('required'),
+                'c' => array('required'),
+                'e' => array('integer', 'floating'),
+                'f' => array('required'),
             )
         );
         $this->assertSame($read, $expected);

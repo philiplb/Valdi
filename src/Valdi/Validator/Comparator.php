@@ -29,13 +29,13 @@ abstract class Comparator extends ParametrizedValidator {
     /**
      * Performs the comparison.
      *
-     * @param mixed $a
+     * @param mixed $value
      * the first value to compare
      * @param mixed $parameters
      * the values to compare
      *
      * @return boolean
-     * true if a compares to the values
+     * true if value compares to the parameters
      */
     abstract protected function compare($value, $parameters);
 

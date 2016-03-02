@@ -104,6 +104,7 @@ class Validator {
             'ipv6' => 'IPv6',
             'max' => 'Max',
             'min' => 'Min',
+            'minLength' => 'MinLength',
             'regexp' => 'Regexp',
             'required' => 'Required',
             'url' => 'Url'

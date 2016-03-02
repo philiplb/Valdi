@@ -21,6 +21,7 @@ use Valdi\Validator\Integer;
 use Valdi\Validator\IP;
 use Valdi\Validator\IPv4;
 use Valdi\Validator\IPv6;
+use Valdi\Validator\Min;
 use Valdi\Validator\Regexp;
 use Valdi\Validator\Required;
 use Valdi\Validator\Url;
@@ -44,6 +45,7 @@ class Validator {
             'ip' => new IP(),
             'ipv4' => new IPv4(),
             'ipv6' => new IPv6(),
+            'min' => new Min(),
             'regexp' => new Regexp(),
             'required' => new Required(),
             'url' => new Url()

@@ -12,7 +12,7 @@
 namespace Valdi\Validator;
 
 /**
- * Validator for floats.
+ * Validator for IPs.
  */
 class IP extends Filter {
 

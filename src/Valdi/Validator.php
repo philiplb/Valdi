@@ -109,7 +109,8 @@ class Validator {
             'minLength' => 'MinLength',
             'regexp' => 'Regexp',
             'required' => 'Required',
-            'url' => 'Url'
+            'url' => 'Url',
+            'value' => 'Value'
         );
         $this->createValidators($validators);
     }

@@ -22,11 +22,4 @@ class Min extends Comparator {
     protected function compare($a, $parameters) {
         return is_numeric($a) && is_numeric($parameters[0]) && $a >= $parameters[0];
     }
-
-    /**
-     * Constructor.
-     */
-    public function __construct() {
-        $this->amountOfParameters = 1;
-    }
 }

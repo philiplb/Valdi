@@ -35,6 +35,13 @@ abstract class Comparator extends ParametrizedValidator {
     abstract protected function compare($a, $parameters);
 
     /**
+     * Constructor.
+     */
+    public function __construct() {
+        $this->amountOfParameters = 1;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function validate($value, array $parameters) {

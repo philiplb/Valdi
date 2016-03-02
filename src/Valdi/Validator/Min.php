@@ -11,23 +11,15 @@
 
 namespace Valdi\Validator;
 
-use Valdi\ValidationException;
-
 /**
  * Validator for min values.
  */
-class Min implements ValidatorInterface {
+class Min extends Comparator {
 
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
-
-        if (count($parameters) !== 1) {
-            throw new ValidationException('"min" expects one parameter.');
-        }
-
-        return in_array($value, array('', null), true) ||
-            (is_numeric($value) && $value >= $parameters[0]);
+    protected function compare($a, $b) {
+        return $a >= $b;
     }
 }

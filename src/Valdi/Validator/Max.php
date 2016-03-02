@@ -11,23 +11,15 @@
 
 namespace Valdi\Validator;
 
-use Valdi\ValidationException;
-
 /**
  * Validator for max values.
  */
-class Max implements ValidatorInterface {
+class Max extends Comparator {
 
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
-
-        if (count($parameters) !== 1) {
-            throw new ValidationException('"max" expects one parameter.');
-        }
-
-        return in_array($value, array('', null), true) ||
-            (is_numeric($value) && $value <= $parameters[0]);
+    protected function compare($a, $b) {
+        return $a <= $b;
     }
 }

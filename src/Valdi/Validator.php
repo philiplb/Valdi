@@ -94,6 +94,7 @@ class Validator {
         $validators = array(
             'alphabetical' => 'Alphabetical', 'alphaNumerical' => 'AlphaNumerical',
             'between' => 'Between', 'boolean' => 'Boolean',
+            'contains' => 'Contains',
             'dateTime' => 'DateTime', 'email' => 'Email',
             'floating' => 'Floating', 'inSet' => 'InSet',
             'integer' => 'Integer', 'ip' => 'IP',

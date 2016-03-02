@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use Valdi\Validator\Alphabetical;
 use Valdi\ValidationException;
 
-class AlphaTest extends \PHPUnit_Framework_TestCase {
+class AlphabeticalTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Alphabetical();

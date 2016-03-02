@@ -11,8 +11,6 @@
 
 namespace Valdi\Validator;
 
-use Valdi\ValidationException;
-
 /**
  * Validator for comparing numeric values.
  */

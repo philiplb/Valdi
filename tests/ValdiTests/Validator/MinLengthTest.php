@@ -13,7 +13,7 @@ namespace ValdiTests\Validator;
 
 use Valdi\Validator\Min;
 
-class MinTest extends \PHPUnit_Framework_TestCase {
+class MinLengthTest extends \PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Min();

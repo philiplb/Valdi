@@ -26,7 +26,7 @@ class DateTime implements ValidatorInterface {
         if (count($parameters) > 0) {
             $format = $parameters[0];
         }
-        return $value === '' || $value === null ||
+        return in_array($value, array('', null), true) ||
             \DateTime::createFromFormat($format, $value) !== false;
     }
 }

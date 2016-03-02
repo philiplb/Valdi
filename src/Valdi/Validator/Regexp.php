@@ -25,7 +25,7 @@ class Regexp implements ValidatorInterface {
         if (count($parameters) !== 1) {
             throw new ValidationException('"regexp" expects one parameter.');
         }
-        if ($value === '' || $value === null) {
+        if (in_array($value, array('', null), true)) {
             return true;
         }
         // Workaround for not using '@preg_match'.

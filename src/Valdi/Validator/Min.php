@@ -27,7 +27,7 @@ class Min implements ValidatorInterface {
             throw new ValidationException('"min" expects one parameter.');
         }
 
-        return $value === '' || $value === null ||
+        return in_array($value, array('', null), true) ||
             (is_numeric($value) && $value >= $parameters[0]);
     }
 }

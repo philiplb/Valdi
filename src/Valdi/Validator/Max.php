@@ -27,7 +27,7 @@ class Max implements ValidatorInterface {
             throw new ValidationException('"max" expects one parameter.');
         }
 
-        return $value === '' || $value === null ||
+        return in_array($value, array('', null), true) ||
             (is_numeric($value) && $value <= $parameters[0]);
     }
 }

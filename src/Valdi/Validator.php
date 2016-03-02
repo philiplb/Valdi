@@ -11,6 +11,8 @@
 
 namespace Valdi;
 
+use Valdi\Validator\ValidatorInterface;
+
 /**
  * The Validator is used to chain Validators together and validate a set of data
  * with it.

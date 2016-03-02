@@ -20,6 +20,7 @@ class MinLength extends Comparator {
      * {@inheritdoc}
      */
     protected function compare($a, $parameters) {
-        return is_numeric($parameters[0]) && strlen($a) >= $parameters[0];
+        $length = strlen($a);
+        return is_numeric($parameters[0]) && $length >= $parameters[0];
     }
 }

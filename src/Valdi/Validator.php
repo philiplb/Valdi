@@ -22,22 +22,29 @@ class Validator {
     protected $availableValidators;
 
     protected function setupValidators() {
-        $this->availableValidators = array(
-            'boolean' => new \Valdi\Validator\Boolean(),
-            'dateTime' => new \Valdi\Validator\DateTime(),
-            'email' => new \Valdi\Validator\Email(),
-            'floating' => new \Valdi\Validator\Floating(),
-            'inSet' => new \Valdi\Validator\InSet(),
-            'integer' => new \Valdi\Validator\Integer(),
-            'ip' => new \Valdi\Validator\IP(),
-            'ipv4' => new \Valdi\Validator\IPv4(),
-            'ipv6' => new \Valdi\Validator\IPv6(),
-            'max' => new \Valdi\Validator\Max(),
-            'min' => new \Valdi\Validator\Min(),
-            'regexp' => new \Valdi\Validator\Regexp(),
-            'required' => new \Valdi\Validator\Required(),
-            'url' => new \Valdi\Validator\Url()
+
+        $validators = array(
+            'boolean' => 'Boolean',
+            'dateTime' => 'DateTime',
+            'email' => 'Email',
+            'floating' => 'Floating',
+            'inSet' => 'InSet',
+            'integer' => 'Integer',
+            'ip' => 'IP',
+            'ipv4' => 'IPv4',
+            'ipv6' => 'IPv6',
+            'max' => 'Max',
+            'min' => 'Min',
+            'regexp' => 'Regexp',
+            'required' => 'Required',
+            'url' => 'Url'
         );
+
+        $this->availableValidators = array();
+        foreach ($validators as $name => $type) {
+            $class = '\\Valdi\\Validator\\' . $type;
+            $this->availableValidators[$name] = new $class();
+        }
     }
 
     protected function validateRule($name, $parameters, $value) {

@@ -35,6 +35,21 @@ abstract class Comparator extends ParametrizedValidator {
     abstract protected function compare($a, $parameters);
 
     /**
+     * Checks whether all given parameters are numeric.
+     *
+     * @return boolean
+     * true if all values are numeric
+     */
+    protected function allNumeric() {
+        foreach (func_get_args() as $value) {
+            if (!is_numeric($value)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
      * Constructor.
      */
     public function __construct() {

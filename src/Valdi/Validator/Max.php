@@ -20,6 +20,6 @@ class Max extends Comparator {
      * {@inheritdoc}
      */
     protected function compare($a, $parameters) {
-        return is_numeric($a) && is_numeric($parameters[0]) && $a <= $parameters[0];
+        return $this->allNumeric($a, $parameters[0]) && $a <= $parameters[0];
     }
 }

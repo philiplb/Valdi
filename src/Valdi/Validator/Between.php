@@ -20,8 +20,7 @@ class Between extends Comparator {
      * {@inheritdoc}
      */
     protected function compare($a, $parameters) {
-        return is_numeric($a) && is_numeric($parameters[0]) &&
-            is_numeric($parameters[1])
+        return $this->allNumeric($a, $parameters[0], $parameters[1])
             && $a >= $parameters[0]
             && $a <= $parameters[1];
     }

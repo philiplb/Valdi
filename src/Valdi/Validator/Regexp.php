@@ -16,15 +16,15 @@ use Valdi\ValidationException;
 /**
  * Validator for regular expressions.
  */
-class Regexp implements ValidatorInterface {
+class Regexp extends ParametrizedValidator {
 
     /**
      * {@inheritdoc}
      */
     public function validate($value, array $parameters) {
-        if (count($parameters) !== 1) {
-            throw new ValidationException('"regexp" expects one parameter.');
-        }
+
+        $this->validateParameterCount('regexp', 1, $parameters);
+
         if (in_array($value, array('', null), true)) {
             return true;
         }

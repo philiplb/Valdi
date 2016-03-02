@@ -23,7 +23,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
-            $expected = '"regexp" expects one parameter.';
+            $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
         } catch (Exception $e) {
             $this->fail();
@@ -34,7 +34,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
-            $expected = '"regexp" expects one parameter.';
+            $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
         } catch (Exception $e) {
             $this->fail();

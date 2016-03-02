@@ -16,7 +16,7 @@ use Valdi\ValidationException;
 /**
  * Validator for comparing numeric values.
  */
-abstract class Comparator implements ValidatorInterface {
+abstract class Comparator extends ParametrizedValidator {
 
     /**
      * Performs the comparison.
@@ -36,9 +36,7 @@ abstract class Comparator implements ValidatorInterface {
      */
     public function validate($value, array $parameters) {
 
-        if (count($parameters) !== 1) {
-            throw new ValidationException('"max" expects one parameter.');
-        }
+        $this->validateParameterCount('max', 1, $parameters);
 
         return in_array($value, array('', null), true) ||
             (is_numeric($value) && $this->compare($value, $parameters[0]));

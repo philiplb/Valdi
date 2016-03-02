@@ -103,6 +103,7 @@ class Validator {
             'ipv4' => 'IPv4',
             'ipv6' => 'IPv6',
             'max' => 'Max',
+            'maxLength' => 'MaxLength',
             'min' => 'Min',
             'minLength' => 'MinLength',
             'regexp' => 'Regexp',

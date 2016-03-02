@@ -21,25 +21,7 @@ class Validator {
 
     protected $availableValidators;
 
-    protected function setupValidators() {
-
-        $validators = array(
-            'boolean' => 'Boolean',
-            'dateTime' => 'DateTime',
-            'email' => 'Email',
-            'floating' => 'Floating',
-            'inSet' => 'InSet',
-            'integer' => 'Integer',
-            'ip' => 'IP',
-            'ipv4' => 'IPv4',
-            'ipv6' => 'IPv6',
-            'max' => 'Max',
-            'min' => 'Min',
-            'regexp' => 'Regexp',
-            'required' => 'Required',
-            'url' => 'Url'
-        );
-
+    protected function createValidators(array $validators) {
         $this->availableValidators = array();
         foreach ($validators as $name => $type) {
             $class = '\\Valdi\\Validator\\' . $type;
@@ -72,7 +54,23 @@ class Validator {
     }
 
     public function __construct() {
-        $this->setupValidators();
+        $validators = array(
+            'boolean' => 'Boolean',
+            'dateTime' => 'DateTime',
+            'email' => 'Email',
+            'floating' => 'Floating',
+            'inSet' => 'InSet',
+            'integer' => 'Integer',
+            'ip' => 'IP',
+            'ipv4' => 'IPv4',
+            'ipv6' => 'IPv6',
+            'max' => 'Max',
+            'min' => 'Min',
+            'regexp' => 'Regexp',
+            'required' => 'Required',
+            'url' => 'Url'
+        );
+        $this->createValidators($validators);
     }
 
     public function addValidator($name, ValidatorInterface $validator) {

@@ -17,17 +17,14 @@ namespace Valdi\Validator;
 class Max extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the type of the validator.
      */
-    protected function compare($a, $parameters) {
-        return $this->allNumeric($a, $parameters[0]) && $a <= $parameters[0];
-    }
+    protected $type = 'max';
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        parent::__construct();
-        $this->type = 'max';
+    protected function compare($value, $parameters) {
+        return $this->allNumeric($value, $parameters[0]) && $value <= $parameters[0];
     }
 }

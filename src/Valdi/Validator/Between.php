@@ -17,19 +17,21 @@ namespace Valdi\Validator;
 class Between extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the amount of parameters.
      */
-    protected function compare($a, $parameters) {
-        return $this->allNumeric($a, $parameters[0], $parameters[1])
-            && $a >= $parameters[0]
-            && $a <= $parameters[1];
-    }
+    protected $amountOfParameters = 2;
 
     /**
-     * Constructor.
+     * Holds the type of the validator.
      */
-    public function __construct() {
-        $this->amountOfParameters = 2;
-        $this->type = 'between';
+    protected $type = 'between';
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function compare($value, $parameters) {
+        return $this->allNumeric($value, $parameters[0], $parameters[1])
+            && $value >= $parameters[0]
+            && $value <= $parameters[1];
     }
 }

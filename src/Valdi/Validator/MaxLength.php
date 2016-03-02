@@ -17,17 +17,14 @@ namespace Valdi\Validator;
 class MaxLength extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the type of the validator.
      */
-    protected function compare($a, $parameters) {
-        return is_numeric($parameters[0]) && strlen($a) <= $parameters[0];
-    }
+    protected $type = 'maxLength';
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        parent::__construct();
-        $this->type = 'maxLength';
+    protected function compare($value, $parameters) {
+        return is_numeric($parameters[0]) && strlen($value) <= $parameters[0];
     }
 }

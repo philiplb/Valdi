@@ -17,21 +17,18 @@ namespace Valdi\Validator;
 class Regexp extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the type of the validator.
      */
-    protected function compare($a, $parameters) {
-        // Workaround for not using '@preg_match'.
-        $oldError = error_reporting(0);
-        $regexResult = preg_match($parameters[0], $a);
-        error_reporting($oldError);
-        return $regexResult === 1;
-    }
+    protected $type = 'regexp';
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        parent::__construct();
-        $this->type = 'regexp';
+    protected function compare($value, $parameters) {
+        // Workaround for not using '@preg_match'.
+        $oldError = error_reporting(0);
+        $regexResult = preg_match($parameters[0], $value);
+        error_reporting($oldError);
+        return $regexResult === 1;
     }
 }

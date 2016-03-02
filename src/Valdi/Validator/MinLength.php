@@ -17,18 +17,15 @@ namespace Valdi\Validator;
 class MinLength extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the type of the validator.
      */
-    protected function compare($a, $parameters) {
-        $length = strlen($a);
-        return is_numeric($parameters[0]) && $length >= $parameters[0];
-    }
+    protected $type = 'minLength';
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        parent::__construct();
-        $this->type = 'minLength';
+    protected function compare($value, $parameters) {
+        $length = strlen($value);
+        return is_numeric($parameters[0]) && $length >= $parameters[0];
     }
 }

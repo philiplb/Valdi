@@ -19,7 +19,7 @@ abstract class Comparator extends ParametrizedValidator {
     /**
      * Holds the amount of parameters.
      */
-    protected $amountOfParameters;
+    protected $amountOfParameters = 1;
 
     /**
      * Holds the type of the validator.
@@ -37,7 +37,7 @@ abstract class Comparator extends ParametrizedValidator {
      * @return boolean
      * true if a compares to the values
      */
-    abstract protected function compare($a, $parameters);
+    abstract protected function compare($value, $parameters);
 
     /**
      * Checks whether all given parameters are numeric.
@@ -52,13 +52,6 @@ abstract class Comparator extends ParametrizedValidator {
             }
         }
         return true;
-    }
-
-    /**
-     * Constructor.
-     */
-    public function __construct() {
-        $this->amountOfParameters = 1;
     }
 
     /**

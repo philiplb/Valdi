@@ -17,17 +17,14 @@ namespace Valdi\Validator;
 class Value extends Comparator {
 
     /**
-     * {@inheritdoc}
+     * Holds the type of the validator.
      */
-    protected function compare($a, $parameters) {
-        return $a == $parameters[0];
-    }
+    protected $type = 'value';
 
     /**
-     * Constructor.
+     * {@inheritdoc}
      */
-    public function __construct() {
-        parent::__construct();
-        $this->type = 'value';
+    protected function compare($value, $parameters) {
+        return $value == $parameters[0];
     }
 }

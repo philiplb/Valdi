@@ -12,7 +12,7 @@
 namespace Valdi\Validator;
 
 /**
- * Validator for comparing numeric values.
+ * Validator for comparing values.
  */
 abstract class Comparator extends ParametrizedValidator {
 
@@ -37,6 +37,6 @@ abstract class Comparator extends ParametrizedValidator {
         $this->validateParameterCount('max', 1, $parameters);
 
         return in_array($value, array('', null), true) ||
-            (is_numeric($value) && $this->compare($value, $parameters[0]));
+            $this->compare($value, $parameters[0]);
     }
 }

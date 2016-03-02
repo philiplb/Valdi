@@ -20,6 +20,6 @@ class Max extends Comparator {
      * {@inheritdoc}
      */
     protected function compare($a, $b) {
-        return $a <= $b;
+        return is_numeric($a) && is_numeric($b) && $a <= $b;
     }
 }

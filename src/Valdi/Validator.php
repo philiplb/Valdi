@@ -92,24 +92,15 @@ class Validator {
      */
     public function __construct() {
         $validators = array(
-            'between' => 'Between',
-            'boolean' => 'Boolean',
-            'dateTime' => 'DateTime',
-            'email' => 'Email',
-            'floating' => 'Floating',
-            'inSet' => 'InSet',
-            'integer' => 'Integer',
-            'ip' => 'IP',
-            'ipv4' => 'IPv4',
-            'ipv6' => 'IPv6',
-            'lengthBetween' => 'LengthBetween',
-            'max' => 'Max',
-            'maxLength' => 'MaxLength',
-            'min' => 'Min',
-            'minLength' => 'MinLength',
-            'regexp' => 'Regexp',
-            'required' => 'Required',
-            'url' => 'Url',
+            'between' => 'Between', 'boolean' => 'Boolean',
+            'dateTime' => 'DateTime', 'email' => 'Email',
+            'floating' => 'Floating', 'inSet' => 'InSet',
+            'integer' => 'Integer', 'ip' => 'IP',
+            'ipv4' => 'IPv4', 'ipv6' => 'IPv6',
+            'lengthBetween' => 'LengthBetween', 'max' => 'Max',
+            'maxLength' => 'MaxLength', 'min' => 'Min',
+            'minLength' => 'MinLength', 'regexp' => 'Regexp',
+            'required' => 'Required', 'url' => 'Url',
             'value' => 'Value'
         );
         $this->createValidators($validators);

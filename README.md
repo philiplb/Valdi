@@ -1,7 +1,7 @@
 Valdi
 -----
 
-Super simple, yet complete, data validation.
+Super simple, yet complete data validation.
 
 ## Build Status
 

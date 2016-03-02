@@ -11,22 +11,6 @@
 
 namespace Valdi;
 
-use Valdi\Validator\ValidatorInterface;
-use Valdi\Validator\Boolean;
-use Valdi\Validator\DateTime;
-use Valdi\Validator\Email;
-use Valdi\Validator\Floating;
-use Valdi\Validator\InSet;
-use Valdi\Validator\Integer;
-use Valdi\Validator\IP;
-use Valdi\Validator\IPv4;
-use Valdi\Validator\IPv6;
-use Valdi\Validator\Max;
-use Valdi\Validator\Min;
-use Valdi\Validator\Regexp;
-use Valdi\Validator\Required;
-use Valdi\Validator\Url;
-
 /**
  * The Validator is used to chain Validators together and validate a set of data
  * with it.
@@ -37,20 +21,20 @@ class Validator {
 
     protected function setupValidators() {
         $this->availableValidators = array(
-            'boolean' => new Boolean(),
-            'dateTime' => new DateTime(),
-            'email' => new Email(),
-            'floating' => new Floating(),
-            'inSet' => new InSet(),
-            'integer' => new Integer(),
-            'ip' => new IP(),
-            'ipv4' => new IPv4(),
-            'ipv6' => new IPv6(),
-            'max' => new Max(),
-            'min' => new Min(),
-            'regexp' => new Regexp(),
-            'required' => new Required(),
-            'url' => new Url()
+            'boolean' => new \Valdi\Validator\Boolean(),
+            'dateTime' => new \Valdi\Validator\DateTime(),
+            'email' => new \Valdi\Validator\Email(),
+            'floating' => new \Valdi\Validator\Floating(),
+            'inSet' => new \Valdi\Validator\InSet(),
+            'integer' => new \Valdi\Validator\Integer(),
+            'ip' => new \Valdi\Validator\IP(),
+            'ipv4' => new \Valdi\Validator\IPv4(),
+            'ipv6' => new \Valdi\Validator\IPv6(),
+            'max' => new \Valdi\Validator\Max(),
+            'min' => new \Valdi\Validator\Min(),
+            'regexp' => new \Valdi\Validator\Regexp(),
+            'required' => new \Valdi\Validator\Required(),
+            'url' => new \Valdi\Validator\Url()
         );
     }
 

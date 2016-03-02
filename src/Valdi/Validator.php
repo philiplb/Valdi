@@ -101,8 +101,8 @@ class Validator {
             'lengthBetween' => 'LengthBetween', 'max' => 'Max',
             'maxLength' => 'MaxLength', 'min' => 'Min',
             'minLength' => 'MinLength', 'regexp' => 'Regexp',
-            'required' => 'Required', 'url' => 'Url',
-            'value' => 'Value'
+            'required' => 'Required', 'slug' => 'Slug',
+            'url' => 'Url', 'value' => 'Value'
         );
         $this->createValidators($validators);
     }

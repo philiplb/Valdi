@@ -22,4 +22,12 @@ class Min extends Comparator {
     protected function compare($a, $parameters) {
         return $this->allNumeric($a, $parameters[0]) && $a >= $parameters[0];
     }
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->type = 'min';
+    }
 }

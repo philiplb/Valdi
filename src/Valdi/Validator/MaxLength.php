@@ -22,4 +22,12 @@ class MaxLength extends Comparator {
     protected function compare($a, $parameters) {
         return is_numeric($parameters[0]) && strlen($a) <= $parameters[0];
     }
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->type = 'maxLength';
+    }
 }

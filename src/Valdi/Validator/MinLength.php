@@ -23,4 +23,12 @@ class MinLength extends Comparator {
         $length = strlen($a);
         return is_numeric($parameters[0]) && $length >= $parameters[0];
     }
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->type = 'minLength';
+    }
 }

@@ -22,4 +22,12 @@ class Value extends Comparator {
     protected function compare($a, $parameters) {
         return $a == $parameters[0];
     }
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->type = 'value';
+    }
 }

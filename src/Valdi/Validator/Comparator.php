@@ -22,6 +22,11 @@ abstract class Comparator extends ParametrizedValidator {
     protected $amountOfParameters;
 
     /**
+     * Holds the type of the validator.
+     */
+    protected $type;
+
+    /**
      * Performs the comparison.
      *
      * @param mixed $a
@@ -61,7 +66,7 @@ abstract class Comparator extends ParametrizedValidator {
      */
     public function validate($value, array $parameters) {
 
-        $this->validateParameterCount('max', $this->amountOfParameters, $parameters);
+        $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters);
 
         return in_array($value, array('', null), true) ||
             $this->compare($value, $parameters);

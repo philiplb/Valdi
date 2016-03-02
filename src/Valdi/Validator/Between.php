@@ -30,5 +30,6 @@ class Between extends Comparator {
      */
     public function __construct() {
         $this->amountOfParameters = 2;
+        $this->type = 'between';
     }
 }

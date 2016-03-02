@@ -14,22 +14,24 @@ namespace Valdi\Validator;
 /**
  * Validator for regular expressions.
  */
-class Regexp extends ParametrizedValidator {
+class Regexp extends Comparator {
 
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
-
-        $this->validateParameterCount('regexp', 1, $parameters);
-
-        if (in_array($value, array('', null), true)) {
-            return true;
-        }
+    protected function compare($a, $parameters) {
         // Workaround for not using '@preg_match'.
         $oldError = error_reporting(0);
-        $regexResult = preg_match($parameters[0], $value);
+        $regexResult = preg_match($parameters[0], $a);
         error_reporting($oldError);
         return $regexResult === 1;
+    }
+
+    /**
+     * Constructor.
+     */
+    public function __construct() {
+        parent::__construct();
+        $this->type = 'regexp';
     }
 }

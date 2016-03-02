@@ -12,21 +12,24 @@
 namespace Valdi\Validator;
 
 /**
- * Validator for max values.
+ * Validator for values between.
  */
-class Max extends Comparator {
+class Between extends Comparator {
 
     /**
      * {@inheritdoc}
      */
     protected function compare($a, $parameters) {
-        return is_numeric($a) && is_numeric($parameters[0]) && $a <= $parameters[0];
+        return is_numeric($a) && is_numeric($parameters[0]) &&
+            is_numeric($parameters[1])
+            && $a >= $parameters[0]
+            && $a <= $parameters[1];
     }
 
     /**
      * Constructor.
      */
     public function __construct() {
-        $this->amountOfParameters = 1;
+        $this->amountOfParameters = 2;
     }
 }

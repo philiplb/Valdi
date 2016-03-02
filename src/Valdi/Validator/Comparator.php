@@ -17,26 +17,31 @@ namespace Valdi\Validator;
 abstract class Comparator extends ParametrizedValidator {
 
     /**
+     * Holds the amount of parameters.
+     */
+    protected $amountOfParameters;
+
+    /**
      * Performs the comparison.
      *
      * @param mixed $a
-     * the first number to compare
-     * @param mixed $b
-     * the second number to compare
+     * the first value to compare
+     * @param mixed $parameters
+     * the values to compare
      *
      * @return boolean
-     * true if a compares to b
+     * true if a compares to the values
      */
-    abstract protected function compare($a, $b);
+    abstract protected function compare($a, $parameters);
 
     /**
      * {@inheritdoc}
      */
     public function validate($value, array $parameters) {
 
-        $this->validateParameterCount('max', 1, $parameters);
+        $this->validateParameterCount('max', $this->amountOfParameters, $parameters);
 
         return in_array($value, array('', null), true) ||
-            $this->compare($value, $parameters[0]);
+            $this->compare($value, $parameters);
     }
 }

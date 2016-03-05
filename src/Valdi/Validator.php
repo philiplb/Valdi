@@ -92,7 +92,9 @@ class Validator {
      */
     public function __construct() {
         $validators = array(
+            'afterDateTime' => 'AfterDateTime',
             'alphabetical' => 'Alphabetical', 'alphaNumerical' => 'AlphaNumerical',
+            'beforeDateTime' => 'BeforeDateTime',
             'between' => 'Between', 'boolean' => 'Boolean',
             'contains' => 'Contains',
             'dateTime' => 'DateTime', 'email' => 'Email',

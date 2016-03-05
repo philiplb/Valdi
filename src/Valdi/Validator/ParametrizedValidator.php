@@ -34,4 +34,21 @@ abstract class ParametrizedValidator implements ValidatorInterface {
             throw new ValidationException('"' . $name . '" expects ' . $parameterAmount . ' parameter.');
         }
     }
+
+    /**
+     * Throws an exception if the parameters don't fullfill the expected
+     * minimum parameter count.
+     *
+     * @param string $name
+     * the name of the validator
+     * @param integer $parameterAmount
+     * the amount of expected parameters
+     * @param string[] $parameters
+     * the parameters
+     */
+    protected function validateMinParameterCount($name, $parameterAmount, array $parameters) {
+        if (count($parameters) < $parameterAmount) {
+            throw new ValidationException('"' . $name . '" expects ' . $parameterAmount . ' parameter.');
+        }
+    }
 }

@@ -48,7 +48,7 @@ abstract class ParametrizedValidator implements ValidatorInterface {
      */
     protected function validateMinParameterCount($name, $parameterAmount, array $parameters) {
         if (count($parameters) < $parameterAmount) {
-            throw new ValidationException('"' . $name . '" expects ' . $parameterAmount . ' parameter.');
+            throw new ValidationException('"' . $name . '" expects at least ' . $parameterAmount . ' parameter.');
         }
     }
 }

@@ -11,6 +11,8 @@
 
 namespace Valdi\Validator;
 
+use Valdi\ValidationException;
+
 /**
  * Abstract validator to compare date times.
  * For the format, see:

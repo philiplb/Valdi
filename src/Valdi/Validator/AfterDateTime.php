@@ -26,8 +26,8 @@ class AfterDateTime extends DateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($date, array $compareDates) {
-        return $date > $compareDates[0];
+    protected function compare($date, array $datetimes) {
+        return $date > $datetimes[0];
     }
 
 }

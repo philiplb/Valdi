@@ -31,7 +31,7 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->validate(null, array('2016-03-29 01:23:45')));
 
         try {
-            $validator->validate('2016-03-28 01:23:45', array('2016-03-27 01:23:45', 'asd'));
+            $validator->validate('2016-03-28 01:23:45', array('2015-03-27 01:23:45', 'asd'));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

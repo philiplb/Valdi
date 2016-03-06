@@ -21,6 +21,11 @@ use Valdi\ValidationException;
 abstract class DateTimeComparator extends ParametrizedValidator {
 
     /**
+     * Holds the type of the validator.
+     */
+    protected $type;
+
+    /**
      * Compares two dates.
      *
      * @param \DateTime $date
@@ -55,12 +60,12 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      */
     public function validate($value, array $parameters) {
 
-        $this->validateMinParameterCount('beforeDateTime', 1, $parameters);
+        $this->validateMinParameterCount($this->type, 1, $parameters);
 
         $format = $this->getDateTimeFormat($parameters);
         $compareDate = \DateTime::createFromFormat($format, $parameters[0]);
         if ($compareDate === false) {
-            throw new ValidationException('"beforeDateTime" expects a date of the format ' . $format . '.');
+            throw new ValidationException('"' . $this->type . '" expects a date of the format "' . $format . '".');
         }
 
         if (in_array($value, array('', null), true)) {

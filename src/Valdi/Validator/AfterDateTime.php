@@ -18,6 +18,14 @@ namespace Valdi\Validator;
  */
 class AfterDateTime extends DateTimeComparator {
 
+    /**
+     * Holds the type of the validator.
+     */
+    protected $type = 'afterDateTime';
+
+    /**
+     * {@inheritdoc}
+     */
     protected function compare($date, $compareDate) {
         return $date > $compareDate;
     }

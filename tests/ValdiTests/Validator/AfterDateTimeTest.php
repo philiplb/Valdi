@@ -34,7 +34,20 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
             $validator->validate('2016-03-28 01:23:45', array('2016-03-27 01:23:45', 'asd'));
             $this->fail();
         } catch (ValidationException $e) {
-            // Expected
+            $read = $e->getMessage();
+            $expected = '"afterDateTime" expects a date of the format "asd".';
+            $this->assertSame($read, $expected);
+        } catch (Exception $e) {
+            $this->fail();
+        }
+
+        try {
+            $validator->validate('2016-03-28 01:23:45', array());
+            $this->fail();
+        } catch (ValidationException $e) {
+            $read = $e->getMessage();
+            $expected = '"afterDateTime" expects at least 1 parameter.';
+            $this->assertSame($read, $expected);
         } catch (Exception $e) {
             $this->fail();
         }

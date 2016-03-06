@@ -21,6 +21,11 @@ use Valdi\ValidationException;
 abstract class DateTimeComparator extends ParametrizedValidator {
 
     /**
+     * Holds the amount of parameters.
+     */
+    protected $amountOfParameters = 1;
+
+    /**
      * Holds the type of the validator.
      */
     protected $type;
@@ -30,13 +35,13 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      *
      * @param \DateTime $date
      * the first date to compare
-     * @param \DateTime $compareDate
+     * @param \DateTime[] $compareDates
      * the second date to compare
      *
      * @return boolean
      * true if the dates compare
      */
-    abstract protected function compare($date, $compareDate);
+    abstract protected function compare($date, array $compareDates);
 
     /**
      * Gets a date time format from the parameters if given or a default one.
@@ -49,8 +54,8 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      */
     protected function getDateTimeFormat($parameters) {
         $format = 'Y-m-d H:i:s';
-        if (count($parameters) > 1) {
-            $format = $parameters[1];
+        if (count($parameters) > $this->amountOfParameters) {
+            $format = $parameters[$this->amountOfParameters];
         }
         return $format;
     }
@@ -60,13 +65,19 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      */
     public function validate($value, array $parameters) {
 
-        $this->validateMinParameterCount($this->type, 1, $parameters);
+        $this->validateMinParameterCount($this->type, $this->amountOfParameters, $parameters);
 
         $format = $this->getDateTimeFormat($parameters);
-        $compareDate = \DateTime::createFromFormat($format, $parameters[0]);
-        if ($compareDate === false) {
-            throw new ValidationException('"' . $this->type . '" expects a date of the format "' . $format . '".');
+
+        $compareDates = array();
+        for ($i = 0; $i < $this->amountOfParameters; ++$i) {
+            $compareDate = \DateTime::createFromFormat($format, $parameters[0]);
+            if ($compareDate === false) {
+                throw new ValidationException('"' . $this->type . '" expects a date of the format "' . $format . '".');
+            }
+            $compareDates[] = $compareDate;
         }
+
 
         if (in_array($value, array('', null), true)) {
             return true;
@@ -76,6 +87,6 @@ abstract class DateTimeComparator extends ParametrizedValidator {
         if ($date === false) {
             return false;
         }
-        return $this->compare($date, $compareDate);
+        return $this->compare($date, $compareDates);
     }
 }

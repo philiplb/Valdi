@@ -25,6 +25,7 @@ class BeforeDateTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->validate('20160328012345', array('20160328012345', 'YmdHis')));
         $this->assertFalse($validator->validate('2016-03-28 01:23:45', array('2016-03-27 01:23:45')));
         $this->assertFalse($validator->validate('20160328012345', array('20160327012345', 'YmdHis')));
+        $this->assertFalse($validator->validate('test', array('2016-03-29 01:23:45')));
 
         $this->assertTrue($validator->validate('', array('2016-03-29 01:23:45')));
         $this->assertTrue($validator->validate(null, array('2016-03-29 01:23:45')));

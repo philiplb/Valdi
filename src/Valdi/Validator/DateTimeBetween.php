@@ -31,7 +31,7 @@ class DateTimeBetween extends DateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($date, array $datetimes, array $parameters) {
+    protected function compare(\DateTime $date, array $datetimes, array $parameters) {
         return $date > $datetimes[0] && $date < $datetimes[1];
     }
 

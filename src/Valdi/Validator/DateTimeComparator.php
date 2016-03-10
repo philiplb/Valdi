@@ -37,11 +37,13 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      * the first date to compare
      * @param \DateTime[] $datetimes
      * the date times to compare to
+     * @param array $parameters
+     * the original validator parameters
      *
      * @return boolean
      * true if the dates compare
      */
-    abstract protected function compare($date, array $datetimes);
+    abstract protected function compare($date, array $datetimes, array $parameters);
 
     /**
      * Gets a date time format from the parameters if given or a default one.
@@ -102,6 +104,6 @@ abstract class DateTimeComparator extends ParametrizedValidator {
             return false;
         }
 
-        return $this->compare($date, $datetimes);
+        return $this->compare($date, $datetimes, $parameters);
     }
 }

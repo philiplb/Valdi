@@ -26,7 +26,7 @@ class BeforeDateTime extends DateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($date, array $datetimes) {
+    protected function compare($date, array $datetimes, array $parameters) {
         return $date < $datetimes[0];
     }
 

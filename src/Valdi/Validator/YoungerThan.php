@@ -20,9 +20,10 @@ namespace Valdi\Validator;
 class YoungerThan extends DateTimeComparator {
 
     /**
-     * Holds the amount of parameters.
+     * Holds whether to parse the parameters as \DateTimes so the child class
+     * can decide.
      */
-    protected $amountOfParameters = 0;
+    protected $parseParametersAsDateTimes = false;
 
     /**
      * Holds the type of the validator.
@@ -32,10 +33,9 @@ class YoungerThan extends DateTimeComparator {
      /**
       * {@inheritdoc}
       */
-     protected function compare(\DateTime $date, array $datetimes, array $parameters) {
-         $this->validateMinParameterCount($this->type, 1, $parameters);
-         $now = new \DateTime();
-         return $now->getTimestamp() - $date->getTimestamp() < $parameters[0];
-     }
+    protected function compare(\DateTime $date, array $datetimes, array $parameters) {
+        $now = new \DateTime();
+        return $now->getTimestamp() - $date->getTimestamp() < $parameters[0];
+    }
 
 }

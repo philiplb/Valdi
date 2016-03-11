@@ -30,9 +30,9 @@ class YoungerThan extends DateTimeComparator {
      */
     protected $type = 'youngerThan';
 
-     /**
-      * {@inheritdoc}
-      */
+    /**
+     * {@inheritdoc}
+     */
     protected function compare(\DateTime $date, array $datetimes, array $parameters) {
         $now = new \DateTime();
         return $now->getTimestamp() - $date->getTimestamp() < $parameters[0];

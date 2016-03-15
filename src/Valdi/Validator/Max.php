@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for max values.
  */
-class Max extends Comparator {
+class Max extends AbstractComparator {
 
     /**
      * Holds the type of the validator.

@@ -16,7 +16,7 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class DateTimeBetween extends DateTimeComparator {
+class DateTimeBetween extends AbstractDateTimeComparator {
 
     /**
      * Holds the amount of parameters.

@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for strings of a max length.
  */
-class MaxLength extends Comparator {
+class MaxLength extends AbstractComparator {
 
     /**
      * Holds the type of the validator.

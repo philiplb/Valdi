@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for string lengths between.
  */
-class LengthBetween extends Comparator {
+class LengthBetween extends AbstractComparator {
 
     /**
      * Holds the amount of parameters.

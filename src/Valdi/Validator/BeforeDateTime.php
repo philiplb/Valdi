@@ -16,7 +16,7 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class BeforeDateTime extends DateTimeComparator {
+class BeforeDateTime extends AbstractDateTimeComparator {
 
     /**
      * Holds the type of the validator.

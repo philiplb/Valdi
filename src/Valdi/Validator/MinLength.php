@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for strings of a min length.
  */
-class MinLength extends Comparator {
+class MinLength extends AbstractComparator {
 
     /**
      * Holds the type of the validator.

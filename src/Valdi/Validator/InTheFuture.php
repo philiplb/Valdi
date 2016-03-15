@@ -16,7 +16,7 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class InTheFuture extends DateTimeComparator {
+class InTheFuture extends AbstractDateTimeComparator {
 
     /**
      * Holds the amount of parameters.

@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for values between.
  */
-class Between extends Comparator {
+class Between extends AbstractComparator {
 
     /**
      * Holds the amount of parameters.

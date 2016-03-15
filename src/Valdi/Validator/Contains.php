@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for strings containing a substring.
  */
-class Contains extends Comparator {
+class Contains extends AbstractComparator {
 
     /**
      * Holds the amount of parameters.

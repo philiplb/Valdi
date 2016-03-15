@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for regular expressions.
  */
-class Regexp extends Comparator {
+class Regexp extends AbstractComparator {
 
     /**
      * Holds the type of the validator.

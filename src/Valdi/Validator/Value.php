@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for equal values.
  */
-class Value extends Comparator {
+class Value extends AbstractComparator {
 
     /**
      * Holds the type of the validator.

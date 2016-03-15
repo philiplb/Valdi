@@ -17,7 +17,7 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class OlderThan extends DateTimeComparator {
+class OlderThan extends AbstractDateTimeComparator {
 
     /**
      * Holds whether to parse the parameters as \DateTimes so the child class

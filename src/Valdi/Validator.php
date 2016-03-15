@@ -92,23 +92,21 @@ class Validator {
      */
     public function __construct() {
         $validators = array(
-            'afterDateTime' => 'AfterDateTime',
-            'alphabetical' => 'Alphabetical', 'alphaNumerical' => 'AlphaNumerical',
-            'beforeDateTime' => 'BeforeDateTime',
+            'afterDateTime' => 'AfterDateTime', 'alphabetical' => 'Alphabetical',
+            'alphaNumerical' => 'AlphaNumerical', 'beforeDateTime' => 'BeforeDateTime',
             'between' => 'Between', 'boolean' => 'Boolean',
             'contains' => 'Contains', 'dateTime' => 'DateTime',
             'dateTimeBetween' => 'DateTimeBetween', 'email' => 'Email',
             'floating' => 'Floating', 'inSet' => 'InSet',
-            'integer' => 'Integer', 'inThePast' => 'InThePast',
-            'ip' => 'IP',
+            'integer' => 'Integer', 'inTheFuture' => 'InTheFuture',
+            'inThePast' => 'InThePast', 'ip' => 'IP',
             'ipv4' => 'IPv4', 'ipv6' => 'IPv6',
             'lengthBetween' => 'LengthBetween', 'max' => 'Max',
             'maxLength' => 'MaxLength', 'min' => 'Min',
             'minLength' => 'MinLength', 'olderThan' => 'OlderThan',
-            'regexp' => 'Regexp',
-            'required' => 'Required', 'slug' => 'Slug',
-            'url' => 'Url', 'value' => 'Value',
-            'youngerThan' => 'YoungerThan'
+            'regexp' => 'Regexp', 'required' => 'Required',
+            'slug' => 'Slug', 'url' => 'Url',
+            'value' => 'Value', 'youngerThan' => 'YoungerThan'
         );
         $this->createValidators($validators);
     }

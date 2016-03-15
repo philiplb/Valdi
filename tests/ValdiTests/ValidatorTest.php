@@ -45,21 +45,21 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             )
         );
         $this->assertSame($read, $expected);
-            $validator = new Validator();
-            $data = array(
-                'a' => 'a',
-                'b' => 'b',
-            );
-            $validators = array(
-                'a' => array('required'),
-                'b' => array(array('required')),
-            );
-            $read = $validator->validate($validators, $data);
-            $expected = array(
-                'valid' => true,
-                'errors' => array()
-            );
-            $this->assertSame($read, $expected);
+        $validator = new Validator();
+        $data = array(
+            'a' => 'a',
+            'b' => 'b',
+        );
+        $validators = array(
+            'a' => array('required'),
+            'b' => array(array('required')),
+        );
+        $read = $validator->validate($validators, $data);
+        $expected = array(
+            'valid' => true,
+            'errors' => array()
+        );
+        $this->assertSame($read, $expected);
     }
 
     public function testInvalidRule() {

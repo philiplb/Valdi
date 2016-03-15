@@ -95,7 +95,7 @@ abstract class DateTimeComparator extends ParametrizedValidator {
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
 
         $this->validateMinParameterCount($this->type, $this->amountOfParameters, $parameters);
 

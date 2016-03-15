@@ -57,7 +57,7 @@ abstract class Comparator extends ParametrizedValidator {
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
 
         $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters);
 

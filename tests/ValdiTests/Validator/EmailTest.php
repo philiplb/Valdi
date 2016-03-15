@@ -18,14 +18,14 @@ class EmailTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Email();
 
-        $this->assertTrue($validator->validate('test@test.de', array()));
+        $this->assertTrue($validator->isValid('test@test.de', array()));
 
-        $this->assertFalse($validator->validate('test.de', array()));
-        $this->assertFalse($validator->validate('@test.de', array()));
-        $this->assertFalse($validator->validate('test', array()));
+        $this->assertFalse($validator->isValid('test.de', array()));
+        $this->assertFalse($validator->isValid('@test.de', array()));
+        $this->assertFalse($validator->isValid('test', array()));
 
-        $this->assertTrue($validator->validate('', array()));
-        $this->assertTrue($validator->validate(null, array()));
+        $this->assertTrue($validator->isValid('', array()));
+        $this->assertTrue($validator->isValid(null, array()));
     }
 
 }

@@ -19,7 +19,7 @@ class Required implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
         return !is_null($value) && $value !== '';
     }
 }

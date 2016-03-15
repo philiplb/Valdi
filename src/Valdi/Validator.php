@@ -34,7 +34,7 @@ class Validator {
     protected function createValidators(array $validators) {
         $this->availableValidators = array();
         foreach ($validators as $name => $type) {
-            $class = '\\Valdi\\Validator\\' . $type;
+            $class                            = '\\Valdi\\Validator\\' . $type;
             $this->availableValidators[$name] = new $class();
         }
     }
@@ -52,11 +52,11 @@ class Validator {
      * @return boolean
      * true if the value is valid
      */
-    protected function validateRule($validator, $parameters, $value) {
+    protected function isValidRule($validator, $parameters, $value) {
         if (!array_key_exists($validator, $this->availableValidators)) {
             throw new ValidatorException('"' . $validator . '" not found as available validator.');
         }
-        return $this->availableValidators[$validator]->validate($value, $parameters);
+        return $this->availableValidators[$validator]->isValid($value, $parameters);
     }
 
     /**
@@ -70,16 +70,16 @@ class Validator {
      * @return string[]
      * the fields where the validation failed
      */
-    protected function validateField($fieldRules, $value) {
+    protected function isValidField($fieldRules, $value) {
         $result = array();
         foreach ($fieldRules as $rule) {
             $name = $rule;
             $parameters = array();
             if (is_array($rule)) {
                 $parameters = $rule;
-                $name = array_shift($parameters);
+                $name       = array_shift($parameters);
             }
-            $valid = $this->validateRule($name, $parameters, $value);
+            $valid = $this->isValidRule($name, $parameters, $value);
             if (!$valid) {
                 $result[] = $name;
             }
@@ -135,7 +135,7 @@ class Validator {
      * @param array $data
      * the data to validate as a map
      *
-     * @return array
+     * @return array<string,boolean|array>
      * the validation result having the keys "valid" (true or false) and
      * the key "errors" containing all failed fields as keys with arrays of the
      * failed validator names; example where the field "b" from the above sample
@@ -145,8 +145,8 @@ class Validator {
     public function isValid(array $rules, array $data) {
         $errors = array();
         foreach ($rules as $field => $fieldRules) {
-            $value = isset($data[$field]) ? $data[$field] : null;
-            $fieldErrors = $this->validateField($fieldRules, $value);
+            $value       = isset($data[$field]) ? $data[$field] : null;
+            $fieldErrors = $this->isValidField($fieldRules, $value);
             if (!empty($fieldErrors)) {
                 $errors[$field] = $fieldErrors;
             }

@@ -18,10 +18,10 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Required();
 
-        $this->assertTrue($validator->validate('test', array()));
+        $this->assertTrue($validator->isValid('test', array()));
 
-        $this->assertFalse($validator->validate('', array()));
-        $this->assertFalse($validator->validate(null, array()));
+        $this->assertFalse($validator->isValid('', array()));
+        $this->assertFalse($validator->isValid(null, array()));
     }
 
 }

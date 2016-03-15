@@ -21,7 +21,7 @@ class InSet implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
         if (count($parameters) === 0) {
             throw new ValidationException('"set" expects at least one parameter.');
         }

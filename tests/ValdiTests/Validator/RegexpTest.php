@@ -19,16 +19,16 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Regexp();
 
-        $this->assertTrue($validator->validate('test', array('/t.st/')));
+        $this->assertTrue($validator->isValid('test', array('/t.st/')));
 
-        $this->assertFalse($validator->validate('test', array('foo')));
-        $this->assertFalse($validator->validate('@test.de', array('foo')));
+        $this->assertFalse($validator->isValid('test', array('foo')));
+        $this->assertFalse($validator->isValid('@test.de', array('foo')));
 
-        $this->assertTrue($validator->validate('', array('foo')));
-        $this->assertTrue($validator->validate(null, array('foo')));
+        $this->assertTrue($validator->isValid('', array('foo')));
+        $this->assertTrue($validator->isValid(null, array('foo')));
 
         try {
-            $validator->validate('test', array());
+            $validator->isValid('test', array());
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -39,7 +39,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
         }
 
         try {
-            $validator->validate('test', array('1', '2'));
+            $validator->isValid('test', array('1', '2'));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

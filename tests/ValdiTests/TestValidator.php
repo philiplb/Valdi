@@ -15,7 +15,7 @@ use Valdi\Validator\ValidatorInterface;
 
 class TestValidator implements ValidatorInterface {
 
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
        return $value % 2 == 0;
     }
 

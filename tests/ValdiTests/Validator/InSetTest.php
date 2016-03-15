@@ -19,16 +19,16 @@ class InSetTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new InSet();
 
-        $this->assertTrue($validator->validate('a', array('a')));
-        $this->assertTrue($validator->validate('a', array('a', 'b')));
+        $this->assertTrue($validator->isValid('a', array('a')));
+        $this->assertTrue($validator->isValid('a', array('a', 'b')));
 
-        $this->assertFalse($validator->validate('c', array('a', 'b')));
+        $this->assertFalse($validator->isValid('c', array('a', 'b')));
 
-        $this->assertTrue($validator->validate('', array('a')));
-        $this->assertTrue($validator->validate(null, array('a')));
+        $this->assertTrue($validator->isValid('', array('a')));
+        $this->assertTrue($validator->isValid(null, array('a')));
 
         try {
-            $validator->validate('test', array());
+            $validator->isValid('test', array());
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

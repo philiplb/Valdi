@@ -18,18 +18,18 @@ class ValueTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Value();
 
-        $this->assertTrue($validator->validate(1, array(1)));
-        $this->assertTrue($validator->validate('1', array(1)));
-        $this->assertTrue($validator->validate(1, array('1')));
-        $this->assertTrue($validator->validate('1', array('1')));
+        $this->assertTrue($validator->isValid(1, array(1)));
+        $this->assertTrue($validator->isValid('1', array(1)));
+        $this->assertTrue($validator->isValid(1, array('1')));
+        $this->assertTrue($validator->isValid('1', array('1')));
 
-        $this->assertFalse($validator->validate(2, array(1)));
-        $this->assertFalse($validator->validate('2', array(1)));
-        $this->assertFalse($validator->validate(2, array('1')));
-        $this->assertFalse($validator->validate('2', array('1')));
+        $this->assertFalse($validator->isValid(2, array(1)));
+        $this->assertFalse($validator->isValid('2', array(1)));
+        $this->assertFalse($validator->isValid(2, array('1')));
+        $this->assertFalse($validator->isValid('2', array('1')));
 
-        $this->assertTrue($validator->validate('', array(1)));
-        $this->assertTrue($validator->validate(null, array(1)));
+        $this->assertTrue($validator->isValid('', array(1)));
+        $this->assertTrue($validator->isValid(null, array(1)));
     }
 
 }

@@ -19,16 +19,16 @@ class SlugTest extends \PHPUnit_Framework_TestCase {
     public function testSlug() {
         $validator = new Slug();
 
-        $this->assertTrue($validator->validate('test', array()));
-        $this->assertTrue($validator->validate('a-test', array()));
-        $this->assertTrue($validator->validate('a-real-test', array()));
+        $this->assertTrue($validator->isValid('test', array()));
+        $this->assertTrue($validator->isValid('a-test', array()));
+        $this->assertTrue($validator->isValid('a-real-test', array()));
 
-        $this->assertFalse($validator->validate('-test', array()));
-        $this->assertFalse($validator->validate('false-test-', array()));
-        $this->assertFalse($validator->validate('@test', array()));
+        $this->assertFalse($validator->isValid('-test', array()));
+        $this->assertFalse($validator->isValid('false-test-', array()));
+        $this->assertFalse($validator->isValid('@test', array()));
 
-        $this->assertTrue($validator->validate('', array()));
-        $this->assertTrue($validator->validate(null, array()));
+        $this->assertTrue($validator->isValid('', array()));
+        $this->assertTrue($validator->isValid(null, array()));
     }
 
 }

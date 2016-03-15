@@ -28,6 +28,6 @@ interface ValidatorInterface {
      * @return boolean
      * true if the value is valid, false else
      */
-    public function validate($value, array $parameters);
+    public function isValid($value, array $parameters);
 
 }

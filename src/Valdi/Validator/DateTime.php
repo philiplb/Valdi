@@ -21,7 +21,7 @@ class DateTime implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function validate($value, array $parameters) {
+    public function isValid($value, array $parameters) {
         $format = 'Y-m-d H:i:s';
         if (count($parameters) > 0) {
             $format = $parameters[0];

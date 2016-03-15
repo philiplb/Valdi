@@ -19,20 +19,20 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new AfterDateTime();
 
-        $this->assertTrue($validator->validate('2016-03-28 01:23:45', array('2016-03-27 01:23:45')));
-        $this->assertTrue($validator->validate('20160328012345', array('20160327012345', 'YmdHis')));
+        $this->assertTrue($validator->isValid('2016-03-28 01:23:45', array('2016-03-27 01:23:45')));
+        $this->assertTrue($validator->isValid('20160328012345', array('20160327012345', 'YmdHis')));
 
-        $this->assertFalse($validator->validate('2016-03-28 01:23:45', array('2016-03-28 01:23:45')));
-        $this->assertFalse($validator->validate('20160328012345', array('20160328012345', 'YmdHis')));
-        $this->assertFalse($validator->validate('2016-03-28 01:23:45', array('2016-03-29 01:23:45')));
-        $this->assertFalse($validator->validate('20160328012345', array('20160329012345', 'YmdHis')));
-        $this->assertFalse($validator->validate('test', array('2016-03-29 01:23:45')));
+        $this->assertFalse($validator->isValid('2016-03-28 01:23:45', array('2016-03-28 01:23:45')));
+        $this->assertFalse($validator->isValid('20160328012345', array('20160328012345', 'YmdHis')));
+        $this->assertFalse($validator->isValid('2016-03-28 01:23:45', array('2016-03-29 01:23:45')));
+        $this->assertFalse($validator->isValid('20160328012345', array('20160329012345', 'YmdHis')));
+        $this->assertFalse($validator->isValid('test', array('2016-03-29 01:23:45')));
 
-        $this->assertTrue($validator->validate('', array('2016-03-29 01:23:45')));
-        $this->assertTrue($validator->validate(null, array('2016-03-29 01:23:45')));
+        $this->assertTrue($validator->isValid('', array('2016-03-29 01:23:45')));
+        $this->assertTrue($validator->isValid(null, array('2016-03-29 01:23:45')));
 
         try {
-            $validator->validate('2016-03-28 01:23:45', array('2015-03-27 01:23:45', 'asd'));
+            $validator->isValid('2016-03-28 01:23:45', array('2015-03-27 01:23:45', 'asd'));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -43,7 +43,7 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
         }
 
         try {
-            $validator->validate('2016-03-28 01:23:45', array());
+            $validator->isValid('2016-03-28 01:23:45', array());
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

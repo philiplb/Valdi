@@ -29,7 +29,7 @@ abstract class Filter implements ValidatorInterface {
      * Gets the flags to use within the validation.
      * See http://php.net/manual/de/filter.filters.validate.php .
      *
-     * @return string
+     * @return string|null
      * the flags to use
      */
     protected function getFlags() {

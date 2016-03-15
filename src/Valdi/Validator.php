@@ -73,7 +73,7 @@ class Validator {
     protected function isValidField($fieldRules, $value) {
         $result = array();
         foreach ($fieldRules as $rule) {
-            $name = $rule;
+            $name       = $rule;
             $parameters = array();
             if (is_array($rule)) {
                 $parameters = $rule;

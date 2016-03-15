@@ -61,7 +61,7 @@ abstract class DateTimeComparator extends ParametrizedValidator {
      * the date time format
      */
     protected function getDateTimeFormat($parameters) {
-        $format = 'Y-m-d H:i:s';
+        $format          = 'Y-m-d H:i:s';
         $parametersCount = count($parameters);
         if ($parametersCount > $this->amountOfParameters) {
             $format = $parameters[$parametersCount - 1];
@@ -106,7 +106,7 @@ abstract class DateTimeComparator extends ParametrizedValidator {
         $format = $this->getDateTimeFormat($parameters);
 
         $datetimes = $this->parseParametersAsDateTimes ? $this->getDateTimes($parameters, $format) : array();
-        $date = \DateTime::createFromFormat($format, $value);
+        $date      = \DateTime::createFromFormat($format, $value);
         if ($date === false) {
             return false;
         }

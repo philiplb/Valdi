@@ -32,7 +32,7 @@ class Contains extends Comparator {
     protected function compare($value, $parameters) {
         if ($parameters[0]) {
             $parameters[1] = strtolower($parameters[1]);
-            $value = strtolower($value);
+            $value         = strtolower($value);
         }
         return strpos($value, $parameters[1]) !== false;
     }

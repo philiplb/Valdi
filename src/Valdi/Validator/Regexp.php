@@ -26,7 +26,7 @@ class Regexp extends Comparator {
      */
     protected function compare($value, $parameters) {
         // Workaround for not using '@preg_match'.
-        $oldError = error_reporting(0);
+        $oldError    = error_reporting(0);
         $regexResult = preg_match($parameters[0], $value);
         error_reporting($oldError);
         return $regexResult === 1;

@@ -102,6 +102,12 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'errors' => array('a' => array('test'))
         );
         $this->assertSame($read, $expected);
+        $read = $validator->validate($validators, array('a' => 2));
+        $expected = array(
+            'valid' => true,
+            'errors' => array()
+        );
+        $this->assertSame($read, $expected);
     }
 
 }

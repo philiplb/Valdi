@@ -79,4 +79,29 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
+    public function testAddValidator() {
+        $validator = new Validator();
+        $validators = array(
+            'a' => array('test')
+        );
+        try {
+            $read = $validator->validate($validators, array('a' => 1));
+            $this->fail();
+        } catch (ValidatorException $e) {
+            $read = $e->getMessage();
+            $expected = '"test" not found as available validator.';
+            $this->assertSame($read, $expected);
+        } catch (Exception $e) {
+            $this->fail();
+        }
+
+        $validator->addValidator('test', new TestValidator());
+        $read = $validator->validate($validators, array('a' => 1));
+        $expected = array(
+            'valid' => false,
+            'errors' => array('a' => array('test'))
+        );
+        $this->assertSame($read, $expected);
+    }
+
 }

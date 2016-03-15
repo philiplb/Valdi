@@ -16,7 +16,7 @@ use Valdi\ValidatorException;
 
 class RequiredTest extends \PHPUnit_Framework_TestCase {
 
-    public function testValidate() {
+    public function testIsValid() {
         $validator = new Validator();
         $data = array(
             'a' => 'a',
@@ -34,7 +34,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'e' => array('required', 'integer', 'floating'),
             'f' => array('required', 'integer'),
         );
-        $read = $validator->validate($validators, $data);
+        $read = $validator->isValid($validators, $data);
         $expected = array(
             'valid' => false,
             'errors' => array(
@@ -54,7 +54,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => array('required'),
             'b' => array(array('required')),
         );
-        $read = $validator->validate($validators, $data);
+        $read = $validator->isValid($validators, $data);
         $expected = array(
             'valid' => true,
             'errors' => array()
@@ -68,7 +68,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => array('invalid')
         );
         try {
-            $read = $validator->validate($validators, array());
+            $read = $validator->isValid($validators, array());
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
@@ -85,7 +85,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => array('test')
         );
         try {
-            $read = $validator->validate($validators, array('a' => 1));
+            $read = $validator->isValid($validators, array('a' => 1));
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
@@ -96,13 +96,13 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         }
 
         $validator->addValidator('test', new TestValidator());
-        $read = $validator->validate($validators, array('a' => 1));
+        $read = $validator->isValid($validators, array('a' => 1));
         $expected = array(
             'valid' => false,
             'errors' => array('a' => array('test'))
         );
         $this->assertSame($read, $expected);
-        $read = $validator->validate($validators, array('a' => 2));
+        $read = $validator->isValid($validators, array('a' => 2));
         $expected = array(
             'valid' => true,
             'errors' => array()

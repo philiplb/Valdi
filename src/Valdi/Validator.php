@@ -142,7 +142,7 @@ class Validator {
      * failed due to the min validator:
      * array('valid' => false, errors => array('b' => array('min')))
      */
-    public function validate(array $rules, array $data) {
+    public function isValid(array $rules, array $data) {
         $errors = array();
         foreach ($rules as $field => $fieldRules) {
             $value = isset($data[$field]) ? $data[$field] : null;

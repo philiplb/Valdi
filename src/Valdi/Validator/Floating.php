@@ -15,7 +15,7 @@ namespace Valdi\Validator;
  * Validator for floats. It's not named "Float" as it is a reserved class name
  * in PHP7.
  */
-class Floating extends Filter {
+class Floating extends AbstractFilter {
 
     /**
      * {@inheritdoc}

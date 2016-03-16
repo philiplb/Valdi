@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for Urls.
  */
-class Url extends Filter {
+class Url extends AbstractFilter {
 
     /**
      * {@inheritdoc}

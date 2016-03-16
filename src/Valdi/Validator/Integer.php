@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for integers.
  */
-class Integer extends Filter {
+class Integer extends AbstractFilter {
 
     /**
      * {@inheritdoc}

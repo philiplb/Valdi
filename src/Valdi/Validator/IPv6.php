@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for floats.
  */
-class IPv6 extends Filter {
+class IPv6 extends AbstractFilter {
 
     /**
      * {@inheritdoc}

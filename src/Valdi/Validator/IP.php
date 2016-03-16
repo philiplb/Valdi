@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for IPs.
  */
-class IP extends Filter {
+class IP extends AbstractFilter {
 
     /**
      * {@inheritdoc}

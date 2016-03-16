@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for IP v4 addresses.
  */
-class IPv4 extends Filter {
+class IPv4 extends AbstractFilter {
 
     /**
      * {@inheritdoc}
@@ -22,7 +22,7 @@ class IPv4 extends Filter {
     protected function getFilter() {
         return \FILTER_VALIDATE_IP;
     }
-    
+
     /**
      * {@inheritdoc}
      */

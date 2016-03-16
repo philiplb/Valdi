@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for e-mail addresses.
  */
-class Email extends Filter {
+class Email extends AbstractFilter {
 
     /**
      * {@inheritdoc}

@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Base validator for PHPs filter_var function.
  */
-abstract class Filter implements ValidatorInterface {
+abstract class AbstractFilter implements ValidatorInterface {
 
     /**
      * Gets the filter to use within the validation.

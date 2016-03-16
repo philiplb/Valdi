@@ -30,7 +30,7 @@ class Between extends AbstractComparator {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        return $this->allNumeric($value, $parameters[0], $parameters[1])
+        return $this->isAllNumeric($value, $parameters[0], $parameters[1])
             && $value >= $parameters[0]
             && $value <= $parameters[1];
     }

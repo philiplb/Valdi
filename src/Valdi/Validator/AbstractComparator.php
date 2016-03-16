@@ -45,7 +45,7 @@ abstract class AbstractComparator extends ParametrizedValidator {
      * @return boolean
      * true if all values are numeric
      */
-    protected function allNumeric() {
+    protected function isAllNumeric() {
         foreach (func_get_args() as $value) {
             if (!is_numeric($value)) {
                 return false;

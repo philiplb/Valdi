@@ -37,7 +37,7 @@ class InThePast extends AbstractDateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare(\DateTime $date, array $datetimes, array $parameters) {
+    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters) {
         $now = new \DateTime();
         return $date->getTimestamp() < $now->getTimestamp();
     }

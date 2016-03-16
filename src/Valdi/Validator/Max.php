@@ -25,6 +25,6 @@ class Max extends AbstractComparator {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        return $this->allNumeric($value, $parameters[0]) && $value <= $parameters[0];
+        return $this->isAllNumeric($value, $parameters[0]) && $value <= $parameters[0];
     }
 }

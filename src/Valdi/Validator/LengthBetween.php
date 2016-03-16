@@ -30,7 +30,7 @@ class LengthBetween extends AbstractComparator {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        return $this->allNumeric($parameters[0], $parameters[1])
+        return $this->isAllNumeric($parameters[0], $parameters[1])
             && strlen($value) >= $parameters[0]
             && strlen($value) <= $parameters[1];
     }

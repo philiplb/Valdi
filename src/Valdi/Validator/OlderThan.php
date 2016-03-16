@@ -33,7 +33,7 @@ class OlderThan extends AbstractDateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare(\DateTime $date, array $datetimes, array $parameters) {
+    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters) {
         $now = new \DateTime();
         return $now->getTimestamp() - $date->getTimestamp() > $parameters[0];
     }

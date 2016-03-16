@@ -24,7 +24,7 @@ class Regexp extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         // Workaround for not using '@preg_match'.
         $oldError    = error_reporting(0);
         $regexResult = preg_match($parameters[0], $value);

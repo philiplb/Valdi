@@ -29,8 +29,8 @@ class AlphaNumerical extends Regexp {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         $parameters = array('/^([a-z0-9])+$/i');
-        return parent::compare($value, $parameters);
+        return parent::isValidComparison($value, $parameters);
     }
 }

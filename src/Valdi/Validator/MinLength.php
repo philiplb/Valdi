@@ -24,7 +24,7 @@ class MinLength extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         $length = strlen($value);
         return is_numeric($parameters[0]) && $length >= $parameters[0];
     }

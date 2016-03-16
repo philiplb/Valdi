@@ -29,7 +29,7 @@ class Contains extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         if ($parameters[0]) {
             $parameters[1] = strtolower($parameters[1]);
             $value         = strtolower($value);

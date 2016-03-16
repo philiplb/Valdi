@@ -24,7 +24,7 @@ class Value extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         return $value == $parameters[0];
     }
 }

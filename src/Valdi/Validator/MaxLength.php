@@ -24,7 +24,7 @@ class MaxLength extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function compare($value, $parameters) {
+    protected function isValidComparison($value, $parameters) {
         return is_numeric($parameters[0]) && strlen($value) <= $parameters[0];
     }
 }

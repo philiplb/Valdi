@@ -37,7 +37,7 @@ abstract class AbstractComparator extends ParametrizedValidator {
      * @return boolean
      * true if value compares to the parameters
      */
-    abstract protected function compare($value, $parameters);
+    abstract protected function isValidComparison($value, $parameters);
 
     /**
      * Checks whether all given parameters are numeric.
@@ -62,6 +62,6 @@ abstract class AbstractComparator extends ParametrizedValidator {
         $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters);
 
         return in_array($value, array('', null), true) ||
-            $this->compare($value, $parameters);
+            $this->isValidComparison($value, $parameters);
     }
 }

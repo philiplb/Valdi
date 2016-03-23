@@ -28,27 +28,14 @@ abstract class AbstractParametrizedValidator implements ValidatorInterface {
      * the amount of expected parameters
      * @param string[] $parameters
      * the parameters
+     * @param boolean $exact
+     * whether the amount of parameters has to be exact (true) or whether it
+     * might be greater (false)
      */
-    protected function validateParameterCount($name, $parameterAmount, array $parameters) {
-        if (count($parameters) !== $parameterAmount) {
-            throw new ValidationException('"' . $name . '" expects ' . $parameterAmount . ' parameter.');
+    protected function validateParameterCount($name, $parameterAmount, array $parameters, $exact = true) {
+        if (($exact && count($parameters) !== $parameterAmount) xor (!$exact && count($parameters) < $parameterAmount)) {
+            throw new ValidationException('"' . $name . '" expects ' . (!$exact ? 'at least ' : '') . $parameterAmount . ' parameter.');
         }
     }
 
-    /**
-     * Throws an exception if the parameters don't fullfill the expected
-     * minimum parameter count.
-     *
-     * @param string $name
-     * the name of the validator
-     * @param integer $parameterAmount
-     * the amount of expected parameters
-     * @param string[] $parameters
-     * the parameters
-     */
-    protected function validateMinParameterCount($name, $parameterAmount, array $parameters) {
-        if (count($parameters) < $parameterAmount) {
-            throw new ValidationException('"' . $name . '" expects at least ' . $parameterAmount . ' parameter.');
-        }
-    }
 }

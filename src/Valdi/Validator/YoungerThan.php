@@ -34,7 +34,7 @@ class YoungerThan extends AbstractDateTimeComparator {
      * {@inheritdoc}
      */
     protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters) {
-        $now = new \DateTime();
+        $now  = new \DateTime();
         $then = $now->getTimestamp() - $date->getTimestamp();
         return $then < $parameters[0];
     }

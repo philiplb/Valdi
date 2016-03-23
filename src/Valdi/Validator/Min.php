@@ -25,6 +25,7 @@ class Min extends AbstractComparator {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        return $this->isAllNumeric($value, $parameters[0]) && $value >= $parameters[0];
+        $isAllNumeric = $this->isAllNumeric($value, $parameters[0]);
+        return $isAllNumeric && $value >= $parameters[0];
     }
 }

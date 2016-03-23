@@ -18,7 +18,7 @@ use Valdi\ValidationException;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-abstract class AbstractDateTimeComparator extends ParametrizedValidator {
+abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator {
 
     /**
      * Holds the amount of parameters.

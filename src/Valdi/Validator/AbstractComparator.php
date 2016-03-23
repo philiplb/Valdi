@@ -14,7 +14,7 @@ namespace Valdi\Validator;
 /**
  * Validator for comparing values.
  */
-abstract class AbstractComparator extends ParametrizedValidator {
+abstract class AbstractComparator extends AbstractParametrizedValidator {
 
     /**
      * Holds the amount of parameters.

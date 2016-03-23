@@ -16,7 +16,7 @@ use Valdi\ValidationException;
 /**
  * Validator for parametrized validators.
  */
-abstract class ParametrizedValidator implements ValidatorInterface {
+abstract class AbstractParametrizedValidator implements ValidatorInterface {
 
     /**
      * Throws an exception if the parameters don't fullfill the expected

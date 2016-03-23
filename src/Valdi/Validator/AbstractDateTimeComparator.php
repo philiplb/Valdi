@@ -97,7 +97,9 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      */
     public function isValid($value, array $parameters) {
 
-        $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters, false);
+        if (count($parameters) < $this->amountOfParameters) {
+            throw new ValidationException('"' . $this->type . '" expects at least ' . $this->amountOfParameters . ' parameter.');
+        }
 
         if (in_array($value, array('', null), true)) {
             return true;

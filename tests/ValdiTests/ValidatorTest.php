@@ -26,7 +26,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'e' => 'test',
             'f' => '',
         );
-        $validators = array(
+        $rules = array(
             'a' => array('required'),
             'b' => array(array('required')),
             'c' => array('required'),
@@ -34,7 +34,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'e' => array('required', 'integer', 'floating'),
             'f' => array('required', 'integer'),
         );
-        $read = $validator->isValid($validators, $data);
+        $read = $validator->isValid($rules, $data);
         $expected = array(
             'valid' => false,
             'errors' => array(
@@ -50,11 +50,11 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => 'a',
             'b' => 'b',
         );
-        $validators = array(
+        $rules = array(
             'a' => array('required'),
             'b' => array(array('required')),
         );
-        $read = $validator->isValid($validators, $data);
+        $read = $validator->isValid($rules, $data);
         $expected = array(
             'valid' => true,
             'errors' => array()
@@ -64,11 +64,11 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
 
     public function testInvalidRule() {
         $validator = new Validator();
-        $validators = array(
+        $rules = array(
             'a' => array('invalid')
         );
         try {
-            $read = $validator->isValid($validators, array());
+            $read = $validator->isValid($rules, array());
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
@@ -81,11 +81,11 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
 
     public function testAddValidator() {
         $validator = new Validator();
-        $validators = array(
+        $rules = array(
             'a' => array('test')
         );
         try {
-            $read = $validator->isValid($validators, array('a' => 1));
+            $read = $validator->isValid($rules, array('a' => 1));
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
@@ -96,13 +96,13 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         }
 
         $validator->addValidator('test', new TestValidator());
-        $read = $validator->isValid($validators, array('a' => 1));
+        $read = $validator->isValid($rules, array('a' => 1));
         $expected = array(
             'valid' => false,
             'errors' => array('a' => array('test'))
         );
         $this->assertSame($read, $expected);
-        $read = $validator->isValid($validators, array('a' => 2));
+        $read = $validator->isValid($rules, array('a' => 2));
         $expected = array(
             'valid' => true,
             'errors' => array()

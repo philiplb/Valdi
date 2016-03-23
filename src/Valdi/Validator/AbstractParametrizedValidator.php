@@ -33,7 +33,7 @@ abstract class AbstractParametrizedValidator implements ValidatorInterface {
      * might be greater (false)
      */
     protected function validateParameterCount($name, $parameterAmount, array $parameters, $exact = true) {
-        if (($exact && count($parameters) !== $parameterAmount) xor (!$exact && count($parameters) < $parameterAmount)) {
+        if (($exact && count($parameters) !== $parameterAmount) || (count($parameters) < $parameterAmount)) {
             throw new ValidationException('"' . $name . '" expects ' . (!$exact ? 'at least ' : '') . $parameterAmount . ' parameter.');
         }
     }

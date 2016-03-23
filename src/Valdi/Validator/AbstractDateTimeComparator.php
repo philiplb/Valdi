@@ -34,7 +34,7 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      * Holds whether to parse the parameters as \DateTimes so the child class
      * can decide.
      */
-    protected $parseParametersAsDateTimes = true;
+    protected $dateTimeParameters = true;
 
     /**
      * Compares date times.
@@ -105,7 +105,7 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
 
         $format = $this->getDateTimeFormat($parameters);
 
-        $datetimes = $this->parseParametersAsDateTimes ? $this->getDateTimes($parameters, $format) : array();
+        $datetimes = $this->dateTimeParameters ? $this->getDateTimes($parameters, $format) : array();
         $date      = \DateTime::createFromFormat($format, $value);
         if ($date === false) {
             return false;

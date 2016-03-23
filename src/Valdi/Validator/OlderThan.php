@@ -23,7 +23,7 @@ class OlderThan extends AbstractDateTimeComparator {
      * Holds whether to parse the parameters as \DateTimes so the child class
      * can decide.
      */
-    protected $parseParametersAsDateTimes = false;
+    protected $dateTimeParameters = false;
 
     /**
      * Holds the type of the validator.

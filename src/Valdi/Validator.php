@@ -73,12 +73,8 @@ class Validator {
     protected function isValidField($fieldRules, $value) {
         $result = array();
         foreach ($fieldRules as $rule) {
-            $name       = $rule;
-            $parameters = array();
-            if (is_array($rule)) {
-                $parameters = $rule;
-                $name       = array_shift($parameters);
-            }
+            $parameters = $rule;
+            $name       = array_shift($parameters);
             $valid = $this->isValidRule($name, $parameters, $value);
             if (!$valid) {
                 $result[] = $name;
@@ -128,10 +124,9 @@ class Validator {
      *
      * @param array $rules
      * the validation rules: an array with a field name as key and an array
-     * of rules to use for this field; each rule is either a string with the
-     * validator name or an array with the validator name as first element and
-     * parameters as following elements; example:
-     * array('a' => array('required'), 'b' => array(array('min', 1)))
+     * of rules to use for this field; each rule is an array with the validator
+     * name as first element and parameters as following elements; example:
+     * array('a' => array(array('required')), 'b' => array(array('min', 1)))
      * @param array $data
      * the data to validate as a map
      *

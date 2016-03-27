@@ -27,12 +27,12 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'f' => '',
         );
         $rules = array(
-            'a' => array('required'),
+            'a' => array(array('required')),
             'b' => array(array('required')),
-            'c' => array('required'),
-            'd' => array('required', 'integer'),
-            'e' => array('required', 'integer', 'floating'),
-            'f' => array('required', 'integer'),
+            'c' => array(array('required')),
+            'd' => array(array('required'), array('integer')),
+            'e' => array(array('required'), array('integer'), array('floating')),
+            'f' => array(array('required'), array('integer')),
         );
         $read = $validator->isValid($rules, $data);
         $expected = array(
@@ -51,7 +51,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'b' => 'b',
         );
         $rules = array(
-            'a' => array('required'),
+            'a' => array(array('required')),
             'b' => array(array('required')),
         );
         $read = $validator->isValid($rules, $data);
@@ -65,7 +65,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
     public function testInvalidRule() {
         $validator = new Validator();
         $rules = array(
-            'a' => array('invalid')
+            'a' => array(array('invalid'))
         );
         try {
             $read = $validator->isValid($rules, array());
@@ -82,7 +82,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
     public function testAddValidator() {
         $validator = new Validator();
         $rules = array(
-            'a' => array('test')
+            'a' => array(array('test'))
         );
         try {
             $read = $validator->isValid($rules, array('a' => 1));

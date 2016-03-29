@@ -75,7 +75,7 @@ class Validator {
         foreach ($fieldRules as $rule) {
             $parameters = $rule;
             $name       = array_shift($parameters);
-            $valid = $this->isValidRule($name, $parameters, $value);
+            $valid      = $this->isValidRule($name, $parameters, $value);
             if (!$valid) {
                 $result[] = $name;
             }

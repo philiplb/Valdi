@@ -29,6 +29,17 @@ class ContainsTest extends \PHPUnit_Framework_TestCase {
 
         $this->assertTrue($validator->isValid('', array('es')));
         $this->assertTrue($validator->isValid(null, array('es')));
+
+        try {
+            $validator->isValid('test', array());
+            $this->fail();
+        } catch (ValidationException $e) {
+            $read = $e->getMessage();
+            $expected = '"contains" expects at least 1 parameter.';
+            $this->assertSame($read, $expected);
+        } catch (Exception $e) {
+            $this->fail();
+        }
     }
 
 }

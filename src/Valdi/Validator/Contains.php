@@ -11,22 +11,35 @@
 
 namespace Valdi\Validator;
 
+use Valdi\ValidationException;
+
 /**
  * Validator for strings containing a substring.
  */
 class Contains implements ValidatorInterface {
 
     /**
+     * Throws an exception if the parameters don't fullfill the expected
+     * parameter count.
+     *
+     * @param integer $parameterAmount
+     * the amount of expected parameters
+     */
+    protected function validateParameterCount($parameterAmount) {
+        if ($parameterAmount < 1) {
+            throw new ValidationException('"contains" expects at least 1 parameter.');
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function isValid($value, array $parameters) {
-        $parametersCount = count($parameters);
+        $parameterAmount = count($parameters);
 
-        if ($parametersCount < 1) {
-            throw new ValidationException('"contains" expects at least 1 parameter.');
-        }
+        $this->validateParameterCount($parameterAmount);
 
-        $caseInsensitive = $parametersCount == 1 || $parametersCount > 1 && $parameters[1];
+        $caseInsensitive = $parameterAmount == 1 || $parameterAmount > 1 && $parameters[1];
 
         if ($caseInsensitive) {
             $parameters[0] = strtolower($parameters[0]);

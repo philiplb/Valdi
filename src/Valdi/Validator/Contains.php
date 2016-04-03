@@ -32,17 +32,32 @@ class Contains implements ValidatorInterface {
     }
 
     /**
+     * Adjusts value and parameters to be case insensitive if the second
+     * parameter says so or is not given.
+     *
+     * @param mixed $value
+     * the value to validate
+     *
+     * @param array $parameters
+     * the other parameters the validator need
+     */
+    protected function adjustCaseInsensitive(&$value, &$parameters) {
+        $parameterAmount = count($parameters);
+        if ($parameterAmount == 1 || $parameterAmount > 1 && $parameters[1]) {
+            $parameters[0] = strtolower($parameters[0]);
+            $value         = strtolower($value);
+        }
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function isValid($value, array $parameters) {
         $parameterAmount = count($parameters);
 
         $this->validateParameterCount($parameterAmount);
+        $this->adjustCaseInsensitive($value, $parameters);
 
-        if ($parameterAmount == 1 || $parameterAmount > 1 && $parameters[1]) {
-            $parameters[0] = strtolower($parameters[0]);
-            $value         = strtolower($value);
-        }
         return in_array($value, array('', null), true) || strpos($value, $parameters[0]) !== false;
     }
 }

@@ -21,12 +21,14 @@ class BooleanTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(1, array()));
         $this->assertTrue($validator->isValid('1', array()));
         $this->assertTrue($validator->isValid(true, array()));
+        $this->assertTrue($validator->isValid('true', array()));
         $this->assertTrue($validator->isValid('on', array()));
         $this->assertTrue($validator->isValid('yes', array()));
 
         $this->assertTrue($validator->isValid(0, array()));
         $this->assertTrue($validator->isValid('0', array()));
         $this->assertTrue($validator->isValid(false, array()));
+        $this->assertTrue($validator->isValid('false', array()));
         $this->assertTrue($validator->isValid('off', array()));
         $this->assertTrue($validator->isValid('no', array()));
         $this->assertTrue($validator->isValid('', array()));

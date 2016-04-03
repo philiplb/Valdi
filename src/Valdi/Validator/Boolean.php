@@ -23,6 +23,7 @@ class Boolean implements ValidatorInterface {
         return in_array($value, array(
             '', null,
             true, false,
+            'true', 'false',
             1, 0,
             '1', '0',
             'on', 'off',

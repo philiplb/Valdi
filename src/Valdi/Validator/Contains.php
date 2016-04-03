@@ -39,9 +39,7 @@ class Contains implements ValidatorInterface {
 
         $this->validateParameterCount($parameterAmount);
 
-        $caseInsensitive = $parameterAmount == 1 || $parameterAmount > 1 && $parameters[1];
-
-        if ($caseInsensitive) {
+        if ($parameterAmount == 1 || $parameterAmount > 1 && $parameters[1]) {
             $parameters[0] = strtolower($parameters[0]);
             $value         = strtolower($value);
         }

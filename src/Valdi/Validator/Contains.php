@@ -14,26 +14,24 @@ namespace Valdi\Validator;
 /**
  * Validator for strings containing a substring.
  */
-class Contains extends AbstractComparator {
-
-    /**
-     * Holds the amount of parameters.
-     */
-    protected $amountOfParameters = 2;
-
-    /**
-     * Holds the type of the validator.
-     */
-    protected $type = 'contains';
+class Contains implements ValidatorInterface {
 
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
-        if ($parameters[0]) {
-            $parameters[1] = strtolower($parameters[1]);
+    public function isValid($value, array $parameters) {
+        $parametersCount = count($parameters);
+
+        if ($parametersCount < 1) {
+            throw new ValidationException('"contains" expects at least 1 parameter.');
+        }
+
+        $caseInsensitive = $parametersCount == 1 || $parametersCount > 1 && $parameters[1];
+
+        if ($caseInsensitive) {
+            $parameters[0] = strtolower($parameters[0]);
             $value         = strtolower($value);
         }
-        return strpos($value, $parameters[1]) !== false;
+        return in_array($value, array('', null), true) || strpos($value, $parameters[0]) !== false;
     }
 }

@@ -19,14 +19,16 @@ class ContainsTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Contains();
 
-        $this->assertTrue($validator->isValid('test', array(true, 'ES')));
-        $this->assertTrue($validator->isValid('test', array(false, 'es')));
+        $this->assertTrue($validator->isValid('test', array('ES')));
+        $this->assertTrue($validator->isValid('test', array('ES', true)));
+        $this->assertTrue($validator->isValid('test', array('es', false)));
 
-        $this->assertFalse($validator->isValid('test', array(false, 'ES')));
-        $this->assertFalse($validator->isValid('test', array(true, '123')));
+        $this->assertFalse($validator->isValid('test', array('ES', false)));
+        $this->assertFalse($validator->isValid('test', array('123')));
+        $this->assertFalse($validator->isValid('test', array('123', true)));
 
-        $this->assertTrue($validator->isValid('', array(true, 'es')));
-        $this->assertTrue($validator->isValid(null, array(true, 'es')));
+        $this->assertTrue($validator->isValid('', array('es')));
+        $this->assertTrue($validator->isValid(null, array('es')));
     }
 
 }

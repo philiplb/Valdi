@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Valdi 0.9.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Valdi 0.9.0 documentation" href="../index.html"/>
+        <link rel="next" title="Validators" href="validators.html"/>
+        <link rel="prev" title="Welcome to Valdi’s documentation!" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Valdi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#rules">Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#validation">Validation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="validators.html">Validators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extendedfeatures.html">Extended Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Validator\AbstractFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Validator\AbstractParametrizedValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Validator\DateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Validator\Required</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Validator\ValidatorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">ValidatorException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">ValidatorException</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Valdi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/manual/gettingstarted.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<p>This chapter shows the setup and usage of Valdi.</p>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<p>Just include it in your composer.json:</p>
+<div class="highlight-js"><div class="highlight"><pre><span></span><span class="s2">&quot;philiplb/valdi&quot;</span><span class="o">:</span> <span class="s2">&quot;0.9.0&quot;</span>
+</pre></div>
+</div>
+<p>And that&#8217;s it.</p>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The usage is simple. You create your validation rules and you validate your
+data against them.</p>
+<div class="section" id="rules">
+<h3>Rules<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h3>
+<p>Then you have to create some validation rules your data has to fulfill. Here,
+we assume you have a required name field, a zip code and an optional e-mail
+address:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$read = RulesBuilder::create()</span>
+<span class="x">    -&gt;addRule(&#39;name&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;between&#39;, 9999, 100000)</span>
+<span class="x">    -&gt;addRule(&#39;email&#39;, &#39;email&#39;)</span>
+<span class="x">    -&gt;getRules()</span>
+<span class="x">;</span>
+</pre></div>
+</div>
+<p>The rules builder is a convenience class to create rules. You get an instance of
+it via the create() function and add rules as long as you like in a chained style
+via the addRule() function. It takes as first parameter the name of the field to
+apply the rule on, then the rule name and depending on the rule, some additional
+parameters. When you are done with adding rules, you get your rules set via
+calling getRules().</p>
+<p>Note that you can apply multiple rules on your fields like in the zip code field
+above.</p>
+<p>In the chapter &#8220;Extended Features&#8221;, you might learn more about the rules data
+structure.</p>
+</div>
+<div class="section" id="validation">
+<h3>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
+<p>First, create a Validator instance:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Valdi\Validator();</span>
+</pre></div>
+</div>
+<p>Now you can validate your data. Here, we validate directly the HTTP POST input:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = $validator-&gt;isValid($rules, $_POST);</span>
+</pre></div>
+</div>
+<p>You get back an array with your validation result. First of all, you can
+check if something went wrong via the key &#8216;valid&#8217;. It is either &#8220;true&#8221;
+(everything valid) or &#8220;false&#8221; (something in your data is invalid).</p>
+<p>In case of invalid data, you can find out what&#8217;s wrong via the second key
+&#8220;errors&#8221;. It maps to an array with the fields as keys and arrays of failed
+rules as values. For example, here was the name missing and the e-mail in the
+wrong format:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result == array(</span>
+<span class="x">    &#39;valid&#39; =&gt; false</span>
+<span class="x">    &#39;errors&#39; =&gt; array(</span>
+<span class="x">        &#39;name&#39; =&gt; array(&#39;required&#39;),</span>
+<span class="x">        &#39;email&#39; =&gt; array(&#39;email&#39;)</span>
+<span class="x">    )</span>
+<span class="x">)</span>
+</pre></div>
+</div>
+<p>That&#8217;s it for getting started with this library. In the next chapter, all
+available rules with their parameters are listed and in the last chapter,
+some more extended features are shown and how to extend Valdi with own rules.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="validators.html" class="btn btn-neutral float-right" title="Validators" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to Valdi’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Philip Lehmann-Böhm.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.9.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

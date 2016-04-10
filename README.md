@@ -3,6 +3,16 @@ Valdi
 
 Super simple, yet complete data validation.
 
+## Getting Started
+
+Find out more and get started with the [documentation](philiplb.github.io/Valdi/docs/html/0.9.0.
+
+## Documentation
+
+The documentation is available for each version:
+
+* [0.9.0](philiplb.github.io/Valdi/docs/html/0.9.0)
+
 ## Package
 
 [![Total Downloads](https://poser.pugx.org/philiplb/valdi/downloads.svg)](https://packagist.org/packages/philiplb/valdi)

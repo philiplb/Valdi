@@ -5,7 +5,7 @@ Super simple, yet complete data validation.
 
 ## Getting Started
 
-Find out more and get started with the [documentation](philiplb.github.io/Valdi/docs/html/0.9.0.
+Find out more and get started with the [documentation](philiplb.github.io/Valdi/docs/html/0.9.0).
 
 ## Documentation
 

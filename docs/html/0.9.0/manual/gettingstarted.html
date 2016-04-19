@@ -176,7 +176,7 @@ data against them.</p>
 <p>Then you have to create some validation rules your data has to fulfill. Here,
 we assume you have a required name field, a zip code and an optional e-mail
 address:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$read = RulesBuilder::create()</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$rules = RulesBuilder::create()</span>
 <span class="x">    -&gt;addRule(&#39;name&#39;, &#39;required&#39;)</span>
 <span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;required&#39;)</span>
 <span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;between&#39;, 9999, 100000)</span>
@@ -203,7 +203,7 @@ structure.</p>
 </pre></div>
 </div>
 <p>Now you can validate your data. Here, we validate directly the HTTP POST input:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = $validator-&gt;isValid($rules, $_POST);</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validation = $validator-&gt;isValid($rules, $_POST);</span>
 </pre></div>
 </div>
 <p>You get back an array with your validation result. First of all, you can
@@ -213,7 +213,7 @@ check if something went wrong via the key &#8216;valid&#8217;. It is either &#82
 &#8220;errors&#8221;. It maps to an array with the fields as keys and arrays of failed
 rules as values. For example, here was the name missing and the e-mail in the
 wrong format:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result == array(</span>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validation == array(</span>
 <span class="x">    &#39;valid&#39; =&gt; false</span>
 <span class="x">    &#39;errors&#39; =&gt; array(</span>
 <span class="x">        &#39;name&#39; =&gt; array(&#39;required&#39;),</span>

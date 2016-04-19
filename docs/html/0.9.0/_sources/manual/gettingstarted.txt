@@ -32,7 +32,7 @@ address:
 
 .. code-block:: php
 
-    $read = RulesBuilder::create()
+    $rules = RulesBuilder::create()
         ->addRule('name', 'required')
         ->addRule('zipcode', 'required')
         ->addRule('zipcode', 'between', 9999, 100000)
@@ -67,7 +67,7 @@ Now you can validate your data. Here, we validate directly the HTTP POST input:
 
 .. code-block:: php
 
-    $result = $validator->isValid($rules, $_POST);
+    $validation = $validator->isValid($rules, $_POST);
 
 You get back an array with your validation result. First of all, you can
 check if something went wrong via the key 'valid'. It is either "true"
@@ -80,7 +80,7 @@ wrong format:
 
 .. code-block:: php
 
-    $result == array(
+    $validation == array(
         'valid' => false
         'errors' => array(
             'name' => array('required'),

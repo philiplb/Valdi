@@ -55,13 +55,13 @@ Validator to combine other validators with a logical "or".
 
 **Parameters**
 
-* validator: the Validator or subclass instance which will execute the child
-  validations
+* validator: the Validator or subclass instance which will execute the child validations
 * rules 1: array of rules to combine; like
   array(array('required'), array('between', 9999, 100000))
 * rules 2: array of rules to combine; like
   array(array('required'), array('between', 9999, 100000))
-* as many more rules as needed
+
+You can add as many more rules parameters as you need.
 
 -------
 Strings

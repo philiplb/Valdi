@@ -51,7 +51,7 @@ class OrCombine implements ValidatorInterface {
             }
         }
 
-		return false;
-	}
+        return false;
+    }
 
 }

@@ -34,7 +34,7 @@ class Validator {
     protected function createValidators(array $validators) {
         $this->availableValidators = array();
         foreach ($validators as $name => $type) {
-            $class                            = '\\Valdi\\Validator\\' . $type;
+            $class                            = '\\Valdi\\Validator\\'.$type;
             $this->availableValidators[$name] = new $class();
         }
     }
@@ -54,7 +54,7 @@ class Validator {
      */
     protected function isValidRule($validator, $parameters, $value) {
         if (!array_key_exists($validator, $this->availableValidators)) {
-            throw new ValidatorException('"' . $validator . '" not found as available validator.');
+            throw new ValidatorException('"'.$validator.'" not found as available validator.');
         }
         return $this->availableValidators[$validator]->isValid($value, $parameters);
     }

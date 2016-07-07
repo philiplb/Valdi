@@ -89,6 +89,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#boolean">boolean</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inset">inSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#required">required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#or">or</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#strings">Strings</a><ul>
@@ -141,6 +142,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Validator</a></li>
@@ -230,6 +232,21 @@ values:</p>
 <p>Validates if there is any value not being null or empty string. Might be one
 of the most used validators.</p>
 </div>
+<div class="section" id="or">
+<h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<p>Validator to combine other validators with a logical &#8220;or&#8221;.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>validator: the Validator or subclass instance which will execute the child
+validations</li>
+<li>rules 1: array of rules to combine; like
+array(array(&#8216;required&#8217;), array(&#8216;between&#8217;, 9999, 100000))</li>
+<li>rules 2: array of rules to combine; like
+array(array(&#8216;required&#8217;), array(&#8216;between&#8217;, 9999, 100000))</li>
+<li>as many more rules as needed</li>
+</ul>
+</div>
+<p>* as many more rules as needed</p>
 </div>
 <div class="section" id="strings">
 <h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>

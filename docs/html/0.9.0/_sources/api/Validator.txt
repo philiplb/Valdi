@@ -34,16 +34,6 @@ Validator
         :param $value: the value to validate
         :returns: boolean true if the value is valid
 
-    .. php:method:: isValidField($fieldRules, $value)
-
-        Validates a value via the given rules.
-
-        :type $fieldRules: array
-        :param $fieldRules: the validation rules
-        :type $value: string
-        :param $value: the value to validate
-        :returns: string[] the fields where the validation failed
-
     .. php:method:: __construct()
 
         Constructor.
@@ -57,12 +47,22 @@ Validator
         :type $validator: ValidatorInterface
         :param $validator: the validator to add
 
+    .. php:method:: isValidValue($rules, $value)
+
+        Validates a value via the given rules.
+
+        :type $rules: array
+        :param $rules: the validation rules
+        :type $value: string
+        :param $value: the value to validate
+        :returns: string[] the fields where the validation failed
+
     .. php:method:: isValid($rules, $data)
 
         Performs the actual validation.
 
         :type $rules: array
-        :param $rules: the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is either a string with the validator name or an array with the validator name as first element and parameters as following elements; example: array('a' => array('required'), 'b' => array(array('min', 1)))
+        :param $rules: the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is an array with the validator name as first element and parameters as following elements; example: array('a' => array(array('required')), 'b' => array(array('min', 1)))
         :type $data: array
         :param $data: the data to validate as a map
         :returns: array<string,boolean|array> the validation result having the keys "valid" (true or false) and the key "errors" containing all failed fields as keys with arrays of the failed validator names; example where the field "b" from the above sample failed due to the min validator: array('valid' => false, errors => array('b' => array('min')))

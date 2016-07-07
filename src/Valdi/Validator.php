@@ -60,30 +60,6 @@ class Validator {
     }
 
     /**
-     * Validates a value via the given rules.
-     *
-     * @param array $fieldRules
-     * the validation rules
-     * @param string $value
-     * the value to validate
-     *
-     * @return string[]
-     * the fields where the validation failed
-     */
-    protected function isValidField($fieldRules, $value) {
-        $result = array();
-        foreach ($fieldRules as $rule) {
-            $parameters = $rule;
-            $name       = array_shift($parameters);
-            $valid      = $this->isValidRule($name, $parameters, $value);
-            if (!$valid) {
-                $result[] = $name;
-            }
-        }
-        return $result;
-    }
-
-    /**
      * Constructor.
      */
     public function __construct() {
@@ -100,9 +76,10 @@ class Validator {
             'lengthBetween' => 'LengthBetween', 'max' => 'Max',
             'maxLength' => 'MaxLength', 'min' => 'Min',
             'minLength' => 'MinLength', 'olderThan' => 'OlderThan',
-            'regexp' => 'Regexp', 'required' => 'Required',
-            'slug' => 'Slug', 'url' => 'Url',
-            'value' => 'Value', 'youngerThan' => 'YoungerThan'
+            'or' => 'OrCombine', 'regexp' => 'Regexp',
+            'required' => 'Required', 'slug' => 'Slug',
+            'url' => 'Url', 'value' => 'Value',
+            'youngerThan' => 'YoungerThan'
         );
         $this->createValidators($validators);
     }
@@ -117,6 +94,30 @@ class Validator {
      */
     public function addValidator($name, ValidatorInterface $validator) {
         $this->availableValidators[$name] = $validator;
+    }
+
+    /**
+     * Validates a value via the given rules.
+     *
+     * @param array $rules
+     * the validation rules
+     * @param string $value
+     * the value to validate
+     *
+     * @return string[]
+     * the fields where the validation failed
+     */
+    public function isValidValue($rules, $value) {
+        $result = array();
+        foreach ($rules as $rule) {
+            $parameters = $rule;
+            $name       = array_shift($parameters);
+            $valid      = $this->isValidRule($name, $parameters, $value);
+            if (!$valid) {
+                $result[] = $name;
+            }
+        }
+        return $result;
     }
 
     /**
@@ -141,7 +142,7 @@ class Validator {
         $errors = array();
         foreach ($rules as $field => $fieldRules) {
             $value       = isset($data[$field]) ? $data[$field] : null;
-            $fieldErrors = $this->isValidField($fieldRules, $value);
+            $fieldErrors = $this->isValidValue($fieldRules, $value);
             if (!empty($fieldErrors)) {
                 $errors[$field] = $fieldErrors;
             }

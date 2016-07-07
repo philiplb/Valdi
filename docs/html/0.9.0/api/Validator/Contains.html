@@ -114,6 +114,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
@@ -174,31 +175,17 @@
 <dt id="Contains">
 <em class="property">class </em><code class="descname">Contains</code><a class="headerlink" href="#Contains" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validator for strings containing a substring.</p>
-<dl class="attr">
-<dt id="Contains::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#Contains::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
-</dd></dl>
-
-<dl class="attr">
-<dt id="Contains::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#Contains::$type" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the type of the validator.</p>
-</dd></dl>
-
 <dl class="method">
-<dt id="Contains::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::isValidComparison" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+<dt id="Contains::validateParameterCount">
+<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$parameterAmount</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::validateParameterCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Throws an exception if the parameters don&#8217;t fullfill the expected
+parameter count.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
 </ul>
 </td>
 </tr>
@@ -207,14 +194,19 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Contains::isAllNumeric">
-<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Contains::isAllNumeric" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether all given parameters are numeric.</p>
+<dt id="Contains::adjustCaseInsensitive">
+<code class="descname">adjustCaseInsensitive</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::adjustCaseInsensitive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts value and parameters to be case insensitive if the second
+parameter says so or is not given.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; the value to validate</li>
+<li><strong>$parameters</strong> (<em>array</em>) &#8211; the other parameters the validator need</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -231,26 +223,6 @@
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>$value</strong> &#8211; </li>
 <li><strong>$parameters</strong> &#8211; </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Contains::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don&#8217;t fullfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
 </ul>
 </td>
 </tr>

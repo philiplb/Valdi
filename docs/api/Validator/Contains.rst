@@ -8,30 +8,23 @@ Validator\\Contains
 
     Validator for strings containing a substring.
 
-    .. php:attr:: amountOfParameters
+    .. php:method:: validateParameterCount($parameterAmount)
 
-        protected
+        Throws an exception if the parameters don't fullfill the expected
+        parameter count.
 
-        Holds the amount of parameters.
+        :type $parameterAmount: integer
+        :param $parameterAmount: the amount of expected parameters
 
-    .. php:attr:: type
+    .. php:method:: adjustCaseInsensitive($value, $parameters)
 
-        protected
+        Adjusts value and parameters to be case insensitive if the second
+        parameter says so or is not given.
 
-        Holds the type of the validator.
-
-    .. php:method:: isValidComparison($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
-
-    .. php:method:: isAllNumeric()
-
-        Checks whether all given parameters are numeric.
-
-        :returns: boolean true if all values are numeric
+        :type $value: mixed
+        :param $value: the value to validate
+        :type $parameters: array
+        :param $parameters: the other parameters the validator need
 
     .. php:method:: isValid($value, $parameters)
 
@@ -39,15 +32,3 @@ Validator\\Contains
 
         :param $value:
         :param $parameters:
-
-    .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
-
-        Throws an exception if the parameters don't fullfill the expected
-        parameter count.
-
-        :type $name: string
-        :param $name: the name of the validator
-        :type $parameterAmount: integer
-        :param $parameterAmount: the amount of expected parameters
-        :type $parameters: string[]
-        :param $parameters: the parameters

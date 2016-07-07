@@ -38,6 +38,7 @@ Contents:
     api/Validator/Boolean
     api/Validator/DateTime
     api/Validator/InSet
+    api/Validator/OrCombine
     api/Validator/Required
     api/Validator/ValidatorInterface
     api/Validator

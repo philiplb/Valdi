@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Validator\Required &mdash; Valdi 0.9.0 documentation</title>
+  <title>Valdi\Validator\OrCombine &mdash; Valdi 0.9.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="Valdi 0.9.0 documentation" href="../../index.html"/>
-        <link rel="next" title="Validator\ValidatorInterface" href="ValidatorInterface.html"/>
-        <link rel="prev" title="Valdi\Validator\OrCombine" href="OrCombine.html"/> 
+        <link rel="next" title="Validator\Required" href="Required.html"/>
+        <link rel="prev" title="Validator\InSet" href="InSet.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -98,8 +98,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Validator\InSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Validator\Required</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">ValidatorException</a></li>
@@ -135,11 +135,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Validator\Required</li>
+    <li>Valdi\Validator\OrCombine</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/Required.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/OrCombine.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -149,15 +149,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="validator-required">
-<h1>Validator\Required<a class="headerlink" href="#validator-required" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="valdi-validator-orcombine">
+<h1>Valdi\Validator\OrCombine<a class="headerlink" href="#valdi-validator-orcombine" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="Required">
-<em class="property">class </em><code class="descname">Required</code><a class="headerlink" href="#Required" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for required values.</p>
+<dt id="OrCombine">
+<em class="property">class </em><code class="descname">OrCombine</code><a class="headerlink" href="#OrCombine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validator to combine other validators with a logical &#8220;or&#8221;.</p>
 <dl class="method">
-<dt id="Required::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Required::isValid" title="Permalink to this definition">¶</a></dt>
+<dt id="OrCombine::checkParameters">
+<code class="descname">checkParameters</code><span class="sig-paren">(</span><em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::checkParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the given parameters fullfil:
+- At least three given
+- The first one is a Validator or a subclass of it</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$parameters</strong> (<em>array</em>) &#8211; the validation parameters</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="OrCombine::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -184,10 +203,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="ValidatorInterface.html" class="btn btn-neutral float-right" title="Validator\ValidatorInterface" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="Required.html" class="btn btn-neutral float-right" title="Validator\Required" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="OrCombine.html" class="btn btn-neutral" title="Valdi\Validator\OrCombine" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="InSet.html" class="btn btn-neutral" title="Validator\InSet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

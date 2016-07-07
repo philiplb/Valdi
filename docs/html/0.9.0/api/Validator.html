@@ -98,6 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Validator/Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Validator</a></li>
@@ -202,27 +203,6 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Validator::isValidField">
-<code class="descname">isValidField</code><span class="sig-paren">(</span><em>$fieldRules</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#Validator::isValidField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validates a value via the given rules.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$fieldRules</strong> (<em>array</em>) &#8211; the validation rules</li>
-<li><strong>$value</strong> (<em>string</em>) &#8211; the value to validate</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string[] the fields where the validation failed</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
 <dt id="Validator::__construct">
 <code class="descname">__construct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Validator::__construct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
@@ -247,6 +227,27 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="Validator::isValidValue">
+<code class="descname">isValidValue</code><span class="sig-paren">(</span><em>$rules</em>, <em>$value</em><span class="sig-paren">)</span><a class="headerlink" href="#Validator::isValidValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates a value via the given rules.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$rules</strong> (<em>array</em>) &#8211; the validation rules</li>
+<li><strong>$value</strong> (<em>string</em>) &#8211; the value to validate</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string[] the fields where the validation failed</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="Validator::isValid">
 <code class="descname">isValid</code><span class="sig-paren">(</span><em>$rules</em>, <em>$data</em><span class="sig-paren">)</span><a class="headerlink" href="#Validator::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs the actual validation.</p>
@@ -255,7 +256,7 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$rules</strong> (<em>array</em>) &#8211; the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is either a string with the validator name or an array with the validator name as first element and parameters as following elements; example: array(&#8216;a&#8217; =&gt; array(&#8216;required&#8217;), &#8216;b&#8217; =&gt; array(array(&#8216;min&#8217;, 1)))</li>
+<li><strong>$rules</strong> (<em>array</em>) &#8211; the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is an array with the validator name as first element and parameters as following elements; example: array(&#8216;a&#8217; =&gt; array(array(&#8216;required&#8217;)), &#8216;b&#8217; =&gt; array(array(&#8216;min&#8217;, 1)))</li>
 <li><strong>$data</strong> (<em>array</em>) &#8211; the data to validate as a map</li>
 </ul>
 </td>

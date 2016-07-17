@@ -29,4 +29,11 @@ class LengthBetweenTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array(1, 2)));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new LengthBetween();
+        $read = $validator->getInvalidDetails();
+        $expected = 'lengthBetween';
+        $this->assertSame($read, $expected);
+    }
+
 }

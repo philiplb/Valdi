@@ -56,7 +56,8 @@ class Validator {
         if (!array_key_exists($validator, $this->availableValidators)) {
             throw new ValidatorException('"'.$validator.'" not found as available validator.');
         }
-        return $this->availableValidators[$validator]->isValid($value, $parameters);
+        return $this->availableValidators[$validator]->isValid($value, $parameters) ?
+            null : $this->availableValidators[$validator]->getInvalidDetails();
     }
 
     /**
@@ -113,8 +114,8 @@ class Validator {
             $parameters = $rule;
             $name       = array_shift($parameters);
             $valid      = $this->isValidRule($name, $parameters, $value);
-            if (!$valid) {
-                $result[] = $name;
+            if ($valid !== null) {
+                $result[] = $valid;
             }
         }
         return $result;
@@ -137,6 +138,9 @@ class Validator {
      * failed validator names; example where the field "b" from the above sample
      * failed due to the min validator:
      * array('valid' => false, errors => array('b' => array('min')))
+     * the "or" validator doesn't return a single string on validation error;
+     * instead, it returns an array listing all failed validators of it:
+     * array('or' => array('url', 'email')
      */
     public function isValid(array $rules, array $data) {
         $errors = array();

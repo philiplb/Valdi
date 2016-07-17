@@ -64,4 +64,11 @@ abstract class AbstractComparator extends AbstractParametrizedValidator {
         return in_array($value, array('', null), true) ||
             $this->isValidComparison($value, $parameters);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return $this->type;
+    }
 }

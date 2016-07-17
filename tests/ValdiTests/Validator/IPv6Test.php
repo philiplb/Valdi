@@ -33,4 +33,11 @@ class IPv6Test extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new IPv6();
+        $read = $validator->getInvalidDetails();
+        $expected = 'ipv6';
+        $this->assertSame($read, $expected);
+    }
+
 }

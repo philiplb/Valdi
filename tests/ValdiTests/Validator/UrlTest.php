@@ -31,4 +31,11 @@ class UrlTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Url();
+        $read = $validator->getInvalidDetails();
+        $expected = 'url';
+        $this->assertSame($read, $expected);
+    }
+
 }

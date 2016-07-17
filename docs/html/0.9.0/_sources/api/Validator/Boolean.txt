@@ -14,3 +14,7 @@ Validator\\Boolean
 
         :param $value:
         :param $parameters:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}

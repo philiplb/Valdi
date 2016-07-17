@@ -16,6 +16,10 @@ Validator\\IPv6
 
         {@inheritdoc}
 
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
+
     .. php:method:: isValid($value, $parameters)
 
         {@inheritdoc}

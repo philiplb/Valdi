@@ -28,4 +28,11 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new DateTime();
+        $read = $validator->getInvalidDetails();
+        $expected = 'dateTime';
+        $this->assertSame($read, $expected);
+    }
+
 }

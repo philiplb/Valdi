@@ -23,4 +23,11 @@ class Floating extends AbstractFilter {
     protected function getFilter() {
         return \FILTER_VALIDATE_FLOAT;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'floating';
+    }
 }

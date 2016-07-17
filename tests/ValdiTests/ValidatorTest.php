@@ -62,6 +62,24 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
+    public function testInvalidOrCombine() {
+        $validator = new Validator();
+        $data = array(
+            'a' => 'invalid'
+        );
+        $rules = array(
+            'a' => array(array('or', $validator, array('email'), array('url')))
+        );
+        $read = $validator->isValid($rules, $data);
+        $expected = array(
+            'valid' => false,
+            'errors' => array(
+                'a' => array(array('or' => array('email', 'url')))
+            )
+        );
+        $this->assertSame($read, $expected);
+    }
+
     public function testInvalidRule() {
         $validator = new Validator();
         $rules = array(

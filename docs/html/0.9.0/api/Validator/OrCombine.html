@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Valdi\Validator\OrCombine &mdash; Valdi 0.9.0 documentation</title>
+  <title>Validator\OrCombine &mdash; Valdi 0.9.0 documentation</title>
   
 
   
@@ -98,7 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Validator\InSet</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
@@ -135,7 +135,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-    <li>Valdi\Validator\OrCombine</li>
+    <li>Validator\OrCombine</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -149,12 +149,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-orcombine">
-<h1>Valdi\Validator\OrCombine<a class="headerlink" href="#valdi-validator-orcombine" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="validator-orcombine">
+<h1>Validator\OrCombine<a class="headerlink" href="#validator-orcombine" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="OrCombine">
 <em class="property">class </em><code class="descname">OrCombine</code><a class="headerlink" href="#OrCombine" title="Permalink to this definition">¶</a></dt>
 <dd><p>Validator to combine other validators with a logical &#8220;or&#8221;.</p>
+<dl class="attr">
+<dt id="OrCombine::$invalid">
+<em class="property">property </em><code class="descname">invalid</code><a class="headerlink" href="#OrCombine::$invalid" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds the invalid validators.</p>
+</dd></dl>
+
 <dl class="method">
 <dt id="OrCombine::checkParameters">
 <code class="descname">checkParameters</code><span class="sig-paren">(</span><em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::checkParameters" title="Permalink to this definition">¶</a></dt>
@@ -190,6 +197,12 @@
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="OrCombine::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 </dd></dl>
 
 </dd></dl>

@@ -118,4 +118,11 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
 
         return $this->isValidComparison($date, $datetimes, $parameters);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return $this->type;
+    }
 }

@@ -54,4 +54,11 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new AfterDateTime();
+        $read = $validator->getInvalidDetails();
+        $expected = 'afterDateTime';
+        $this->assertSame($read, $expected);
+    }
+
 }

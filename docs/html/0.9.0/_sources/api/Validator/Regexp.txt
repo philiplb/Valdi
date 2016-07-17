@@ -46,6 +46,10 @@ Validator\\Regexp
         :param $value:
         :param $parameters:
 
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
+
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 
         Throws an exception if the parameters don't fullfill the expected

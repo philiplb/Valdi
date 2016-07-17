@@ -35,6 +35,7 @@ abstract class AbstractFilter implements ValidatorInterface {
     protected function getFlags() {
         return null;
     }
+
     /**
      * {@inheritdoc}
      */

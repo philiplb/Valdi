@@ -28,4 +28,11 @@ class InSet implements ValidatorInterface {
         return in_array($value, array('', null), true) ||
             in_array($value, $parameters);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'inSet';
+    }
 }

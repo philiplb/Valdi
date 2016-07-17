@@ -98,7 +98,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Validator/Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/InSet.html">Validator\InSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validator/OrCombine.html">Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Validator</a></li>
@@ -261,7 +261,7 @@ with it.</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array&lt;string,boolean|array&gt; the validation result having the keys &#8220;valid&#8221; (true or false) and the key &#8220;errors&#8221; containing all failed fields as keys with arrays of the failed validator names; example where the field &#8220;b&#8221; from the above sample failed due to the min validator: array(&#8216;valid&#8217; =&gt; false, errors =&gt; array(&#8216;b&#8217; =&gt; array(&#8216;min&#8217;)))</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array&lt;string,boolean|array&gt; the validation result having the keys &#8220;valid&#8221; (true or false) and the key &#8220;errors&#8221; containing all failed fields as keys with arrays of the failed validator names; example where the field &#8220;b&#8221; from the above sample failed due to the min validator: array(&#8216;valid&#8217; =&gt; false, errors =&gt; array(&#8216;b&#8217; =&gt; array(&#8216;min&#8217;))) the &#8220;or&#8221; validator doesn&#8217;t return a single string on validation error; instead, it returns an array listing all failed validators of it: array(&#8216;or&#8217; =&gt; array(&#8216;url&#8217;, &#8216;email&#8217;)</p>
 </td>
 </tr>
 </tbody>

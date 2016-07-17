@@ -22,4 +22,11 @@ class Email extends AbstractFilter {
     public function getFilter() {
         return \FILTER_VALIDATE_EMAIL;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'email';
+    }
 }

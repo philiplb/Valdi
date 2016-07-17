@@ -28,4 +28,11 @@ class IntegerTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Integer();
+        $read = $validator->getInvalidDetails();
+        $expected = 'integer';
+        $this->assertSame($read, $expected);
+    }
+
 }

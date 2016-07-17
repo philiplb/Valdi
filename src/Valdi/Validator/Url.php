@@ -22,4 +22,11 @@ class Url extends AbstractFilter {
     public function getFilter() {
         return \FILTER_VALIDATE_URL;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'url';
+    }
 }

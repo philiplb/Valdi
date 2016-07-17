@@ -53,6 +53,31 @@ or
 
 Validator to combine other validators with a logical "or".
 
+**Attention: The error result of this validator is not just a string, but an array. Example:
+
+.. code-block:: php
+
+        $validator = new Validator();
+        $data = array(
+            'a' => 'invalid'
+        );
+        $rules = array(
+            'a' => array(array('or', $validator, array('email'), array('url')))
+        );
+        $result = $validator->isValid($rules, $data);
+
+This results in the following validation result:
+
+.. code-block:: php
+
+        $result = array(
+            'valid' => false,
+            'errors' => array(
+                'a' => array(array('or' => array('email', 'url')))
+            )
+        );
+
+
 **Parameters**
 
 * validator: the Validator or subclass instance which will execute the child validations

@@ -29,4 +29,11 @@ class IPv4 extends AbstractFilter {
     protected function getFlags() {
         return \FILTER_FLAG_IPV4;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'ipv4';
+    }
 }

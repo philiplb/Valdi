@@ -32,3 +32,7 @@ Validator\\Contains
 
         :param $value:
         :param $parameters:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}

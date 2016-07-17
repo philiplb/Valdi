@@ -37,4 +37,11 @@ class BooleanTest extends \PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->isValid('test', array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Boolean();
+        $read = $validator->getInvalidDetails();
+        $expected = 'boolean';
+        $this->assertSame($read, $expected);
+    }
+
 }

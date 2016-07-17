@@ -1,5 +1,5 @@
 ---------------------------
-Valdi\\Validator\\OrCombine
+Validator\\OrCombine
 ---------------------------
 
 .. php:namespace: Valdi\\Validator
@@ -7,6 +7,12 @@ Valdi\\Validator\\OrCombine
 .. php:class:: OrCombine
 
     Validator to combine other validators with a logical "or".
+
+    .. php:attr:: invalid
+
+        protected
+
+        Holds the invalid validators.
 
     .. php:method:: checkParameters($parameters)
 
@@ -23,3 +29,7 @@ Valdi\\Validator\\OrCombine
 
         :param $value:
         :param $parameters:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}

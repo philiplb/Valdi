@@ -29,4 +29,11 @@ class IPv6 extends AbstractFilter {
     protected function getFlags() {
         return \FILTER_FLAG_IPV6;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'ipv6';
+    }
 }

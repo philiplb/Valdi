@@ -20,6 +20,11 @@ use Valdi\ValidationException;
 class OrCombine implements ValidatorInterface {
 
     /**
+     * Holds the invalid validators.
+     */
+    protected $invalid;
+
+    /**
      * Checks whether the given parameters fullfil:
      * - At least three given
      * - The first one is a Validator or a subclass of it
@@ -44,14 +49,24 @@ class OrCombine implements ValidatorInterface {
         $this->checkParameters($parameters);
 
         $validator = array_shift($parameters);
+        $this->invalidDetails = array();
+        $valid = false;
         foreach ($parameters as $rules) {
-            $result = $validator->isValidValue(array($rules), $value);
-            if (empty($result)) {
-                return true;
+            $failedValidations = $validator->isValidValue(array($rules), $value);
+            foreach ($failedValidations as $failedValidation) {
+                $this->invalidDetails[] = $failedValidation;
             }
+            $valid = $valid || empty($failedValidations);
         }
 
-        return false;
+        return $valid;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return array('or' => $this->invalidDetails);
     }
 
 }

@@ -43,8 +43,6 @@ Contents:
     api/Validator/ValidatorInterface
     api/Validator
     api/ValidatorException
-    api/Validator
-    api/ValidatorException
 
 Indices and tables
 ==================

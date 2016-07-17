@@ -102,7 +102,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Validator\InSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Validator\ValidatorInterface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Validator</a></li>
@@ -161,7 +161,7 @@
 <p>There might be cases where the shipped rules of Valdi might not be enough for
 you. So here is how to introduce own rules by extending Valdi.</p>
 <p>First of all, you have to implement the validator which is a single interface
-with a single method. This validator for example would validate only if the
+with two methods. This validator for example would validate only if the
 given value can be divided by two:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface {</span>
 
@@ -169,9 +169,16 @@ given value can be divided by two:</p>
 <span class="x">       return $value % 2 == 0;</span>
 <span class="x">    }</span>
 
+<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">        return &#39;divideByTwo&#39;;</span>
+<span class="x">    }</span>
+
 <span class="x">}</span>
 </pre></div>
 </div>
+<p>The method &#8220;getInvalidDetails&#8221; defines the details in the validation results
+if the validation failed. Normally, it is a string naming the failed validator.
+One exception is the validator &#8220;or&#8221; which returns an array here.</p>
 <p>This validator has one small problem: It fails if the value is not given. But
 it shouldn&#8217;t as this check is covered by the &#8220;required&#8221; validator. So we extend
 it a bit:</p>
@@ -179,6 +186,10 @@ it a bit:</p>
 
 <span class="x">    public function isValid($value, array $parameters) {</span>
 <span class="x">       return in_array($value, array(&#39;&#39;, null), true) || $value % 2 == 0;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">        return &#39;divideByTwo&#39;;</span>
 <span class="x">    }</span>
 
 <span class="x">}</span>

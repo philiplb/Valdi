@@ -19,4 +19,8 @@ class TestValidator implements ValidatorInterface {
        return $value % 2 == 0;
     }
 
+    public function getInvalidDetails() {
+        return 'test';
+    }
+
 }

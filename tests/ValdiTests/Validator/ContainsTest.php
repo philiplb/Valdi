@@ -42,4 +42,11 @@ class ContainsTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Contains();
+        $read = $validator->getInvalidDetails();
+        $expected = 'contains';
+        $this->assertSame($read, $expected);
+    }
+
 }

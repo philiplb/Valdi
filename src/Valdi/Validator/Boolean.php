@@ -30,4 +30,11 @@ class Boolean implements ValidatorInterface {
             'yes', 'no'
         ), true);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'boolean';
+    }
 }

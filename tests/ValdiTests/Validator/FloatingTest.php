@@ -30,4 +30,11 @@ class FloatTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Floating();
+        $read = $validator->getInvalidDetails();
+        $expected = 'floating';
+        $this->assertSame($read, $expected);
+    }
+
 }

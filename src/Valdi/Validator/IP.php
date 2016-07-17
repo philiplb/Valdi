@@ -22,4 +22,11 @@ class IP extends AbstractFilter {
     protected function getFilter() {
         return \FILTER_VALIDATE_IP;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'ip';
+    }
 }

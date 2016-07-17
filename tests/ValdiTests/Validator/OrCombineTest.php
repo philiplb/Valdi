@@ -57,4 +57,13 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
 
     }
 
+    public function testGetInvalidDetails() {
+        $combine = new OrCombine();
+        $validator = new Validator();
+        $combine->isValid('test', array($validator, array('email'), array('url')));
+        $read = $combine->getInvalidDetails();
+        $expected = array('or' => array('email', 'url'));
+        $this->assertSame($read, $expected);
+    }
+
 }

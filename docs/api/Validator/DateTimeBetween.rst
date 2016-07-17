@@ -1,6 +1,6 @@
---------------------------
-Validator\\DateTimeBetween
---------------------------
+---------------------------------
+Valdi\\Validator\\DateTimeBetween
+---------------------------------
 
 .. php:namespace: Valdi\\Validator
 
@@ -62,6 +62,10 @@ Validator\\DateTimeBetween
 
         :param $value:
         :param $parameters:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
 
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 

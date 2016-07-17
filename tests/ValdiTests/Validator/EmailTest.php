@@ -28,4 +28,11 @@ class EmailTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new Email();
+        $read = $validator->getInvalidDetails();
+        $expected = 'email';
+        $this->assertSame($read, $expected);
+    }
+
 }

@@ -22,4 +22,11 @@ class Required implements ValidatorInterface {
     public function isValid($value, array $parameters) {
         return !is_null($value) && $value !== '';
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'required';
+    }
 }

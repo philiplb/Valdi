@@ -33,4 +33,11 @@ class IPTest extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new IP();
+        $read = $validator->getInvalidDetails();
+        $expected = 'ip';
+        $this->assertSame($read, $expected);
+    }
+
 }

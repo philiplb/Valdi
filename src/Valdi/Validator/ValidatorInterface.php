@@ -30,4 +30,12 @@ interface ValidatorInterface {
      */
     public function isValid($value, array $parameters);
 
+    /**
+     * Gets the details if the validation failed.
+     *
+     * @return mixed
+     * the details
+     */
+    public function getInvalidDetails();
+
 }

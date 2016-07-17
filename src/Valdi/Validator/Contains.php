@@ -60,4 +60,11 @@ class Contains implements ValidatorInterface {
 
         return in_array($value, array('', null), true) || strpos($value, $parameters[0]) !== false;
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getInvalidDetails() {
+        return 'contains';
+    }
 }

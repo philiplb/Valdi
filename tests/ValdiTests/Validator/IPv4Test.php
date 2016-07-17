@@ -30,4 +30,11 @@ class IPv4Test extends \PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, array()));
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new IPv4();
+        $read = $validator->getInvalidDetails();
+        $expected = 'ipv4';
+        $this->assertSame($read, $expected);
+    }
+
 }

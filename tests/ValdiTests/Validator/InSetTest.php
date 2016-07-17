@@ -39,4 +39,11 @@ class InSetTest extends \PHPUnit_Framework_TestCase {
         }
     }
 
+    public function testGetInvalidDetails() {
+        $validator = new InSet();
+        $read = $validator->getInvalidDetails();
+        $expected = 'inSet';
+        $this->assertSame($read, $expected);
+    }
+
 }

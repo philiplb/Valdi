@@ -12,6 +12,10 @@ Validator\\Email
 
         {@inheritdoc}
 
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
+
     .. php:method:: getFlags()
 
         Gets the flags to use within the validation.

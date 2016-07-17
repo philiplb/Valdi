@@ -21,7 +21,12 @@ The documentation is available for each version:
 
 ### Stable
 
-Todo.
+
+```json
+"require": {
+    "philiplb/valdi": "0.9.0"
+}
+```
 
 ### Bleeding Edge
 

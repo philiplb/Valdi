@@ -22,7 +22,7 @@ class OrCombine implements ValidatorInterface {
     /**
      * Holds the invalid validators.
      */
-    protected $invalid;
+    protected $invalidDetails;
 
     /**
      * Checks whether the given parameters fullfil:
@@ -48,9 +48,9 @@ class OrCombine implements ValidatorInterface {
 
         $this->checkParameters($parameters);
 
-        $validator = array_shift($parameters);
+        $validator            = array_shift($parameters);
         $this->invalidDetails = array();
-        $valid = false;
+        $valid                = false;
         foreach ($parameters as $rules) {
             $failedValidations = $validator->isValidValue(array($rules), $value);
             foreach ($failedValidations as $failedValidation) {

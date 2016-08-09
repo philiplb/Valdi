@@ -11,6 +11,7 @@ Find out more and get started with the [documentation](https://philiplb.github.i
 
 The documentation is available for each version:
 
+* [0.9.1](https://philiplb.github.io/Valdi/docs/html/0.9.1) (Upcoming)
 * [0.9.0](https://philiplb.github.io/Valdi/docs/html/0.9.0)
 
 ## Package

@@ -61,7 +61,7 @@ abstract class AbstractComparator extends AbstractParametrizedValidator {
 
         $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters);
 
-        return in_array($value, array('', null), true) ||
+        return in_array($value, ['', null], true) ||
             $this->isValidComparison($value, $parameters);
     }
 

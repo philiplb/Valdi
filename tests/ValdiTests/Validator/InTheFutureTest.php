@@ -19,15 +19,15 @@ class InTheFutureTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new InTheFuture();
 
-        $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() + 5), array()));
-        $this->assertTrue($validator->isValid(date('YmdHis', time() + 5), array('YmdHis')));
+        $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() + 5), []));
+        $this->assertTrue($validator->isValid(date('YmdHis', time() + 5), ['YmdHis']));
 
-        $this->assertFalse($validator->isValid(date('Y-m-d H:i:s', time() - 5), array()));
-        $this->assertFalse($validator->isValid(date('YmdHis', time() - 5), array('YmdHis')));
-        $this->assertFalse($validator->isValid(date('test', time() + 5), array()));
+        $this->assertFalse($validator->isValid(date('Y-m-d H:i:s', time() - 5), []));
+        $this->assertFalse($validator->isValid(date('YmdHis', time() - 5), ['YmdHis']));
+        $this->assertFalse($validator->isValid(date('test', time() + 5), []));
 
-        $this->assertTrue($validator->isValid('', array(10)));
-        $this->assertTrue($validator->isValid(null, array(10)));
+        $this->assertTrue($validator->isValid('', [10]));
+        $this->assertTrue($validator->isValid(null, [10]));
 
     }
 

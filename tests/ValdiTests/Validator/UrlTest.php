@@ -18,17 +18,17 @@ class UrlTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Url();
 
-        $this->assertTrue($validator->isValid('http://www.philiplb.de', array()));
-        $this->assertTrue($validator->isValid('https://www.philiplb.de', array()));
-        $this->assertTrue($validator->isValid('ftps://www.philiplb.de', array()));
-        $this->assertTrue($validator->isValid('https://www.philiplb.de/CRUDlex', array()));
-        $this->assertTrue($validator->isValid('https://www.philiplb.de/CRUDlex?test=test', array()));
+        $this->assertTrue($validator->isValid('http://www.philiplb.de', []));
+        $this->assertTrue($validator->isValid('https://www.philiplb.de', []));
+        $this->assertTrue($validator->isValid('ftps://www.philiplb.de', []));
+        $this->assertTrue($validator->isValid('https://www.philiplb.de/CRUDlex', []));
+        $this->assertTrue($validator->isValid('https://www.philiplb.de/CRUDlex?test=test', []));
 
-        $this->assertFalse($validator->isValid('test', array()));
-        $this->assertTrue($validator->isValid('htt://www.philiplb.de', array()));
+        $this->assertFalse($validator->isValid('test', []));
+        $this->assertTrue($validator->isValid('htt://www.philiplb.de', []));
 
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
     }
 
     public function testGetInvalidDetails() {

@@ -32,7 +32,7 @@ class Validator {
      * namespace "\Valdi\Validator"
      */
     protected function createValidators(array $validators) {
-        $this->availableValidators = array();
+        $this->availableValidators = [];
         foreach ($validators as $name => $type) {
             $class                            = '\\Valdi\\Validator\\'.$type;
             $this->availableValidators[$name] = new $class();
@@ -64,7 +64,7 @@ class Validator {
      * Constructor.
      */
     public function __construct() {
-        $validators = array(
+        $validators = [
             'afterDateTime' => 'AfterDateTime', 'alphabetical' => 'Alphabetical',
             'alphaNumerical' => 'AlphaNumerical', 'beforeDateTime' => 'BeforeDateTime',
             'between' => 'Between', 'boolean' => 'Boolean',
@@ -81,7 +81,7 @@ class Validator {
             'required' => 'Required', 'slug' => 'Slug',
             'url' => 'Url', 'value' => 'Value',
             'youngerThan' => 'YoungerThan'
-        );
+        ];
         $this->createValidators($validators);
     }
 
@@ -109,7 +109,7 @@ class Validator {
      * the fields where the validation failed
      */
     public function isValidValue($rules, $value) {
-        $result = array();
+        $result = [];
         foreach ($rules as $rule) {
             $parameters = $rule;
             $name       = array_shift($parameters);
@@ -143,7 +143,7 @@ class Validator {
      * array('or' => array('url', 'email')
      */
     public function isValid(array $rules, array $data) {
-        $errors = array();
+        $errors = [];
         foreach ($rules as $field => $fieldRules) {
             $value       = isset($data[$field]) ? $data[$field] : null;
             $fieldErrors = $this->isValidValue($fieldRules, $value);
@@ -151,10 +151,10 @@ class Validator {
                 $errors[$field] = $fieldErrors;
             }
         }
-        return array(
+        return [
             'valid' => count($errors) === 0,
             'errors' => $errors
-        );
+        ];
     }
 
 }

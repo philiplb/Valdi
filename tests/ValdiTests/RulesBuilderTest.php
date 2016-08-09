@@ -31,11 +31,11 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
             ->addRule('b', 'between', 5, 17)
             ->getRules()
         ;
-        $expected = array(
-            'a' => array(array('required'), array('min', 42)),
-            'b' => array(array('inThePast'), array('between', 5, 17)),
-            'c' => array(array('slug'))
-        );
+        $expected = [
+            'a' => [['required'], ['min', 42]],
+            'b' => [['inThePast'], ['between', 5, 17]],
+            'c' => [['slug']]
+        ];
         $this->assertSame($read, $expected);
     }
 
@@ -45,13 +45,13 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
             ->addRule('b', 'min', 5)
             ->getRules()
         ;
-        $data = array('a' => 'abc', 'b' => 6);
+        $data = ['a' => 'abc', 'b' => 6];
         $validator = new Validator();
         $read = $validator->isValid($rules, $data);
-        $expected = array(
+        $expected = [
             'valid' => true,
-            'errors' => array()
-        );
+            'errors' => []
+        ];
         $this->assertSame($read, $expected);
     }
 

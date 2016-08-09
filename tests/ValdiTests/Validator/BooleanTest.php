@@ -18,23 +18,23 @@ class BooleanTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Boolean();
 
-        $this->assertTrue($validator->isValid(1, array()));
-        $this->assertTrue($validator->isValid('1', array()));
-        $this->assertTrue($validator->isValid(true, array()));
-        $this->assertTrue($validator->isValid('true', array()));
-        $this->assertTrue($validator->isValid('on', array()));
-        $this->assertTrue($validator->isValid('yes', array()));
+        $this->assertTrue($validator->isValid(1, []));
+        $this->assertTrue($validator->isValid('1', []));
+        $this->assertTrue($validator->isValid(true, []));
+        $this->assertTrue($validator->isValid('true', []));
+        $this->assertTrue($validator->isValid('on', []));
+        $this->assertTrue($validator->isValid('yes', []));
 
-        $this->assertTrue($validator->isValid(0, array()));
-        $this->assertTrue($validator->isValid('0', array()));
-        $this->assertTrue($validator->isValid(false, array()));
-        $this->assertTrue($validator->isValid('false', array()));
-        $this->assertTrue($validator->isValid('off', array()));
-        $this->assertTrue($validator->isValid('no', array()));
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid(0, []));
+        $this->assertTrue($validator->isValid('0', []));
+        $this->assertTrue($validator->isValid(false, []));
+        $this->assertTrue($validator->isValid('false', []));
+        $this->assertTrue($validator->isValid('off', []));
+        $this->assertTrue($validator->isValid('no', []));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
 
-        $this->assertFalse($validator->isValid('test', array()));
+        $this->assertFalse($validator->isValid('test', []));
     }
 
     public function testGetInvalidDetails() {

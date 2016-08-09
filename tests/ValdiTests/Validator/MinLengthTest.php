@@ -18,14 +18,14 @@ class MinLengthTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new MinLength();
 
-        $this->assertTrue($validator->isValid('1', array(1)));
-        $this->assertTrue($validator->isValid('11', array(1)));
+        $this->assertTrue($validator->isValid('1', [1]));
+        $this->assertTrue($validator->isValid('11', [1]));
 
-        $this->assertFalse($validator->isValid('1', array(2)));
-        $this->assertFalse($validator->isValid('11', array(3)));
+        $this->assertFalse($validator->isValid('1', [2]));
+        $this->assertFalse($validator->isValid('11', [3]));
 
-        $this->assertTrue($validator->isValid('', array(1)));
-        $this->assertTrue($validator->isValid(null, array(1)));
+        $this->assertTrue($validator->isValid('', [1]));
+        $this->assertTrue($validator->isValid(null, [1]));
     }
 
 }

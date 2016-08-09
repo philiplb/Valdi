@@ -21,20 +21,20 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
         $combine = new OrCombine();
         $validator = new Validator();
 
-        $this->assertTrue($combine->isValid('test@test.de', array($validator, array('email'), array('url'))));
-        $this->assertTrue($combine->isValid('https://www.philiplb.de', array($validator, array('email'), array('url'))));
+        $this->assertTrue($combine->isValid('test@test.de', [$validator, ['email'], ['url']]));
+        $this->assertTrue($combine->isValid('https://www.philiplb.de', [$validator, ['email'], ['url']]));
 
-        $this->assertTrue($combine->isValid('one', array($validator, array('email'), array('url'), array('inSet', 'one', 'two'))));
+        $this->assertTrue($combine->isValid('one', [$validator, ['email'], ['url'], ['inSet', 'one', 'two']]));
 
-        $this->assertFalse($combine->isValid('test', array($validator, array('email'), array('url'))));
-        $this->assertFalse($combine->isValid('three', array($validator, array('email'), array('url'), array('inSet', 'one', 'two'))));
+        $this->assertFalse($combine->isValid('test', [$validator, ['email'], ['url']]));
+        $this->assertFalse($combine->isValid('three', [$validator, ['email'], ['url'], ['inSet', 'one', 'two']]));
 
-        $this->assertTrue($combine->isValid('', array($validator, array('email'), array('url'))));
-        $this->assertTrue($combine->isValid(null, array($validator, array('email'), array('url'))));
+        $this->assertTrue($combine->isValid('', [$validator, ['email'], ['url']]));
+        $this->assertTrue($combine->isValid(null, [$validator, ['email'], ['url']]));
 
 
         try {
-            $this->assertTrue($combine->isValid('test@test.de', array($validator, array('email'))));
+            $this->assertTrue($combine->isValid('test@test.de', [$validator, ['email']]));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -45,7 +45,7 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
         }
 
         try {
-            $this->assertTrue($combine->isValid('test@test.de', array('foo', array('email'), array('url'))));
+            $this->assertTrue($combine->isValid('test@test.de', ['foo', ['email'], ['url']]));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -60,9 +60,9 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
     public function testGetInvalidDetails() {
         $combine = new OrCombine();
         $validator = new Validator();
-        $combine->isValid('test', array($validator, array('email'), array('url')));
+        $combine->isValid('test', [$validator, ['email'], ['url']]);
         $read = $combine->getInvalidDetails();
-        $expected = array('or' => array('email', 'url'));
+        $expected = ['or' => ['email', 'url']];
         $this->assertSame($read, $expected);
     }
 

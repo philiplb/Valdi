@@ -30,7 +30,7 @@ class Alphabetical extends Regexp {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        $parameters = array('/^([a-z])+$/i');
+        $parameters = ['/^([a-z])+$/i'];
         return parent::isValidComparison($value, $parameters);
     }
 }

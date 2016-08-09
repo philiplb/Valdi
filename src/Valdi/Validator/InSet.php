@@ -25,7 +25,7 @@ class InSet implements ValidatorInterface {
         if (count($parameters) === 0) {
             throw new ValidationException('"set" expects at least one parameter.');
         }
-        return in_array($value, array('', null), true) ||
+        return in_array($value, ['', null], true) ||
             in_array($value, $parameters);
     }
 

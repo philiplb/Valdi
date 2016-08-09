@@ -1,0 +1,31 @@
+----------------
+Validator\\Email
+----------------
+
+.. php:namespace: Valdi\\Validator
+
+.. php:class:: Email
+
+    Validator for e-mail addresses.
+
+    .. php:method:: getFilter()
+
+        {@inheritdoc}
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
+
+    .. php:method:: getFlags()
+
+        Gets the flags to use within the validation.
+        See http://php.net/manual/de/filter.filters.validate.php .
+
+        :returns: string|null the flags to use
+
+    .. php:method:: isValid($value, $parameters)
+
+        {@inheritdoc}
+
+        :param $value:
+        :param $parameters:

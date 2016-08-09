@@ -18,14 +18,14 @@ class IntegerTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Integer();
 
-        $this->assertTrue($validator->isValid(1, array()));
-        $this->assertTrue($validator->isValid('1', array()));
+        $this->assertTrue($validator->isValid(1, []));
+        $this->assertTrue($validator->isValid('1', []));
 
-        $this->assertFalse($validator->isValid('test', array()));
-        $this->assertFalse($validator->isValid('1abc', array()));
+        $this->assertFalse($validator->isValid('test', []));
+        $this->assertFalse($validator->isValid('1abc', []));
 
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
     }
 
     public function testGetInvalidDetails() {

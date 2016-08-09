@@ -18,14 +18,14 @@ class DateTimeTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new DateTime();
 
-        $this->assertTrue($validator->isValid('2016-02-28 01:23:45', array()));
-        $this->assertTrue($validator->isValid('20160228012345', array('YmdHis')));
+        $this->assertTrue($validator->isValid('2016-02-28 01:23:45', []));
+        $this->assertTrue($validator->isValid('20160228012345', ['YmdHis']));
 
-        $this->assertFalse($validator->isValid('2016-02-28', array()));
-        $this->assertFalse($validator->isValid('test', array()));
+        $this->assertFalse($validator->isValid('2016-02-28', []));
+        $this->assertFalse($validator->isValid('test', []));
 
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
     }
 
     public function testGetInvalidDetails() {

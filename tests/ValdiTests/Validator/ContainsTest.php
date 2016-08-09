@@ -19,19 +19,19 @@ class ContainsTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Contains();
 
-        $this->assertTrue($validator->isValid('test', array('ES')));
-        $this->assertTrue($validator->isValid('test', array('ES', true)));
-        $this->assertTrue($validator->isValid('test', array('es', false)));
+        $this->assertTrue($validator->isValid('test', ['ES']));
+        $this->assertTrue($validator->isValid('test', ['ES', true]));
+        $this->assertTrue($validator->isValid('test', ['es', false]));
 
-        $this->assertFalse($validator->isValid('test', array('ES', false)));
-        $this->assertFalse($validator->isValid('test', array('123')));
-        $this->assertFalse($validator->isValid('test', array('123', true)));
+        $this->assertFalse($validator->isValid('test', ['ES', false]));
+        $this->assertFalse($validator->isValid('test', ['123']));
+        $this->assertFalse($validator->isValid('test', ['123', true]));
 
-        $this->assertTrue($validator->isValid('', array('es')));
-        $this->assertTrue($validator->isValid(null, array('es')));
+        $this->assertTrue($validator->isValid('', ['es']));
+        $this->assertTrue($validator->isValid(null, ['es']));
 
         try {
-            $validator->isValid('test', array());
+            $validator->isValid('test', []);
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

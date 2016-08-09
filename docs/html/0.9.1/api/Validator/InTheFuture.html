@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Validator\InTheFuture &mdash; Valdi 0.9.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Valdi 0.9.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Validator\AbstractDateTimeComparator" href="AbstractDateTimeComparator.html"/>
+        <link rel="next" title="Validator\InThePast" href="InThePast.html"/>
+        <link rel="prev" title="Valdi\Validator\DateTimeBetween" href="DateTimeBetween.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Valdi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/validators.html">Validators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/extendedfeatures.html">Extended Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Validator\AbstractFilter</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Validator\AbstractParametrizedValidator</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AbstractComparator.html">Validator\AbstractComparator</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="AbstractDateTimeComparator.html">Validator\AbstractDateTimeComparator</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="AfterDateTime.html">Validator\AfterDateTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BeforeDateTime.html">Validator\BeforeDateTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="DateTimeBetween.html">Valdi\Validator\DateTimeBetween</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Validator\InTheFuture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="InThePast.html">Validator\InThePast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="OlderThan.html">Validator\OlderThan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="YoungerThan.html">Validator\YoungerThan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Boolean.html">Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DateTime.html">Validator\DateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Required.html">Validator\Required</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Validator\ValidatorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">ValidatorException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">ValidatorException</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Valdi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="AbstractParametrizedValidator.html">Validator\AbstractParametrizedValidator</a> &raquo;</li>
+      
+          <li><a href="AbstractDateTimeComparator.html">Validator\AbstractDateTimeComparator</a> &raquo;</li>
+      
+    <li>Validator\InTheFuture</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/Validator/InTheFuture.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="validator-inthefuture">
+<h1>Validator\InTheFuture<a class="headerlink" href="#validator-inthefuture" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="InTheFuture">
+<em class="property">class </em><code class="descname">InTheFuture</code><a class="headerlink" href="#InTheFuture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validator for a date time being in the future compared to the current moment.
+For the format, see:
+<a class="reference external" href="http://php.net/manual/en/datetime.createfromformat.php">http://php.net/manual/en/datetime.createfromformat.php</a></p>
+<dl class="attr">
+<dt id="InTheFuture::$amountOfParameters">
+<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#InTheFuture::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds the amount of parameters.</p>
+</dd></dl>
+
+<dl class="attr">
+<dt id="InTheFuture::$dateTimeParameters">
+<em class="property">property </em><code class="descname">dateTimeParameters</code><a class="headerlink" href="#InTheFuture::$dateTimeParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds whether to parse the parameters as DateTimes so the child class
+can decide.</p>
+</dd></dl>
+
+<dl class="attr">
+<dt id="InTheFuture::$type">
+<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#InTheFuture::$type" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds the type of the validator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::isValidComparison">
+<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>DateTime $date</em>, <em>$datetimes</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$date</strong> (<a class="reference internal" href="DateTime.html#DateTime" title="DateTime"><em>DateTime</em></a>) &#8211; </li>
+<li><strong>$datetimes</strong> &#8211; </li>
+<li><strong>$parameters</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::getDateTimeFormat">
+<code class="descname">getDateTimeFormat</code><span class="sig-paren">(</span><em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::getDateTimeFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a date time format from the parameters if given or a default one.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string the date time format</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::getDateTimes">
+<code class="descname">getDateTimes</code><span class="sig-paren">(</span><em>$parameters</em>, <em>$format</em><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::getDateTimes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interprets the given parameters as date times and returns them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$parameters</strong> (<em>array</em>) &#8211; the paramters</li>
+<li><strong>$format</strong> (<em>string</em>) &#8211; the date time format</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">DateTime[] the date times</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::isValid" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$value</strong> &#8211; </li>
+<li><strong>$parameters</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="InTheFuture::validateParameterCount">
+<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#InTheFuture::validateParameterCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Throws an exception if the parameters don&#8217;t fullfill the expected
+parameter count.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
+<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="InThePast.html" class="btn btn-neutral float-right" title="Validator\InThePast" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="DateTimeBetween.html" class="btn btn-neutral" title="Valdi\Validator\DateTimeBetween" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Philip Lehmann-Böhm.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.9.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

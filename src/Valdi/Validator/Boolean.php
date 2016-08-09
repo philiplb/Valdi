@@ -20,7 +20,7 @@ class Boolean implements ValidatorInterface {
      * {@inheritdoc}
      */
     public function isValid($value, array $parameters) {
-        return in_array($value, array(
+        return in_array($value, [
             '', null,
             true, false,
             'true', 'false',
@@ -28,7 +28,7 @@ class Boolean implements ValidatorInterface {
             '1', '0',
             'on', 'off',
             'yes', 'no'
-        ), true);
+        ], true);
     }
 
     /**

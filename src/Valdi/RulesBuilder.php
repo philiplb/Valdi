@@ -35,7 +35,7 @@ class RulesBuilder {
      * Constructor.
      */
     public function __construct() {
-        $this->rules = array();
+        $this->rules = [];
     }
 
     /**
@@ -57,9 +57,9 @@ class RulesBuilder {
      */
     public function addRule($field, $rule) {
         if (!isset($this->rules[$field])) {
-            $this->rules[$field] = array();
+            $this->rules[$field] = [];
         }
-        $newRule = array($rule);
+        $newRule = [$rule];
         $numArgs = func_num_args();
         for ($i = 2; $i < $numArgs; ++$i) {
             $newRule[] = func_get_arg($i);

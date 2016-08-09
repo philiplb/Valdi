@@ -18,14 +18,14 @@ class MaxLengthTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new MaxLength();
 
-        $this->assertTrue($validator->isValid('1', array(2)));
-        $this->assertTrue($validator->isValid('11', array(2)));
+        $this->assertTrue($validator->isValid('1', [2]));
+        $this->assertTrue($validator->isValid('11', [2]));
 
-        $this->assertFalse($validator->isValid('11', array(1)));
-        $this->assertFalse($validator->isValid('111', array(1)));
+        $this->assertFalse($validator->isValid('11', [1]));
+        $this->assertFalse($validator->isValid('111', [1]));
 
-        $this->assertTrue($validator->isValid('', array(1)));
-        $this->assertTrue($validator->isValid(null, array(1)));
+        $this->assertTrue($validator->isValid('', [1]));
+        $this->assertTrue($validator->isValid(null, [1]));
     }
 
 }

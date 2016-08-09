@@ -19,13 +19,13 @@ class AlphabeticalTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Alphabetical();
 
-        $this->assertTrue($validator->isValid('test', array()));
+        $this->assertTrue($validator->isValid('test', []));
 
-        $this->assertFalse($validator->isValid('test123', array()));
-        $this->assertFalse($validator->isValid('@test.de', array()));
+        $this->assertFalse($validator->isValid('test123', []));
+        $this->assertFalse($validator->isValid('@test.de', []));
 
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
     }
 
 }

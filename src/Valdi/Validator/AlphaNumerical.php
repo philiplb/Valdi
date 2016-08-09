@@ -30,7 +30,7 @@ class AlphaNumerical extends Regexp {
      * {@inheritdoc}
      */
     protected function isValidComparison($value, $parameters) {
-        $parameters = array('/^([a-z0-9])+$/i');
+        $parameters = ['/^([a-z0-9])+$/i'];
         return parent::isValidComparison($value, $parameters);
     }
 }

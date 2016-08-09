@@ -40,7 +40,7 @@ abstract class AbstractFilter implements ValidatorInterface {
      * {@inheritdoc}
      */
     public function isValid($value, array $parameters) {
-        return in_array($value, array('', null), true) ||
+        return in_array($value, ['', null], true) ||
             filter_var($value, $this->getFilter(), $this->getFlags()) !== false;
     }
 }

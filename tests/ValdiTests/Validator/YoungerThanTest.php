@@ -19,18 +19,18 @@ class YoungerThanTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new YoungerThan();
 
-        $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 5), array(10)));
-        $this->assertTrue($validator->isValid(date('YmdHis', time() - 5), array(10, 'YmdHis')));
+        $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 5), [10]));
+        $this->assertTrue($validator->isValid(date('YmdHis', time() - 5), [10, 'YmdHis']));
 
-        $this->assertFalse($validator->isValid(date('Y-m-d H:i:s', time() - 5), array(4)));
-        $this->assertFalse($validator->isValid(date('YmdHis', time() - 5), array(4, 'YmdHis')));
-        $this->assertFalse($validator->isValid(date('test', time() - 5), array(10)));
+        $this->assertFalse($validator->isValid(date('Y-m-d H:i:s', time() - 5), [4]));
+        $this->assertFalse($validator->isValid(date('YmdHis', time() - 5), [4, 'YmdHis']));
+        $this->assertFalse($validator->isValid(date('test', time() - 5), [10]));
 
-        $this->assertTrue($validator->isValid('', array(10)));
-        $this->assertTrue($validator->isValid(null, array(10)));
+        $this->assertTrue($validator->isValid('', [10]));
+        $this->assertTrue($validator->isValid(null, [10]));
 
         try {
-            $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 5), array()));
+            $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 5), []));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();

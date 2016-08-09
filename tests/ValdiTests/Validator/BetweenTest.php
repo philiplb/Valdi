@@ -18,25 +18,25 @@ class BetweenTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new Between();
 
-        $this->assertTrue($validator->isValid(1, array(1, 2)));
-        $this->assertTrue($validator->isValid(1.1, array(1.1, 2.1)));
-        $this->assertTrue($validator->isValid('1', array(1, 2)));
-        $this->assertTrue($validator->isValid('1.1', array(1.1, 2.1)));
+        $this->assertTrue($validator->isValid(1, [1, 2]));
+        $this->assertTrue($validator->isValid(1.1, [1.1, 2.1]));
+        $this->assertTrue($validator->isValid('1', [1, 2]));
+        $this->assertTrue($validator->isValid('1.1', [1.1, 2.1]));
 
-        $this->assertTrue($validator->isValid(2, array(1, 2)));
-        $this->assertTrue($validator->isValid(2.1, array(1.1, 2.1)));
-        $this->assertTrue($validator->isValid('2', array(1, 2)));
-        $this->assertTrue($validator->isValid('2.1', array(1.1, 2.1)));
+        $this->assertTrue($validator->isValid(2, [1, 2]));
+        $this->assertTrue($validator->isValid(2.1, [1.1, 2.1]));
+        $this->assertTrue($validator->isValid('2', [1, 2]));
+        $this->assertTrue($validator->isValid('2.1', [1.1, 2.1]));
 
-        $this->assertFalse($validator->isValid(1, array(2, 3)));
-        $this->assertFalse($validator->isValid(1.1, array(2.1, 3.1)));
-        $this->assertFalse($validator->isValid('1', array(2, 3)));
-        $this->assertFalse($validator->isValid('1.1', array(2.1, 3.1)));
+        $this->assertFalse($validator->isValid(1, [2, 3]));
+        $this->assertFalse($validator->isValid(1.1, [2.1, 3.1]));
+        $this->assertFalse($validator->isValid('1', [2, 3]));
+        $this->assertFalse($validator->isValid('1.1', [2.1, 3.1]));
 
-        $this->assertFalse($validator->isValid('test', array(1, 2)));
+        $this->assertFalse($validator->isValid('test', [1, 2]));
 
-        $this->assertTrue($validator->isValid('', array(1, 2)));
-        $this->assertTrue($validator->isValid(null, array(1, 2)));
+        $this->assertTrue($validator->isValid('', [1, 2]));
+        $this->assertTrue($validator->isValid(null, [1, 2]));
     }
 
 }

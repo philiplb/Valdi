@@ -82,9 +82,9 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      */
     protected function getDateTimes(array $parameters, $format) {
         if (!$this->dateTimeParameters) {
-            return array();
+            return [];
         }
-        $datetimes = array();
+        $datetimes = [];
         for ($i = 0; $i < $this->amountOfParameters; ++$i) {
             $datetime = \DateTime::createFromFormat($format, $parameters[$i]);
             if ($datetime === false) {
@@ -104,7 +104,7 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
             throw new ValidationException('"'.$this->type.'" expects at least '.$this->amountOfParameters.' parameter.');
         }
 
-        if (in_array($value, array('', null), true)) {
+        if (in_array($value, ['', null], true)) {
             return true;
         }
 

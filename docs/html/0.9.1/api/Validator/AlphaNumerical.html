@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Validator\AlphaNumerical &mdash; Valdi 0.9.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Valdi 0.9.0 documentation" href="../../index.html"/>
+        <link rel="up" title="Validator\Regexp" href="Regexp.html"/>
+        <link rel="next" title="Validator\Slug" href="Slug.html"/>
+        <link rel="prev" title="Validator\Alphabetical" href="Alphabetical.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Valdi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/validators.html">Validators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../manual/extendedfeatures.html">Extended Features</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Validator\AbstractFilter</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Validator\AbstractParametrizedValidator</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="AbstractComparator.html">Validator\AbstractComparator</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="Between.html">Validator\Between</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Contains.html">Validator\Contains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="LengthBetween.html">Validator\LengthBetween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Max.html">Validator\Max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MaxLength.html">Validator\MaxLength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Min.html">Validator\Min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="MinLength.html">Validator\MinLength</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="Regexp.html">Validator\Regexp</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="Alphabetical.html">Validator\Alphabetical</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="">Validator\AlphaNumerical</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Slug.html">Validator\Slug</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="Value.html">Validator\Value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AbstractDateTimeComparator.html">Validator\AbstractDateTimeComparator</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Boolean.html">Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DateTime.html">Validator\DateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InSet.html">Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Required.html">Validator\Required</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Validator\ValidatorInterface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">ValidatorException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">ValidatorException</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Valdi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="AbstractParametrizedValidator.html">Validator\AbstractParametrizedValidator</a> &raquo;</li>
+      
+          <li><a href="AbstractComparator.html">Validator\AbstractComparator</a> &raquo;</li>
+      
+          <li><a href="Regexp.html">Validator\Regexp</a> &raquo;</li>
+      
+    <li>Validator\AlphaNumerical</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/api/Validator/AlphaNumerical.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="validator-alphanumerical">
+<h1>Validator\AlphaNumerical<a class="headerlink" href="#validator-alphanumerical" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="AlphaNumerical">
+<em class="property">class </em><code class="descname">AlphaNumerical</code><a class="headerlink" href="#AlphaNumerical" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validator for alpha numerical values.</p>
+<dl class="attr">
+<dt id="AlphaNumerical::$amountOfParameters">
+<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#AlphaNumerical::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds the amount of parameters.</p>
+</dd></dl>
+
+<dl class="attr">
+<dt id="AlphaNumerical::$type">
+<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#AlphaNumerical::$type" title="Permalink to this definition">¶</a></dt>
+<dd><p>protected</p>
+<p>Holds the type of the validator.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="AlphaNumerical::isValidComparison">
+<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaNumerical::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$value</strong> &#8211; </li>
+<li><strong>$parameters</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="AlphaNumerical::isAllNumeric">
+<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AlphaNumerical::isAllNumeric" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether all given parameters are numeric.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="AlphaNumerical::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaNumerical::isValid" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$value</strong> &#8211; </li>
+<li><strong>$parameters</strong> &#8211; </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="AlphaNumerical::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AlphaNumerical::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="AlphaNumerical::validateParameterCount">
+<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AlphaNumerical::validateParameterCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Throws an exception if the parameters don&#8217;t fullfill the expected
+parameter count.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
+<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Slug.html" class="btn btn-neutral float-right" title="Validator\Slug" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Alphabetical.html" class="btn btn-neutral" title="Validator\Alphabetical" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Philip Lehmann-Böhm.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.9.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

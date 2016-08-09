@@ -58,7 +58,7 @@ class Contains implements ValidatorInterface {
         $this->validateParameterCount($parameterAmount);
         $this->adjustCaseInsensitive($value, $parameters);
 
-        return in_array($value, array('', null), true) || strpos($value, $parameters[0]) !== false;
+        return in_array($value, ['', null], true) || strpos($value, $parameters[0]) !== false;
     }
 
     /**

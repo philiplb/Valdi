@@ -49,10 +49,10 @@ class OrCombine implements ValidatorInterface {
         $this->checkParameters($parameters);
 
         $validator            = array_shift($parameters);
-        $this->invalidDetails = array();
+        $this->invalidDetails = [];
         $valid                = false;
         foreach ($parameters as $rules) {
-            $failedValidations = $validator->isValidValue(array($rules), $value);
+            $failedValidations = $validator->isValidValue([$rules], $value);
             foreach ($failedValidations as $failedValidation) {
                 $this->invalidDetails[] = $failedValidation;
             }
@@ -66,7 +66,7 @@ class OrCombine implements ValidatorInterface {
      * {@inheritdoc}
      */
     public function getInvalidDetails() {
-        return array('or' => $this->invalidDetails);
+        return ['or' => $this->invalidDetails];
     }
 
 }

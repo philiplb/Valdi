@@ -19,15 +19,15 @@ class AlphaNumericalTest extends \PHPUnit_Framework_TestCase {
     public function testValidate() {
         $validator = new AlphaNumerical();
 
-        $this->assertTrue($validator->isValid('test', array()));
-        $this->assertTrue($validator->isValid('test123', array()));
-        $this->assertTrue($validator->isValid('123test', array()));
-        $this->assertTrue($validator->isValid('t3st', array()));
+        $this->assertTrue($validator->isValid('test', []));
+        $this->assertTrue($validator->isValid('test123', []));
+        $this->assertTrue($validator->isValid('123test', []));
+        $this->assertTrue($validator->isValid('t3st', []));
 
-        $this->assertFalse($validator->isValid('@test.de', array()));
+        $this->assertFalse($validator->isValid('@test.de', []));
 
-        $this->assertTrue($validator->isValid('', array()));
-        $this->assertTrue($validator->isValid(null, array()));
+        $this->assertTrue($validator->isValid('', []));
+        $this->assertTrue($validator->isValid(null, []));
     }
 
 }

@@ -12,7 +12,6 @@
 namespace ValdiTests\Validator;
 
 use Valdi\Validator\Slug;
-use Valdi\ValidationException;
 
 class SlugTest extends \PHPUnit_Framework_TestCase {
 

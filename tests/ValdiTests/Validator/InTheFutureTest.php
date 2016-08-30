@@ -12,7 +12,6 @@
 namespace ValdiTests\Validator;
 
 use Valdi\Validator\InTheFuture;
-use Valdi\ValidationException;
 
 class InTheFutureTest extends \PHPUnit_Framework_TestCase {
 

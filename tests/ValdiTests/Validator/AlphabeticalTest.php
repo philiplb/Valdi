@@ -12,7 +12,6 @@
 namespace ValdiTests\Validator;
 
 use Valdi\Validator\Alphabetical;
-use Valdi\ValidationException;
 
 class AlphabeticalTest extends \PHPUnit_Framework_TestCase {
 

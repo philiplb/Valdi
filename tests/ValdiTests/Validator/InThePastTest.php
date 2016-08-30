@@ -12,7 +12,6 @@
 namespace ValdiTests\Validator;
 
 use Valdi\Validator\InThePast;
-use Valdi\ValidationException;
 
 class InThePastTest extends \PHPUnit_Framework_TestCase {
 

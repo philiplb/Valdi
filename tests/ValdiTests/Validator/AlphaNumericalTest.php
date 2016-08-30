@@ -12,7 +12,6 @@
 namespace ValdiTests\Validator;
 
 use Valdi\Validator\AlphaNumerical;
-use Valdi\ValidationException;
 
 class AlphaNumericalTest extends \PHPUnit_Framework_TestCase {
 

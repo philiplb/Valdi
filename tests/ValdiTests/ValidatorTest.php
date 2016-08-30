@@ -86,7 +86,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => [['invalid']]
         ];
         try {
-            $read = $validator->isValid($rules, []);
+            $validator->isValid($rules, []);
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();
@@ -103,7 +103,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => [['test']]
         ];
         try {
-            $read = $validator->isValid($rules, ['a' => 1]);
+            $validator->isValid($rules, ['a' => 1]);
             $this->fail();
         } catch (ValidatorException $e) {
             $read = $e->getMessage();

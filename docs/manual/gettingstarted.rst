@@ -7,11 +7,11 @@ This chapter shows the setup and usage of Valdi.
 Setup
 -----
 
-Just include it in your composer.json:
+Just include it in your Composer project:
 
-.. code-block:: js
+.. code-block:: bash
 
-    "philiplb/valdi": "0.9.0"
+    composer require "philiplb/valdi"
 
 And that's it.
 

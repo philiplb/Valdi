@@ -5,13 +5,13 @@ Super simple, yet complete data validation.
 
 ## Getting Started
 
-Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.9.0).
+Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.10.0).
 
 ## Documentation
 
 The documentation is available for each version:
 
-* [0.10.0](https://philiplb.github.io/Valdi/docs/html/0.10.0) (Upcoming)
+* [0.10.0](https://philiplb.github.io/Valdi/docs/html/0.10.0)
 * [0.9.0](https://philiplb.github.io/Valdi/docs/html/0.9.0)
 
 ## Package
@@ -25,7 +25,7 @@ The documentation is available for each version:
 
 ```json
 "require": {
-    "philiplb/valdi": "0.9.0"
+    "philiplb/valdi": "0.10.0"
 }
 ```
 
@@ -33,7 +33,7 @@ The documentation is available for each version:
 
 ```json
 "require": {
-    "philiplb/valdi": "0.9.x-dev"
+    "philiplb/valdi": "0.11.x-dev"
 }
 ```
 

@@ -38,7 +38,7 @@ class DateTimeBetweenTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"dateTimeBetween" expects at least 2 parameter.';
             $this->assertSame($read, $expected);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->fail();
         }
     }

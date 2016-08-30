@@ -34,7 +34,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->fail();
         }
 
@@ -45,7 +45,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->fail();
         }
     }

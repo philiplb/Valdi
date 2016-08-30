@@ -1,6 +1,6 @@
-------------
-RulesBuilder
-------------
+-------------------
+Valdi\\RulesBuilder
+-------------------
 
 .. php:namespace: Valdi
 

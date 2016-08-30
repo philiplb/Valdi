@@ -1,6 +1,6 @@
--------------------------
-Validator\\AbstractFilter
--------------------------
+--------------------------------
+Valdi\\Validator\\AbstractFilter
+--------------------------------
 
 .. toctree::
 
@@ -38,3 +38,9 @@ Validator\\AbstractFilter
 
         :param $value:
         :param $parameters:
+
+    .. php:method:: getInvalidDetails()
+
+        Gets the details if the validation failed.
+
+        :returns: mixed the details

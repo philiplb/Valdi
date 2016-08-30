@@ -1,6 +1,6 @@
-----------------
-Validator\\InSet
-----------------
+-----------------------
+Valdi\\Validator\\InSet
+-----------------------
 
 .. php:namespace: Valdi\\Validator
 

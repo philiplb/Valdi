@@ -51,6 +51,9 @@ class Validator {
      *
      * @return boolean
      * true if the value is valid
+     *
+     * @throws ValidationException
+     * thrown if the validator is not available
      */
     protected function isValidRule($validator, $parameters, $value) {
         if (!array_key_exists($validator, $this->availableValidators)) {

@@ -1,6 +1,6 @@
------------------------------
-Validator\\AbstractComparator
------------------------------
+------------------------------------
+Valdi\\Validator\\AbstractComparator
+------------------------------------
 
 .. toctree::
 
@@ -61,7 +61,7 @@ Validator\\AbstractComparator
 
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 
-        Throws an exception if the parameters don't fullfill the expected
+        Throws an exception if the parameters don't fulfill the expected
         parameter count.
 
         :type $name: string

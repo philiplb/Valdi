@@ -1,6 +1,6 @@
---------------
-Validator\\Url
---------------
+---------------------
+Valdi\\Validator\\Url
+---------------------
 
 .. php:namespace: Valdi\\Validator
 

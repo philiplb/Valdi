@@ -1,6 +1,6 @@
-----------------
-Validator\\Email
-----------------
+-----------------------
+Valdi\\Validator\\Email
+-----------------------
 
 .. php:namespace: Valdi\\Validator
 

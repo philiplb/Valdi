@@ -1,6 +1,6 @@
--------------------
-Validator\\DateTime
--------------------
+--------------------------
+Valdi\\Validator\\DateTime
+--------------------------
 
 .. php:namespace: Valdi\\Validator
 

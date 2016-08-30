@@ -117,7 +117,7 @@ Validates if the parameter is within the given value.
 **Parameters**
 
 * sub value: the value which must be within the value to validate
-* case sensitive: boolean value indicating whether the comparsion should be
+* case sensitive: boolean value indicating whether the comparision should be
   case sensitive; optional, defaults to true
 
 ^^^^^
@@ -152,7 +152,7 @@ the given parameters.
 
 **Parameters**
 
-* min length: The mininum string length
+* min length: The minimum string length
 * max length: The maximum string length
 
 ^^^^^^^^^

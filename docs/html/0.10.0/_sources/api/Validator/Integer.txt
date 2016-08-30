@@ -1,6 +1,6 @@
-------------------
-Validator\\Integer
-------------------
+-------------------------
+Valdi\\Validator\\Integer
+-------------------------
 
 .. php:namespace: Valdi\\Validator
 

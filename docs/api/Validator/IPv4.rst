@@ -1,6 +1,6 @@
----------------
-Validator\\IPv4
----------------
+----------------------
+Valdi\\Validator\\IPv4
+----------------------
 
 .. php:namespace: Valdi\\Validator
 

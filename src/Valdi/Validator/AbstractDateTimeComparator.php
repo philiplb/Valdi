@@ -73,12 +73,15 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      * Interprets the given parameters as date times and returns them.
      *
      * @param array $parameters
-     * the paramters
+     * the parameters
      * @param string $format
      * the date time format
      *
      * @return \DateTime[]
      * the date times
+     *
+     * @throws ValidationException
+     * thrown if one of the parameters is not a date in the given format
      */
     protected function getDateTimes(array $parameters, $format) {
         if (!$this->dateTimeParameters) {

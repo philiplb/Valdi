@@ -1,6 +1,6 @@
-------------------------
-Validator\\AfterDateTime
-------------------------
+-------------------------------
+Valdi\\Validator\\AfterDateTime
+-------------------------------
 
 .. php:namespace: Valdi\\Validator
 
@@ -51,7 +51,7 @@ Validator\\AfterDateTime
         Interprets the given parameters as date times and returns them.
 
         :type $parameters: array
-        :param $parameters: the paramters
+        :param $parameters: the parameters
         :type $format: string
         :param $format: the date time format
         :returns: \DateTime[] the date times
@@ -69,7 +69,7 @@ Validator\\AfterDateTime
 
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 
-        Throws an exception if the parameters don't fullfill the expected
+        Throws an exception if the parameters don't fulfill the expected
         parameter count.
 
         :type $name: string

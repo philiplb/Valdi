@@ -1,6 +1,6 @@
---------------
-Validator\\Max
---------------
+---------------------
+Valdi\\Validator\\Max
+---------------------
 
 .. php:namespace: Valdi\\Validator
 
@@ -46,7 +46,7 @@ Validator\\Max
 
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 
-        Throws an exception if the parameters don't fullfill the expected
+        Throws an exception if the parameters don't fulfill the expected
         parameter count.
 
         :type $name: string

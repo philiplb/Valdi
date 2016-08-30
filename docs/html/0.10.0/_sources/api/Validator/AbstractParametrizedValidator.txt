@@ -1,6 +1,6 @@
-----------------------------------------
-Validator\\AbstractParametrizedValidator
-----------------------------------------
+-----------------------------------------------
+Valdi\\Validator\\AbstractParametrizedValidator
+-----------------------------------------------
 
 .. toctree::
 
@@ -15,7 +15,7 @@ Validator\\AbstractParametrizedValidator
 
     .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
 
-        Throws an exception if the parameters don't fullfill the expected
+        Throws an exception if the parameters don't fulfill the expected
         parameter count.
 
         :type $name: string
@@ -34,3 +34,9 @@ Validator\\AbstractParametrizedValidator
         :type $parameters: array
         :param $parameters: the other parameters the validator might need
         :returns: boolean true if the value is valid, false else
+
+    .. php:method:: getInvalidDetails()
+
+        Gets the details if the validation failed.
+
+        :returns: mixed the details

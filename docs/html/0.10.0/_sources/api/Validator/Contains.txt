@@ -1,6 +1,6 @@
--------------------
-Validator\\Contains
--------------------
+--------------------------
+Valdi\\Validator\\Contains
+--------------------------
 
 .. php:namespace: Valdi\\Validator
 
@@ -10,7 +10,7 @@ Validator\\Contains
 
     .. php:method:: validateParameterCount($parameterAmount)
 
-        Throws an exception if the parameters don't fullfill the expected
+        Throws an exception if the parameters don't fulfill the expected
         parameter count.
 
         :type $parameterAmount: integer

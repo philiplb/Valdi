@@ -19,11 +19,14 @@ use Valdi\ValidationException;
 class Contains implements ValidatorInterface {
 
     /**
-     * Throws an exception if the parameters don't fullfill the expected
+     * Throws an exception if the parameters don't fulfill the expected
      * parameter count.
      *
      * @param integer $parameterAmount
      * the amount of expected parameters
+     *
+     * @throws ValidationException
+     * thrown if less than one parameter is given
      */
     protected function validateParameterCount($parameterAmount) {
         if ($parameterAmount < 1) {

@@ -1,6 +1,6 @@
-------------------
-ValidatorException
-------------------
+-------------------------
+Valdi\\ValidatorException
+-------------------------
 
 .. php:namespace: Valdi
 

@@ -15,7 +15,7 @@ Reasons to use Valdi:
 
 Requirements:
 
-* PHP >= 5.3.3
+* PHP >= 5.5
 
 Contents:
 

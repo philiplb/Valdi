@@ -32,13 +32,13 @@ class Collection implements ValidatorInterface {
      * the potential array values to check
      * @param Validator $validator
      * the validator to check with
-     * @param array $rule
-     * the rule which each element must fulfill
+     * @param array $rules
+     * the rules which each element must fulfill
      *
      * @return boolean
      * true if all the $values are a valid array, else false with the invalid details set
      */
-    protected function isValidCollection($values, Validator $validator, array $rule) {
+    protected function isValidCollection($values, Validator $validator, array $rules) {
         if (!is_array($values)) {
             $this->invalidDetails = $values;
             return false;
@@ -46,9 +46,9 @@ class Collection implements ValidatorInterface {
 
         $this->invalidDetails = [];
         foreach ($values as $key => $value) {
-            $elementValidation = $validator->isValid(['value' => [$rule]], ['value' => $value]);
+            $elementValidation = $validator->isValid(['value' => $rules], ['value' => $value]);
             if (!$elementValidation['valid']) {
-                $this->invalidDetails[$key] = $elementValidation['errors']['value'][0];
+                $this->invalidDetails[$key] = $elementValidation['errors']['value'];
             }
         }
         return count($this->invalidDetails) === 0;

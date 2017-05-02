@@ -46,7 +46,7 @@ Validator to check an array value fulfilling another validator having a single r
             'a' => ['one', 2, 'three]
         ];
         $rules = [
-            'a' => [['collection', $validator, ['int']]]
+            'a' => [['collection', $validator, [['integer']]]]
         ];
         $result = $validator->isValid($rules, $data);
 
@@ -57,15 +57,15 @@ This results in the following validation result:
         $result = [
             'valid' => false,
             'errors' => [
-                'a' => [['collection' => [1 => 'integer', 3 => 'integer']]]
+                'a' => [['collection' => [1 => ['integer'], 3 => ['integer']]]]
             ]
         ];
 
 
 **Parameters**
 
-* validator: the Validator or subclass instance which will execute the child validations
-* rule: an rule the array values must fulfill
+* validator: the Validator or subclass instance which will execute the values validations
+* rules: the rules the array values must fulfill
 
 You can add as many more rules parameters as you need.
 

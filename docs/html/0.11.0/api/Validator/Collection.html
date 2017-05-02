@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Valdi\Validator\MaxLength &mdash; Valdi 0.11.0 documentation</title>
+  <title>Valdi\Validator\Collection &mdash; Valdi 0.11.0 documentation</title>
   
 
   
@@ -31,9 +31,8 @@
 
   
     <link rel="top" title="Valdi 0.11.0 documentation" href="../../index.html"/>
-        <link rel="up" title="Valdi\Validator\AbstractComparator" href="AbstractComparator.html"/>
-        <link rel="next" title="Valdi\Validator\Min" href="Min.html"/>
-        <link rel="prev" title="Valdi\Validator\Max" href="Max.html"/> 
+        <link rel="next" title="Valdi\Validator\DateTime" href="DateTime.html"/>
+        <link rel="prev" title="Valdi\Validator\Boolean" href="Boolean.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,24 +94,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="AbstractComparator.html">Valdi\Validator\AbstractComparator</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Between.html">Valdi\Validator\Between</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LengthBetween.html">Valdi\Validator\LengthBetween</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Max.html">Valdi\Validator\Max</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Valdi\Validator\MaxLength</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Min.html">Valdi\Validator\Min</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MinLength.html">Valdi\Validator\MinLength</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Regexp.html">Valdi\Validator\Regexp</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Value.html">Valdi\Validator\Value</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="AbstractDateTimeComparator.html">Valdi\Validator\AbstractDateTimeComparator</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Valdi\Validator\Boolean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Collection.html">Valdi\Validator\Collection</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator\Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
@@ -150,15 +134,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a> &raquo;</li>
-      
-          <li><a href="AbstractComparator.html">Valdi\Validator\AbstractComparator</a> &raquo;</li>
-      
-    <li>Valdi\Validator\MaxLength</li>
+    <li>Valdi\Validator\Collection</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/MaxLength.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/Collection.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -168,29 +148,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-maxlength">
-<h1>Valdi\Validator\MaxLength<a class="headerlink" href="#valdi-validator-maxlength" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="valdi-validator-collection">
+<h1>Valdi\Validator\Collection<a class="headerlink" href="#valdi-validator-collection" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="MaxLength">
-<em class="property">class </em><code class="descname">MaxLength</code><a class="headerlink" href="#MaxLength" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for strings of a max length.</p>
+<dt id="Collection">
+<em class="property">class </em><code class="descname">Collection</code><a class="headerlink" href="#Collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validator for array values fulfilling a rule.</p>
 <dl class="attr">
-<dt id="MaxLength::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#MaxLength::$type" title="Permalink to this definition">¶</a></dt>
+<dt id="Collection::$invalidDetails">
+<em class="property">property </em><code class="descname">invalidDetails</code><a class="headerlink" href="#Collection::$invalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>protected</p>
-<p>Holds the type of the validator.</p>
-</dd></dl>
-
-<dl class="attr">
-<dt id="MaxLength::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#MaxLength::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
+<p>Holds the invalid array values.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="MaxLength::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#MaxLength::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dt id="Collection::isValidCollection">
+<code class="descname">isValidCollection</code><span class="sig-paren">(</span><em>$values</em>, <em>Validator $validator</em>, <em>$rules</em><span class="sig-paren">)</span><a class="headerlink" href="#Collection::isValidCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the given values are of the expected array.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$values</strong> (<em>mixed</em>) &#8211; the potential array values to check</li>
+<li><strong>$validator</strong> (<a class="reference internal" href="../Validator.html#Validator" title="Validator"><em>Validator</em></a>) &#8211; the validator to check with</li>
+<li><strong>$rules</strong> (<em>array</em>) &#8211; the rules which each element must fulfill</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean true if all the $values are a valid array, else false with the invalid details set</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Collection::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Collection::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -207,61 +202,9 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="MaxLength::isAllNumeric">
-<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MaxLength::isAllNumeric" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether all given parameters are numeric.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="MaxLength::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#MaxLength::isValid" title="Permalink to this definition">¶</a></dt>
+<dt id="Collection::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Collection::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="MaxLength::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#MaxLength::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="MaxLength::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#MaxLength::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don&#8217;t fulfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </dd></dl>
@@ -275,10 +218,10 @@ parameter count.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Min.html" class="btn btn-neutral float-right" title="Valdi\Validator\Min" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="DateTime.html" class="btn btn-neutral float-right" title="Valdi\Validator\DateTime" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Max.html" class="btn btn-neutral" title="Valdi\Validator\Max" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Boolean.html" class="btn btn-neutral" title="Valdi\Validator\Boolean" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

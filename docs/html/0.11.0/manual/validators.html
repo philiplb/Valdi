@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Validators &mdash; Valdi 0.9.0 documentation</title>
+  <title>Validators &mdash; Valdi 0.11.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="Valdi 0.9.0 documentation" href="../index.html"/>
+    <link rel="top" title="Valdi 0.11.0 documentation" href="../index.html"/>
         <link rel="next" title="Extended Features" href="extendedfeatures.html"/>
         <link rel="prev" title="Getting Started" href="gettingstarted.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.9.0
+                0.11.0
               </div>
             
           
@@ -141,6 +141,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Collection.html">Valdi\Validator\Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
@@ -221,13 +222,13 @@ values:</p>
 <div class="section" id="collection">
 <h3>collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
 <p>Validator to check an array value fulfilling another validator having a single rule.</p>
-<p><a href="#id1"><span class="problematic" id="id2">**</span></a>Attention: The error result of this validator is not just a string, but an array with each failed array index. Example:</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index. Example:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; [&#39;one&#39;, 2, &#39;three]</span>
 <span class="x">];</span>
 <span class="x">$rules = [</span>
-<span class="x">    &#39;a&#39; =&gt; [[&#39;collection&#39;, $validator, [&#39;int&#39;]]]</span>
+<span class="x">    &#39;a&#39; =&gt; [[&#39;collection&#39;, $validator, [[&#39;integer&#39;]]]]</span>
 <span class="x">];</span>
 <span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
 </pre></div>
@@ -236,15 +237,15 @@ values:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
 <span class="x">    &#39;valid&#39; =&gt; false,</span>
 <span class="x">    &#39;errors&#39; =&gt; [</span>
-<span class="x">        &#39;a&#39; =&gt; [[&#39;collection&#39; =&gt; [1 =&gt; &#39;integer&#39;, 3 =&gt; &#39;integer&#39;]]]</span>
+<span class="x">        &#39;a&#39; =&gt; [[&#39;collection&#39; =&gt; [1 =&gt; [&#39;integer&#39;], 3 =&gt; [&#39;integer&#39;]]]]</span>
 <span class="x">    ]</span>
 <span class="x">];</span>
 </pre></div>
 </div>
 <p><strong>Parameters</strong></p>
 <ul class="simple">
-<li>validator: the Validator or subclass instance which will execute the child validations</li>
-<li>rule: an rule the array values must fulfill</li>
+<li>validator: the Validator or subclass instance which will execute the values validations</li>
+<li>rules: the rules the array values must fulfill</li>
 </ul>
 <p>You can add as many more rules parameters as you need.</p>
 </div>
@@ -264,7 +265,7 @@ of the most used validators.</p>
 <div class="section" id="or">
 <h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
 <p>Validator to combine other validators with a logical &#8220;or&#8221;.</p>
-<p><a href="#id3"><span class="problematic" id="id4">**</span></a>Attention: The error result of this validator is not just a string, but an array. Example:</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array. Example:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; &#39;invalid&#39;</span>
@@ -558,7 +559,7 @@ Y-m-d H:i:s</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.9.0',
+            VERSION:'0.11.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

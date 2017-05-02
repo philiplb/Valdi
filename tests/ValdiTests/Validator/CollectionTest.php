@@ -21,18 +21,18 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
         $validator = new Collection();
         $valueValidator = new Validator();
 
-        $this->assertTrue($validator->isValid([], [$valueValidator, ['integer']]));
-        $this->assertTrue($validator->isValid([1], [$valueValidator, ['integer']]));
-        $this->assertTrue($validator->isValid([1, 2, 3], [$valueValidator, ['integer']]));
+        $this->assertTrue($validator->isValid([], [$valueValidator, [['integer']]]));
+        $this->assertTrue($validator->isValid([1], [$valueValidator, [['integer']]]));
+        $this->assertTrue($validator->isValid([1, 2, 3], [$valueValidator, [['integer']]]));
 
-        $this->assertFalse($validator->isValid('one', [$valueValidator, ['integer']]));
-        $this->assertFalse($validator->isValid(['one'], [$valueValidator, ['integer']]));
-        $this->assertFalse($validator->isValid(['one', 'two'], [$valueValidator, ['integer']]));
-        $this->assertFalse($validator->isValid([1, 'two'], [$valueValidator, ['integer']]));
+        $this->assertFalse($validator->isValid('one', [$valueValidator, [['integer']]]));
+        $this->assertFalse($validator->isValid(['one'], [$valueValidator, [['integer']]]));
+        $this->assertFalse($validator->isValid(['one', 'two'], [$valueValidator, [['integer']]]));
+        $this->assertFalse($validator->isValid([1, 'two'], [$valueValidator, [['integer']]]));
 
-        $this->assertTrue($validator->isValid('', [$valueValidator, ['integer']]));
-        $this->assertTrue($validator->isValid([], [$valueValidator, ['integer']]));
-        $this->assertTrue($validator->isValid(null, [$valueValidator, ['integer']]));
+        $this->assertTrue($validator->isValid('', [$valueValidator, [['integer']]]));
+        $this->assertTrue($validator->isValid([], [$valueValidator, [['integer']]]));
+        $this->assertTrue($validator->isValid(null, [$valueValidator, [['integer']]]));
 
 
         try {
@@ -63,9 +63,9 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
     public function testGetInvalidDetails() {
         $validator = new Collection();
         $valueValidator = new Validator();
-        $validator->isValid([1, 'two', 3,'four'], [$valueValidator, ['integer']]);
+        $validator->isValid([1, 'two', 3,'four'], [$valueValidator, [['integer']]]);
         $read = $validator->getInvalidDetails();
-        $expected = ['collection' => [1 => 'integer', 3 => 'integer']];
+        $expected = ['collection' => [1 => ['integer'], 3 => ['integer']]];
         $this->assertSame($expected, $read);
     }
 

@@ -11,7 +11,6 @@
 
 namespace Valdi\Validator;
 
-use Valdi\ValidationException;
 use Valdi\Validator;
 
 /**

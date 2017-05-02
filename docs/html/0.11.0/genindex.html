@@ -92,13 +92,12 @@
 <li class="toctree-l1"><a class="reference internal" href="api/ValidationException.html">Valdi\ValidationException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/Validator/Collection.html">Valdi\Validator\Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api/Validator/Nested.html">Valdi\Validator\Nested</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
@@ -230,6 +229,10 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%" valign="top"><dl>
+      
+  <dt><a href="api/Validator/AbstractArray.html#AbstractArray"><strong>AbstractArray (class)</strong></a>
+  </dt>
+
       
   <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator"><strong>AbstractComparator (class)</strong></a>
   </dt>
@@ -661,10 +664,14 @@
 
       </dl></dd>
       
-  <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::getInvalidDetails"><strong>getInvalidDetails() (AbstractComparator method)</strong></a>
+  <dt><a href="api/Validator/AbstractArray.html#AbstractArray::getInvalidDetails"><strong>getInvalidDetails() (AbstractArray method)</strong></a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::getInvalidDetails"><strong>(AbstractComparator method)</strong></a>
+  </dt>
+
         
   <dt><a href="api/Validator/AbstractDateTimeComparator.html#AbstractDateTimeComparator::getInvalidDetails"><strong>(AbstractDateTimeComparator method)</strong></a>
   </dt>
@@ -893,10 +900,14 @@
   </dt>
 
       
-  <dt><a href="api/Validator/Collection.html#Collection::$invalidDetails"><strong>invalidDetails (Collection property)</strong></a>
+  <dt><a href="api/Validator/AbstractArray.html#AbstractArray::$invalidDetails"><strong>invalidDetails (AbstractArray property)</strong></a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="api/Validator/Collection.html#Collection::$invalidDetails"><strong>(Collection property)</strong></a>
+  </dt>
+
         
   <dt><a href="api/Validator/Nested.html#Nested::$invalidDetails"><strong>(Nested property)</strong></a>
   </dt>
@@ -914,12 +925,12 @@
   <dt><a href="api/Validator/IPv4.html#IPv4"><strong>IPv4 (class)</strong></a>
   </dt>
 
+  </dl></td>
+  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api/Validator/IPv6.html#IPv6"><strong>IPv6 (class)</strong></a>
   </dt>
 
-  </dl></td>
-  <td style="width: 33%" valign="top"><dl>
       
   <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::isAllNumeric"><strong>isAllNumeric() (AbstractComparator method)</strong></a>
   </dt>
@@ -971,10 +982,14 @@
 
       </dl></dd>
       
-  <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::isValid"><strong>isValid() (AbstractComparator method)</strong></a>
+  <dt><a href="api/Validator/AbstractArray.html#AbstractArray::isValid"><strong>isValid() (AbstractArray method)</strong></a>
   </dt>
 
       <dd><dl>
+        
+  <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::isValid"><strong>(AbstractComparator method)</strong></a>
+  </dt>
+
         
   <dt><a href="api/Validator/AbstractDateTimeComparator.html#AbstractDateTimeComparator::isValid"><strong>(AbstractDateTimeComparator method)</strong></a>
   </dt>
@@ -1129,9 +1144,19 @@
 
       </dl></dd>
       
-  <dt><a href="api/Validator/Collection.html#Collection::isValidCollection"><strong>isValidCollection() (Collection method)</strong></a>
+  <dt><a href="api/Validator/AbstractArray.html#AbstractArray::isValidArray"><strong>isValidArray() (AbstractArray method)</strong></a>
   </dt>
 
+      <dd><dl>
+        
+  <dt><a href="api/Validator/Collection.html#Collection::isValidArray"><strong>(Collection method)</strong></a>
+  </dt>
+
+        
+  <dt><a href="api/Validator/Nested.html#Nested::isValidArray"><strong>(Nested method)</strong></a>
+  </dt>
+
+      </dl></dd>
       
   <dt><a href="api/Validator/AbstractComparator.html#AbstractComparator::isValidComparison"><strong>isValidComparison() (AbstractComparator method)</strong></a>
   </dt>
@@ -1214,10 +1239,6 @@
   </dt>
 
       </dl></dd>
-      
-  <dt><a href="api/Validator/Nested.html#Nested::isValidNested"><strong>isValidNested() (Nested method)</strong></a>
-  </dt>
-
       
   <dt><a href="api/Validator.html#Validator::isValidRule"><strong>isValidRule() (Validator method)</strong></a>
   </dt>

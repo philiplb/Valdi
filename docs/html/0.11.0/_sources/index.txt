@@ -33,13 +33,12 @@ Contents:
     api/ValidationException
     api/RulesBuilder
     api/ValidationException
+    api/Validator/AbstractArray
     api/Validator/AbstractFilter
     api/Validator/AbstractParametrizedValidator
     api/Validator/Boolean
-    api/Validator/Collection
     api/Validator/DateTime
     api/Validator/InSet
-    api/Validator/Nested
     api/Validator/OrCombine
     api/Validator/Required
     api/Validator/ValidatorInterface

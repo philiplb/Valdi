@@ -39,7 +39,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
             $this->assertTrue($validator->isValid([], []));
             $this->fail();
         } catch (ValidationException $e) {
-            $expected = '"collection" expects two parameters.';
+            $expected = 'Expecting two parameters.';
             $read = $e->getMessage();
             $this->assertSame($read, $expected);
         } catch (\Exception $e) {
@@ -51,7 +51,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
-            $expected = '"collection" expects the first parameter to be an instance of a Validator.';
+            $expected = 'Expecting the first parameter to be an instance of a Validator.';
             $this->assertSame($read, $expected);
         } catch (\Exception $e) {
             $this->fail();

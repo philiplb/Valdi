@@ -14,17 +14,18 @@ Valdi\\Validator\\Nested
 
         Holds the invalid values.
 
-    .. php:method:: isValidNested($value, Validator $validator, $rules)
+    .. php:method:: isValidArray($values, Validator $validator, $rules)
 
-        Checks whether the given values are of the expected nested data.
+        {@inheritdoc}
 
-        :type $value: mixed
-        :param $value: the potential nested values to check
+        :param $values:
         :type $validator: Validator
-        :param $validator: the validator to check with
-        :type $rules: array
-        :param $rules: the rules which the nested data must fulfill
-        :returns: boolean true if all the $values are a valid array, else false with the invalid details set
+        :param $validator:
+        :param $rules:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
 
     .. php:method:: isValid($value, $parameters)
 
@@ -32,7 +33,3 @@ Valdi\\Validator\\Nested
 
         :param $value:
         :param $parameters:
-
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}

@@ -12,19 +12,20 @@ Valdi\\Validator\\Collection
 
         protected
 
-        Holds the invalid array values.
+        Holds the invalid values.
 
-    .. php:method:: isValidCollection($values, Validator $validator, $rules)
+    .. php:method:: isValidArray($values, Validator $validator, $rules)
 
-        Checks whether the given values are of the expected array.
+        {@inheritdoc}
 
-        :type $values: mixed
-        :param $values: the potential array values to check
+        :param $values:
         :type $validator: Validator
-        :param $validator: the validator to check with
-        :type $rules: array
-        :param $rules: the rules which each element must fulfill
-        :returns: boolean true if all the $values are a valid array, else false with the invalid details set
+        :param $validator:
+        :param $rules:
+
+    .. php:method:: getInvalidDetails()
+
+        {@inheritdoc}
 
     .. php:method:: isValid($value, $parameters)
 
@@ -32,7 +33,3 @@ Valdi\\Validator\\Collection
 
         :param $value:
         :param $parameters:
-
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}

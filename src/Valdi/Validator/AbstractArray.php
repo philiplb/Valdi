@@ -39,7 +39,7 @@ abstract class AbstractArray implements ValidatorInterface {
      * @return boolean
      * true if all the $values are valid, else false with the invalid details set
      */
-    protected abstract function isValidArray($values, Validator $validator, array $rules);
+    abstract protected function isValidArray($values, Validator $validator, array $rules);
 
     /**
      * {@inheritdoc}

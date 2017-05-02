@@ -37,7 +37,7 @@ collection
 
 Validator to check an array value fulfilling another validator having a single rule.
 
-**Attention**: The error result of this validator is not just a string, but an array with each failed array index. Example:
+**Attention: The error result of this validator is not just a string, but an array with each failed array index. Example:
 
 .. code-block:: php
 
@@ -93,7 +93,7 @@ or
 
 Validator to combine other validators with a logical "or".
 
-**Attention**: The error result of this validator is not just a string, but an array. Example:
+**Attention: The error result of this validator is not just a string, but an array. Example:
 
 .. code-block:: php
 

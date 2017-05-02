@@ -71,19 +71,19 @@ class Validator {
             'afterDateTime' => 'AfterDateTime', 'alphabetical' => 'Alphabetical',
             'alphaNumerical' => 'AlphaNumerical', 'beforeDateTime' => 'BeforeDateTime',
             'between' => 'Between', 'boolean' => 'Boolean',
-            'contains' => 'Contains', 'dateTime' => 'DateTime',
-            'dateTimeBetween' => 'DateTimeBetween', 'email' => 'Email',
-            'floating' => 'Floating', 'inSet' => 'InSet',
-            'integer' => 'Integer', 'inTheFuture' => 'InTheFuture',
-            'inThePast' => 'InThePast', 'ip' => 'IP',
-            'ipv4' => 'IPv4', 'ipv6' => 'IPv6',
-            'lengthBetween' => 'LengthBetween', 'max' => 'Max',
-            'maxLength' => 'MaxLength', 'min' => 'Min',
-            'minLength' => 'MinLength', 'olderThan' => 'OlderThan',
-            'or' => 'OrCombine', 'regexp' => 'Regexp',
-            'required' => 'Required', 'slug' => 'Slug',
-            'url' => 'Url', 'value' => 'Value',
-            'youngerThan' => 'YoungerThan'
+            'collection' => 'Collection', 'contains' => 'Contains',
+            'dateTime' => 'DateTime', 'dateTimeBetween' => 'DateTimeBetween',
+            'email' => 'Email', 'floating' => 'Floating',
+            'inSet' => 'InSet', 'integer' => 'Integer',
+            'inTheFuture' => 'InTheFuture', 'inThePast' => 'InThePast',
+            'ip' => 'IP', 'ipv4' => 'IPv4',
+            'ipv6' => 'IPv6', 'lengthBetween' => 'LengthBetween',
+            'max' => 'Max', 'maxLength' => 'MaxLength',
+            'min' => 'Min', 'minLength' => 'MinLength',
+            'olderThan' => 'OlderThan', 'or' => 'OrCombine',
+            'regexp' => 'Regexp', 'required' => 'Required',
+            'slug' => 'Slug', 'url' => 'Url',
+            'value' => 'Value', 'youngerThan' => 'YoungerThan'
         ];
         $this->createValidators($validators);
     }

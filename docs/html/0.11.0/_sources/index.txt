@@ -36,7 +36,6 @@ Contents:
     api/Validator/AbstractFilter
     api/Validator/AbstractParametrizedValidator
     api/Validator/Boolean
-    api/Validator/Collection
     api/Validator/DateTime
     api/Validator/InSet
     api/Validator/OrCombine

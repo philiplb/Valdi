@@ -5,6 +5,8 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Added a collection validator
+
 ## 0.10.0
 
 Released: 2016-08-30

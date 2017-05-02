@@ -88,6 +88,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#basics-and-miscellaneous">Basics and Miscellaneous</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#boolean">boolean</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#collection">collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nested">nested</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inset">inSet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#required">required</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#or">or</a></li>
@@ -144,6 +145,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Collection.html">Valdi\Validator\Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Nested.html">Valdi\Validator\Nested</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
@@ -221,7 +223,7 @@ values:</p>
 </div>
 <div class="section" id="collection">
 <h3>collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
-<p>Validator to check an array value fulfilling another validator having a single rule.</p>
+<p>Validator to check an array value fulfilling another validator having a ruleset.</p>
 <p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index. Example:</p>
 <div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
@@ -247,7 +249,35 @@ values:</p>
 <li>validator: the Validator or subclass instance which will execute the values validations</li>
 <li>rules: the rules the array values must fulfill</li>
 </ul>
-<p>You can add as many more rules parameters as you need.</p>
+</div>
+<div class="section" id="nested">
+<h3>nested<a class="headerlink" href="#nested" title="Permalink to this headline">¶</a></h3>
+<p>Validator to check an value being again an associative array fulfilling another validator having its own set of rules.</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with the nested validation. Example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<span class="x">$data = [</span>
+<span class="x">    &#39;a&#39; =&gt; [&#39;b&#39; =&gt; &#39;foo&#39;]</span>
+<span class="x">];</span>
+<span class="x">$rules = [</span>
+<span class="x">    &#39;a&#39; =&gt; [[&#39;nested&#39;, $validator, [&#39;b&#39; =&gt; [[&#39;integer&#39;], [&#39;required&#39;]], &#39;c&#39; =&gt; [[&#39;required&#39;]]]]]</span>
+<span class="x">];</span>
+<span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
+</pre></div>
+</div>
+<p>This results in the following validation result:</p>
+<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<span class="x">    &#39;valid&#39; =&gt; false,</span>
+<span class="x">    &#39;errors&#39; =&gt; [</span>
+<span class="x">        &#39;a&#39; =&gt; [[&#39;nested&#39; =&gt; [&#39;b&#39; =&gt; [&#39;integer&#39;], &#39;c&#39; =&gt; [&#39;integer&#39;, &#39;required&#39;]]]]</span>
+<span class="x">    ]</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>validator: the Validator or subclass instance which will execute the values validations</li>
+<li>rules: the rules the associative array values must fulfill</li>
+</ul>
 </div>
 <div class="section" id="inset">
 <h3>inSet<a class="headerlink" href="#inset" title="Permalink to this headline">¶</a></h3>

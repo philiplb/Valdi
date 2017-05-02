@@ -35,7 +35,7 @@ values:
 collection
 ^^^^^^^^^^
 
-Validator to check an array value fulfilling another validator having a single rule.
+Validator to check an array value fulfilling another validator having a ruleset.
 
 **Attention**: The error result of this validator is not just a string, but an array with each failed array index. Example:
 
@@ -67,8 +67,41 @@ This results in the following validation result:
 * validator: the Validator or subclass instance which will execute the values validations
 * rules: the rules the array values must fulfill
 
-You can add as many more rules parameters as you need.
+^^^^^^
+nested
+^^^^^^
 
+Validator to check an value being again an associative array fulfilling another validator having its own set of rules.
+
+**Attention**: The error result of this validator is not just a string, but an array with the nested validation. Example:
+
+.. code-block:: php
+
+        $validator = new Validator();
+        $data = [
+            'a' => ['b' => 'foo']
+        ];
+        $rules = [
+            'a' => [['nested', $validator, ['b' => [['integer'], ['required']], 'c' => [['required']]]]]
+        ];
+        $result = $validator->isValid($rules, $data);
+
+This results in the following validation result:
+
+.. code-block:: php
+
+        $result = [
+            'valid' => false,
+            'errors' => [
+                'a' => [['nested' => ['b' => ['integer'], 'c' => ['integer', 'required']]]]
+            ]
+        ];
+
+
+**Parameters**
+
+* validator: the Validator or subclass instance which will execute the values validations
+* rules: the rules the associative array values must fulfill
 
 ^^^^^
 inSet

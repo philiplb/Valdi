@@ -80,9 +80,9 @@ class Validator {
             'ipv6' => 'IPv6', 'lengthBetween' => 'LengthBetween',
             'max' => 'Max', 'maxLength' => 'MaxLength',
             'min' => 'Min', 'minLength' => 'MinLength',
-            'olderThan' => 'OlderThan', 'or' => 'OrCombine',
-            'regexp' => 'Regexp', 'required' => 'Required',
-            'slug' => 'Slug', 'url' => 'Url',
+            'nested' => 'Nested', 'olderThan' => 'OlderThan',
+            'or' => 'OrCombine', 'regexp' => 'Regexp',
+            'required' => 'Required', 'slug' => 'Slug', 'url' => 'Url',
             'value' => 'Value', 'youngerThan' => 'YoungerThan'
         ];
         $this->createValidators($validators);

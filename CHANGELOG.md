@@ -6,6 +6,7 @@ Valdi Changelog
 Released: Upcoming
 
 - Added a collection validator
+- Added a nested validator
 
 ## 0.10.0
 

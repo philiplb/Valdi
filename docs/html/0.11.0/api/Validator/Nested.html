@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Valdi\Validator\Value &mdash; Valdi 0.11.0 documentation</title>
+  <title>Valdi\Validator\Nested &mdash; Valdi 0.11.0 documentation</title>
   
 
   
@@ -31,9 +31,8 @@
 
   
     <link rel="top" title="Valdi 0.11.0 documentation" href="../../index.html"/>
-        <link rel="up" title="Valdi\Validator\AbstractComparator" href="AbstractComparator.html"/>
-        <link rel="next" title="Valdi\Validator\AbstractDateTimeComparator" href="AbstractDateTimeComparator.html"/>
-        <link rel="prev" title="Valdi\Validator\Slug" href="Slug.html"/> 
+        <link rel="next" title="Valdi\Validator\OrCombine" href="OrCombine.html"/>
+        <link rel="prev" title="Valdi\Validator\InSet" href="InSet.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -95,27 +94,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="AbstractComparator.html">Valdi\Validator\AbstractComparator</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="Between.html">Valdi\Validator\Between</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
-<li class="toctree-l3"><a class="reference internal" href="LengthBetween.html">Valdi\Validator\LengthBetween</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Max.html">Valdi\Validator\Max</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MaxLength.html">Valdi\Validator\MaxLength</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Min.html">Valdi\Validator\Min</a></li>
-<li class="toctree-l3"><a class="reference internal" href="MinLength.html">Valdi\Validator\MinLength</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Regexp.html">Valdi\Validator\Regexp</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Valdi\Validator\Value</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="AbstractDateTimeComparator.html">Valdi\Validator\AbstractDateTimeComparator</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Valdi\Validator\Boolean</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Collection.html">Valdi\Validator\Collection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Valdi\Validator\InSet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Nested.html">Valdi\Validator\Nested</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator\Nested</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
@@ -151,15 +135,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../../index.html">Docs</a> &raquo;</li>
       
-          <li><a href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a> &raquo;</li>
-      
-          <li><a href="AbstractComparator.html">Valdi\Validator\AbstractComparator</a> &raquo;</li>
-      
-    <li>Valdi\Validator\Value</li>
+    <li>Valdi\Validator\Nested</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/Value.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/Nested.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -169,29 +149,44 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-value">
-<h1>Valdi\Validator\Value<a class="headerlink" href="#valdi-validator-value" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="valdi-validator-nested">
+<h1>Valdi\Validator\Nested<a class="headerlink" href="#valdi-validator-nested" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="Value">
-<em class="property">class </em><code class="descname">Value</code><a class="headerlink" href="#Value" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for equal values.</p>
+<dt id="Nested">
+<em class="property">class </em><code class="descname">Nested</code><a class="headerlink" href="#Nested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validator for nested data sets.</p>
 <dl class="attr">
-<dt id="Value::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#Value::$type" title="Permalink to this definition">¶</a></dt>
+<dt id="Nested::$invalidDetails">
+<em class="property">property </em><code class="descname">invalidDetails</code><a class="headerlink" href="#Nested::$invalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>protected</p>
-<p>Holds the type of the validator.</p>
-</dd></dl>
-
-<dl class="attr">
-<dt id="Value::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#Value::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
+<p>Holds the invalid values.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Value::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Value::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dt id="Nested::isValidNested">
+<code class="descname">isValidNested</code><span class="sig-paren">(</span><em>$value</em>, <em>Validator $validator</em>, <em>$rules</em><span class="sig-paren">)</span><a class="headerlink" href="#Nested::isValidNested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the given values are of the expected nested data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$value</strong> (<em>mixed</em>) &#8211; the potential nested values to check</li>
+<li><strong>$validator</strong> (<a class="reference internal" href="../Validator.html#Validator" title="Validator"><em>Validator</em></a>) &#8211; the validator to check with</li>
+<li><strong>$rules</strong> (<em>array</em>) &#8211; the rules which the nested data must fulfill</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean true if all the $values are a valid array, else false with the invalid details set</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="Nested::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Nested::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -208,61 +203,9 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="Value::isAllNumeric">
-<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Value::isAllNumeric" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether all given parameters are numeric.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Value::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Value::isValid" title="Permalink to this definition">¶</a></dt>
+<dt id="Nested::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Nested::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Value::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Value::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="Value::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Value::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don&#8217;t fulfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </dd></dl>
@@ -276,10 +219,10 @@ parameter count.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="AbstractDateTimeComparator.html" class="btn btn-neutral float-right" title="Valdi\Validator\AbstractDateTimeComparator" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="OrCombine.html" class="btn btn-neutral float-right" title="Valdi\Validator\OrCombine" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Slug.html" class="btn btn-neutral" title="Valdi\Validator\Slug" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="InSet.html" class="btn btn-neutral" title="Valdi\Validator\InSet" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

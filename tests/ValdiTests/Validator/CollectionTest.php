@@ -43,7 +43,6 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $this->assertSame($read, $expected);
         } catch (\Exception $e) {
-            var_dump($e);
             $this->fail();
         }
 

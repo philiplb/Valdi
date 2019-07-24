@@ -43,11 +43,17 @@ Validator to check an array value fulfilling another validator having a ruleset.
 
         $validator = new Validator();
         $data = [
-            'a' => ['one', 2, 'three]
+            'a' => ['one', 2, 'three']
         ];
-        $rules = [
-            'a' => [['collection', $validator, [['integer']]]]
-        ];
+        $builder = RulesBuilder::create();
+        $itemRules = $builder
+            ->addRule('integer')
+            ->build()
+        ;
+        $rules = $builder
+            ->addFieldRule('a', $validator, $itemRules)
+            ->build()
+        ;
         $result = $validator->isValid($rules, $data);
 
 This results in the following validation result:
@@ -81,9 +87,17 @@ Validator to check an value being again an associative array fulfilling another 
         $data = [
             'a' => ['b' => 'foo']
         ];
-        $rules = [
-            'a' => [['nested', $validator, ['b' => [['integer'], ['required']], 'c' => [['required']]]]]
-        ];
+        $builder = RulesBuilder::create();
+        $nestedRules = $builder
+            ->addFieldRule('b', 'integer')
+            ->addFieldRule('b', 'required')
+            ->addFieldRule('c', 'required')
+            ->build()
+        ;
+        $rules = $builder
+            ->addFieldRule('a', 'nested', $validator, $nestedRules)
+            ->build()
+        ;
         $result = $validator->isValid($rules, $data);
 
 This results in the following validation result:

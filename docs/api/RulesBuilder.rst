@@ -24,14 +24,14 @@ Valdi\\RulesBuilder
 
         Constructor.
 
-    .. php:method:: addRule($field, $rule)
+    .. php:method:: addFieldRule($field, $rule)
 
-        Adds a rule to the set. This function takes a variable amount
+        Adds a rule for a field to the set. This function takes a variable amount
         of parameters in order to cover the rule parameters. Example for a rule
         without parameter:
-        addRule('myField', 'required')
+        addFieldRule('myField', 'required')
         Example for a rule with two parameters:
-        addRule('myField', 'between', 3, 7)
+        addFieldRule('myField', 'between', 3, 7)
 
         :type $field: string
         :param $field: the field for the rule
@@ -39,8 +39,22 @@ Valdi\\RulesBuilder
         :param $rule: the rule to add
         :returns: RulesBuilder the instance of the called RulesBuilder in order to chain the rules creation
 
-    .. php:method:: getRules()
+    .. php:method:: addRule($rule)
 
-        Gets the created rules.
+        Adds a rule to the set. This function takes a variable amount
+        of parameters in order to cover the rule parameters. Example for a rule
+        without parameter:
+        addRule('required')
+        Example for a rule with two parameters:
+        addRule('between', 3, 7)
+
+        :type $rule: string
+        :param $rule: the rule to add
+        :returns: RulesBuilder the instance of the called RulesBuilder in order to chain the rules creation
+
+    .. php:method:: build()
+
+        Gets the created rules. Afterwards, the RulesBuilder is emptied and ready
+        to be used again.
 
         :returns: array the created rules

@@ -20,9 +20,9 @@ class NestedTest extends \PHPUnit_Framework_TestCase {
 
     protected function getRules() {
         return RulesBuilder::create()
-        ->addRule('b', 'required')
-        ->addRule('b', 'integer')
-        ->addRule('c', 'required')
+        ->addFieldRule('b', 'required')
+        ->addFieldRule('b', 'integer')
+        ->addFieldRule('c', 'required')
         ->getRules()
         ;
     }

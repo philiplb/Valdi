@@ -24,11 +24,11 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testRulesBuilding() {
         $read = RulesBuilder::create()
-            ->addRule('a', 'required')
-            ->addRule('b', 'inThePast')
-            ->addRule('a', 'min', 42)
-            ->addRule('c', 'slug')
-            ->addRule('b', 'between', 5, 17)
+            ->addFieldRule('a', 'required')
+            ->addFieldRule('b', 'inThePast')
+            ->addFieldRule('a', 'min', 42)
+            ->addFieldRule('c', 'slug')
+            ->addFieldRule('b', 'between', 5, 17)
             ->getRules()
         ;
         $expected = [
@@ -41,8 +41,8 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testCreatedRules() {
         $rules = RulesBuilder::create()
-            ->addRule('a', 'required')
-            ->addRule('b', 'min', 5)
+            ->addFieldRule('a', 'required')
+            ->addFieldRule('b', 'min', 5)
             ->getRules()
         ;
         $data = ['a' => 'abc', 'b' => 6];
@@ -51,6 +51,29 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
         $expected = [
             'valid' => true,
             'errors' => []
+        ];
+        $this->assertSame($read, $expected);
+    }
+
+    public function testCreatedCollectionRules() {
+        $validator = new Validator();
+        $elementRules = RulesBuilder::create()->addRule('min', 5)->getRules();
+        $rules = RulesBuilder::create()
+            ->addFieldRule('a', 'collection', $validator, $elementRules)
+            ->getRules()
+        ;
+        $data = ['a' => [6, 7, 8]];
+        $read = $validator->isValid($rules, $data);
+        $expected = [
+            'valid' => true,
+            'errors' => []
+        ];
+        $this->assertSame($read, $expected);
+        $data = ['a' => [6, 7, 1]];
+        $read = $validator->isValid($rules, $data);
+        $expected = [
+            'valid' => false,
+            'errors' => ['a' => [['collection' => [2 => ['min']]]]]
         ];
         $this->assertSame($read, $expected);
     }

@@ -39,12 +39,12 @@ class RulesBuilder {
     }
 
     /**
-     * Adds a rule to the set. This function takes a variable amount
+     * Adds a rule for a field to the set. This function takes a variable amount
      * of parameters in order to cover the rule parameters. Example for a rule
      * without parameter:
-     * addRule('myField', 'required')
+     * addFieldRule('myField', 'required')
      * Example for a rule with two parameters:
-     * addRule('myField', 'between', 3, 7)
+     * addFieldRule('myField', 'between', 3, 7)
      *
      * @param string $field
      * the field for the rule
@@ -55,7 +55,7 @@ class RulesBuilder {
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function addRule($field, $rule) {
+    public function addFieldRule($field, $rule) {
         if (!isset($this->rules[$field])) {
             $this->rules[$field] = [];
         }
@@ -69,7 +69,33 @@ class RulesBuilder {
     }
 
     /**
-     * Gets the created rules.
+     * Adds a rule to the set. This function takes a variable amount
+     * of parameters in order to cover the rule parameters. Example for a rule
+     * without parameter:
+     * addRule('required')
+     * Example for a rule with two parameters:
+     * addRule('between', 3, 7)
+     *
+     * @param string $rule
+     * the rule to add
+     *
+     * @return RulesBuilder
+     * the instance of the called RulesBuilder in order to chain the rules
+     * creation
+     */
+    public function addRule($rule) {
+        $newRule = [$rule];
+        $numArgs = func_num_args();
+        for ($i = 1; $i < $numArgs; ++$i) {
+            $newRule[] = func_get_arg($i);
+        }
+        $this->rules[] = $newRule;
+
+        return $this;
+    }
+
+    /**
+     * Gets the created rules. Afterwards, the RulesBuilder is emptied and ready to be used again.
      *
      * @return array
      * the created rules

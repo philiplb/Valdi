@@ -17,13 +17,13 @@ use Valdi\Validator;
 class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testCreate() {
-        $read = RulesBuilder::new();
+        $read = RulesBuilder::create();
         $expected = 'Valdi\RulesBuilder';
         $this->assertSame(get_class($read), $expected);
     }
 
     public function testRulesBuilding() {
-        $read = RulesBuilder::new()
+        $read = RulesBuilder::create()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'inThePast')
             ->addFieldRule('a', 'min', 42)
@@ -40,7 +40,7 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testCreatedRules() {
-        $rules = RulesBuilder::new()
+        $rules = RulesBuilder::create()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'min', 5)
             ->build()
@@ -57,7 +57,7 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testCreatedCollectionRules() {
         $validator = new Validator();
-        $builder = RulesBuilder::new();
+        $builder = RulesBuilder::create();
         $elementRules = $builder->addRule('min', 5)->build();
         $rules = $builder
             ->addFieldRule('a', 'collection', $validator, $elementRules)

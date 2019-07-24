@@ -27,7 +27,7 @@ class RulesBuilder {
      * @return RulesBuilder
      * the new instance
      */
-    public static function new() {
+    public static function create() {
         return new RulesBuilder();
     }
 

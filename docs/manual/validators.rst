@@ -71,7 +71,7 @@ This results in the following validation result:
 **Parameters**
 
 * validator: the Validator or subclass instance which will execute the values validations
-* rules: the rules the array values must fulfill
+* rules: the rules the array values must fulfill, the RulesBuilder can be used of course
 
 ^^^^^^
 nested
@@ -115,7 +115,7 @@ This results in the following validation result:
 **Parameters**
 
 * validator: the Validator or subclass instance which will execute the values validations
-* rules: the rules the associative array values must fulfill
+* rules: the rules the associative array values must fulfill, the RulesBuilder can be used of course
 
 ^^^^^
 inSet
@@ -138,7 +138,7 @@ of the most used validators.
 or
 ^^
 
-Validator to combine other validators with a logical "or".
+Validator to combine other rulesets with a logical "or".
 
 **Attention**: The error result of this validator is not just a string, but an array. Example:
 
@@ -148,9 +148,10 @@ Validator to combine other validators with a logical "or".
         $data = [
             'a' => 'invalid'
         ];
-        $rules = [
-            'a' => [['or', $validator, ['email'], ['url']]]
-        ];
+        $builder = RulesBuilder::create();
+        $emailRules = $builder->addRule('email')->build();
+        $urlRules = $builder->addRule('url')->build();
+        $rules = $builder->addFieldRule('a', 'or', $validator, $emailRules, $urlRules);
         $result = $validator->isValid($rules, $data);
 
 This results in the following validation result:
@@ -173,7 +174,8 @@ This results in the following validation result:
 * rules 2: array of rules to combine; like
   [['required'], ['between', 9999, 100000]]
 
-You can add as many more rules parameters as you need.
+You can add as many more rules parameters as you need. And to construct the actual rules,
+the RulesBuilder can be used of course.
 
 -------
 Strings

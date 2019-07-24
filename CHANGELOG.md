@@ -5,6 +5,8 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Attention: The "or" validator now accepts complete rules instead of parts so the RulesBuilder and actually more
+  complex rules can be used
 - Attention: The RulesBuilder function "getRules" got renamed to "build" with an additional reset of the rules builder
 - Added a collection validator
 - Added a nested validator

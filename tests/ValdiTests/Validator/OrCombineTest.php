@@ -11,6 +11,7 @@
 
 namespace ValdiTests\Validator;
 
+use Valdi\RulesBuilder;
 use Valdi\Validator\OrCombine;
 use Valdi\ValidationException;
 use Valdi\Validator;
@@ -21,20 +22,20 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
         $combine = new OrCombine();
         $validator = new Validator();
 
-        $this->assertTrue($combine->isValid('test@test.de', [$validator, ['email'], ['url']]));
-        $this->assertTrue($combine->isValid('https://www.philiplb.de', [$validator, ['email'], ['url']]));
+        $this->assertTrue($combine->isValid('test@test.de', [$validator, [['email']], [['url']]]));
+        $this->assertTrue($combine->isValid('https://www.philiplb.de', [$validator, [['email']], [['url']]]));
 
-        $this->assertTrue($combine->isValid('one', [$validator, ['email'], ['url'], ['inSet', 'one', 'two']]));
+        $this->assertTrue($combine->isValid('one', [$validator, [['email']], [['url']], [['inSet', 'one', 'two']]]));
 
-        $this->assertFalse($combine->isValid('test', [$validator, ['email'], ['url']]));
-        $this->assertFalse($combine->isValid('three', [$validator, ['email'], ['url'], ['inSet', 'one', 'two']]));
+        $this->assertFalse($combine->isValid('test', [$validator, [['email']], [['url']]]));
+        $this->assertFalse($combine->isValid('three', [$validator, [['email']], [['url']], [['inSet', 'one', 'two']]]));
 
-        $this->assertTrue($combine->isValid('', [$validator, ['email'], ['url']]));
-        $this->assertTrue($combine->isValid(null, [$validator, ['email'], ['url']]));
+        $this->assertTrue($combine->isValid('', [$validator, [['email']], [['url']]]));
+        $this->assertTrue($combine->isValid(null, [$validator, [['email']], [['url']]]));
 
 
         try {
-            $this->assertTrue($combine->isValid('test@test.de', [$validator, ['email']]));
+            $this->assertTrue($combine->isValid('test@test.de', [$validator, [['email']]]));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -45,7 +46,7 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
         }
 
         try {
-            $this->assertTrue($combine->isValid('test@test.de', ['foo', ['email'], ['url']]));
+            $this->assertTrue($combine->isValid('test@test.de', ['foo', [['email']], [['url']]]));
             $this->fail();
         } catch (ValidationException $e) {
             $read = $e->getMessage();
@@ -60,10 +61,21 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
     public function testGetInvalidDetails() {
         $combine = new OrCombine();
         $validator = new Validator();
-        $combine->isValid('test', [$validator, ['email'], ['url']]);
+        $combine->isValid('test', [$validator, [['email']], [['url']]]);
         $read = $combine->getInvalidDetails();
         $expected = ['or' => ['email', 'url']];
         $this->assertSame($read, $expected);
     }
 
+    public function testValidateWithRulesBuilder() {
+        $combine = new OrCombine();
+        $validator = new Validator();
+
+        $builder = RulesBuilder::create();
+        $minIntegerRules = $builder->addRule('integer')->addRule('min', 5)->build();
+        $emailRules = $builder->addRule('email')->build();
+        $this->assertTrue($combine->isValid('test@test.de', [$validator, $minIntegerRules, $emailRules]));
+        $this->assertTrue($combine->isValid(6, [$validator, $minIntegerRules, $emailRules]));
+        $this->assertFalse($combine->isValid('asd', [$validator, $minIntegerRules, $emailRules]));
+    }
 }

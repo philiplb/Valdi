@@ -55,7 +55,7 @@ class OrCombine implements ValidatorInterface {
         $this->invalidDetails = [];
         $valid                = false;
         foreach ($parameters as $rules) {
-            $failedValidations = $validator->isValidValue([$rules], $value);
+            $failedValidations = $validator->isValidValue($rules, $value);
             foreach ($failedValidations as $failedValidation) {
                 $this->invalidDetails[] = $failedValidation;
             }

@@ -68,7 +68,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             'a' => 'invalid'
         ];
         $rules = [
-            'a' => [['or', $validator, ['email'], ['url']]]
+            'a' => [['or', $validator, [['email']], [['url']]]]
         ];
         $read = $validator->isValid($rules, $data);
         $expected = [

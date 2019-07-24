@@ -7,6 +7,7 @@
 # file that was distributed with this source code.
 #
 
+dist: trusty
 language: php
 before_script:
     - composer install --dev --prefer-source

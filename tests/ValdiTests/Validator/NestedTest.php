@@ -19,11 +19,11 @@ use Valdi\Validator\Nested;
 class NestedTest extends \PHPUnit_Framework_TestCase {
 
     protected function getRules() {
-        return RulesBuilder::create()
+        return RulesBuilder::new()
         ->addFieldRule('b', 'required')
         ->addFieldRule('b', 'integer')
         ->addFieldRule('c', 'required')
-        ->getRules()
+        ->build()
         ;
     }
 

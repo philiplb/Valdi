@@ -32,12 +32,12 @@ address:
 
 .. code-block:: php
 
-    $rules = RulesBuilder::create()
-        ->addRule('name', 'required')
-        ->addRule('zipcode', 'required')
-        ->addRule('zipcode', 'between', 9999, 100000)
-        ->addRule('email', 'email')
-        ->getRules()
+    $rules = RulesBuilder::new()
+        ->addFieldRule('name', 'required')
+        ->addFieldRule('zipcode', 'required')
+        ->addFieldRule('zipcode', 'between', 9999, 100000)
+        ->addFieldRule('email', 'email')
+        ->build()
     ;
 
 The rules builder is a convenience class to create rules. You get an instance of

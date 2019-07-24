@@ -5,6 +5,8 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Attention: The RulesBuilder function "create" got renamed to "new"
+- Attention: The RulesBuilder function "getRules" got renamed to "build" with an additional reset of the rules builder
 - Added a collection validator
 - Added a nested validator
 

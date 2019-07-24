@@ -27,7 +27,7 @@ class RulesBuilder {
      * @return RulesBuilder
      * the new instance
      */
-    public static function create() {
+    public static function new() {
         return new RulesBuilder();
     }
 
@@ -100,8 +100,10 @@ class RulesBuilder {
      * @return array
      * the created rules
      */
-    public function getRules() {
-        return $this->rules;
+    public function build() {
+        $rules = $this->rules;
+        $this->rules = [];
+        return $rules;
     }
 
 }

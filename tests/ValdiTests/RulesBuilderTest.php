@@ -17,19 +17,19 @@ use Valdi\Validator;
 class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testCreate() {
-        $read = RulesBuilder::create();
+        $read = RulesBuilder::new();
         $expected = 'Valdi\RulesBuilder';
         $this->assertSame(get_class($read), $expected);
     }
 
     public function testRulesBuilding() {
-        $read = RulesBuilder::create()
+        $read = RulesBuilder::new()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'inThePast')
             ->addFieldRule('a', 'min', 42)
             ->addFieldRule('c', 'slug')
             ->addFieldRule('b', 'between', 5, 17)
-            ->getRules()
+            ->build()
         ;
         $expected = [
             'a' => [['required'], ['min', 42]],
@@ -40,10 +40,10 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testCreatedRules() {
-        $rules = RulesBuilder::create()
+        $rules = RulesBuilder::new()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'min', 5)
-            ->getRules()
+            ->build()
         ;
         $data = ['a' => 'abc', 'b' => 6];
         $validator = new Validator();
@@ -57,10 +57,11 @@ class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
 
     public function testCreatedCollectionRules() {
         $validator = new Validator();
-        $elementRules = RulesBuilder::create()->addRule('min', 5)->getRules();
-        $rules = RulesBuilder::create()
+        $builder = RulesBuilder::new();
+        $elementRules = $builder->addRule('min', 5)->build();
+        $rules = $builder
             ->addFieldRule('a', 'collection', $validator, $elementRules)
-            ->getRules()
+            ->build()
         ;
         $data = ['a' => [6, 7, 8]];
         $read = $validator->isValid($rules, $data);

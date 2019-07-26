@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../index.html"/>
         <link rel="next" title="Validators" href="validators.html"/>
         <link rel="prev" title="Welcome to Valdi’s documentation!" href="../index.html"/> 
@@ -83,7 +86,7 @@
             
                 <p class="caption"><span class="caption-text">Manual</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Getting Started</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#rules">Rules</a></li>
@@ -99,19 +102,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -146,7 +148,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/manual/gettingstarted.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/manual/gettingstarted.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,10 +164,10 @@
 <div class="section" id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>Just include it in your Composer project:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>composer require <span class="s2">&quot;philiplb/valdi&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>composer require <span class="s2">&quot;philiplb/valdi&quot;</span>
 </pre></div>
 </div>
-<p>And that&#8217;s it.</p>
+<p>And that’s it.</p>
 </div>
 <div class="section" id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
@@ -176,12 +178,12 @@ data against them.</p>
 <p>Then you have to create some validation rules your data has to fulfill. Here,
 we assume you have a required name field, a zip code and an optional e-mail
 address:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$rules = RulesBuilder::create()</span>
-<span class="x">    -&gt;addRule(&#39;name&#39;, &#39;required&#39;)</span>
-<span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;required&#39;)</span>
-<span class="x">    -&gt;addRule(&#39;zipcode&#39;, &#39;between&#39;, 9999, 100000)</span>
-<span class="x">    -&gt;addRule(&#39;email&#39;, &#39;email&#39;)</span>
-<span class="x">    -&gt;getRules()</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$rules = RulesBuilder::create()</span>
+<span class="x">    -&gt;addFieldRule(&#39;name&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;addFieldRule(&#39;zipcode&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;addFieldRule(&#39;zipcode&#39;, &#39;between&#39;, 9999, 100000)</span>
+<span class="x">    -&gt;addFieldRule(&#39;email&#39;, &#39;email&#39;)</span>
+<span class="x">    -&gt;build()</span>
 <span class="x">;</span>
 </pre></div>
 </div>
@@ -193,27 +195,27 @@ parameters. When you are done with adding rules, you get your rules set via
 calling getRules().</p>
 <p>Note that you can apply multiple rules on your fields like in the zip code field
 above.</p>
-<p>In the chapter &#8220;Extended Features&#8221;, you might learn more about the rules data
+<p>In the chapter “Extended Features”, you might learn more about the rules data
 structure.</p>
 </div>
 <div class="section" id="validation">
 <h3>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
 <p>First, create a Validator instance:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Valdi\Validator();</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Valdi\Validator();</span>
 </pre></div>
 </div>
 <p>Now you can validate your data. Here, we validate directly the HTTP POST input:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validation = $validator-&gt;isValid($rules, $_POST);</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validation = $validator-&gt;isValid($rules, $_POST);</span>
 </pre></div>
 </div>
 <p>You get back an array with your validation result. First of all, you can
-check if something went wrong via the key &#8216;valid&#8217;. It is either &#8220;true&#8221;
-(everything valid) or &#8220;false&#8221; (something in your data is invalid).</p>
-<p>In case of invalid data, you can find out what&#8217;s wrong via the second key
-&#8220;errors&#8221;. It maps to an array with the fields as keys and arrays of failed
+check if something went wrong via the key ‘valid’. It is either “true”
+(everything valid) or “false” (something in your data is invalid).</p>
+<p>In case of invalid data, you can find out what’s wrong via the second key
+“errors”. It maps to an array with the fields as keys and arrays of failed
 rules as values. For example, here was the name missing and the e-mail in the
 wrong format:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validation == [</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validation == [</span>
 <span class="x">    &#39;valid&#39; =&gt; false</span>
 <span class="x">    &#39;errors&#39; =&gt; [</span>
 <span class="x">        &#39;name&#39; =&gt; [&#39;required&#39;],</span>
@@ -222,7 +224,7 @@ wrong format:</p>
 <span class="x">]</span>
 </pre></div>
 </div>
-<p>That&#8217;s it for getting started with this library. In the next chapter, all
+<p>That’s it for getting started with this library. In the next chapter, all
 available rules with their parameters are listed and in the last chapter,
 some more extended features are shown and how to extend Valdi with own rules.</p>
 </div>
@@ -248,7 +250,7 @@ some more extended features are shown and how to extend Valdi with own rules.</p
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

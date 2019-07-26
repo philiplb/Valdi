@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Valdi\Validator\AbstractDateTimeComparator" href="AbstractDateTimeComparator.html"/>
         <link rel="next" title="Valdi\Validator\InTheFuture" href="InTheFuture.html"/>
@@ -92,8 +95,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a><ul class="current">
@@ -101,7 +104,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="AbstractDateTimeComparator.html">Valdi\Validator\AbstractDateTimeComparator</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="AfterDateTime.html">Valdi\Validator\AfterDateTime</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BeforeDateTime.html">Valdi\Validator\BeforeDateTime</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Valdi\Validator\DateTimeBetween</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Valdi\Validator\DateTimeBetween</a></li>
 <li class="toctree-l3"><a class="reference internal" href="InTheFuture.html">Valdi\Validator\InTheFuture</a></li>
 <li class="toctree-l3"><a class="reference internal" href="InThePast.html">Valdi\Validator\InThePast</a></li>
 <li class="toctree-l3"><a class="reference internal" href="OlderThan.html">Valdi\Validator\OlderThan</a></li>
@@ -111,13 +114,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -156,7 +158,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/DateTimeBetween.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/DateTimeBetween.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -205,9 +207,9 @@ can decide.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$date</strong> (<a class="reference internal" href="DateTime.html#DateTime" title="DateTime"><em>DateTime</em></a>) &#8211; </li>
-<li><strong>$datetimes</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$date</strong> (<a class="reference internal" href="DateTime.html#DateTime" title="DateTime"><em>DateTime</em></a>) – </li>
+<li><strong>$datetimes</strong> – </li>
+<li><strong>$parameters</strong> – </li>
 </ul>
 </td>
 </tr>
@@ -224,7 +226,7 @@ can decide.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
 </ul>
 </td>
 </tr>
@@ -244,8 +246,8 @@ can decide.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$parameters</strong> (<em>array</em>) &#8211; the parameters</li>
-<li><strong>$format</strong> (<em>string</em>) &#8211; the date time format</li>
+<li><strong>$parameters</strong> (<em>array</em>) – the parameters</li>
+<li><strong>$format</strong> (<em>string</em>) – the date time format</li>
 </ul>
 </td>
 </tr>
@@ -265,8 +267,8 @@ can decide.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$value</strong> – </li>
+<li><strong>$parameters</strong> – </li>
 </ul>
 </td>
 </tr>
@@ -283,16 +285,16 @@ can decide.</p>
 <dl class="method">
 <dt id="DateTimeBetween::validateParameterCount">
 <code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#DateTimeBetween::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don&#8217;t fulfill the expected
+<dd><p>Throws an exception if the parameters don’t fulfill the expected
 parameter count.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+<li><strong>$name</strong> (<em>string</em>) – the name of the validator</li>
+<li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
 </ul>
 </td>
 </tr>
@@ -323,7 +325,7 @@ parameter count.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

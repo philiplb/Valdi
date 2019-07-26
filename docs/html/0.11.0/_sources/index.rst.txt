@@ -31,19 +31,19 @@ Contents:
 
     api/RulesBuilder
     api/ValidationException
-    api/RulesBuilder
-    api/ValidationException
+    api/Validator
+    api/ValidatorException
+
     api/Validator/AbstractArray
     api/Validator/AbstractFilter
     api/Validator/AbstractParametrizedValidator
     api/Validator/Boolean
+    api/Validator/Contains
     api/Validator/DateTime
     api/Validator/InSet
     api/Validator/OrCombine
     api/Validator/Required
     api/Validator/ValidatorInterface
-    api/Validator
-    api/ValidatorException
 
 Indices and tables
 ==================

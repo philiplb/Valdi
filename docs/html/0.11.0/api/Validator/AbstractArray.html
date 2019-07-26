@@ -30,9 +30,12 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../../index.html"/>
         <link rel="next" title="Valdi\Validator\Collection" href="Collection.html"/>
-        <link rel="prev" title="Valdi\ValidationException" href="../ValidationException.html"/> 
+        <link rel="prev" title="Valdi\ValidatorException" href="../ValidatorException.html"/> 
 
   
   <script src="../../_static/js/modernizr.min.js"></script>
@@ -91,9 +94,9 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator\AbstractArray</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Valdi\Validator\AbstractArray</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="Collection.html">Valdi\Validator\Collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Nested.html">Valdi\Validator\Nested</a></li>
 </ul>
@@ -101,13 +104,12 @@
 <li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -142,7 +144,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/AbstractArray.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/AbstractArray.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -180,9 +182,9 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$values</strong> (<em>mixed</em>) &#8211; the potential array values to check</li>
-<li><strong>$validator</strong> (<a class="reference internal" href="../Validator.html#Validator" title="Validator"><em>Validator</em></a>) &#8211; the validator to check with</li>
-<li><strong>$rules</strong> (<em>array</em>) &#8211; the rules which the array data must fulfill</li>
+<li><strong>$values</strong> (<em>mixed</em>) – the potential array values to check</li>
+<li><strong>$validator</strong> (<a class="reference internal" href="../Validator.html#Validator" title="Validator"><em>Validator</em></a>) – the validator to check with</li>
+<li><strong>$rules</strong> (<em>array</em>) – the rules which the array data must fulfill</li>
 </ul>
 </td>
 </tr>
@@ -202,8 +204,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$value</strong> – </li>
+<li><strong>$parameters</strong> – </li>
 </ul>
 </td>
 </tr>
@@ -239,7 +241,7 @@
         <a href="Collection.html" class="btn btn-neutral float-right" title="Valdi\Validator\Collection" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../ValidationException.html" class="btn btn-neutral" title="Valdi\ValidationException" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../ValidatorException.html" class="btn btn-neutral" title="Valdi\ValidatorException" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -248,7 +250,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

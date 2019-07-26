@@ -30,9 +30,12 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../index.html"/>
         <link rel="next" title="Valdi\ValidatorException" href="ValidatorException.html"/>
-        <link rel="prev" title="Valdi\Validator\ValidatorInterface" href="Validator/ValidatorInterface.html"/> 
+        <link rel="prev" title="Valdi\ValidationException" href="ValidationException.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -91,19 +94,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validator/Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -138,7 +140,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/Validator.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/Validator.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -171,7 +173,7 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$validators</strong> (<em>array</em>) &#8211; the validators to load, key = name, value = classname within the namespace &#8220;ValdiValidator&#8221;</li>
+<li><strong>$validators</strong> (<em>array</em>) – the validators to load, key = name, value = classname within the namespace “ValdiValidator”</li>
 </ul>
 </td>
 </tr>
@@ -188,9 +190,9 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$validator</strong> (<em>string</em>) &#8211; the validator to use</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the validation parameters, depending on the validator</li>
-<li><strong>$value</strong> (<em>string</em>) &#8211; the value to validate</li>
+<li><strong>$validator</strong> (<em>string</em>) – the validator to use</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) – the validation parameters, depending on the validator</li>
+<li><strong>$value</strong> (<em>string</em>) – the value to validate</li>
 </ul>
 </td>
 </tr>
@@ -216,8 +218,8 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the new validator.</li>
-<li><strong>$validator</strong> (<a class="reference internal" href="Validator/ValidatorInterface.html#ValidatorInterface" title="ValidatorInterface"><em>ValidatorInterface</em></a>) &#8211; the validator to add</li>
+<li><strong>$name</strong> (<em>string</em>) – the name of the new validator.</li>
+<li><strong>$validator</strong> (<a class="reference internal" href="Validator/ValidatorInterface.html#ValidatorInterface" title="ValidatorInterface"><em>ValidatorInterface</em></a>) – the validator to add</li>
 </ul>
 </td>
 </tr>
@@ -234,8 +236,8 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$rules</strong> (<em>array</em>) &#8211; the validation rules</li>
-<li><strong>$value</strong> (<em>string</em>) &#8211; the value to validate</li>
+<li><strong>$rules</strong> (<em>array</em>) – the validation rules</li>
+<li><strong>$value</strong> (<em>string</em>) – the value to validate</li>
 </ul>
 </td>
 </tr>
@@ -255,12 +257,12 @@ with it.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$rules</strong> (<em>array</em>) &#8211; the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is an array with the validator name as first element and parameters as following elements; example: array(&#8216;a&#8217; =&gt; array(array(&#8216;required&#8217;)), &#8216;b&#8217; =&gt; array(array(&#8216;min&#8217;, 1)))</li>
-<li><strong>$data</strong> (<em>array</em>) &#8211; the data to validate as a map</li>
+<li><strong>$rules</strong> (<em>array</em>) – the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is an array with the validator name as first element and parameters as following elements; example: array(‘a’ =&gt; array(array(‘required’)), ‘b’ =&gt; array(array(‘min’, 1)))</li>
+<li><strong>$data</strong> (<em>array</em>) – the data to validate as a map</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array&lt;string,boolean|array&gt; the validation result having the keys &#8220;valid&#8221; (true or false) and the key &#8220;errors&#8221; containing all failed fields as keys with arrays of the failed validator names; example where the field &#8220;b&#8221; from the above sample failed due to the min validator: array(&#8216;valid&#8217; =&gt; false, errors =&gt; array(&#8216;b&#8217; =&gt; array(&#8216;min&#8217;))) the &#8220;or&#8221; validator doesn&#8217;t return a single string on validation error; instead, it returns an array listing all failed validators of it: array(&#8216;or&#8217; =&gt; array(&#8216;url&#8217;, &#8216;email&#8217;)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">array&lt;string,boolean|array&gt; the validation result having the keys “valid” (true or false) and the key “errors” containing all failed fields as keys with arrays of the failed validator names; example where the field “b” from the above sample failed due to the min validator: array(‘valid’ =&gt; false, errors =&gt; array(‘b’ =&gt; array(‘min’))) the “or” validator doesn’t return a single string on validation error; instead, it returns an array listing all failed validators of it: array(‘or’ =&gt; array(‘url’, ‘email’)</p>
 </td>
 </tr>
 </tbody>
@@ -281,7 +283,7 @@ with it.</p>
         <a href="ValidatorException.html" class="btn btn-neutral float-right" title="Valdi\ValidatorException" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="Validator/ValidatorInterface.html" class="btn btn-neutral" title="Valdi\Validator\ValidatorInterface" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ValidationException.html" class="btn btn-neutral" title="Valdi\ValidationException" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -290,7 +292,7 @@ with it.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

@@ -5,7 +5,6 @@ Valdi\\Validator\\AbstractComparator
 .. toctree::
 
    Between
-   Contains
    LengthBetween
    Max
    MaxLength

@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../genindex.html"/>
+        <link rel="search" title="Search" href="../../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../../index.html"/>
         <link rel="up" title="Valdi\Validator\AbstractComparator" href="AbstractComparator.html"/>
         <link rel="next" title="Valdi\Validator\MaxLength" href="MaxLength.html"/>
@@ -92,16 +95,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="AbstractComparator.html">Valdi\Validator\AbstractComparator</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="Between.html">Valdi\Validator\Between</a></li>
-<li class="toctree-l3"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l3"><a class="reference internal" href="LengthBetween.html">Valdi\Validator\LengthBetween</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="">Valdi\Validator\Max</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Valdi\Validator\Max</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MaxLength.html">Valdi\Validator\MaxLength</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Min.html">Valdi\Validator\Min</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MinLength.html">Valdi\Validator\MinLength</a></li>
@@ -113,13 +115,12 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -158,7 +159,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../_sources/api/Validator/Max.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/api/Validator/Max.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -197,8 +198,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$value</strong> – </li>
+<li><strong>$parameters</strong> – </li>
 </ul>
 </td>
 </tr>
@@ -229,8 +230,8 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> &#8211; </li>
-<li><strong>$parameters</strong> &#8211; </li>
+<li><strong>$value</strong> – </li>
+<li><strong>$parameters</strong> – </li>
 </ul>
 </td>
 </tr>
@@ -247,16 +248,16 @@
 <dl class="method">
 <dt id="Max::validateParameterCount">
 <code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Max::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don&#8217;t fulfill the expected
+<dd><p>Throws an exception if the parameters don’t fulfill the expected
 parameter count.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) &#8211; the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) &#8211; the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) &#8211; the parameters</li>
+<li><strong>$name</strong> (<em>string</em>) – the name of the validator</li>
+<li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
+<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
 </ul>
 </td>
 </tr>
@@ -287,7 +288,7 @@ parameter count.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

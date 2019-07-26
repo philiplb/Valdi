@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../index.html"/>
         <link rel="next" title="Extended Features" href="extendedfeatures.html"/>
         <link rel="prev" title="Getting Started" href="gettingstarted.html"/> 
@@ -84,7 +87,7 @@
                 <p class="caption"><span class="caption-text">Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Validators</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Validators</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#basics-and-miscellaneous">Basics and Miscellaneous</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#boolean">boolean</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#collection">collection</a></li>
@@ -137,19 +140,18 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -184,7 +186,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/manual/validators.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/manual/validators.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -208,34 +210,40 @@ values:</p>
 <ul class="simple">
 <li>true</li>
 <li>false</li>
-<li>&#8216;true&#8217;</li>
-<li>&#8216;false&#8217;</li>
+<li>‘true’</li>
+<li>‘false’</li>
 <li>1</li>
 <li>0</li>
-<li>&#8216;1&#8217;</li>
-<li>&#8216;0&#8217;</li>
-<li>&#8216;on&#8217;</li>
-<li>&#8216;off&#8217;</li>
-<li>&#8216;yes&#8217;</li>
-<li>&#8216;no&#8217;</li>
+<li>‘1’</li>
+<li>‘0’</li>
+<li>‘on’</li>
+<li>‘off’</li>
+<li>‘yes’</li>
+<li>‘no’</li>
 </ul>
 </div>
 <div class="section" id="collection">
 <h3>collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
 <p>Validator to check an array value fulfilling another validator having a ruleset.</p>
 <p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index. Example:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
-<span class="x">    &#39;a&#39; =&gt; [&#39;one&#39;, 2, &#39;three]</span>
+<span class="x">    &#39;a&#39; =&gt; [&#39;one&#39;, 2, &#39;three&#39;]</span>
 <span class="x">];</span>
-<span class="x">$rules = [</span>
-<span class="x">    &#39;a&#39; =&gt; [[&#39;collection&#39;, $validator, [[&#39;integer&#39;]]]]</span>
-<span class="x">];</span>
+<span class="x">$builder = RulesBuilder::create();</span>
+<span class="x">$itemRules = $builder</span>
+<span class="x">    -&gt;addRule(&#39;integer&#39;)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$rules = $builder</span>
+<span class="x">    -&gt;addFieldRule(&#39;a&#39;, $validator, $itemRules)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
 <span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
 </pre></div>
 </div>
 <p>This results in the following validation result:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
 <span class="x">    &#39;valid&#39; =&gt; false,</span>
 <span class="x">    &#39;errors&#39; =&gt; [</span>
 <span class="x">        &#39;a&#39; =&gt; [[&#39;collection&#39; =&gt; [1 =&gt; [&#39;integer&#39;], 3 =&gt; [&#39;integer&#39;]]]]</span>
@@ -246,25 +254,33 @@ values:</p>
 <p><strong>Parameters</strong></p>
 <ul class="simple">
 <li>validator: the Validator or subclass instance which will execute the values validations</li>
-<li>rules: the rules the array values must fulfill</li>
+<li>rules: the rules the array values must fulfill, the RulesBuilder can be used of course</li>
 </ul>
 </div>
 <div class="section" id="nested">
 <h3>nested<a class="headerlink" href="#nested" title="Permalink to this headline">¶</a></h3>
 <p>Validator to check an value being again an associative array fulfilling another validator having its own set of rules.</p>
 <p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with the nested validation. Example:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; [&#39;b&#39; =&gt; &#39;foo&#39;]</span>
 <span class="x">];</span>
-<span class="x">$rules = [</span>
-<span class="x">    &#39;a&#39; =&gt; [[&#39;nested&#39;, $validator, [&#39;b&#39; =&gt; [[&#39;integer&#39;], [&#39;required&#39;]], &#39;c&#39; =&gt; [[&#39;required&#39;]]]]]</span>
-<span class="x">];</span>
+<span class="x">$builder = RulesBuilder::create();</span>
+<span class="x">$nestedRules = $builder</span>
+<span class="x">    -&gt;addFieldRule(&#39;b&#39;, &#39;integer&#39;)</span>
+<span class="x">    -&gt;addFieldRule(&#39;b&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;addFieldRule(&#39;c&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$rules = $builder</span>
+<span class="x">    -&gt;addFieldRule(&#39;a&#39;, &#39;nested&#39;, $validator, $nestedRules)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
 <span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
 </pre></div>
 </div>
 <p>This results in the following validation result:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
 <span class="x">    &#39;valid&#39; =&gt; false,</span>
 <span class="x">    &#39;errors&#39; =&gt; [</span>
 <span class="x">        &#39;a&#39; =&gt; [[&#39;nested&#39; =&gt; [&#39;b&#39; =&gt; [&#39;integer&#39;], &#39;c&#39; =&gt; [&#39;integer&#39;, &#39;required&#39;]]]]</span>
@@ -275,7 +291,7 @@ values:</p>
 <p><strong>Parameters</strong></p>
 <ul class="simple">
 <li>validator: the Validator or subclass instance which will execute the values validations</li>
-<li>rules: the rules the associative array values must fulfill</li>
+<li>rules: the rules the associative array values must fulfill, the RulesBuilder can be used of course</li>
 </ul>
 </div>
 <div class="section" id="inset">
@@ -293,20 +309,21 @@ of the most used validators.</p>
 </div>
 <div class="section" id="or">
 <h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
-<p>Validator to combine other validators with a logical &#8220;or&#8221;.</p>
+<p>Validator to combine other rulesets with a logical “or”.</p>
 <p><strong>Attention</strong>: The error result of this validator is not just a string, but an array. Example:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; &#39;invalid&#39;</span>
 <span class="x">];</span>
-<span class="x">$rules = [</span>
-<span class="x">    &#39;a&#39; =&gt; [[&#39;or&#39;, $validator, [&#39;email&#39;], [&#39;url&#39;]]]</span>
-<span class="x">];</span>
+<span class="x">$builder = RulesBuilder::create();</span>
+<span class="x">$emailRules = $builder-&gt;addRule(&#39;email&#39;)-&gt;build();</span>
+<span class="x">$urlRules = $builder-&gt;addRule(&#39;url&#39;)-&gt;build();</span>
+<span class="x">$rules = $builder-&gt;addFieldRule(&#39;a&#39;, &#39;or&#39;, $validator, $emailRules, $urlRules);</span>
 <span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
 </pre></div>
 </div>
 <p>This results in the following validation result:</p>
-<div class="highlight-php"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
 <span class="x">    &#39;valid&#39; =&gt; false,</span>
 <span class="x">    &#39;errors&#39; =&gt; [</span>
 <span class="x">        &#39;a&#39; =&gt; [[&#39;or&#39; =&gt; [&#39;email&#39;, &#39;url&#39;]]]</span>
@@ -318,13 +335,14 @@ of the most used validators.</p>
 <ul class="simple">
 <li>validator: the Validator or subclass instance which will execute the child validations</li>
 <li>rules 1: array of rules to combine; like
-[[&#8216;required&#8217;], [&#8216;between&#8217;, 9999, 100000]]</li>
+[[‘required’], [‘between’, 9999, 100000]]</li>
 <li>rules 2: array of rules to combine; like
-[[&#8216;required&#8217;], [&#8216;between&#8217;, 9999, 100000]]</li>
+[[‘required’], [‘between’, 9999, 100000]]</li>
 </ul>
-<p>You can add as many more rules parameters as you need.</p>
+<p>You can add as many more rules parameters as you need. And to construct the actual rules,
+the RulesBuilder can be used of course.</p>
 </div>
-<p>You can add as many more rules parameters as you need.</p>
+<p>the RulesBuilder can be used of course.</p>
 </div>
 <div class="section" id="strings">
 <h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
@@ -566,7 +584,7 @@ Y-m-d H:i:s</li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

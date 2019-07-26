@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Valdi 0.11.0 documentation" href="../index.html"/>
         <link rel="next" title="Valdi\ValidationException" href="ValidationException.html"/>
         <link rel="prev" title="Extended Features" href="../manual/extendedfeatures.html"/> 
@@ -89,21 +92,20 @@
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\RulesBuilder</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Valdi\RulesBuilder</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ValidationException.html">Valdi\ValidationException</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Valdi\RulesBuilder</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ValidatorException.html">Valdi\ValidatorException</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Validator/Contains.html">Valdi\Validator\Contains</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/InSet.html">Valdi\Validator\InSet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/Required.html">Valdi\Validator\Required</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Validator.html">Valdi\Validator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ValidatorException.html">Valdi\ValidatorException</a></li>
 </ul>
 
             
@@ -138,7 +140,7 @@
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/api/RulesBuilder.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/api/RulesBuilder.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -182,21 +184,21 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::addRule">
-<code class="descname">addRule</code><span class="sig-paren">(</span><em>$field</em>, <em>$rule</em><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::addRule" title="Permalink to this definition">¶</a></dt>
-<dd><p>Adds a rule to the set. This function takes a variable amount
+<dt id="RulesBuilder::addFieldRule">
+<code class="descname">addFieldRule</code><span class="sig-paren">(</span><em>$field</em>, <em>$rule</em><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::addFieldRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a rule for a field to the set. This function takes a variable amount
 of parameters in order to cover the rule parameters. Example for a rule
 without parameter:
-addRule(&#8216;myField&#8217;, &#8216;required&#8217;)
+addFieldRule(‘myField’, ‘required’)
 Example for a rule with two parameters:
-addRule(&#8216;myField&#8217;, &#8216;between&#8217;, 3, 7)</p>
+addFieldRule(‘myField’, ‘between’, 3, 7)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$field</strong> (<em>string</em>) &#8211; the field for the rule</li>
-<li><strong>$rule</strong> (<em>string</em>) &#8211; the rule to add</li>
+<li><strong>$field</strong> (<em>string</em>) – the field for the rule</li>
+<li><strong>$rule</strong> (<em>string</em>) – the rule to add</li>
 </ul>
 </td>
 </tr>
@@ -208,9 +210,35 @@ addRule(&#8216;myField&#8217;, &#8216;between&#8217;, 3, 7)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::getRules">
-<code class="descname">getRules</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::getRules" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the created rules.</p>
+<dt id="RulesBuilder::addRule">
+<code class="descname">addRule</code><span class="sig-paren">(</span><em>$rule</em><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::addRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a rule to the set. This function takes a variable amount
+of parameters in order to cover the rule parameters. Example for a rule
+without parameter:
+addRule(‘required’)
+Example for a rule with two parameters:
+addRule(‘between’, 3, 7)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>$rule</strong> (<em>string</em>) – the rule to add</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RulesBuilder the instance of the called RulesBuilder in order to chain the rules creation</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="RulesBuilder::build">
+<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the created rules. Afterwards, the RulesBuilder is emptied and ready
+to be used again.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -244,7 +272,7 @@ addRule(&#8216;myField&#8217;, &#8216;between&#8217;, 3, 7)</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2016, Philip Lehmann-Böhm.
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
 
     </p>
   </div>

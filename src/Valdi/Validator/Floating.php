@@ -11,8 +11,6 @@
 
 namespace Valdi\Validator;
 
-use const FILTER_VALIDATE_FLOAT;
-
 /**
  * Validator for floats. It's not named "Float" as it is a reserved class name
  * in PHP7.
@@ -25,7 +23,7 @@ class Floating extends AbstractFilter
      */
     protected function getFilter()
     {
-        return FILTER_VALIDATE_FLOAT;
+        return \FILTER_VALIDATE_FLOAT;
     }
 
     /**

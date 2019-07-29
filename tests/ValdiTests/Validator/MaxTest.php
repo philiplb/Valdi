@@ -11,9 +11,10 @@
 
 namespace ValdiTests\Validator;
 
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Max;
 
-class MaxTest extends \PHPUnit_Framework_TestCase {
+class MaxTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Max();

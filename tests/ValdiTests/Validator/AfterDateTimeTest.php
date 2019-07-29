@@ -11,10 +11,12 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\AfterDateTime;
 use Valdi\ValidationException;
 
-class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
+class AfterDateTimeTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new AfterDateTime();
@@ -38,7 +40,7 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"afterDateTime" expects a date of the format "asd".';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 
@@ -49,7 +51,7 @@ class AfterDateTimeTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"afterDateTime" expects at least 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }

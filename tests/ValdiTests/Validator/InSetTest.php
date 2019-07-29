@@ -11,10 +11,12 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\InSet;
 use Valdi\ValidationException;
 
-class InSetTest extends \PHPUnit_Framework_TestCase {
+class InSetTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new InSet();
@@ -34,7 +36,7 @@ class InSetTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"set" expects at least one parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }

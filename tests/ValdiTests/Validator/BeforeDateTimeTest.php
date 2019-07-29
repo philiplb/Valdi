@@ -11,9 +11,10 @@
 
 namespace ValdiTests\Validator;
 
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\BeforeDateTime;
 
-class BeforeDateTimeTest extends \PHPUnit_Framework_TestCase {
+class BeforeDateTimeTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new BeforeDateTime();

@@ -11,11 +11,13 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\ValidationException;
 use Valdi\Validator;
 use Valdi\Validator\Collection;
 
-class CollectionTest extends \PHPUnit_Framework_TestCase {
+class CollectionTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Collection();
@@ -42,7 +44,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
             $expected = 'Expecting two parameters.';
             $read = $e->getMessage();
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 
@@ -53,7 +55,7 @@ class CollectionTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = 'Expecting the first parameter to be an instance of a Validator.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 

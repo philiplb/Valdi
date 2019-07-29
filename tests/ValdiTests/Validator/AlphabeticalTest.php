@@ -11,9 +11,10 @@
 
 namespace ValdiTests\Validator;
 
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Alphabetical;
 
-class AlphabeticalTest extends \PHPUnit_Framework_TestCase {
+class AlphabeticalTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Alphabetical();

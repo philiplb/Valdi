@@ -11,9 +11,10 @@
 
 namespace ValdiTests\Validator;
 
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\LengthBetween;
 
-class LengthBetweenTest extends \PHPUnit_Framework_TestCase {
+class LengthBetweenTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new LengthBetween();

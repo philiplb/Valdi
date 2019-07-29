@@ -11,12 +11,14 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\RulesBuilder;
 use Valdi\Validator\OrCombine;
 use Valdi\ValidationException;
 use Valdi\Validator;
 
-class OrCombineTest extends \PHPUnit_Framework_TestCase {
+class OrCombineTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $combine = new OrCombine();
@@ -41,7 +43,7 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"or" expects at least 3 parameters.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 
@@ -52,7 +54,7 @@ class OrCombineTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"or" expects the first parameter to be a Validator or a subclass of it.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 

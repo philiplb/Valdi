@@ -11,6 +11,8 @@
 
 namespace Valdi\Validator;
 
+use const FILTER_VALIDATE_EMAIL;
+
 /**
  * Validator for e-mail addresses.
  */
@@ -20,7 +22,7 @@ class Email extends AbstractFilter {
      * {@inheritdoc}
      */
     public function getFilter() {
-        return \FILTER_VALIDATE_EMAIL;
+        return FILTER_VALIDATE_EMAIL;
     }
 
     /**

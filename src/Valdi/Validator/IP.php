@@ -11,6 +11,8 @@
 
 namespace Valdi\Validator;
 
+use const FILTER_VALIDATE_IP;
+
 /**
  * Validator for IPs.
  */
@@ -20,7 +22,7 @@ class IP extends AbstractFilter {
      * {@inheritdoc}
      */
     protected function getFilter() {
-        return \FILTER_VALIDATE_IP;
+        return FILTER_VALIDATE_IP;
     }
 
     /**

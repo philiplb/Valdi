@@ -11,10 +11,12 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Regexp;
 use Valdi\ValidationException;
 
-class RegexpTest extends \PHPUnit_Framework_TestCase {
+class RegexpTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new Regexp();
@@ -34,7 +36,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 
@@ -45,7 +47,7 @@ class RegexpTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"regexp" expects 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }

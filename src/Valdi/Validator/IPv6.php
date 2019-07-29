@@ -11,6 +11,9 @@
 
 namespace Valdi\Validator;
 
+use const FILTER_FLAG_IPV6;
+use const FILTER_VALIDATE_IP;
+
 /**
  * Validator for floats.
  */
@@ -20,14 +23,14 @@ class IPv6 extends AbstractFilter {
      * {@inheritdoc}
      */
     protected function getFilter() {
-        return \FILTER_VALIDATE_IP;
+        return FILTER_VALIDATE_IP;
     }
 
     /**
      * {@inheritdoc}
      */
     protected function getFlags() {
-        return \FILTER_FLAG_IPV6;
+        return FILTER_FLAG_IPV6;
     }
 
     /**

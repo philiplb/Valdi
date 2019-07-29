@@ -11,8 +11,10 @@
 
 namespace Valdi;
 
+use Exception;
+
 /**
  * Exception for failures within a validator.
  */
-class ValidationException extends \Exception {
+class ValidationException extends Exception {
 }

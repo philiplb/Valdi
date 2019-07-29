@@ -11,10 +11,12 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\OlderThan;
 use Valdi\ValidationException;
 
-class OlderThanTest extends \PHPUnit_Framework_TestCase {
+class OlderThanTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new OlderThan();
@@ -36,7 +38,7 @@ class OlderThanTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"olderThan" expects at least 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }

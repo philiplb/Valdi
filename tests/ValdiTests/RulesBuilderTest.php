@@ -11,10 +11,11 @@
 
 namespace ValdiTests;
 
+use PHPUnit_Framework_TestCase;
 use Valdi\RulesBuilder;
 use Valdi\Validator;
 
-class RulesBuilderTest extends \PHPUnit_Framework_TestCase {
+class RulesBuilderTest extends PHPUnit_Framework_TestCase {
 
     public function testCreate() {
         $read = RulesBuilder::create();

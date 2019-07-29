@@ -11,10 +11,12 @@
 
 namespace ValdiTests\Validator;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator\YoungerThan;
 use Valdi\ValidationException;
 
-class YoungerThanTest extends \PHPUnit_Framework_TestCase {
+class YoungerThanTest extends PHPUnit_Framework_TestCase {
 
     public function testValidate() {
         $validator = new YoungerThan();
@@ -36,7 +38,7 @@ class YoungerThanTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"youngerThan" expects at least 1 parameter.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }

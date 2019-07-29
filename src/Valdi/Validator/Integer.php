@@ -11,6 +11,8 @@
 
 namespace Valdi\Validator;
 
+use const FILTER_VALIDATE_INT;
+
 /**
  * Validator for integers.
  */
@@ -20,7 +22,7 @@ class Integer extends AbstractFilter {
      * {@inheritdoc}
      */
     protected function getFilter() {
-        return \FILTER_VALIDATE_INT;
+        return FILTER_VALIDATE_INT;
     }
 
     /**

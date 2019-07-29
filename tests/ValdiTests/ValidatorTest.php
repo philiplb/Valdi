@@ -11,10 +11,12 @@
 
 namespace ValdiTests;
 
+use Exception;
+use PHPUnit_Framework_TestCase;
 use Valdi\Validator;
 use Valdi\ValidatorException;
 
-class RequiredTest extends \PHPUnit_Framework_TestCase {
+class RequiredTest extends PHPUnit_Framework_TestCase {
 
     public function testIsValid() {
         $validator = new Validator();
@@ -92,7 +94,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"invalid" not found as available validator.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
     }
@@ -109,7 +111,7 @@ class RequiredTest extends \PHPUnit_Framework_TestCase {
             $read = $e->getMessage();
             $expected = '"test" not found as available validator.';
             $this->assertSame($read, $expected);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->fail();
         }
 

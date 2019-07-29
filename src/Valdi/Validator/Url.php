@@ -11,6 +11,8 @@
 
 namespace Valdi\Validator;
 
+use const FILTER_VALIDATE_URL;
+
 /**
  * Validator for Urls.
  */
@@ -20,7 +22,7 @@ class Url extends AbstractFilter {
      * {@inheritdoc}
      */
     public function getFilter() {
-        return \FILTER_VALIDATE_URL;
+        return FILTER_VALIDATE_URL;
     }
 
     /**

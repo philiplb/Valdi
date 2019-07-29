@@ -41,7 +41,7 @@ The documentation is available for each version:
 ## Build Status
 
 [![Build Status](https://travis-ci.org/philiplb/Valdi.svg?branch=master)](https://travis-ci.org/philiplb/Valdi)
-[![Coverage Status](https://coveralls.io/repos/github/philiplb/Valdi/badge.svg?branch=master)](https://coveralls.io/github/philiplb/Valdi?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/philiplb/CRUDlex/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/philiplb/CRUDlex/?branch=master)
 
 ## Code Quality
 

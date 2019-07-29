@@ -16,19 +16,22 @@ use const FILTER_VALIDATE_INT;
 /**
  * Validator for integers.
  */
-class Integer extends AbstractFilter {
+class Integer extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function getFilter() {
+    protected function getFilter()
+    {
         return FILTER_VALIDATE_INT;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'integer';
     }
 }

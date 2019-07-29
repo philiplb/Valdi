@@ -13,13 +13,16 @@ namespace ValdiTests;
 
 use Valdi\Validator\ValidatorInterface;
 
-class TestValidator implements ValidatorInterface {
+class TestValidator implements ValidatorInterface
+{
 
-    public function isValid($value, array $parameters) {
-       return $value % 2 == 0;
+    public function isValid($value, array $parameters)
+    {
+        return $value % 2 == 0;
     }
 
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'test';
     }
 

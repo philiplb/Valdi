@@ -16,12 +16,14 @@ use Valdi\Validator;
 /**
  * Validator for array values fulfilling a rule.
  */
-class Collection extends AbstractArray {
+class Collection extends AbstractArray
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function isValidArray($values, Validator $validator, array $rules) {
+    protected function isValidArray($values, Validator $validator, array $rules)
+    {
         if (!is_array($values)) {
             $this->invalidDetails = $values;
             return false;
@@ -40,7 +42,8 @@ class Collection extends AbstractArray {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return ['collection' => $this->invalidDetails];
     }
 }

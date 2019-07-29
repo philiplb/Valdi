@@ -16,19 +16,22 @@ use const FILTER_VALIDATE_EMAIL;
 /**
  * Validator for e-mail addresses.
  */
-class Email extends AbstractFilter {
+class Email extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    public function getFilter() {
+    public function getFilter()
+    {
         return FILTER_VALIDATE_EMAIL;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'email';
     }
 }

@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * The interface each validator has to implement.
  */
-interface ValidatorInterface {
+interface ValidatorInterface
+{
 
     /**
      * Validates the given value.

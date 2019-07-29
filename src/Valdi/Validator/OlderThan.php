@@ -17,7 +17,8 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class OlderThan extends AbstractDateTimeComparator {
+class OlderThan extends AbstractDateTimeComparator
+{
 
     /**
      * Holds whether to parse the parameters as \DateTimes so the child class
@@ -33,7 +34,8 @@ class OlderThan extends AbstractDateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters) {
+    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters)
+    {
         $now = new \DateTime();
         return $now->getTimestamp() - $date->getTimestamp() > $parameters[0];
     }

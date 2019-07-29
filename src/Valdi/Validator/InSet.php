@@ -16,12 +16,14 @@ use Valdi\ValidationException;
 /**
  * Validator for values being in a set.
  */
-class InSet implements ValidatorInterface {
+class InSet implements ValidatorInterface
+{
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         if (count($parameters) === 0) {
             throw new ValidationException('"set" expects at least one parameter.');
         }
@@ -32,7 +34,8 @@ class InSet implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'inSet';
     }
 }

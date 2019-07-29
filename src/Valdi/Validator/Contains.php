@@ -16,7 +16,8 @@ use Valdi\ValidationException;
 /**
  * Validator for strings containing a substring.
  */
-class Contains implements ValidatorInterface {
+class Contains implements ValidatorInterface
+{
 
     /**
      * Throws an exception if the parameters don't fulfill the expected
@@ -28,7 +29,8 @@ class Contains implements ValidatorInterface {
      * @throws ValidationException
      * thrown if less than one parameter is given
      */
-    protected function validateParameterCount($parameterAmount) {
+    protected function validateParameterCount($parameterAmount)
+    {
         if ($parameterAmount < 1) {
             throw new ValidationException('"contains" expects at least 1 parameter.');
         }
@@ -44,18 +46,20 @@ class Contains implements ValidatorInterface {
      * @param array $parameters
      * the other parameters the validator need
      */
-    protected function adjustCaseInsensitive(&$value, &$parameters) {
+    protected function adjustCaseInsensitive(&$value, &$parameters)
+    {
         $parameterAmount = count($parameters);
         if ($parameterAmount == 1 || $parameterAmount > 1 && $parameters[1]) {
             $parameters[0] = strtolower($parameters[0]);
-            $value         = strtolower($value);
+            $value = strtolower($value);
         }
     }
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         $parameterAmount = count($parameters);
 
         $this->validateParameterCount($parameterAmount);
@@ -67,7 +71,8 @@ class Contains implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'contains';
     }
 }

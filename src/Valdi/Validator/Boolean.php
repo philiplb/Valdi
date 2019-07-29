@@ -14,27 +14,37 @@ namespace Valdi\Validator;
 /**
  * Validator for booleans.
  */
-class Boolean implements ValidatorInterface {
+class Boolean implements ValidatorInterface
+{
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         return in_array($value, [
-            '', null,
-            true, false,
-            'true', 'false',
-            1, 0,
-            '1', '0',
-            'on', 'off',
-            'yes', 'no'
+            '',
+            null,
+            true,
+            false,
+            'true',
+            'false',
+            1,
+            0,
+            '1',
+            '0',
+            'on',
+            'off',
+            'yes',
+            'no'
         ], true);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'boolean';
     }
 }

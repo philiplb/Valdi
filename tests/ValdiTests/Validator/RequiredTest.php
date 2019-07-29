@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Required;
 
-class RequiredTest extends PHPUnit_Framework_TestCase {
+class RequiredTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Required();
 
         $this->assertTrue($validator->isValid('test', []));
@@ -25,7 +27,8 @@ class RequiredTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Required();
         $read = $validator->getInvalidDetails();
         $expected = 'required';

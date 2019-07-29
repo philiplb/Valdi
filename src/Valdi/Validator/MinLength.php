@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for strings of a min length.
  */
-class MinLength extends AbstractComparator {
+class MinLength extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,7 +25,8 @@ class MinLength extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         $length = strlen($value);
         return is_numeric($parameters[0]) && $length >= $parameters[0];
     }

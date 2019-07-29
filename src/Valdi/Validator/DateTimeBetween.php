@@ -16,7 +16,8 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class DateTimeBetween extends AbstractDateTimeComparator {
+class DateTimeBetween extends AbstractDateTimeComparator
+{
 
     /**
      * Holds the amount of parameters.
@@ -31,7 +32,8 @@ class DateTimeBetween extends AbstractDateTimeComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters) {
+    protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters)
+    {
         return $date > $datetimes[0] && $date < $datetimes[1];
     }
 

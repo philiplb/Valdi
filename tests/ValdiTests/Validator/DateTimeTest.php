@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\DateTime;
 
-class DateTimeTest extends PHPUnit_Framework_TestCase {
+class DateTimeTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new DateTime();
 
         $this->assertTrue($validator->isValid('2016-02-28 01:23:45', []));
@@ -29,7 +31,8 @@ class DateTimeTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new DateTime();
         $read = $validator->getInvalidDetails();
         $expected = 'dateTime';

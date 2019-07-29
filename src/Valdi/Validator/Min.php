@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for min values.
  */
-class Min extends AbstractComparator {
+class Min extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,7 +25,8 @@ class Min extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         $isAllNumeric = $this->isAllNumeric($value, $parameters[0]);
         return $isAllNumeric && $value >= $parameters[0];
     }

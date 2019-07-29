@@ -14,19 +14,22 @@ namespace Valdi\Validator;
 /**
  * Validator for required values.
  */
-class Required implements ValidatorInterface {
+class Required implements ValidatorInterface
+{
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         return !is_null($value) && $value !== '';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'required';
     }
 }

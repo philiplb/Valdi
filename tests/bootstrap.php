@@ -10,5 +10,5 @@
  */
 
 date_default_timezone_set('Europe/Berlin');
-$loader = require __DIR__.'/../vendor/autoload.php';
+$loader = require __DIR__ . '/../vendor/autoload.php';
 $loader->add('ValdiTests', __DIR__);

@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\LengthBetween;
 
-class LengthBetweenTest extends PHPUnit_Framework_TestCase {
+class LengthBetweenTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new LengthBetween();
 
         $this->assertTrue($validator->isValid('1', [1, 3]));
@@ -30,7 +32,8 @@ class LengthBetweenTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, [1, 2]));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new LengthBetween();
         $read = $validator->getInvalidDetails();
         $expected = 'lengthBetween';

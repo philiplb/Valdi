@@ -18,7 +18,8 @@ use Valdi\ValidationException;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator {
+abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator
+{
 
     /**
      * Holds the amount of parameters.
@@ -60,8 +61,9 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      * @return string
      * the date time format
      */
-    protected function getDateTimeFormat($parameters) {
-        $format          = 'Y-m-d H:i:s';
+    protected function getDateTimeFormat($parameters)
+    {
+        $format = 'Y-m-d H:i:s';
         $parametersCount = count($parameters);
         if ($parametersCount > $this->amountOfParameters) {
             $format = $parameters[$parametersCount - 1];
@@ -83,7 +85,8 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
      * @throws ValidationException
      * thrown if one of the parameters is not a date in the given format
      */
-    protected function getDateTimes(array $parameters, $format) {
+    protected function getDateTimes(array $parameters, $format)
+    {
         if (!$this->dateTimeParameters) {
             return [];
         }
@@ -91,7 +94,7 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
         for ($i = 0; $i < $this->amountOfParameters; ++$i) {
             $datetime = \DateTime::createFromFormat($format, $parameters[$i]);
             if ($datetime === false) {
-                throw new ValidationException('"'.$this->type.'" expects a date of the format "'.$format.'".');
+                throw new ValidationException('"' . $this->type . '" expects a date of the format "' . $format . '".');
             }
             $datetimes[] = $datetime;
         }
@@ -101,10 +104,11 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
 
         if (count($parameters) < $this->amountOfParameters) {
-            throw new ValidationException('"'.$this->type.'" expects at least '.$this->amountOfParameters.' parameter.');
+            throw new ValidationException('"' . $this->type . '" expects at least ' . $this->amountOfParameters . ' parameter.');
         }
 
         if (in_array($value, ['', null], true)) {
@@ -114,7 +118,7 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
         $format = $this->getDateTimeFormat($parameters);
 
         $datetimes = $this->getDateTimes($parameters, $format);
-        $date      = \DateTime::createFromFormat($format, $value);
+        $date = \DateTime::createFromFormat($format, $value);
         if ($date === false) {
             return false;
         }
@@ -125,7 +129,8 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return $this->type;
     }
 }

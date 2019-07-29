@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Value;
 
-class ValueTest extends PHPUnit_Framework_TestCase {
+class ValueTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Value();
 
         $this->assertTrue($validator->isValid(1, [1]));

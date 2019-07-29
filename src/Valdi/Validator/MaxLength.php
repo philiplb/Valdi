@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for strings of a max length.
  */
-class MaxLength extends AbstractComparator {
+class MaxLength extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,7 +25,8 @@ class MaxLength extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         return is_numeric($parameters[0]) && strlen($value) <= $parameters[0];
     }
 }

@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for values between.
  */
-class Between extends AbstractComparator {
+class Between extends AbstractComparator
+{
 
     /**
      * Holds the amount of parameters.
@@ -29,7 +30,8 @@ class Between extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         return $this->isAllNumeric($value, $parameters[0], $parameters[1])
             && $value >= $parameters[0]
             && $value <= $parameters[1];

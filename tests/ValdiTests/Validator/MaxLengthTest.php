@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\MaxLength;
 
-class MaxLengthTest extends PHPUnit_Framework_TestCase {
+class MaxLengthTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new MaxLength();
 
         $this->assertTrue($validator->isValid('1', [2]));

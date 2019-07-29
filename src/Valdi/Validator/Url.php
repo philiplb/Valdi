@@ -16,19 +16,22 @@ use const FILTER_VALIDATE_URL;
 /**
  * Validator for Urls.
  */
-class Url extends AbstractFilter {
+class Url extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    public function getFilter() {
+    public function getFilter()
+    {
         return FILTER_VALIDATE_URL;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'url';
     }
 }

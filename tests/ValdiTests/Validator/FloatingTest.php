@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Floating;
 
-class FloatTest extends PHPUnit_Framework_TestCase {
+class FloatTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Floating();
 
         $this->assertTrue($validator->isValid(1, []));
@@ -31,7 +33,8 @@ class FloatTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Floating();
         $read = $validator->getInvalidDetails();
         $expected = 'floating';

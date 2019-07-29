@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Slug;
 
-class SlugTest extends PHPUnit_Framework_TestCase {
+class SlugTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testSlug() {
+    public function testSlug()
+    {
         $validator = new Slug();
 
         $this->assertTrue($validator->isValid('test', []));

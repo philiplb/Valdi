@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for regular expressions.
  */
-class Regexp extends AbstractComparator {
+class Regexp extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,9 +25,10 @@ class Regexp extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         // Workaround for not using '@preg_match'.
-        $oldError    = error_reporting(0);
+        $oldError = error_reporting(0);
         $regexResult = preg_match($parameters[0], $value);
         error_reporting($oldError);
         return $regexResult === 1;

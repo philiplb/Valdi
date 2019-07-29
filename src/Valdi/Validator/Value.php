@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for equal values.
  */
-class Value extends AbstractComparator {
+class Value extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,7 +25,8 @@ class Value extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         return $value == $parameters[0];
     }
 }

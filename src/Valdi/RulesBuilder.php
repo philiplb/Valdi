@@ -14,7 +14,8 @@ namespace Valdi;
 /**
  * To ease the building of the rules array.
  */
-class RulesBuilder {
+class RulesBuilder
+{
 
     /**
      * Holds the rules under construction.
@@ -27,14 +28,16 @@ class RulesBuilder {
      * @return RulesBuilder
      * the new instance
      */
-    public static function create() {
+    public static function create()
+    {
         return new RulesBuilder();
     }
 
     /**
      * Constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->rules = [];
     }
 
@@ -55,7 +58,8 @@ class RulesBuilder {
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function addFieldRule($field, $rule) {
+    public function addFieldRule($field, $rule)
+    {
         if (!isset($this->rules[$field])) {
             $this->rules[$field] = [];
         }
@@ -83,7 +87,8 @@ class RulesBuilder {
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function addRule($rule) {
+    public function addRule($rule)
+    {
         $newRule = [$rule];
         $numArgs = func_num_args();
         for ($i = 1; $i < $numArgs; ++$i) {
@@ -100,7 +105,8 @@ class RulesBuilder {
      * @return array
      * the created rules
      */
-    public function build() {
+    public function build()
+    {
         $rules = $this->rules;
         $this->rules = [];
         return $rules;

@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Integer;
 
-class IntegerTest extends PHPUnit_Framework_TestCase {
+class IntegerTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Integer();
 
         $this->assertTrue($validator->isValid(1, []));
@@ -29,7 +31,8 @@ class IntegerTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Integer();
         $read = $validator->getInvalidDetails();
         $expected = 'integer';

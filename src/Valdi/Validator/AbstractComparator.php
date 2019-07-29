@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for comparing values.
  */
-abstract class AbstractComparator extends AbstractParametrizedValidator {
+abstract class AbstractComparator extends AbstractParametrizedValidator
+{
 
     /**
      * Holds the amount of parameters.
@@ -45,7 +46,8 @@ abstract class AbstractComparator extends AbstractParametrizedValidator {
      * @return boolean
      * true if all values are numeric
      */
-    protected function isAllNumeric() {
+    protected function isAllNumeric()
+    {
         foreach (func_get_args() as $value) {
             if (!is_numeric($value)) {
                 return false;
@@ -57,7 +59,8 @@ abstract class AbstractComparator extends AbstractParametrizedValidator {
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
 
         $this->validateParameterCount($this->type, $this->amountOfParameters, $parameters);
 
@@ -68,7 +71,8 @@ abstract class AbstractComparator extends AbstractParametrizedValidator {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return $this->type;
     }
 }

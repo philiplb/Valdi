@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Url;
 
-class UrlTest extends PHPUnit_Framework_TestCase {
+class UrlTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Url();
 
         $this->assertTrue($validator->isValid('http://www.philiplb.de', []));
@@ -32,7 +34,8 @@ class UrlTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Url();
         $read = $validator->getInvalidDetails();
         $expected = 'url';

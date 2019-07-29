@@ -16,7 +16,8 @@ namespace Valdi\Validator;
  * sequences of dashes and more alphanumerical values and ending with an
  * alphanumerical character.
  */
-class Slug extends Regexp {
+class Slug extends Regexp
+{
 
     /**
      * Holds the amount of parameters.
@@ -31,7 +32,8 @@ class Slug extends Regexp {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         $parameters = ['/^[a-z0-9][-a-z0-9]*[a-z0-9]+$/i'];
         return parent::isValidComparison($value, $parameters);
     }

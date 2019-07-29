@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\IPv4;
 
-class IPv4Test extends PHPUnit_Framework_TestCase {
+class IPv4Test extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new IPv4();
 
         $this->assertTrue($validator->isValid('127.0.0.1', []));
@@ -31,7 +33,8 @@ class IPv4Test extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new IPv4();
         $read = $validator->getInvalidDetails();
         $expected = 'ipv4';

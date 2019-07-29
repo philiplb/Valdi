@@ -15,23 +15,25 @@ use PHPUnit_Framework_TestCase;
 use Valdi\RulesBuilder;
 use Valdi\Validator;
 
-class RulesBuilderTest extends PHPUnit_Framework_TestCase {
+class RulesBuilderTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testCreate() {
+    public function testCreate()
+    {
         $read = RulesBuilder::create();
         $expected = 'Valdi\RulesBuilder';
         $this->assertSame(get_class($read), $expected);
     }
 
-    public function testRulesBuilding() {
+    public function testRulesBuilding()
+    {
         $read = RulesBuilder::create()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'inThePast')
             ->addFieldRule('a', 'min', 42)
             ->addFieldRule('c', 'slug')
             ->addFieldRule('b', 'between', 5, 17)
-            ->build()
-        ;
+            ->build();
         $expected = [
             'a' => [['required'], ['min', 42]],
             'b' => [['inThePast'], ['between', 5, 17]],
@@ -40,12 +42,12 @@ class RulesBuilderTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
-    public function testCreatedRules() {
+    public function testCreatedRules()
+    {
         $rules = RulesBuilder::create()
             ->addFieldRule('a', 'required')
             ->addFieldRule('b', 'min', 5)
-            ->build()
-        ;
+            ->build();
         $data = ['a' => 'abc', 'b' => 6];
         $validator = new Validator();
         $read = $validator->isValid($rules, $data);
@@ -56,14 +58,14 @@ class RulesBuilderTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
-    public function testCreatedCollectionRules() {
+    public function testCreatedCollectionRules()
+    {
         $validator = new Validator();
         $builder = RulesBuilder::create();
         $elementRules = $builder->addRule('min', 5)->build();
         $rules = $builder
             ->addFieldRule('a', 'collection', $validator, $elementRules)
-            ->build()
-        ;
+            ->build();
         $data = ['a' => [6, 7, 8]];
         $read = $validator->isValid($rules, $data);
         $expected = [

@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\InSet;
 use Valdi\ValidationException;
 
-class InSetTest extends PHPUnit_Framework_TestCase {
+class InSetTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new InSet();
 
         $this->assertTrue($validator->isValid('a', ['a']));
@@ -41,7 +43,8 @@ class InSetTest extends PHPUnit_Framework_TestCase {
         }
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new InSet();
         $read = $validator->getInvalidDetails();
         $expected = 'inSet';

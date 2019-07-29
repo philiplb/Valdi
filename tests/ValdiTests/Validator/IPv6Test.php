@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\IPv6;
 
-class IPv6Test extends PHPUnit_Framework_TestCase {
+class IPv6Test extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new IPv6();
 
         $this->assertTrue($validator->isValid('2001:0db8:0000:08d3:0000:8a2e:0070:7344', []));
@@ -34,7 +36,8 @@ class IPv6Test extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new IPv6();
         $read = $validator->getInvalidDetails();
         $expected = 'ipv6';

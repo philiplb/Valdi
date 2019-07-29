@@ -16,12 +16,14 @@ namespace Valdi\Validator;
  * For the format, see:
  * http://php.net/manual/en/datetime.createfromformat.php
  */
-class DateTime implements ValidatorInterface {
+class DateTime implements ValidatorInterface
+{
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         $format = 'Y-m-d H:i:s';
         if (count($parameters) > 0) {
             $format = $parameters[0];
@@ -33,7 +35,8 @@ class DateTime implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'dateTime';
     }
 }

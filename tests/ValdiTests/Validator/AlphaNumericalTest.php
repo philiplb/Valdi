@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\AlphaNumerical;
 
-class AlphaNumericalTest extends PHPUnit_Framework_TestCase {
+class AlphaNumericalTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new AlphaNumerical();
 
         $this->assertTrue($validator->isValid('test', []));

@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Regexp;
 use Valdi\ValidationException;
 
-class RegexpTest extends PHPUnit_Framework_TestCase {
+class RegexpTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Regexp();
 
         $this->assertTrue($validator->isValid('test', ['/t.st/']));

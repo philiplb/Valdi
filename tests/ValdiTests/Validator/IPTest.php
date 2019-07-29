@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\IP;
 
-class IPTest extends PHPUnit_Framework_TestCase {
+class IPTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new IP();
 
         $this->assertTrue($validator->isValid('127.0.0.1', []));
@@ -34,7 +36,8 @@ class IPTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new IP();
         $read = $validator->getInvalidDetails();
         $expected = 'ip';

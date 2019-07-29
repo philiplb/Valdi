@@ -17,9 +17,11 @@ use Valdi\ValidationException;
 use Valdi\Validator;
 use Valdi\Validator\Collection;
 
-class CollectionTest extends PHPUnit_Framework_TestCase {
+class CollectionTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Collection();
         $valueValidator = new Validator();
 
@@ -61,10 +63,11 @@ class CollectionTest extends PHPUnit_Framework_TestCase {
 
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Collection();
         $valueValidator = new Validator();
-        $validator->isValid([1, 'two', 3,'four'], [$valueValidator, [['integer']]]);
+        $validator->isValid([1, 'two', 3, 'four'], [$valueValidator, [['integer']]]);
         $read = $validator->getInvalidDetails();
         $expected = ['collection' => [1 => ['integer'], 3 => ['integer']]];
         $this->assertSame($expected, $read);

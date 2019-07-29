@@ -17,19 +17,22 @@ use const FILTER_VALIDATE_FLOAT;
  * Validator for floats. It's not named "Float" as it is a reserved class name
  * in PHP7.
  */
-class Floating extends AbstractFilter {
+class Floating extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function getFilter() {
+    protected function getFilter()
+    {
         return FILTER_VALIDATE_FLOAT;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'floating';
     }
 }

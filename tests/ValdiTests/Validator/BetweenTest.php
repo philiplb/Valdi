@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Between;
 
-class BetweenTest extends PHPUnit_Framework_TestCase {
+class BetweenTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Between();
 
         $this->assertTrue($validator->isValid(1, [1, 2]));

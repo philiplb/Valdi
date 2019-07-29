@@ -17,7 +17,8 @@ use Valdi\Validator;
 /**
  * Validator for array data, be it maps or lists.
  */
-abstract class AbstractArray implements ValidatorInterface {
+abstract class AbstractArray implements ValidatorInterface
+{
 
 
     /**
@@ -44,7 +45,8 @@ abstract class AbstractArray implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         if (count($parameters) !== 2) {
             throw new ValidationException('Expecting two parameters.');
         }

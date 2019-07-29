@@ -17,7 +17,8 @@ use Valdi\Validator\ValidatorInterface;
  * The Validator is used to chain Validators together and validate a set of data
  * with it.
  */
-class Validator {
+class Validator
+{
 
     /**
      * Holds the available validators.
@@ -31,10 +32,11 @@ class Validator {
      * the validators to load, key = name, value = classname within the
      * namespace "\Valdi\Validator"
      */
-    protected function createValidators(array $validators) {
+    protected function createValidators(array $validators)
+    {
         $this->availableValidators = [];
         foreach ($validators as $name => $type) {
-            $class                            = '\\Valdi\\Validator\\'.$type;
+            $class = '\\Valdi\\Validator\\' . $type;
             $this->availableValidators[$name] = new $class();
         }
     }
@@ -55,9 +57,10 @@ class Validator {
      * @throws ValidationException
      * thrown if the validator is not available
      */
-    protected function isValidRule($validator, $parameters, $value) {
+    protected function isValidRule($validator, $parameters, $value)
+    {
         if (!array_key_exists($validator, $this->availableValidators)) {
-            throw new ValidatorException('"'.$validator.'" not found as available validator.');
+            throw new ValidatorException('"' . $validator . '" not found as available validator.');
         }
         return $this->availableValidators[$validator]->isValid($value, $parameters) ?
             null : $this->availableValidators[$validator]->getInvalidDetails();
@@ -66,24 +69,42 @@ class Validator {
     /**
      * Constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $validators = [
-            'afterDateTime' => 'AfterDateTime', 'alphabetical' => 'Alphabetical',
-            'alphaNumerical' => 'AlphaNumerical', 'beforeDateTime' => 'BeforeDateTime',
-            'between' => 'Between', 'boolean' => 'Boolean',
-            'collection' => 'Collection', 'contains' => 'Contains',
-            'dateTime' => 'DateTime', 'dateTimeBetween' => 'DateTimeBetween',
-            'email' => 'Email', 'floating' => 'Floating',
-            'inSet' => 'InSet', 'integer' => 'Integer',
-            'inTheFuture' => 'InTheFuture', 'inThePast' => 'InThePast',
-            'ip' => 'IP', 'ipv4' => 'IPv4',
-            'ipv6' => 'IPv6', 'lengthBetween' => 'LengthBetween',
-            'max' => 'Max', 'maxLength' => 'MaxLength',
-            'min' => 'Min', 'minLength' => 'MinLength',
-            'nested' => 'Nested', 'olderThan' => 'OlderThan',
-            'or' => 'OrCombine', 'regexp' => 'Regexp',
-            'required' => 'Required', 'slug' => 'Slug', 'url' => 'Url',
-            'value' => 'Value', 'youngerThan' => 'YoungerThan'
+            'afterDateTime' => 'AfterDateTime',
+            'alphabetical' => 'Alphabetical',
+            'alphaNumerical' => 'AlphaNumerical',
+            'beforeDateTime' => 'BeforeDateTime',
+            'between' => 'Between',
+            'boolean' => 'Boolean',
+            'collection' => 'Collection',
+            'contains' => 'Contains',
+            'dateTime' => 'DateTime',
+            'dateTimeBetween' => 'DateTimeBetween',
+            'email' => 'Email',
+            'floating' => 'Floating',
+            'inSet' => 'InSet',
+            'integer' => 'Integer',
+            'inTheFuture' => 'InTheFuture',
+            'inThePast' => 'InThePast',
+            'ip' => 'IP',
+            'ipv4' => 'IPv4',
+            'ipv6' => 'IPv6',
+            'lengthBetween' => 'LengthBetween',
+            'max' => 'Max',
+            'maxLength' => 'MaxLength',
+            'min' => 'Min',
+            'minLength' => 'MinLength',
+            'nested' => 'Nested',
+            'olderThan' => 'OlderThan',
+            'or' => 'OrCombine',
+            'regexp' => 'Regexp',
+            'required' => 'Required',
+            'slug' => 'Slug',
+            'url' => 'Url',
+            'value' => 'Value',
+            'youngerThan' => 'YoungerThan'
         ];
         $this->createValidators($validators);
     }
@@ -96,7 +117,8 @@ class Validator {
      * @param ValidatorInterface $validator
      * the validator to add
      */
-    public function addValidator($name, ValidatorInterface $validator) {
+    public function addValidator($name, ValidatorInterface $validator)
+    {
         $this->availableValidators[$name] = $validator;
     }
 
@@ -111,12 +133,13 @@ class Validator {
      * @return string[]
      * the fields where the validation failed
      */
-    public function isValidValue($rules, $value) {
+    public function isValidValue($rules, $value)
+    {
         $result = [];
         foreach ($rules as $rule) {
             $parameters = $rule;
-            $name       = array_shift($parameters);
-            $valid      = $this->isValidRule($name, $parameters, $value);
+            $name = array_shift($parameters);
+            $valid = $this->isValidRule($name, $parameters, $value);
             if ($valid !== null) {
                 $result[] = $valid;
             }
@@ -145,10 +168,11 @@ class Validator {
      * instead, it returns an array listing all failed validators of it:
      * array('or' => array('url', 'email')
      */
-    public function isValid(array $rules, array $data) {
+    public function isValid(array $rules, array $data)
+    {
         $errors = [];
         foreach ($rules as $field => $fieldRules) {
-            $value       = isset($data[$field]) ? $data[$field] : null;
+            $value = isset($data[$field]) ? $data[$field] : null;
             $fieldErrors = $this->isValidValue($fieldRules, $value);
             if (!empty($fieldErrors)) {
                 $errors[$field] = $fieldErrors;

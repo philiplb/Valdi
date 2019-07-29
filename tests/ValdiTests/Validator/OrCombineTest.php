@@ -18,9 +18,11 @@ use Valdi\Validator\OrCombine;
 use Valdi\ValidationException;
 use Valdi\Validator;
 
-class OrCombineTest extends PHPUnit_Framework_TestCase {
+class OrCombineTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $combine = new OrCombine();
         $validator = new Validator();
 
@@ -60,7 +62,8 @@ class OrCombineTest extends PHPUnit_Framework_TestCase {
 
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $combine = new OrCombine();
         $validator = new Validator();
         $combine->isValid('test', [$validator, [['email']], [['url']]]);
@@ -69,7 +72,8 @@ class OrCombineTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
-    public function testValidateWithRulesBuilder() {
+    public function testValidateWithRulesBuilder()
+    {
         $combine = new OrCombine();
         $validator = new Validator();
 

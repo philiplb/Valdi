@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\OlderThan;
 use Valdi\ValidationException;
 
-class OlderThanTest extends PHPUnit_Framework_TestCase {
+class OlderThanTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new OlderThan();
 
         $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 15), [10]));

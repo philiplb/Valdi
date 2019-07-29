@@ -16,19 +16,22 @@ use const FILTER_VALIDATE_IP;
 /**
  * Validator for IPs.
  */
-class IP extends AbstractFilter {
+class IP extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function getFilter() {
+    protected function getFilter()
+    {
         return FILTER_VALIDATE_IP;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'ip';
     }
 }

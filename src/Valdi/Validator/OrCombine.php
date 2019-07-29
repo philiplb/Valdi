@@ -17,7 +17,8 @@ use Valdi\ValidationException;
 /**
  * Validator to combine other validators with a logical "or".
  */
-class OrCombine implements ValidatorInterface {
+class OrCombine implements ValidatorInterface
+{
 
     /**
      * Holds the invalid validators.
@@ -35,7 +36,8 @@ class OrCombine implements ValidatorInterface {
      * @throws ValidationException
      * thrown if the amount of parameters is less than three or the first parameter is not a Validator
      */
-    protected function checkParameters($parameters) {
+    protected function checkParameters($parameters)
+    {
         if (count($parameters) < 3) {
             throw new ValidationException('"or" expects at least 3 parameters.');
         }
@@ -47,13 +49,14 @@ class OrCombine implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
 
         $this->checkParameters($parameters);
 
-        $validator            = array_shift($parameters);
+        $validator = array_shift($parameters);
         $this->invalidDetails = [];
-        $valid                = false;
+        $valid = false;
         foreach ($parameters as $rules) {
             $failedValidations = $validator->isValidValue($rules, $value);
             foreach ($failedValidations as $failedValidation) {
@@ -68,7 +71,8 @@ class OrCombine implements ValidatorInterface {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return ['or' => $this->invalidDetails];
     }
 

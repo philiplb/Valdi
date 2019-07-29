@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator;
 use Valdi\ValidatorException;
 
-class RequiredTest extends PHPUnit_Framework_TestCase {
+class RequiredTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testIsValid() {
+    public function testIsValid()
+    {
         $validator = new Validator();
         $data = [
             'a' => 'a',
@@ -64,7 +66,8 @@ class RequiredTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
-    public function testInvalidOrCombine() {
+    public function testInvalidOrCombine()
+    {
         $validator = new Validator();
         $data = [
             'a' => 'invalid'
@@ -82,7 +85,8 @@ class RequiredTest extends PHPUnit_Framework_TestCase {
         $this->assertSame($read, $expected);
     }
 
-    public function testInvalidRule() {
+    public function testInvalidRule()
+    {
         $validator = new Validator();
         $rules = [
             'a' => [['invalid']]
@@ -99,7 +103,8 @@ class RequiredTest extends PHPUnit_Framework_TestCase {
         }
     }
 
-    public function testAddValidator() {
+    public function testAddValidator()
+    {
         $validator = new Validator();
         $rules = [
             'a' => [['test']]

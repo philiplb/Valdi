@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\AfterDateTime;
 use Valdi\ValidationException;
 
-class AfterDateTimeTest extends PHPUnit_Framework_TestCase {
+class AfterDateTimeTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new AfterDateTime();
 
         $this->assertTrue($validator->isValid('2016-03-28 01:23:45', ['2016-03-27 01:23:45']));
@@ -56,7 +58,8 @@ class AfterDateTimeTest extends PHPUnit_Framework_TestCase {
         }
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new AfterDateTime();
         $read = $validator->getInvalidDetails();
         $expected = 'afterDateTime';

@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Base validator for PHPs filter_var function.
  */
-abstract class AbstractFilter implements ValidatorInterface {
+abstract class AbstractFilter implements ValidatorInterface
+{
 
     /**
      * Gets the filter to use within the validation.
@@ -32,14 +33,16 @@ abstract class AbstractFilter implements ValidatorInterface {
      * @return string|null
      * the flags to use
      */
-    protected function getFlags() {
+    protected function getFlags()
+    {
         return null;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function isValid($value, array $parameters) {
+    public function isValid($value, array $parameters)
+    {
         return in_array($value, ['', null], true) ||
             filter_var($value, $this->getFilter(), $this->getFlags()) !== false;
     }

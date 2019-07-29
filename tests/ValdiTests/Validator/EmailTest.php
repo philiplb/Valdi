@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Email;
 
-class EmailTest extends PHPUnit_Framework_TestCase {
+class EmailTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Email();
 
         $this->assertTrue($validator->isValid('test@test.de', []));
@@ -29,7 +31,8 @@ class EmailTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue($validator->isValid(null, []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Email();
         $read = $validator->getInvalidDetails();
         $expected = 'email';

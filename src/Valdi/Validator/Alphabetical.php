@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for alphabetical values.
  */
-class Alphabetical extends Regexp {
+class Alphabetical extends Regexp
+{
 
     /**
      * Holds the amount of parameters.
@@ -29,7 +30,8 @@ class Alphabetical extends Regexp {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         $parameters = ['/^([a-z])+$/i'];
         return parent::isValidComparison($value, $parameters);
     }

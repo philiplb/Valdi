@@ -16,12 +16,14 @@ use Valdi\Validator;
 /**
  * Validator for nested data sets.
  */
-class Nested extends AbstractArray {
+class Nested extends AbstractArray
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function isValidArray($values, Validator $validator, array $rules) {
+    protected function isValidArray($values, Validator $validator, array $rules)
+    {
         if (!is_array($values)) {
             $this->invalidDetails = $values;
             return false;
@@ -38,7 +40,8 @@ class Nested extends AbstractArray {
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return ['nested' => $this->invalidDetails];
     }
 }

@@ -17,26 +17,30 @@ use const FILTER_VALIDATE_IP;
 /**
  * Validator for floats.
  */
-class IPv6 extends AbstractFilter {
+class IPv6 extends AbstractFilter
+{
 
     /**
      * {@inheritdoc}
      */
-    protected function getFilter() {
+    protected function getFilter()
+    {
         return FILTER_VALIDATE_IP;
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function getFlags() {
+    protected function getFlags()
+    {
         return FILTER_FLAG_IPV6;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getInvalidDetails() {
+    public function getInvalidDetails()
+    {
         return 'ipv6';
     }
 }

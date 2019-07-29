@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\BeforeDateTime;
 
-class BeforeDateTimeTest extends PHPUnit_Framework_TestCase {
+class BeforeDateTimeTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new BeforeDateTime();
 
         $this->assertTrue($validator->isValid('2016-03-28 01:23:45', ['2016-03-29 01:23:45']));

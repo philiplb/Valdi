@@ -14,7 +14,8 @@ namespace Valdi\Validator;
 /**
  * Validator for max values.
  */
-class Max extends AbstractComparator {
+class Max extends AbstractComparator
+{
 
     /**
      * Holds the type of the validator.
@@ -24,7 +25,8 @@ class Max extends AbstractComparator {
     /**
      * {@inheritdoc}
      */
-    protected function isValidComparison($value, $parameters) {
+    protected function isValidComparison($value, $parameters)
+    {
         return $this->isAllNumeric($value, $parameters[0]) && $value <= $parameters[0];
     }
 }

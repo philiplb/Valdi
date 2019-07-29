@@ -16,9 +16,11 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Contains;
 use Valdi\ValidationException;
 
-class ContainsTest extends PHPUnit_Framework_TestCase {
+class ContainsTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Contains();
 
         $this->assertTrue($validator->isValid('test', ['ES']));
@@ -44,7 +46,8 @@ class ContainsTest extends PHPUnit_Framework_TestCase {
         }
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Contains();
         $read = $validator->getInvalidDetails();
         $expected = 'contains';

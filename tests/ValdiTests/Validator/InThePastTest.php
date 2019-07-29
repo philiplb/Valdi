@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\InThePast;
 
-class InThePastTest extends PHPUnit_Framework_TestCase {
+class InThePastTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new InThePast();
 
         $this->assertTrue($validator->isValid(date('Y-m-d H:i:s', time() - 5), []));

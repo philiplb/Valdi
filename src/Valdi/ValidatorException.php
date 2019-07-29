@@ -17,5 +17,6 @@ use Exception;
  * Exception when something general fails like an expected, but missing
  * validator.
  */
-class ValidatorException extends Exception {
+class ValidatorException extends Exception
+{
 }

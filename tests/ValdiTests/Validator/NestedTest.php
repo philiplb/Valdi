@@ -18,18 +18,20 @@ use Valdi\ValidationException;
 use Valdi\Validator;
 use Valdi\Validator\Nested;
 
-class NestedTest extends PHPUnit_Framework_TestCase {
+class NestedTest extends PHPUnit_Framework_TestCase
+{
 
-    protected function getRules() {
+    protected function getRules()
+    {
         return RulesBuilder::create()
-        ->addFieldRule('b', 'required')
-        ->addFieldRule('b', 'integer')
-        ->addFieldRule('c', 'required')
-        ->build()
-        ;
+            ->addFieldRule('b', 'required')
+            ->addFieldRule('b', 'integer')
+            ->addFieldRule('c', 'required')
+            ->build();
     }
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Nested();
         $nestedValidator = new Validator();
         $rules = $this->getRules();
@@ -69,7 +71,8 @@ class NestedTest extends PHPUnit_Framework_TestCase {
 
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
 
         $validator = new Nested();
         $nestedValidator = new Validator();

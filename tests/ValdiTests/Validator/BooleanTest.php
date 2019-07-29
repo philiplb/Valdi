@@ -14,9 +14,11 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Boolean;
 
-class BooleanTest extends PHPUnit_Framework_TestCase {
+class BooleanTest extends PHPUnit_Framework_TestCase
+{
 
-    public function testValidate() {
+    public function testValidate()
+    {
         $validator = new Boolean();
 
         $this->assertTrue($validator->isValid(1, []));
@@ -38,7 +40,8 @@ class BooleanTest extends PHPUnit_Framework_TestCase {
         $this->assertFalse($validator->isValid('test', []));
     }
 
-    public function testGetInvalidDetails() {
+    public function testGetInvalidDetails()
+    {
         $validator = new Boolean();
         $read = $validator->getInvalidDetails();
         $expected = 'boolean';

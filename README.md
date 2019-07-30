@@ -3,6 +3,15 @@ Valdi
 
 Super simple, yet complete data validation.
 
+Reasons to use Valdi:
+
+* Easy to use
+* Feature complete
+* Lightweight, without dependencies
+* Well documented
+* Well tested
+* Extensible
+
 ## Getting Started
 
 Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.10.0).

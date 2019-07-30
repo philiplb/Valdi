@@ -37,7 +37,9 @@ collection
 
 Validator to check an array value fulfilling another validator having a ruleset.
 
-**Attention**: The error result of this validator is not just a string, but an array with each failed array index. Example:
+**Attention**: The error result of this validator is not just a string, but an array with each failed array index.
+
+**Example:**
 
 .. code-block:: php
 
@@ -79,7 +81,9 @@ nested
 
 Validator to check an value being again an associative array fulfilling another validator having its own set of rules.
 
-**Attention**: The error result of this validator is not just a string, but an array with the nested validation. Example:
+**Attention**: The error result of this validator is not just a string, but an array with the nested validation.
+
+**Example:**
 
 .. code-block:: php
 
@@ -140,7 +144,9 @@ or
 
 Validator to combine other rulesets with a logical "or".
 
-**Attention**: The error result of this validator is not just a string, but an array. Example:
+**Attention**: The error result of this validator is not just a string, but an array.
+
+**Example:**
 
 .. code-block:: php
 

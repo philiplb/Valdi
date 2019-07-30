@@ -225,7 +225,8 @@ values:</p>
 <div class="section" id="collection">
 <h3>collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
 <p>Validator to check an array value fulfilling another validator having a ruleset.</p>
-<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index. Example:</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index.</p>
+<p><strong>Example:</strong></p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; [&#39;one&#39;, 2, &#39;three&#39;]</span>
@@ -260,7 +261,8 @@ values:</p>
 <div class="section" id="nested">
 <h3>nested<a class="headerlink" href="#nested" title="Permalink to this headline">¶</a></h3>
 <p>Validator to check an value being again an associative array fulfilling another validator having its own set of rules.</p>
-<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with the nested validation. Example:</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with the nested validation.</p>
+<p><strong>Example:</strong></p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; [&#39;b&#39; =&gt; &#39;foo&#39;]</span>
@@ -310,7 +312,8 @@ of the most used validators.</p>
 <div class="section" id="or">
 <h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
 <p>Validator to combine other rulesets with a logical “or”.</p>
-<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array. Example:</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array.</p>
+<p><strong>Example:</strong></p>
 <div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
 <span class="x">$data = [</span>
 <span class="x">    &#39;a&#39; =&gt; &#39;invalid&#39;</span>

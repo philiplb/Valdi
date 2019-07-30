@@ -1,0 +1,303 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Extended Features &mdash; Valdi 0.12.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Valdi 0.12.0 documentation" href="../index.html"/>
+        <link rel="next" title="Valdi\RulesBuilder" href="../api/RulesBuilder.html"/>
+        <link rel="prev" title="Validators" href="validators.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Valdi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.12.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validators.html">Validators</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extended Features</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#own-rules">Own Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-rules-data-structure">The Rules Data Structure</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Contains.html">Valdi\Validator\Contains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Valdi\Validator\Required</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Valdi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Extended Features</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/manual/extendedfeatures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="extended-features">
+<h1>Extended Features<a class="headerlink" href="#extended-features" title="Permalink to this headline">¶</a></h1>
+<p>In this chapter, more advanced features of Valdi are shown.</p>
+<div class="section" id="own-rules">
+<h2>Own Rules<a class="headerlink" href="#own-rules" title="Permalink to this headline">¶</a></h2>
+<p>There might be cases where the shipped rules of Valdi might not be enough for
+you. So here is how to introduce own rules by extending Valdi.</p>
+<p>First of all, you have to implement the validator which is a single interface
+with two methods. This validator for example would validate only if the
+given value can be divided by two:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface {</span>
+
+<span class="x">    public function isValid($value, array $parameters) {</span>
+<span class="x">       return $value % 2 == 0;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">        return &#39;divideByTwo&#39;;</span>
+<span class="x">    }</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>The method “getInvalidDetails” defines the details in the validation results
+if the validation failed. Normally, it is a string naming the failed validator.
+One exception is the validator “or” which returns an array here.</p>
+<p>This validator has one small problem: It fails if the value is not given. But
+it shouldn’t as this check is covered by the “required” validator. So we extend
+it a bit:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface {</span>
+
+<span class="x">    public function isValid($value, array $parameters) {</span>
+<span class="x">       return in_array($value, [&#39;&#39;, null], true) || $value % 2 == 0;</span>
+<span class="x">    }</span>
+
+<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">        return &#39;divideByTwo&#39;;</span>
+<span class="x">    }</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>Now we have a validator which we can easily add to Valdi with a rule name:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Valdi\Validator();</span>
+<span class="x">$validator-&gt;addValidator(&#39;divideByTwo&#39;, new DivideByTwo());</span>
+</pre></div>
+</div>
+<p>From now on, you can use the rule “divideByTwo” in your Validator instance just
+like all the others.</p>
+<p>With the addValidator method, you could even override the existing rules to
+adjust them to your needs.</p>
+<p>And while you are at it, why not give the rules back and send them to me via
+a pull request? This way, everyone would benefit.</p>
+</div>
+<div class="section" id="the-rules-data-structure">
+<h2>The Rules Data Structure<a class="headerlink" href="#the-rules-data-structure" title="Permalink to this headline">¶</a></h2>
+<p>You don’t have to use the RulesBuilder. It’s output is just a big array. You
+might want to serialize/deserialize it manually. So here is it’s structure:</p>
+<p>Rules is an array with a field name as key and an array of rules to use for this
+field. Each rule is an array  with the validator name as first element and
+parameters as following elements. So our getting started example translates to:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$rules = [</span>
+<span class="x">    &#39;name&#39; =&gt; [</span>
+<span class="x">        [&#39;required&#39;]</span>
+<span class="x">    ],</span>
+<span class="x">    &#39;zipcode&#39; =&gt; [</span>
+<span class="x">        [&#39;required&#39;],</span>
+<span class="x">        [&#39;between&#39;, 9999, 100000]</span>
+<span class="x">    ],</span>
+<span class="x">    &#39;email&#39; =&gt; [</span>
+<span class="x">        [&#39;email&#39;]</span>
+<span class="x">    ],</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../api/RulesBuilder.html" class="btn btn-neutral float-right" title="Valdi\RulesBuilder" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="validators.html" class="btn btn-neutral" title="Validators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.12.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

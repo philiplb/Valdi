@@ -1,5 +1,5 @@
-Welcome to Valdi's documentation!
-=================================
+Welcome to Valdis documentation!
+================================
 
 This is the documentation of Valdi, a very easy to use, yet feature complete
 data validation library.

@@ -14,13 +14,14 @@ Reasons to use Valdi:
 
 ## Getting Started
 
-Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.10.0).
+Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.11.0).
 
 ## Documentation
 
 The documentation is available for each version:
 
-* [0.11.0](https://philiplb.github.io/Valdi/docs/html/0.11.0) (Upcoming)
+* [0.12.0](https://philiplb.github.io/Valdi/docs/html/0.12.0) (Upcoming)
+* [0.11.0](https://philiplb.github.io/Valdi/docs/html/0.11.0)
 * [0.10.0](https://philiplb.github.io/Valdi/docs/html/0.10.0)
 * [0.9.0](https://philiplb.github.io/Valdi/docs/html/0.9.0)
 
@@ -35,7 +36,7 @@ The documentation is available for each version:
 
 ```json
 "require": {
-    "philiplb/valdi": "0.10.0"
+    "philiplb/valdi": "0.11.0"
 }
 ```
 
@@ -43,7 +44,7 @@ The documentation is available for each version:
 
 ```json
 "require": {
-    "philiplb/valdi": "0.11.x-dev"
+    "philiplb/valdi": "0.12.x-dev"
 }
 ```
 

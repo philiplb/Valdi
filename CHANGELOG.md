@@ -1,9 +1,13 @@
 Valdi Changelog
 ===============
 
-## 0.11.0
+## 0.12.0
 
 Released: Upcoming
+
+## 0.11.0
+
+Released: 2019-07-30
 
 - Attention: The "or" validator now accepts complete rules instead of parts so the RulesBuilder and actually more
   complex rules can be used

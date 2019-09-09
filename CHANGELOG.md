@@ -5,6 +5,7 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Attention: Renamed the RuleBuilder function "addFieldRule" to "field"
 ## 0.11.0
 
 Released: 2019-07-30

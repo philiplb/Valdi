@@ -45,9 +45,9 @@ class RulesBuilder
      * Adds a rule for a field to the set. This function takes a variable amount
      * of parameters in order to cover the rule parameters. Example for a rule
      * without parameter:
-     * addFieldRule('myField', 'required')
+     * field('myField', 'required')
      * Example for a rule with two parameters:
-     * addFieldRule('myField', 'between', 3, 7)
+     * field('myField', 'between', 3, 7)
      *
      * @param string $field
      * the field for the rule
@@ -58,7 +58,7 @@ class RulesBuilder
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function addFieldRule($field, $rule)
+    public function field($field, $rule)
     {
         if (!isset($this->rules[$field])) {
             $this->rules[$field] = [];

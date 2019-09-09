@@ -53,7 +53,7 @@ Validator to check an array value fulfilling another validator having a ruleset.
             ->build()
         ;
         $rules = $builder
-            ->addFieldRule('a', $validator, $itemRules)
+            ->field('a', $validator, $itemRules)
             ->build()
         ;
         $result = $validator->isValid($rules, $data);
@@ -93,13 +93,13 @@ Validator to check an value being again an associative array fulfilling another 
         ];
         $builder = RulesBuilder::create();
         $nestedRules = $builder
-            ->addFieldRule('b', 'integer')
-            ->addFieldRule('b', 'required')
-            ->addFieldRule('c', 'required')
+            ->field('b', 'integer')
+            ->field('b', 'required')
+            ->field('c', 'required')
             ->build()
         ;
         $rules = $builder
-            ->addFieldRule('a', 'nested', $validator, $nestedRules)
+            ->field('a', 'nested', $validator, $nestedRules)
             ->build()
         ;
         $result = $validator->isValid($rules, $data);
@@ -157,7 +157,7 @@ Validator to combine other rulesets with a logical "or".
         $builder = RulesBuilder::create();
         $emailRules = $builder->addRule('email')->build();
         $urlRules = $builder->addRule('url')->build();
-        $rules = $builder->addFieldRule('a', 'or', $validator, $emailRules, $urlRules);
+        $rules = $builder->field('a', 'or', $validator, $emailRules, $urlRules);
         $result = $validator->isValid($rules, $data);
 
 This results in the following validation result:

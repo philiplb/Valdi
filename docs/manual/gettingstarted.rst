@@ -33,10 +33,10 @@ address:
 .. code-block:: php
 
     $rules = RulesBuilder::create()
-        ->addFieldRule('name', 'required')
-        ->addFieldRule('zipcode', 'required')
-        ->addFieldRule('zipcode', 'between', 9999, 100000)
-        ->addFieldRule('email', 'email')
+        ->field('name', 'required')
+        ->field('zipcode', 'required')
+        ->field('zipcode', 'between', 9999, 100000)
+        ->field('email', 'email')
         ->build()
     ;
 

@@ -24,9 +24,9 @@ class NestedTest extends PHPUnit_Framework_TestCase
     protected function getRules()
     {
         return RulesBuilder::create()
-            ->addFieldRule('b', 'required')
-            ->addFieldRule('b', 'integer')
-            ->addFieldRule('c', 'required')
+            ->field('b', 'required')
+            ->field('b', 'integer')
+            ->field('c', 'required')
             ->build();
     }
 

@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Validators &mdash; Valdi 1.0.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="Valdi 1.0.0 documentation" href="../index.html"/>
+        <link rel="next" title="Own Rules" href="ownrules.html"/>
+        <link rel="prev" title="Getting Started" href="gettingstarted.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Valdi
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Validators</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basics-and-miscellaneous">Basics and Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#boolean">boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection">collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nested">nested</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inset">inSet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#required">required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#or">or</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#strings">Strings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alphabetical">alphabetical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alphanumerical">alphaNumerical</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contains">contains</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#email">email</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ip">ip</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv4">ipv4</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ipv6">ipv6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lengthbetween">lengthBetween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maxlength">maxLength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minlength">minLength</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#regexp">regexp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slug">slug</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#url">url</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#value">value</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#numerical">Numerical</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#between">between</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#floating">floating</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#integer">integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#max">max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#min">min</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#dates-and-times">Dates and Times</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#afterdatetime">afterDateTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#beforedatetime">beforeDateTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datetime">dateTime</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datetimebetween">dateTimeBetween</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inthefuture">inTheFuture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#inthepast">inThePast</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#olderthan">olderThan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#youngerthan">youngerThan</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ownrules.html">Own Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rulesdatastructure.html">The Rules Data Structure</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../api/RulesBuilder.html">Valdi\RulesBuilder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidationException.html">Valdi\ValidationException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator.html">Valdi\Validator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/ValidatorException.html">Valdi\ValidatorException</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractArray.html">Valdi\Validator\AbstractArray</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractFilter.html">Valdi\Validator\AbstractFilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/AbstractParametrizedValidator.html">Valdi\Validator\AbstractParametrizedValidator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Boolean.html">Valdi\Validator\Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Contains.html">Valdi\Validator\Contains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/DateTime.html">Valdi\Validator\DateTime</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/InSet.html">Valdi\Validator\InSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/OrCombine.html">Valdi\Validator\OrCombine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/Required.html">Valdi\Validator\Required</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/Validator/ValidatorInterface.html">Valdi\Validator\ValidatorInterface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Valdi</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>Validators</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/manual/validators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="validators">
+<h1>Validators<a class="headerlink" href="#validators" title="Permalink to this headline">¶</a></h1>
+<p>Here are all out of the box available validators shown with their name,
+a description and, if needed, their parameters.</p>
+<p>All examples use a rule builder:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder = RulesBuilder::create();</span>
+</pre></div>
+</div>
+<div class="section" id="basics-and-miscellaneous">
+<h2>Basics and Miscellaneous<a class="headerlink" href="#basics-and-miscellaneous" title="Permalink to this headline">¶</a></h2>
+<p>Basic validators and everything else.</p>
+<div class="section" id="boolean">
+<h3>boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is somehow a boolean one. Those are the accepted
+values:</p>
+<ul class="simple">
+<li>true</li>
+<li>false</li>
+<li>‘true’</li>
+<li>‘false’</li>
+<li>1</li>
+<li>0</li>
+<li>‘1’</li>
+<li>‘0’</li>
+<li>‘on’</li>
+<li>‘off’</li>
+<li>‘yes’</li>
+<li>‘no’</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;boolean&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="collection">
+<h3>collection<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
+<p>Validator to check an array value fulfilling another validator having a ruleset.</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with each failed array index.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>validator: the Validator or subclass instance which will execute the values validations</li>
+<li>rules: the rules the array values must fulfill, the RulesBuilder can be used of course</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<span class="x">$data = [</span>
+<span class="x">    &#39;a&#39; =&gt; [&#39;one&#39;, 2, &#39;three&#39;]</span>
+<span class="x">];</span>
+<span class="x">$itemRules = $builder</span>
+<span class="x">    -&gt;rule(&#39;integer&#39;)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$rules = $builder</span>
+<span class="x">    -&gt;field(&#39;a&#39;, $validator, $itemRules)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
+</pre></div>
+</div>
+<p>This results in the following validation result:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<span class="x">    &#39;valid&#39; =&gt; false,</span>
+<span class="x">    &#39;errors&#39; =&gt; [</span>
+<span class="x">        &#39;a&#39; =&gt; [[&#39;collection&#39; =&gt; [1 =&gt; [&#39;integer&#39;], 3 =&gt; [&#39;integer&#39;]]]]</span>
+<span class="x">    ]</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="nested">
+<h3>nested<a class="headerlink" href="#nested" title="Permalink to this headline">¶</a></h3>
+<p>Validator to check an value being again an associative array fulfilling another validator having its own set of rules.</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array with the nested validation.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>validator: the Validator or subclass instance which will execute the values validations</li>
+<li>rules: the rules the associative array values must fulfill, the RulesBuilder can be used of course</li>
+</ul>
+<p><strong>Example:</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<span class="x">$data = [</span>
+<span class="x">    &#39;a&#39; =&gt; [&#39;b&#39; =&gt; &#39;foo&#39;]</span>
+<span class="x">];</span>
+<span class="x">$nestedRules = $builder</span>
+<span class="x">    -&gt;field(&#39;b&#39;, &#39;integer&#39;)</span>
+<span class="x">    -&gt;field(&#39;b&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;field(&#39;c&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$rules = $builder</span>
+<span class="x">    -&gt;field(&#39;a&#39;, &#39;nested&#39;, $validator, $nestedRules)</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
+</pre></div>
+</div>
+<p>This results in the following validation result:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<span class="x">    &#39;valid&#39; =&gt; false,</span>
+<span class="x">    &#39;errors&#39; =&gt; [</span>
+<span class="x">        &#39;a&#39; =&gt; [[&#39;nested&#39; =&gt; [&#39;b&#39; =&gt; [&#39;integer&#39;], &#39;c&#39; =&gt; [&#39;integer&#39;, &#39;required&#39;]]]]</span>
+<span class="x">    ]</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inset">
+<h3>inSet<a class="headerlink" href="#inset" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the value is in the given set.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>set: an array of valid values</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;inSet&#39;, [&#39;b&#39;, &#39;c&#39;]);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="required">
+<h3>required<a class="headerlink" href="#required" title="Permalink to this headline">¶</a></h3>
+<p>Validates if there is any value not being null or empty string. Might be one
+of the most used validators.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;required&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="or">
+<h3>or<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
+<p>Validator to combine other rulesets with a logical “or”.</p>
+<p><strong>Attention</strong>: The error result of this validator is not just a string, but an array.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>validator: the Validator or subclass instance which will execute the child validations</li>
+<li>rules 1: array of rules to combine; like
+[[‘required’], [‘between’, 9999, 100000]]</li>
+<li>rules 2: array of rules to combine; like
+[[‘required’], [‘between’, 9999, 100000]]</li>
+</ul>
+<p>You can add as many more rules parameters as you need. And to construct the actual rules,
+the RulesBuilder can be used of course.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$validator = new Validator();</span>
+<span class="x">$data = [</span>
+<span class="x">    &#39;a&#39; =&gt; &#39;invalid&#39;</span>
+<span class="x">];</span>
+<span class="x">$emailRules = $builder-&gt;rule(&#39;email&#39;)-&gt;build();</span>
+<span class="x">$urlRules = $builder-&gt;rule(&#39;url&#39;)-&gt;build();</span>
+<span class="x">$rules = $builder-&gt;field(&#39;a&#39;, &#39;or&#39;, $validator, $emailRules, $urlRules);</span>
+<span class="x">$result = $validator-&gt;isValid($rules, $data);</span>
+</pre></div>
+</div>
+<p>This results in the following validation result:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$result = [</span>
+<span class="x">    &#39;valid&#39; =&gt; false,</span>
+<span class="x">    &#39;errors&#39; =&gt; [</span>
+<span class="x">        &#39;a&#39; =&gt; [[&#39;or&#39; =&gt; [&#39;email&#39;, &#39;url&#39;]]]</span>
+<span class="x">    ]</span>
+<span class="x">];</span>
+</pre></div>
+</div>
+</div>
+<p>        ];</p>
+</div>
+<div class="section" id="strings">
+<h2>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h2>
+<p>This validators handle strings.</p>
+<div class="section" id="alphabetical">
+<h3>alphabetical<a class="headerlink" href="#alphabetical" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is alphabetical meaning it contains only the
+characters a-z and A-Z.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;alphabetical&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="alphanumerical">
+<h3>alphaNumerical<a class="headerlink" href="#alphanumerical" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is alphanumerical meaning it contains only the
+characters a-z, A-Z and 0-9.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;alphaNumerical&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contains">
+<h3>contains<a class="headerlink" href="#contains" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the parameter is within the given value.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>sub value: the value which must be within the value to validate</li>
+<li>case sensitive: boolean value indicating whether the comparision should be
+case sensitive; optional, defaults to true</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;contains&#39;, &#39;abc&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="email">
+<h3>email<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the value is in the format of an email address.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;email&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ip">
+<h3>ip<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is in the format of an IPv4 or IPv6 address.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;ip&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ipv4">
+<h3>ipv4<a class="headerlink" href="#ipv4" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is in the format of an IPv4 address.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;ipv4&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ipv6">
+<h3>ipv6<a class="headerlink" href="#ipv6" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is in the format of an IPv6 address.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;ipv6&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="lengthbetween">
+<h3>lengthBetween<a class="headerlink" href="#lengthbetween" title="Permalink to this headline">¶</a></h3>
+<p>Compares the string length of the given value and validates if it is between
+the given parameters.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>min length: The minimum string length</li>
+<li>max length: The maximum string length</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;lengthBetween&#39;, 3, 7);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="maxlength">
+<h3>maxLength<a class="headerlink" href="#maxlength" title="Permalink to this headline">¶</a></h3>
+<p>Compares the string length of the given value and validates if it is maximal the
+given parameter.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>max length: The maximum string length</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;maxLength&#39;, 5);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="minlength">
+<h3>minLength<a class="headerlink" href="#minlength" title="Permalink to this headline">¶</a></h3>
+<p>Compares the string length of the given value and validates if it is minimal the
+given parameter.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>min length: The minimal string length</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;minLength&#39;, 5);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="regexp">
+<h3>regexp<a class="headerlink" href="#regexp" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value fulfills the regular expression from the parameter.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>regexp: the regular expression to be fulfilled</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;regexp&#39;, /f.o/);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="slug">
+<h3>slug<a class="headerlink" href="#slug" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is a slug meaning it starts with a set of
+characters (a-z, 0-9) followed by an optional set of dash (-) and more
+characters (a-z, 0-9). Examples: foo, foo-bar, foo-bar-asd</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;slug&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="url">
+<h3>url<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given parameter is an URL.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;url&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="value">
+<h3>value<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given parameter is equal to the parameter. Useful for example
+for terms and conditions checkboxes.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>value: the value to check against</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;value&#39;, &#39;checked&#39;);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="numerical">
+<h2>Numerical<a class="headerlink" href="#numerical" title="Permalink to this headline">¶</a></h2>
+<p>This validators handle integers and floats.</p>
+<div class="section" id="between">
+<h3>between<a class="headerlink" href="#between" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given value is between two numerical values, but not equal to
+one of them.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>min: The lower boundary</li>
+<li>max: The upper boundary</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;between&#39;, 23, 42);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="floating">
+<h3>floating<a class="headerlink" href="#floating" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the value is in the format of a floating point number.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;floating&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer">
+<h3>integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the value is in the format of an integer number.</p>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;integer&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="max">
+<h3>max<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given numerical value is maximal the given parameter.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>max: The maximum</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;max&#39;, 42);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="min">
+<h3>min<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the given numerical value is minimal the given parameter.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>min: The minimum</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;min&#39;);</span>
+</pre></div>
+</div>
+</div>
+<p>        $builder-&gt;field(‘a’, ‘min’);</p>
+</div>
+<div class="section" id="dates-and-times">
+<h2>Dates and Times<a class="headerlink" href="#dates-and-times" title="Permalink to this headline">¶</a></h2>
+<p>This validators handle date times.</p>
+<div class="section" id="afterdatetime">
+<h3>afterDateTime<a class="headerlink" href="#afterdatetime" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the date time parameter and validates if the value
+is after it.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time: Date to compare the value to, format: Y-m-d H:i:s</li>
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;afterDateTime&#39;, &#39;2063-04-05 12:00:00&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="beforedatetime">
+<h3>beforeDateTime<a class="headerlink" href="#beforedatetime" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the date time parameter and validates if the value
+is before it.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time: Date to compare the value to, format: Y-m-d H:i:s</li>
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;beforeDateTime&#39;, &#39;2063-04-05 12:00:00&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="datetime">
+<h3>dateTime<a class="headerlink" href="#datetime" title="Permalink to this headline">¶</a></h3>
+<p>Validates if the value is in the format of a date time.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;dateTime&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="datetimebetween">
+<h3>dateTimeBetween<a class="headerlink" href="#datetimebetween" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the date time parameters and validates if the value
+is between them.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time min: Date time to which the value must be older, format: Y-m-d H:i:s</li>
+<li>date time max: Date time to which the value must be younger, format: Y-m-d H:i:s</li>
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;beforeDateTime&#39;, &#39;2063-04-05 12:00&#39;, &#39;2366-12-28 00:30:27&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inthefuture">
+<h3>inTheFuture<a class="headerlink" href="#inthefuture" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the current date time and validates if the value
+is younger.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;inTheFuture&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inthepast">
+<h3>inThePast<a class="headerlink" href="#inthepast" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the current date time and validates if the value
+is older.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;inThePast&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="olderthan">
+<h3>olderThan<a class="headerlink" href="#olderthan" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the first parameter date time and validates if the
+value is older.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>reference date: the date to compare to</li>
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;olderThan&#39;, &#39;2063-04-05 12:00:00&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="youngerthan">
+<h3>youngerThan<a class="headerlink" href="#youngerthan" title="Permalink to this headline">¶</a></h3>
+<p>Compares the given value to the first parameter date time and validates if the
+value is younger.</p>
+<p><strong>Parameters</strong></p>
+<ul class="simple">
+<li>reference date: the date to compare to</li>
+<li>date time format: To override the default date format; optional, defaults to
+Y-m-d H:i:s</li>
+</ul>
+<p><strong>Example</strong></p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$builder-&gt;field(&#39;a&#39;, &#39;youngerThan&#39;, &#39;2063-04-05 12:00:00&#39;);</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ownrules.html" class="btn btn-neutral float-right" title="Own Rules" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="gettingstarted.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Philip Lehmann-Böhm.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

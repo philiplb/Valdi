@@ -78,8 +78,8 @@ class OrCombineTest extends PHPUnit_Framework_TestCase
         $validator = new Validator();
 
         $builder = RulesBuilder::create();
-        $minIntegerRules = $builder->addRule('integer')->addRule('min', 5)->build();
-        $emailRules = $builder->addRule('email')->build();
+        $minIntegerRules = $builder->rule('integer')->rule('min', 5)->build();
+        $emailRules = $builder->rule('email')->build();
         $this->assertTrue($combine->isValid('test@test.de', [$validator, $minIntegerRules, $emailRules]));
         $this->assertTrue($combine->isValid(6, [$validator, $minIntegerRules, $emailRules]));
         $this->assertFalse($combine->isValid('asd', [$validator, $minIntegerRules, $emailRules]));

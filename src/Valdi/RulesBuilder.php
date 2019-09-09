@@ -76,9 +76,9 @@ class RulesBuilder
      * Adds a rule to the set. This function takes a variable amount
      * of parameters in order to cover the rule parameters. Example for a rule
      * without parameter:
-     * addRule('required')
+     * rule('required')
      * Example for a rule with two parameters:
-     * addRule('between', 3, 7)
+     * rule('between', 3, 7)
      *
      * @param string $rule
      * the rule to add
@@ -87,7 +87,7 @@ class RulesBuilder
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function addRule($rule)
+    public function rule($rule)
     {
         $newRule = [$rule];
         $numArgs = func_num_args();

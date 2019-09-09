@@ -49,7 +49,7 @@ Validator to check an array value fulfilling another validator having a ruleset.
         ];
         $builder = RulesBuilder::create();
         $itemRules = $builder
-            ->addRule('integer')
+            ->rule('integer')
             ->build()
         ;
         $rules = $builder
@@ -155,8 +155,8 @@ Validator to combine other rulesets with a logical "or".
             'a' => 'invalid'
         ];
         $builder = RulesBuilder::create();
-        $emailRules = $builder->addRule('email')->build();
-        $urlRules = $builder->addRule('url')->build();
+        $emailRules = $builder->rule('email')->build();
+        $urlRules = $builder->rule('url')->build();
         $rules = $builder->field('a', 'or', $validator, $emailRules, $urlRules);
         $result = $validator->isValid($rules, $data);
 

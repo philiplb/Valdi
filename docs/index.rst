@@ -24,7 +24,8 @@ Contents:
 
     manual/gettingstarted
     manual/validators
-    manual/extendedfeatures
+    manual/ownrules
+    manual/rulesdatastructure
 
 .. toctree::
     :caption: API

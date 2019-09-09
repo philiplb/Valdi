@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Extended Features &mdash; Valdi 0.12.0 documentation</title>
+  <title>Own Rules &mdash; Valdi 0.12.0 documentation</title>
   
 
   
@@ -34,7 +34,7 @@
               href="../genindex.html"/>
         <link rel="search" title="Search" href="../search.html"/>
     <link rel="top" title="Valdi 0.12.0 documentation" href="../index.html"/>
-        <link rel="next" title="Valdi\RulesBuilder" href="../api/RulesBuilder.html"/>
+        <link rel="next" title="The Rules Data Structure" href="rulesdatastructure.html"/>
         <link rel="prev" title="Validators" href="validators.html"/> 
 
   
@@ -88,11 +88,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validators.html">Validators</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Extended Features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#own-rules">Own Rules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#the-rules-data-structure">The Rules Data Structure</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Own Rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rulesdatastructure.html">The Rules Data Structure</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API</span></p>
 <ul>
@@ -140,11 +137,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Extended Features</li>
+    <li>Own Rules</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/manual/extendedfeatures.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/manual/ownrules.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -154,23 +151,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="extended-features">
-<h1>Extended Features<a class="headerlink" href="#extended-features" title="Permalink to this headline">¶</a></h1>
-<p>In this chapter, more advanced features of Valdi are shown.</p>
-<div class="section" id="own-rules">
-<h2>Own Rules<a class="headerlink" href="#own-rules" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="own-rules">
+<h1>Own Rules<a class="headerlink" href="#own-rules" title="Permalink to this headline">¶</a></h1>
 <p>There might be cases where the shipped rules of Valdi might not be enough for
 you. So here is how to introduce own rules by extending Valdi.</p>
 <p>First of all, you have to implement the validator which is a single interface
 with two methods. This validator for example would validate only if the
 given value can be divided by two:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface {</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface</span>
+<span class="x">{</span>
 
-<span class="x">    public function isValid($value, array $parameters) {</span>
+<span class="x">    public function isValid($value, array $parameters)</span>
+<span class="x">    {</span>
 <span class="x">       return $value % 2 == 0;</span>
 <span class="x">    }</span>
 
-<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">    public function getInvalidDetails()</span>
+<span class="x">    {</span>
 <span class="x">        return &#39;divideByTwo&#39;;</span>
 <span class="x">    }</span>
 
@@ -183,13 +180,16 @@ One exception is the validator “or” which returns an array here.</p>
 <p>This validator has one small problem: It fails if the value is not given. But
 it shouldn’t as this check is covered by the “required” validator. So we extend
 it a bit:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface {</span>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">class DivideByTwo implements Valdi\Validator\Interface</span>
+<span class="x">{</span>
 
-<span class="x">    public function isValid($value, array $parameters) {</span>
+<span class="x">    public function isValid($value, array $parameters)</span>
+<span class="x">    {</span>
 <span class="x">       return in_array($value, [&#39;&#39;, null], true) || $value % 2 == 0;</span>
 <span class="x">    }</span>
 
-<span class="x">    public function getInvalidDetails() {</span>
+<span class="x">    public function getInvalidDetails()</span>
+<span class="x">    {</span>
 <span class="x">        return &#39;divideByTwo&#39;;</span>
 <span class="x">    }</span>
 
@@ -208,29 +208,6 @@ adjust them to your needs.</p>
 <p>And while you are at it, why not give the rules back and send them to me via
 a pull request? This way, everyone would benefit.</p>
 </div>
-<div class="section" id="the-rules-data-structure">
-<h2>The Rules Data Structure<a class="headerlink" href="#the-rules-data-structure" title="Permalink to this headline">¶</a></h2>
-<p>You don’t have to use the RulesBuilder. It’s output is just a big array. You
-might want to serialize/deserialize it manually. So here is it’s structure:</p>
-<p>Rules is an array with a field name as key and an array of rules to use for this
-field. Each rule is an array  with the validator name as first element and
-parameters as following elements. So our getting started example translates to:</p>
-<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$rules = [</span>
-<span class="x">    &#39;name&#39; =&gt; [</span>
-<span class="x">        [&#39;required&#39;]</span>
-<span class="x">    ],</span>
-<span class="x">    &#39;zipcode&#39; =&gt; [</span>
-<span class="x">        [&#39;required&#39;],</span>
-<span class="x">        [&#39;between&#39;, 9999, 100000]</span>
-<span class="x">    ],</span>
-<span class="x">    &#39;email&#39; =&gt; [</span>
-<span class="x">        [&#39;email&#39;]</span>
-<span class="x">    ],</span>
-<span class="x">];</span>
-</pre></div>
-</div>
-</div>
-</div>
 
 
            </div>
@@ -239,7 +216,7 @@ parameters as following elements. So our getting started example translates to:<
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../api/RulesBuilder.html" class="btn btn-neutral float-right" title="Valdi\RulesBuilder" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rulesdatastructure.html" class="btn btn-neutral float-right" title="The Rules Data Structure" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="validators.html" class="btn btn-neutral" title="Validators" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>

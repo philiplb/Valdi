@@ -4,6 +4,12 @@ Validators
 Here are all out of the box available validators shown with their name,
 a description and, if needed, their parameters.
 
+All examples use a rule builder:
+
+.. code-block:: php
+
+        $builder = RulesBuilder::create();
+
 ------------------------
 Basics and Miscellaneous
 ------------------------
@@ -30,6 +36,12 @@ values:
 * 'yes'
 * 'no'
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'boolean');
+
 
 ^^^^^^^^^^
 collection
@@ -39,6 +51,11 @@ Validator to check an array value fulfilling another validator having a ruleset.
 
 **Attention**: The error result of this validator is not just a string, but an array with each failed array index.
 
+**Parameters**
+
+* validator: the Validator or subclass instance which will execute the values validations
+* rules: the rules the array values must fulfill, the RulesBuilder can be used of course
+
 **Example:**
 
 .. code-block:: php
@@ -47,13 +64,12 @@ Validator to check an array value fulfilling another validator having a ruleset.
         $data = [
             'a' => ['one', 2, 'three']
         ];
-        $builder = RulesBuilder::create();
         $itemRules = $builder
-            ->addRule('integer')
+            ->rule('integer')
             ->build()
         ;
         $rules = $builder
-            ->addFieldRule('a', $validator, $itemRules)
+            ->field('a', $validator, $itemRules)
             ->build()
         ;
         $result = $validator->isValid($rules, $data);
@@ -70,11 +86,6 @@ This results in the following validation result:
         ];
 
 
-**Parameters**
-
-* validator: the Validator or subclass instance which will execute the values validations
-* rules: the rules the array values must fulfill, the RulesBuilder can be used of course
-
 ^^^^^^
 nested
 ^^^^^^
@@ -82,6 +93,11 @@ nested
 Validator to check an value being again an associative array fulfilling another validator having its own set of rules.
 
 **Attention**: The error result of this validator is not just a string, but an array with the nested validation.
+
+**Parameters**
+
+* validator: the Validator or subclass instance which will execute the values validations
+* rules: the rules the associative array values must fulfill, the RulesBuilder can be used of course
 
 **Example:**
 
@@ -91,15 +107,14 @@ Validator to check an value being again an associative array fulfilling another 
         $data = [
             'a' => ['b' => 'foo']
         ];
-        $builder = RulesBuilder::create();
         $nestedRules = $builder
-            ->addFieldRule('b', 'integer')
-            ->addFieldRule('b', 'required')
-            ->addFieldRule('c', 'required')
+            ->field('b', 'integer')
+            ->field('b', 'required')
+            ->field('c', 'required')
             ->build()
         ;
         $rules = $builder
-            ->addFieldRule('a', 'nested', $validator, $nestedRules)
+            ->field('a', 'nested', $validator, $nestedRules)
             ->build()
         ;
         $result = $validator->isValid($rules, $data);
@@ -115,12 +130,6 @@ This results in the following validation result:
             ]
         ];
 
-
-**Parameters**
-
-* validator: the Validator or subclass instance which will execute the values validations
-* rules: the rules the associative array values must fulfill, the RulesBuilder can be used of course
-
 ^^^^^
 inSet
 ^^^^^
@@ -131,12 +140,24 @@ Validates if the value is in the given set.
 
 * set: an array of valid values
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'inSet', ['b', 'c']);
+
 ^^^^^^^^
 required
 ^^^^^^^^
 
 Validates if there is any value not being null or empty string. Might be one
 of the most used validators.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'required');
 
 ^^
 or
@@ -146,6 +167,17 @@ Validator to combine other rulesets with a logical "or".
 
 **Attention**: The error result of this validator is not just a string, but an array.
 
+**Parameters**
+
+* validator: the Validator or subclass instance which will execute the child validations
+* rules 1: array of rules to combine; like
+  [['required'], ['between', 9999, 100000]]
+* rules 2: array of rules to combine; like
+  [['required'], ['between', 9999, 100000]]
+
+You can add as many more rules parameters as you need. And to construct the actual rules,
+the RulesBuilder can be used of course.
+
 **Example:**
 
 .. code-block:: php
@@ -154,10 +186,9 @@ Validator to combine other rulesets with a logical "or".
         $data = [
             'a' => 'invalid'
         ];
-        $builder = RulesBuilder::create();
-        $emailRules = $builder->addRule('email')->build();
-        $urlRules = $builder->addRule('url')->build();
-        $rules = $builder->addFieldRule('a', 'or', $validator, $emailRules, $urlRules);
+        $emailRules = $builder->rule('email')->build();
+        $urlRules = $builder->rule('url')->build();
+        $rules = $builder->field('a', 'or', $validator, $emailRules, $urlRules);
         $result = $validator->isValid($rules, $data);
 
 This results in the following validation result:
@@ -170,18 +201,6 @@ This results in the following validation result:
                 'a' => [['or' => ['email', 'url']]]
             ]
         ];
-
-
-**Parameters**
-
-* validator: the Validator or subclass instance which will execute the child validations
-* rules 1: array of rules to combine; like
-  [['required'], ['between', 9999, 100000]]
-* rules 2: array of rules to combine; like
-  [['required'], ['between', 9999, 100000]]
-
-You can add as many more rules parameters as you need. And to construct the actual rules,
-the RulesBuilder can be used of course.
 
 -------
 Strings
@@ -196,12 +215,24 @@ alphabetical
 Validates if the given value is alphabetical meaning it contains only the
 characters a-z and A-Z.
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'alphabetical');
+
 ^^^^^^^^^^^^^^
 alphaNumerical
 ^^^^^^^^^^^^^^
 
 Validates if the given value is alphanumerical meaning it contains only the
 characters a-z, A-Z and 0-9.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'alphaNumerical');
 
 ^^^^^^^^
 contains
@@ -215,16 +246,35 @@ Validates if the parameter is within the given value.
 * case sensitive: boolean value indicating whether the comparision should be
   case sensitive; optional, defaults to true
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'contains', 'abc');
+
 ^^^^^
 email
 ^^^^^
 
 Validates if the value is in the format of an email address.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'email');
+
 ^^
 ip
 ^^
 
 Validates if the given value is in the format of an IPv4 or IPv6 address.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'ip');
 
 ^^^^
 ipv4
@@ -232,11 +282,23 @@ ipv4
 
 Validates if the given value is in the format of an IPv4 address.
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'ipv4');
+
 ^^^^
 ipv6
 ^^^^
 
 Validates if the given value is in the format of an IPv6 address.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'ipv6');
 
 ^^^^^^^^^^^^^
 lengthBetween
@@ -250,6 +312,12 @@ the given parameters.
 * min length: The minimum string length
 * max length: The maximum string length
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'lengthBetween', 3, 7);
+
 ^^^^^^^^^
 maxLength
 ^^^^^^^^^
@@ -260,6 +328,12 @@ given parameter.
 **Parameters**
 
 * max length: The maximum string length
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'maxLength', 5);
 
 ^^^^^^^^^
 minLength
@@ -272,6 +346,12 @@ given parameter.
 
 * min length: The minimal string length
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'minLength', 5);
+
 ^^^^^^
 regexp
 ^^^^^^
@@ -282,12 +362,54 @@ Validates if the given value fulfills the regular expression from the parameter.
 
 * regexp: the regular expression to be fulfilled
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'regexp', /f.o/);
+
+^^^^
+slug
+^^^^
+
+Validates if the given value is a slug meaning it starts with a set of
+characters (a-z, 0-9) followed by an optional set of dash (-) and more
+characters (a-z, 0-9). Examples: foo, foo-bar, foo-bar-asd
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'slug');
+
+^^^
+url
+^^^
+
+Validates if the given parameter is an URL.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'url');
+
 ^^^^^
 value
 ^^^^^
 
 Validates if the given parameter is equal to the parameter. Useful for example
 for terms and conditions checkboxes.
+
+**Parameters**
+
+* value: the value to check against
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'value', 'checked');
 
 ---------
 Numerical
@@ -307,17 +429,35 @@ one of them.
 * min: The lower boundary
 * max: The upper boundary
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'between', 23, 42);
+
 ^^^^^^^^
 floating
 ^^^^^^^^
 
 Validates if the value is in the format of a floating point number.
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'floating');
+
 ^^^^^^^
 integer
 ^^^^^^^
 
 Validates if the value is in the format of an integer number.
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'integer');
 
 ^^^
 max
@@ -329,6 +469,12 @@ Validates if the given numerical value is maximal the given parameter.
 
 * max: The maximum
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'max', 42);
+
 ^^^
 min
 ^^^
@@ -339,19 +485,11 @@ Validates if the given numerical value is minimal the given parameter.
 
 * min: The minimum
 
-^^^^
-slug
-^^^^
+**Example**
 
-Validates if the given value is a slug meaning it starts with a set of
-characters (a-z, 0-9) followed by an optional set of dash (-) and more
-characters (a-z, 0-9). Examples: foo, foo-bar, foo-bar-asd
+.. code-block:: php
 
-^^^
-url
-^^^
-
-Validates if the given parameter is an URL.
+        $builder->field('a', 'min');
 
 ---------------
 Dates and Times
@@ -372,6 +510,12 @@ is after it.
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'afterDateTime', '2063-04-05 12:00:00');
+
 ^^^^^^^^^^^^^^
 beforeDateTime
 ^^^^^^^^^^^^^^
@@ -385,6 +529,12 @@ is before it.
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'beforeDateTime', '2063-04-05 12:00:00');
+
 ^^^^^^^^
 dateTime
 ^^^^^^^^
@@ -395,6 +545,12 @@ Validates if the value is in the format of a date time.
 
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'dateTime');
 
 ^^^^^^^^^^^^^^^
 dateTimeBetween
@@ -410,6 +566,12 @@ is between them.
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'beforeDateTime', '2063-04-05 12:00', '2366-12-28 00:30:27');
+
 ^^^^^^^^^^^
 inTheFuture
 ^^^^^^^^^^^
@@ -422,6 +584,12 @@ is younger.
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'inTheFuture');
+
 ^^^^^^^^^
 inThePast
 ^^^^^^^^^
@@ -433,6 +601,12 @@ is older.
 
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'inThePast');
 
 ^^^^^^^^^
 olderThan
@@ -447,6 +621,12 @@ value is older.
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
 
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'olderThan', '2063-04-05 12:00:00');
+
 ^^^^^^^^^^^
 youngerThan
 ^^^^^^^^^^^
@@ -459,3 +639,9 @@ value is younger.
 * reference date: the date to compare to
 * date time format: To override the default date format; optional, defaults to
   Y-m-d H:i:s
+
+**Example**
+
+.. code-block:: php
+
+        $builder->field('a', 'youngerThan', '2063-04-05 12:00:00');

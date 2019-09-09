@@ -10,13 +10,16 @@ given value can be divided by two:
 
 .. code-block:: php
 
-    class DivideByTwo implements Valdi\Validator\Interface {
+    class DivideByTwo implements Valdi\Validator\Interface
+    {
 
-        public function isValid($value, array $parameters) {
+        public function isValid($value, array $parameters)
+        {
            return $value % 2 == 0;
         }
 
-        public function getInvalidDetails() {
+        public function getInvalidDetails()
+        {
             return 'divideByTwo';
         }
 
@@ -32,13 +35,16 @@ it a bit:
 
 .. code-block:: php
 
-    class DivideByTwo implements Valdi\Validator\Interface {
+    class DivideByTwo implements Valdi\Validator\Interface
+    {
 
-        public function isValid($value, array $parameters) {
+        public function isValid($value, array $parameters)
+        {
            return in_array($value, ['', null], true) || $value % 2 == 0;
         }
 
-        public function getInvalidDetails() {
+        public function getInvalidDetails()
+        {
             return 'divideByTwo';
         }
 

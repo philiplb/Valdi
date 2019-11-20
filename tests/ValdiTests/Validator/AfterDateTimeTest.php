@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\AfterDateTime;
 use Valdi\ValidationException;
 
-class AfterDateTimeTest extends PHPUnit_Framework_TestCase
+class AfterDateTimeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

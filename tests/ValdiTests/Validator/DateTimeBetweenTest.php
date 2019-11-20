@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\ValidationException;
 use Valdi\Validator\DateTimeBetween;
 
-class DateTimeBetweenTest extends PHPUnit_Framework_TestCase
+class DateTimeBetweenTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

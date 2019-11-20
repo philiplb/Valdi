@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Contains;
 use Valdi\ValidationException;
 
-class ContainsTest extends PHPUnit_Framework_TestCase
+class ContainsTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Regexp;
 use Valdi\ValidationException;
 
-class RegexpTest extends PHPUnit_Framework_TestCase
+class RegexpTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Floating;
 
-class FloatTest extends PHPUnit_Framework_TestCase
+class FloatTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

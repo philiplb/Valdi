@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Url;
 
-class UrlTest extends PHPUnit_Framework_TestCase
+class UrlTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

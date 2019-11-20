@@ -18,7 +18,7 @@ use Valdi\Validator\OrCombine;
 use Valdi\ValidationException;
 use Valdi\Validator;
 
-class OrCombineTest extends PHPUnit_Framework_TestCase
+class OrCombineTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

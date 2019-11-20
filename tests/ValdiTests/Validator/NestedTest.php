@@ -18,7 +18,7 @@ use Valdi\ValidationException;
 use Valdi\Validator;
 use Valdi\Validator\Nested;
 
-class NestedTest extends PHPUnit_Framework_TestCase
+class NestedTest extends \PHPUnit\Framework\TestCase
 {
 
     protected function getRules()

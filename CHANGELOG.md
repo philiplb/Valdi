@@ -5,6 +5,8 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Attention: The minimum required PHP version is now 7.0
+
 ## 0.12.0
 
 Released: 2019-09-09

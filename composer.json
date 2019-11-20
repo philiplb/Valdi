@@ -10,10 +10,10 @@
         }
     ],
     "require": {
-        "php": ">=5.5"
+        "php": ">=7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.8",
+        "phpunit/phpunit": "~6.5",
         "sphpdox/sphpdox": "dev-master"
     },
     "autoload": {

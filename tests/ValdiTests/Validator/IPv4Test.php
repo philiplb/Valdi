@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\IPv4;
 
-class IPv4Test extends PHPUnit_Framework_TestCase
+class IPv4Test extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

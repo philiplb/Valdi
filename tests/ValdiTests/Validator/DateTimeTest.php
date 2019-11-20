@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\DateTime;
 
-class DateTimeTest extends PHPUnit_Framework_TestCase
+class DateTimeTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

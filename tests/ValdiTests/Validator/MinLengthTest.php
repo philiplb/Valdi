@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\MinLength;
 
-class MinLengthTest extends PHPUnit_Framework_TestCase
+class MinLengthTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

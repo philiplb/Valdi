@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Integer;
 
-class IntegerTest extends PHPUnit_Framework_TestCase
+class IntegerTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

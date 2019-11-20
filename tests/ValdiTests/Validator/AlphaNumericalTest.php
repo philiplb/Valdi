@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\AlphaNumerical;
 
-class AlphaNumericalTest extends PHPUnit_Framework_TestCase
+class AlphaNumericalTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\InSet;
 use Valdi\ValidationException;
 
-class InSetTest extends PHPUnit_Framework_TestCase
+class InSetTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

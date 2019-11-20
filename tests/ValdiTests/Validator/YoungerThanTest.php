@@ -16,7 +16,7 @@ use PHPUnit_Framework_TestCase;
 use Valdi\Validator\YoungerThan;
 use Valdi\ValidationException;
 
-class YoungerThanTest extends PHPUnit_Framework_TestCase
+class YoungerThanTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

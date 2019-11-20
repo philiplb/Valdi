@@ -17,7 +17,7 @@ use Valdi\ValidationException;
 use Valdi\Validator;
 use Valdi\Validator\Collection;
 
-class CollectionTest extends PHPUnit_Framework_TestCase
+class CollectionTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testValidate()

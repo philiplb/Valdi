@@ -14,7 +14,7 @@ namespace ValdiTests\Validator;
 use PHPUnit_Framework_TestCase;
 use Valdi\Validator\Slug;
 
-class SlugTest extends PHPUnit_Framework_TestCase
+class SlugTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testSlug()

@@ -17,7 +17,7 @@ use Valdi\RulesBuilder;
 use Valdi\Validator;
 use Valdi\ValidatorException;
 
-class RequiredTest extends PHPUnit_Framework_TestCase
+class RequiredTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testIsValid()

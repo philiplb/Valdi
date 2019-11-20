@@ -93,6 +93,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#validation">Validation</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#a-more-complex-example">A More Complex Example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="validators.html">Validators</a></li>
@@ -196,8 +197,6 @@ parameters. When you are done with adding rules, you get your rules set via
 calling getRules().</p>
 <p>Note that you can apply multiple rules on your fields like in the zip code field
 above.</p>
-<p>In the chapter “Extended Features”, you might learn more about the rules data
-structure.</p>
 </div>
 <div class="section" id="validation">
 <h3>Validation<a class="headerlink" href="#validation" title="Permalink to this headline">¶</a></h3>
@@ -228,6 +227,62 @@ wrong format:</p>
 <p>That’s it for getting started with this library. In the next chapter, all
 available rules with their parameters are listed and in the last chapter,
 some more extended features are shown and how to extend Valdi with own rules.</p>
+</div>
+</div>
+<div class="section" id="a-more-complex-example">
+<h2>A More Complex Example<a class="headerlink" href="#a-more-complex-example" title="Permalink to this headline">¶</a></h2>
+<p>Valdi isn’t limited to simple, one dimensional data structures. Lets validate a
+JSON object with a few keys. One key having a simple scalar value, one key having
+a nested object and a third key having an array of objects.
+It could be validated like this:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$toValidate = json_decode(&lt;&lt;&lt;&#39;JSON&#39;</span>
+<span class="x">{</span>
+<span class="x">    &quot;healthy&quot;: true,</span>
+<span class="x">    &quot;user&quot;: {</span>
+<span class="x">        &quot;id&quot;: 42,</span>
+<span class="x">        &quot;name&quot;: &quot;Administrator&quot;,</span>
+<span class="x">        &quot;role&quot;: &quot;ROLE_ADMIN&quot;</span>
+<span class="x">    },</span>
+<span class="x">    &quot;postings&quot;: [</span>
+<span class="x">        {</span>
+<span class="x">            &quot;published&quot;: &quot;2019-11-20 14:37:23&quot;,</span>
+<span class="x">            &quot;headline&quot;: &quot;Good news, everyone!&quot;,</span>
+<span class="x">            &quot;content&quot;: &quot;Great things are about to come.&quot;</span>
+<span class="x">        },</span>
+<span class="x">        {</span>
+<span class="x">            &quot;headline&quot;: &quot;Even better news!&quot;,</span>
+<span class="x">            &quot;content&quot;: &quot;Really awesome things are about to come.&quot;</span>
+<span class="x">        }</span>
+<span class="x">    ]</span>
+<span class="x">}</span>
+<span class="x">JSON</span>
+<span class="x">, true);</span>
+<span class="x">$validator = new Validator();</span>
+<span class="x">$rules = RulesBuilder::create()</span>
+<span class="x">    -&gt;field(&#39;healthy&#39;, &#39;boolean&#39;)</span>
+<span class="x">    -&gt;field(&#39;healthy&#39;, &#39;required&#39;)</span>
+<span class="x">    -&gt;field(&#39;user&#39;, &#39;nested&#39;, $validator, RulesBuilder::create()</span>
+<span class="x">            -&gt;field(&#39;id&#39;, &#39;integer&#39;)</span>
+<span class="x">            -&gt;field(&#39;id&#39;, &#39;required&#39;)</span>
+<span class="x">            -&gt;field(&#39;name&#39;, &#39;alphaNumerical&#39;)</span>
+<span class="x">            -&gt;field(&#39;name&#39;, &#39;required&#39;)</span>
+<span class="x">            -&gt;field(&#39;role&#39;, &#39;required&#39;)</span>
+<span class="x">            -&gt;field(&#39;role&#39;, &#39;inSet&#39;, &#39;ROLE_USER&#39;, &#39;ROLE_ADMIN&#39;)</span>
+<span class="x">            -&gt;build()</span>
+<span class="x">        )</span>
+<span class="x">    -&gt;field(&#39;postings&#39;, &#39;collection&#39;, $validator, RulesBuilder::create()</span>
+<span class="x">           -&gt;rule(&#39;nested&#39;, $validator, RulesBuilder::create()</span>
+<span class="x">                    -&gt;field(&#39;published&#39;, &#39;dateTime&#39;)</span>
+<span class="x">                    -&gt;field(&#39;headline&#39;, &#39;required&#39;)</span>
+<span class="x">                    -&gt;field(&#39;content&#39;, &#39;required&#39;)</span>
+<span class="x">                    -&gt;build()</span>
+<span class="x">                )</span>
+<span class="x">           -&gt;build()</span>
+<span class="x">        )</span>
+<span class="x">    -&gt;build()</span>
+<span class="x">;</span>
+<span class="x">$validation = $validator-&gt;isValid($rules, $toValidate);</span>
+</pre></div>
 </div>
 </div>
 </div>

@@ -12,13 +12,9 @@ Reasons to use Valdi:
 * Well tested
 * Extensible
 
-## Getting Started
-
-Find out more and get started with the [documentation](https://philiplb.github.io/Valdi/docs/html/0.11.0).
-
 ## Documentation
 
-The documentation is available for each version:
+Find out more and get started with the documentation. This documentation is available for each version:
 
 * [1.0.0](https://philiplb.github.io/Valdi/docs/html/1.0.0) (Upcoming)
 * [0.12.0](https://philiplb.github.io/Valdi/docs/html/0.12.0)

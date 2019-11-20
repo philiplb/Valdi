@@ -50,9 +50,6 @@ calling getRules().
 Note that you can apply multiple rules on your fields like in the zip code field
 above.
 
-In the chapter "Extended Features", you might learn more about the rules data
-structure.
-
 ^^^^^^^^^^
 Validation
 ^^^^^^^^^^
@@ -91,3 +88,63 @@ wrong format:
 That's it for getting started with this library. In the next chapter, all
 available rules with their parameters are listed and in the last chapter,
 some more extended features are shown and how to extend Valdi with own rules.
+
+----------------------
+A More Complex Example
+----------------------
+
+Valdi isn't limited to simple, one dimensional data structures. Lets validate a
+JSON object with a few keys. One key having a simple scalar value, one key having
+a nested object and a third key having an array of objects.
+It could be validated like this:
+
+
+.. code-block:: php
+
+    $toValidate = json_decode(<<<'JSON'
+    {
+        "healthy": true,
+        "user": {
+            "id": 42,
+            "name": "Administrator",
+            "role": "ROLE_ADMIN"
+        },
+        "postings": [
+            {
+                "published": "2019-11-20 14:37:23",
+                "headline": "Good news, everyone!",
+                "content": "Great things are about to come."
+            },
+            {
+                "headline": "Even better news!",
+                "content": "Really awesome things are about to come."
+            }
+        ]
+    }
+    JSON
+    , true);
+    $validator = new Validator();
+    $rules = RulesBuilder::create()
+        ->field('healthy', 'boolean')
+        ->field('healthy', 'required')
+        ->field('user', 'nested', $validator, RulesBuilder::create()
+                ->field('id', 'integer')
+                ->field('id', 'required')
+                ->field('name', 'alphaNumerical')
+                ->field('name', 'required')
+                ->field('role', 'required')
+                ->field('role', 'inSet', 'ROLE_USER', 'ROLE_ADMIN')
+                ->build()
+            )
+        ->field('postings', 'collection', $validator, RulesBuilder::create()
+               ->rule('nested', $validator, RulesBuilder::create()
+                        ->field('published', 'dateTime')
+                        ->field('headline', 'required')
+                        ->field('content', 'required')
+                        ->build()
+                    )
+               ->build()
+            )
+        ->build()
+    ;
+    $validation = $validator->isValid($rules, $toValidate);

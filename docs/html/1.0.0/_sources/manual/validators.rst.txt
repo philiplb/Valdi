@@ -144,7 +144,7 @@ Validates if the value is in the given set.
 
 .. code-block:: php
 
-        $builder->field('a', 'inSet', ['b', 'c']);
+        $builder->field('a', 'inSet', 'b', 'c');
 
 ^^^^^^^^
 required

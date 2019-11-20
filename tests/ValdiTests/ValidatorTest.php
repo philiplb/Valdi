@@ -13,6 +13,7 @@ namespace ValdiTests;
 
 use Exception;
 use PHPUnit_Framework_TestCase;
+use Valdi\RulesBuilder;
 use Valdi\Validator;
 use Valdi\ValidatorException;
 
@@ -133,6 +134,63 @@ class RequiredTest extends PHPUnit_Framework_TestCase
             'errors' => []
         ];
         $this->assertSame($read, $expected);
+    }
+
+    public function testComplexValidation()
+    {
+        $toTest = json_decode(<<<'JSON'
+{
+	"healthy": true,
+	"user": {
+		"id": 42,
+		"name": "Administrator",
+		"role": "ROLE_ADMIN"
+	},
+	"postings": [
+		{
+			"published": "2019-11-20 14:37:23",
+			"headline": "Good news, everyone!",
+			"content": "Great things are about to come."
+		},
+		{
+			"headline": "Even better news!",
+			"content": "Really awesome things are about to come."
+		}
+	]
+}
+JSON
+        , true);
+        $validator = new Validator();
+        $rules = RulesBuilder::create()
+            ->field('healthy', 'boolean')
+            ->field('healthy', 'required')
+            ->field('user', 'nested', $validator, RulesBuilder::create()
+                    ->field('id', 'integer')
+                    ->field('id', 'required')
+                    ->field('name', 'alphaNumerical')
+                    ->field('name', 'required')
+                    ->field('role', 'required')
+                    ->field('role', 'inSet', 'ROLE_USER', 'ROLE_ADMIN')
+                    ->build()
+                )
+            ->field('postings', 'collection', $validator, RulesBuilder::create()
+                   ->rule('nested', $validator, RulesBuilder::create()
+                            ->field('published', 'dateTime')
+                            ->field('headline', 'required')
+                            ->field('content', 'required')
+                            ->build()
+                        )
+                   ->build()
+                )
+            ->build()
+        ;
+        $read = $validator->isValid($rules, $toTest);
+        $expected = [
+            'valid' => true,
+            'errors' => []
+        ];
+        $this->assertSame($read, $expected);
+
     }
 
 }

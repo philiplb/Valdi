@@ -28,7 +28,7 @@ class RulesBuilder
      * @return RulesBuilder
      * the new instance
      */
-    public static function create()
+    public static function create() : RulesBuilder
     {
         return new RulesBuilder();
     }
@@ -58,7 +58,7 @@ class RulesBuilder
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function field($field, $rule)
+    public function field(string $field, string $rule) : RulesBuilder
     {
         if (!isset($this->rules[$field])) {
             $this->rules[$field] = [];
@@ -87,7 +87,7 @@ class RulesBuilder
      * the instance of the called RulesBuilder in order to chain the rules
      * creation
      */
-    public function rule($rule)
+    public function rule(string $rule) : RulesBuilder
     {
         $newRule = [$rule];
         $numArgs = func_num_args();
@@ -105,7 +105,7 @@ class RulesBuilder
      * @return array
      * the created rules
      */
-    public function build()
+    public function build() : array
     {
         $rules = $this->rules;
         $this->rules = [];

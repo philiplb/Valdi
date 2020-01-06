@@ -48,7 +48,7 @@ class Validator
      * the validator to use
      * @param string[] $parameters
      * the validation parameters, depending on the validator
-     * @param string $value
+     * @param null|string $value
      * the value to validate
      *
      * @return boolean
@@ -57,7 +57,7 @@ class Validator
      * @throws ValidationException
      * thrown if the validator is not available
      */
-    protected function isValidRule($validator, $parameters, $value)
+    protected function isValidRule(string $validator, array $parameters, $value)
     {
         if (!array_key_exists($validator, $this->availableValidators)) {
             throw new ValidatorException('"' . $validator . '" not found as available validator.');
@@ -117,7 +117,7 @@ class Validator
      * @param ValidatorInterface $validator
      * the validator to add
      */
-    public function addValidator($name, ValidatorInterface $validator)
+    public function addValidator(string $name, ValidatorInterface $validator)
     {
         $this->availableValidators[$name] = $validator;
     }
@@ -127,13 +127,13 @@ class Validator
      *
      * @param array $rules
      * the validation rules
-     * @param string $value
+     * @param null|string $value
      * the value to validate
      *
      * @return string[]
      * the fields where the validation failed
      */
-    public function isValidValue($rules, $value)
+    public function isValidValue(array $rules, $value)
     {
         $result = [];
         foreach ($rules as $rule) {

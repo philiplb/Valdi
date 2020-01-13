@@ -2,19 +2,16 @@
 Valdi\\Validator\\InSet
 -----------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: InSet
 
-    Validator for values being in a set.
+      Validator for values being in a set.
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: InSet::isValid()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-        :param $value:
-        :param $parameters:
+   .. php:method:: InSet::getInvalidDetails()
 
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
+      {@inheritdoc}

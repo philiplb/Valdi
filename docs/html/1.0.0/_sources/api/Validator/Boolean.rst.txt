@@ -2,19 +2,16 @@
 Valdi\\Validator\\Boolean
 -------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Boolean
 
-    Validator for booleans.
+      Validator for booleans.
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: Boolean::isValid()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-        :param $value:
-        :param $parameters:
+   .. php:method:: Boolean::getInvalidDetails()
 
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
+      {@inheritdoc}

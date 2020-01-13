@@ -151,24 +151,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-contains">
-<h1>Valdi\Validator\Contains<a class="headerlink" href="#valdi-validator-contains" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="namespace-Valdi\Validator">
+<span id="valdi-validator-contains"></span><h1>Valdi\Validator\Contains<a class="headerlink" href="#namespace-Valdi\Validator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="Contains">
-<em class="property">class </em><code class="descname">Contains</code><a class="headerlink" href="#Contains" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for strings containing a substring.</p>
+<dt id="Valdi\Validator\Contains">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">Contains</code><a class="headerlink" href="#Valdi\Validator\Contains" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Validator for strings containing a substring.</div></blockquote>
 <dl class="method">
-<dt id="Contains::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$parameterAmount</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::validateParameterCount" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\Contains::validateParameterCount">
+<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\Contains::validateParameterCount" title="Permalink to this definition">¶</a></dt>
 <dd><p>Throws an exception if the parameters don’t fulfill the expected
 parameter count.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Throws:</th><td class="field-body"><p class="first last">ValidationException $ thrown if less than one parameter is given</p>
 </td>
 </tr>
 </tbody>
@@ -176,8 +180,8 @@ parameter count.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Contains::adjustCaseInsensitive">
-<code class="descname">adjustCaseInsensitive</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::adjustCaseInsensitive" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\Contains::adjustCaseInsensitive">
+<code class="descname">adjustCaseInsensitive</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\Contains::adjustCaseInsensitive" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adjusts value and parameters to be case insensitive if the second
 parameter says so or is not given.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -186,7 +190,10 @@ parameter says so or is not given.</p>
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>$value</strong> (<em>mixed</em>) – the value to validate</li>
-<li><strong>$parameters</strong> (<em>array</em>) – the other parameters the validator need</li>
+<li><strong>$parameters</strong> (<em>array</em>) – <ul>
+<li>the other parameters the validator need</li>
+</ul>
+</li>
 </ul>
 </td>
 </tr>
@@ -195,26 +202,14 @@ parameter says so or is not given.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Contains::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Contains::isValid" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\Contains::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\Contains::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
-<dt id="Contains::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Contains::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\Contains::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\Contains::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 </dd></dl>
 
@@ -241,7 +236,7 @@ parameter says so or is not given.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

@@ -2,34 +2,16 @@
 Valdi\\Validator\\Nested
 ------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Nested
 
-    Validator for nested data sets.
+      Validator for nested data sets.
 
-    .. php:attr:: invalidDetails
+   .. php:method:: Nested::isValidArray()
 
-        protected
+      {@inheritdoc}
 
-        Holds the invalid values.
+   .. php:method:: Nested::getInvalidDetails()
 
-    .. php:method:: isValidArray($values, Validator $validator, $rules)
-
-        {@inheritdoc}
-
-        :param $values:
-        :type $validator: Validator
-        :param $validator:
-        :param $rules:
-
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

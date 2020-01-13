@@ -12,35 +12,26 @@ Valdi\\Validator\\AbstractFilter
    IPv6
    Url
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: AbstractFilter
 
-    Base validator for PHPs filter_var function.
+      Base validator for PHPs filter_var function.
 
-    .. php:method:: getFilter()
+   .. php:method:: AbstractFilter::getFilter()
 
-        Gets the filter to use within the validation.
-        See http://php.net/manual/de/filter.filters.validate.php .
+      Gets the filter to use within the validation.
+      See http://php.net/manual/de/filter.filters.validate.php .
 
-        :returns: string the filter to use
+      :returns: string $ the filter to use
 
-    .. php:method:: getFlags()
+   .. php:method:: AbstractFilter::getFlags()
 
-        Gets the flags to use within the validation.
-        See http://php.net/manual/de/filter.filters.validate.php .
+      Gets the flags to use within the validation.
+      See http://php.net/manual/de/filter.filters.validate.php .
 
-        :returns: string|null the flags to use
+      :returns: string|null $ the flags to use
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: AbstractFilter::isValid()
 
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
-
-    .. php:method:: getInvalidDetails()
-
-        Gets the details if the validation failed.
-
-        :returns: mixed the details
+      {@inheritdoc}

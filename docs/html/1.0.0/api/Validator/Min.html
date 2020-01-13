@@ -170,100 +170,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-min">
-<h1>Valdi\Validator\Min<a class="headerlink" href="#valdi-validator-min" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="namespace-Valdi\Validator">
+<span id="valdi-validator-min"></span><h1>Valdi\Validator\Min<a class="headerlink" href="#namespace-Valdi\Validator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="Min">
-<em class="property">class </em><code class="descname">Min</code><a class="headerlink" href="#Min" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for min values.</p>
+<dt id="Valdi\Validator\Min">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">Min</code><a class="headerlink" href="#Valdi\Validator\Min" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Validator for min values.</div></blockquote>
 <dl class="attr">
-<dt id="Min::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#Min::$type" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the type of the validator.</p>
-</dd></dl>
-
-<dl class="attr">
-<dt id="Min::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#Min::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
+<dt id="Valdi\Validator\Min::$$type">
+<em class="property">property </em><code class="descname">$type</code><a class="headerlink" href="#Valdi\Validator\Min::$$type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the type of the validator.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="Min::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Min::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\Min::isValidComparison">
+<code class="descname">isValidComparison</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\Min::isValidComparison" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Min::isAllNumeric">
-<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Min::isAllNumeric" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether all given parameters are numeric.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Min::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Min::isValid" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="Min::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Min::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="Min::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#Min::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don’t fulfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) – the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </dd></dl>
@@ -289,7 +212,7 @@ parameter count.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

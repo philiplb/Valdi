@@ -2,34 +2,16 @@
 Valdi\\Validator\\Collection
 ----------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Collection
 
-    Validator for array values fulfilling a rule.
+      Validator for array values fulfilling a rule.
 
-    .. php:attr:: invalidDetails
+   .. php:method:: Collection::isValidArray()
 
-        protected
+      {@inheritdoc}
 
-        Holds the invalid values.
+   .. php:method:: Collection::getInvalidDetails()
 
-    .. php:method:: isValidArray($values, Validator $validator, $rules)
-
-        {@inheritdoc}
-
-        :param $values:
-        :type $validator: Validator
-        :param $validator:
-        :param $rules:
-
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

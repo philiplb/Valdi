@@ -13,59 +13,39 @@ Valdi\\Validator\\AbstractComparator
    Regexp
    Value
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: AbstractComparator
 
-    Validator for comparing values.
+      Validator for comparing values.
 
-    .. php:attr:: amountOfParameters
+   .. php:attr:: $amountOfParameters
 
-        protected
+      Holds the amount of parameters.
 
-        Holds the amount of parameters.
+   .. php:attr:: $type
 
-    .. php:attr:: type
+      Holds the type of the validator.
 
-        protected
+   .. php:method:: AbstractComparator::isValidComparison()
 
-        Holds the type of the validator.
+      Performs the comparison.
 
-    .. php:method:: isValidComparison($value, $parameters)
+      :param mixed $value: the first value to compare
+      :param mixed $parameters: the values to compare
 
-        Performs the comparison.
+      :returns: boolean $ true if value compares to the parameters
 
-        :type $value: mixed
-        :param $value: the first value to compare
-        :type $parameters: mixed
-        :param $parameters: the values to compare
-        :returns: boolean true if value compares to the parameters
+   .. php:method:: AbstractComparator::isAllNumeric()
 
-    .. php:method:: isAllNumeric()
+      Checks whether all given parameters are numeric.
 
-        Checks whether all given parameters are numeric.
+      :returns: boolean $ true if all values are numeric
 
-        :returns: boolean true if all values are numeric
+   .. php:method:: AbstractComparator::isValid()
 
-    .. php:method:: isValid($value, $parameters)
+      {@inheritdoc}
 
-        {@inheritdoc}
+   .. php:method:: AbstractComparator::getInvalidDetails()
 
-        :param $value:
-        :param $parameters:
-
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
-
-    .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
-
-        Throws an exception if the parameters don't fulfill the expected
-        parameter count.
-
-        :type $name: string
-        :param $name: the name of the validator
-        :type $parameterAmount: integer
-        :param $parameterAmount: the amount of expected parameters
-        :type $parameters: string[]
-        :param $parameters: the parameters
+      {@inheritdoc}

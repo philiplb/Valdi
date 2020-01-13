@@ -2,27 +2,20 @@
 Valdi\\Validator\\IPv6
 ----------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: IPv6
 
-    Validator for floats.
+      Validator for floats.
 
-    .. php:method:: getFilter()
+   .. php:method:: IPv6::getFilter()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getFlags()
+   .. php:method:: IPv6::getFlags()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: IPv6::getInvalidDetails()
 
-        {@inheritdoc}
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

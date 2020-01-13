@@ -187,27 +187,26 @@
 <li class="toctree-l1"><a class="reference internal" href="Value.html">Valdi\Validator\Value</a></li>
 </ul>
 </div>
-<dl class="class">
-<dt id="AbstractComparator">
-<em class="property">class </em><code class="descname">AbstractComparator</code><a class="headerlink" href="#AbstractComparator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for comparing values.</p>
+<span class="target" id="namespace-Valdi\Validator"></span><dl class="class">
+<dt id="Valdi\Validator\AbstractComparator">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">AbstractComparator</code><a class="headerlink" href="#Valdi\Validator\AbstractComparator" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Validator for comparing values.</div></blockquote>
 <dl class="attr">
-<dt id="AbstractComparator::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#AbstractComparator::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
+<dt id="Valdi\Validator\AbstractComparator::$$amountOfParameters">
+<em class="property">property </em><code class="descname">$amountOfParameters</code><a class="headerlink" href="#Valdi\Validator\AbstractComparator::$$amountOfParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the amount of parameters.</p>
 </dd></dl>
 
 <dl class="attr">
-<dt id="AbstractComparator::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#AbstractComparator::$type" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the type of the validator.</p>
+<dt id="Valdi\Validator\AbstractComparator::$$type">
+<em class="property">property </em><code class="descname">$type</code><a class="headerlink" href="#Valdi\Validator\AbstractComparator::$$type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the type of the validator.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractComparator::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AbstractComparator::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractComparator::isValidComparison">
+<code class="descname">isValidComparison</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractComparator::isValidComparison" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs the comparison.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -219,7 +218,7 @@
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean true if value compares to the parameters</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">boolean $ true if value compares to the parameters</p>
 </td>
 </tr>
 </tbody>
@@ -227,61 +226,29 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractComparator::isAllNumeric">
-<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AbstractComparator::isAllNumeric" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractComparator::isAllNumeric">
+<code class="descname">isAllNumeric</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractComparator::isAllNumeric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether all given parameters are numeric.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean true if all values are numeric</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">boolean $ true if all values are numeric</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractComparator::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AbstractComparator::isValid" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="AbstractComparator::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AbstractComparator::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractComparator::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractComparator::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractComparator::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AbstractComparator::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don’t fulfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) – the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
+<dt id="Valdi\Validator\AbstractComparator::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractComparator::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 </dd></dl>
 
 </dd></dl>
@@ -307,7 +274,7 @@ parameter count.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

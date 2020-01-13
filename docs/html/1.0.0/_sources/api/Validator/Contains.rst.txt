@@ -2,37 +2,33 @@
 Valdi\\Validator\\Contains
 --------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Contains
 
-    Validator for strings containing a substring.
+      Validator for strings containing a substring.
 
-    .. php:method:: validateParameterCount($parameterAmount)
+   .. php:method:: Contains::validateParameterCount()
 
-        Throws an exception if the parameters don't fulfill the expected
-        parameter count.
+      Throws an exception if the parameters don't fulfill the expected
+      parameter count.
 
-        :type $parameterAmount: integer
-        :param $parameterAmount: the amount of expected parameters
+      :param integer $parameterAmount: the amount of expected parameters
 
-    .. php:method:: adjustCaseInsensitive($value, $parameters)
+      :throws: ValidationException $ thrown if less than one parameter is given
 
-        Adjusts value and parameters to be case insensitive if the second
-        parameter says so or is not given.
+   .. php:method:: Contains::adjustCaseInsensitive()
 
-        :type $value: mixed
-        :param $value: the value to validate
-        :type $parameters: array
-        :param $parameters: the other parameters the validator need
+      Adjusts value and parameters to be case insensitive if the second
+      parameter says so or is not given.
 
-    .. php:method:: isValid($value, $parameters)
+      :param mixed $value: the value to validate
+      :param array $parameters: - the other parameters the validator need
 
-        {@inheritdoc}
+   .. php:method:: Contains::isValid()
 
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: Contains::getInvalidDetails()
 
-        {@inheritdoc}
+      {@inheritdoc}

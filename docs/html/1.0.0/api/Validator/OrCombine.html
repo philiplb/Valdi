@@ -151,22 +151,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-orcombine">
-<h1>Valdi\Validator\OrCombine<a class="headerlink" href="#valdi-validator-orcombine" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="namespace-Valdi\Validator">
+<span id="valdi-validator-orcombine"></span><h1>Valdi\Validator\OrCombine<a class="headerlink" href="#namespace-Valdi\Validator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="OrCombine">
-<em class="property">class </em><code class="descname">OrCombine</code><a class="headerlink" href="#OrCombine" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator to combine other validators with a logical “or”.</p>
+<dt id="Valdi\Validator\OrCombine">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">OrCombine</code><a class="headerlink" href="#Valdi\Validator\OrCombine" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Validator to combine other validators with a logical “or”.</div></blockquote>
 <dl class="attr">
-<dt id="OrCombine::$invalidDetails">
-<em class="property">property </em><code class="descname">invalidDetails</code><a class="headerlink" href="#OrCombine::$invalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the invalid validators.</p>
+<dt id="Valdi\Validator\OrCombine::$$invalidDetails">
+<em class="property">property </em><code class="descname">$invalidDetails</code><a class="headerlink" href="#Valdi\Validator\OrCombine::$$invalidDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the invalid validators.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="OrCombine::checkParameters">
-<code class="descname">checkParameters</code><span class="sig-paren">(</span><em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::checkParameters" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\OrCombine::checkParameters">
+<code class="descname">checkParameters</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\OrCombine::checkParameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the given parameters fulfil:
 - At least three given
 - The first one is a Validator or a subclass of it</p>
@@ -174,27 +174,12 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>$parameters</strong> (<em>array</em>) – the validation parameters</li>
 </ul>
 </td>
 </tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="OrCombine::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::isValid" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
+<tr class="field-even field"><th class="field-name">Throws:</th><td class="field-body"><p class="first last">ValidationException $ thrown if the amount of parameters is less than three or the first parameter is not a Validator</p>
 </td>
 </tr>
 </tbody>
@@ -202,8 +187,14 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="OrCombine::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#OrCombine::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\OrCombine::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\OrCombine::isValid" title="Permalink to this definition">¶</a></dt>
+<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="Valdi\Validator\OrCombine::getInvalidDetails">
+<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\OrCombine::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
 </dd></dl>
 
@@ -230,7 +221,7 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

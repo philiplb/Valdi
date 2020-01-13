@@ -169,139 +169,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-validator-youngerthan">
-<h1>Valdi\Validator\YoungerThan<a class="headerlink" href="#valdi-validator-youngerthan" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="namespace-Valdi\Validator">
+<span id="valdi-validator-youngerthan"></span><h1>Valdi\Validator\YoungerThan<a class="headerlink" href="#namespace-Valdi\Validator" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="YoungerThan">
-<em class="property">class </em><code class="descname">YoungerThan</code><a class="headerlink" href="#YoungerThan" title="Permalink to this definition">¶</a></dt>
-<dd><p>Validator for a date time being younger than a certain amount of seconds
+<dt id="Valdi\Validator\YoungerThan">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">YoungerThan</code><a class="headerlink" href="#Valdi\Validator\YoungerThan" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Validator for a date time being younger than a certain amount of seconds
 compared to the current moment.
 For the format, see:
-<a class="reference external" href="http://php.net/manual/en/datetime.createfromformat.php">http://php.net/manual/en/datetime.createfromformat.php</a></p>
+<a class="reference external" href="http://php.net/manual/en/datetime.createfromformat.php">http://php.net/manual/en/datetime.createfromformat.php</a></div></blockquote>
 <dl class="attr">
-<dt id="YoungerThan::$dateTimeParameters">
-<em class="property">property </em><code class="descname">dateTimeParameters</code><a class="headerlink" href="#YoungerThan::$dateTimeParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds whether to parse the parameters as DateTimes so the child class
+<dt id="Valdi\Validator\YoungerThan::$$dateTimeParameters">
+<em class="property">property </em><code class="descname">$dateTimeParameters</code><a class="headerlink" href="#Valdi\Validator\YoungerThan::$$dateTimeParameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds whether to parse the parameters as \DateTimes so the child class
 can decide.</p>
 </dd></dl>
 
 <dl class="attr">
-<dt id="YoungerThan::$type">
-<em class="property">property </em><code class="descname">type</code><a class="headerlink" href="#YoungerThan::$type" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the type of the validator.</p>
-</dd></dl>
-
-<dl class="attr">
-<dt id="YoungerThan::$amountOfParameters">
-<em class="property">property </em><code class="descname">amountOfParameters</code><a class="headerlink" href="#YoungerThan::$amountOfParameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the amount of parameters.</p>
+<dt id="Valdi\Validator\YoungerThan::$$type">
+<em class="property">property </em><code class="descname">$type</code><a class="headerlink" href="#Valdi\Validator\YoungerThan::$$type" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the type of the validator.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="YoungerThan::isValidComparison">
-<code class="descname">isValidComparison</code><span class="sig-paren">(</span><em>DateTime $date</em>, <em>$datetimes</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::isValidComparison" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\YoungerThan::isValidComparison">
+<code class="descname">isValidComparison</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\YoungerThan::isValidComparison" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$date</strong> (<a class="reference internal" href="DateTime.html#DateTime" title="DateTime"><em>DateTime</em></a>) – </li>
-<li><strong>$datetimes</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="YoungerThan::getDateTimeFormat">
-<code class="descname">getDateTimeFormat</code><span class="sig-paren">(</span><em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::getDateTimeFormat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets a date time format from the parameters if given or a default one.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">string the date time format</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="YoungerThan::getDateTimes">
-<code class="descname">getDateTimes</code><span class="sig-paren">(</span><em>$parameters</em>, <em>$format</em><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::getDateTimes" title="Permalink to this definition">¶</a></dt>
-<dd><p>Interprets the given parameters as date times and returns them.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>$parameters</strong> (<em>array</em>) – the parameters</li>
-<li><strong>$format</strong> (<em>string</em>) – the date time format</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">DateTime[] the date times</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="YoungerThan::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::isValid" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="YoungerThan::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="YoungerThan::validateParameterCount">
-<code class="descname">validateParameterCount</code><span class="sig-paren">(</span><em>$name</em>, <em>$parameterAmount</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#YoungerThan::validateParameterCount" title="Permalink to this definition">¶</a></dt>
-<dd><p>Throws an exception if the parameters don’t fulfill the expected
-parameter count.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$name</strong> (<em>string</em>) – the name of the validator</li>
-<li><strong>$parameterAmount</strong> (<em>integer</em>) – the amount of expected parameters</li>
-<li><strong>$parameters</strong> (<em>string[]</em>) – the parameters</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </dd></dl>
@@ -327,7 +221,7 @@ parameter count.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

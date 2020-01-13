@@ -151,48 +151,48 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="valdi-rulesbuilder">
-<h1>Valdi\RulesBuilder<a class="headerlink" href="#valdi-rulesbuilder" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="namespace-Valdi">
+<span id="valdi-rulesbuilder"></span><h1>Valdi\RulesBuilder<a class="headerlink" href="#namespace-Valdi" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
-<dt id="RulesBuilder">
-<em class="property">class </em><code class="descname">RulesBuilder</code><a class="headerlink" href="#RulesBuilder" title="Permalink to this definition">¶</a></dt>
-<dd><p>To ease the building of the rules array.</p>
+<dt id="Valdi\RulesBuilder">
+<em class="property">class </em><code class="descclassname">Valdi\</code><code class="descname">RulesBuilder</code><a class="headerlink" href="#Valdi\RulesBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>To ease the building of the rules array.</div></blockquote>
 <dl class="attr">
-<dt id="RulesBuilder::$rules">
-<em class="property">property </em><code class="descname">rules</code><a class="headerlink" href="#RulesBuilder::$rules" title="Permalink to this definition">¶</a></dt>
-<dd><p>protected</p>
-<p>Holds the rules under construction.</p>
+<dt id="Valdi\RulesBuilder::$$rules">
+<em class="property">property </em><code class="descname">$rules</code><a class="headerlink" href="#Valdi\RulesBuilder::$$rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Holds the rules under construction.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::create">
-<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::create" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\RulesBuilder::create">
+<code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\RulesBuilder::create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates and returns an instance.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">RulesBuilder the new instance</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">RulesBuilder $ the new instance</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::__construct">
-<code class="descname">__construct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::__construct" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\RulesBuilder::__construct">
+<code class="descname">__construct</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\RulesBuilder::__construct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::addFieldRule">
-<code class="descname">addFieldRule</code><span class="sig-paren">(</span><em>$field</em>, <em>$rule</em><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::addFieldRule" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\RulesBuilder::field">
+<code class="descname">field</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\RulesBuilder::field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a rule for a field to the set. This function takes a variable amount
 of parameters in order to cover the rule parameters. Example for a rule
 without parameter:
-addFieldRule(‘myField’, ‘required’)
+field(‘myField’, ‘required’)
 Example for a rule with two parameters:
-addFieldRule(‘myField’, ‘between’, 3, 7)</p>
+field(‘myField’, ‘between’, 3, 7)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -203,7 +203,7 @@ addFieldRule(‘myField’, ‘between’, 3, 7)</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RulesBuilder the instance of the called RulesBuilder in order to chain the rules creation</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RulesBuilder $ the instance of the called RulesBuilder in order to chain the rules creation</p>
 </td>
 </tr>
 </tbody>
@@ -211,14 +211,14 @@ addFieldRule(‘myField’, ‘between’, 3, 7)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::addRule">
-<code class="descname">addRule</code><span class="sig-paren">(</span><em>$rule</em><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::addRule" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\RulesBuilder::rule">
+<code class="descname">rule</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\RulesBuilder::rule" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a rule to the set. This function takes a variable amount
 of parameters in order to cover the rule parameters. Example for a rule
 without parameter:
-addRule(‘required’)
+rule(‘required’)
 Example for a rule with two parameters:
-addRule(‘between’, 3, 7)</p>
+rule(‘between’, 3, 7)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -228,7 +228,7 @@ addRule(‘between’, 3, 7)</p>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RulesBuilder the instance of the called RulesBuilder in order to chain the rules creation</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">RulesBuilder $ the instance of the called RulesBuilder in order to chain the rules creation</p>
 </td>
 </tr>
 </tbody>
@@ -236,15 +236,14 @@ addRule(‘between’, 3, 7)</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="RulesBuilder::build">
-<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RulesBuilder::build" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the created rules. Afterwards, the RulesBuilder is emptied and ready
-to be used again.</p>
+<dt id="Valdi\RulesBuilder::build">
+<code class="descname">build</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\RulesBuilder::build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the created rules. Afterwards, the RulesBuilder is emptied and ready to be used again.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">array the created rules</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">array $ the created rules</td>
 </tr>
 </tbody>
 </table>
@@ -273,7 +272,7 @@ to be used again.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

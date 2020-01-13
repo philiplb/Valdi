@@ -2,27 +2,20 @@
 Valdi\\Validator\\IPv4
 ----------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: IPv4
 
-    Validator for IP v4 addresses.
+      Validator for IP v4 addresses.
 
-    .. php:method:: getFilter()
+   .. php:method:: IPv4::getFilter()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getFlags()
+   .. php:method:: IPv4::getFlags()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: IPv4::getInvalidDetails()
 
-        {@inheritdoc}
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

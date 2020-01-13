@@ -7,39 +7,26 @@ Valdi\\Validator\\AbstractArray
    Collection
    Nested
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: AbstractArray
 
-    Validator for array data, be it maps or lists.
+      Validator for array data, be it maps or lists.
 
-    .. php:attr:: invalidDetails
+   .. php:attr:: $invalidDetails
 
-        protected
+      Holds the invalid values.
 
-        Holds the invalid values.
+   .. php:method:: AbstractArray::isValidArray()
 
-    .. php:method:: isValidArray($values, Validator $validator, $rules)
+      Checks whether the given values are of the expected array data.
 
-        Checks whether the given values are of the expected array data.
+      :param mixed $values: the potential array values to check
+      :param Validator $validator: the validator to check with
+      :param array $rules: the rules which the array data must fulfill
 
-        :type $values: mixed
-        :param $values: the potential array values to check
-        :type $validator: Validator
-        :param $validator: the validator to check with
-        :type $rules: array
-        :param $rules: the rules which the array data must fulfill
-        :returns: boolean true if all the $values are valid, else false with the invalid details set
+      :returns: boolean $ true if all the $values are valid, else false with the invalid details set
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: AbstractArray::isValid()
 
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
-
-    .. php:method:: getInvalidDetails()
-
-        Gets the details if the validation failed.
-
-        :returns: mixed the details
+      {@inheritdoc}

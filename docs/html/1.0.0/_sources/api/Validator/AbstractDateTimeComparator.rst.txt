@@ -12,82 +12,60 @@ Valdi\\Validator\\AbstractDateTimeComparator
    OlderThan
    YoungerThan
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: AbstractDateTimeComparator
 
-    Abstract validator to compare date times.
-    For the format, see:
-    http://php.net/manual/en/datetime.createfromformat.php
+      Abstract validator to compare date times.
+      For the format, see:
+      http://php.net/manual/en/datetime.createfromformat.php
 
-    .. php:attr:: amountOfParameters
+   .. php:attr:: $amountOfParameters
 
-        protected
+      Holds the amount of parameters.
 
-        Holds the amount of parameters.
+   .. php:attr:: $type
 
-    .. php:attr:: type
+      Holds the type of the validator.
 
-        protected
+   .. php:attr:: $dateTimeParameters
 
-        Holds the type of the validator.
+      Holds whether to parse the parameters as \\DateTimes so the child class
+      can decide.
 
-    .. php:attr:: dateTimeParameters
+   .. php:method:: AbstractDateTimeComparator::isValidComparison()
 
-        protected
+      Compares date times.
 
-        Holds whether to parse the parameters as \DateTimes so the child class
-        can decide.
+      :param \\DateTime $date: the first date to compare
+      :param \\DateTime[] $datetimes: the date times to compare to
+      :param array $parameters: the original validator parameters
 
-    .. php:method:: isValidComparison(DateTime $date, $datetimes, $parameters)
+      :returns: boolean $ true if the dates compare
 
-        Compares date times.
+   .. php:method:: AbstractDateTimeComparator::getDateTimeFormat()
 
-        :type $date: DateTime
-        :param $date: the first date to compare
-        :type $datetimes: \DateTime[]
-        :param $datetimes: the date times to compare to
-        :type $parameters: array
-        :param $parameters: the original validator parameters
-        :returns: boolean true if the dates compare
+      Gets a date time format from the parameters if given or a default one.
 
-    .. php:method:: getDateTimeFormat($parameters)
+      :param string[] $parameters: the parameters
 
-        Gets a date time format from the parameters if given or a default one.
+      :returns: string $ the date time format
 
-        :type $parameters: string[]
-        :param $parameters: the parameters
-        :returns: string the date time format
+   .. php:method:: AbstractDateTimeComparator::getDateTimes()
 
-    .. php:method:: getDateTimes($parameters, $format)
+      Interprets the given parameters as date times and returns them.
 
-        Interprets the given parameters as date times and returns them.
+      :param array $parameters: the parameters
+      :param string $format: the date time format
 
-        :type $parameters: array
-        :param $parameters: the parameters
-        :type $format: string
-        :param $format: the date time format
-        :returns: \DateTime[] the date times
+      :returns: \\DateTime[] $ the date times
 
-    .. php:method:: isValid($value, $parameters)
+      :throws: ValidationException $ thrown if one of the parameters is not a date in the given format
 
-        {@inheritdoc}
+   .. php:method:: AbstractDateTimeComparator::isValid()
 
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: AbstractDateTimeComparator::getInvalidDetails()
 
-        {@inheritdoc}
-
-    .. php:method:: validateParameterCount($name, $parameterAmount, $parameters)
-
-        Throws an exception if the parameters don't fulfill the expected
-        parameter count.
-
-        :type $name: string
-        :param $name: the name of the validator
-        :type $parameterAmount: integer
-        :param $parameterAmount: the amount of expected parameters
-        :type $parameters: string[]
-        :param $parameters: the parameters
+      {@inheritdoc}

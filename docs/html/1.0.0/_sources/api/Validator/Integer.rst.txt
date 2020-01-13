@@ -2,30 +2,16 @@
 Valdi\\Validator\\Integer
 -------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Integer
 
-    Validator for integers.
+      Validator for integers.
 
-    .. php:method:: getFilter()
+   .. php:method:: Integer::getFilter()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: Integer::getInvalidDetails()
 
-        {@inheritdoc}
-
-    .. php:method:: getFlags()
-
-        Gets the flags to use within the validation.
-        See http://php.net/manual/de/filter.filters.validate.php .
-
-        :returns: string|null the flags to use
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

@@ -2,24 +2,23 @@
 Valdi\\Validator\\ValidatorInterface
 ------------------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:interface:: ValidatorInterface
 
-    The interface each validator has to implement.
+      The interface each validator has to implement.
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: ValidatorInterface::isValid()
 
-        Validates the given value.
+      Validates the given value.
 
-        :type $value: mixed
-        :param $value: the value to validate
-        :type $parameters: array
-        :param $parameters: the other parameters the validator might need
-        :returns: boolean true if the value is valid, false else
+      :param mixed $value: the value to validate
+      :param array $parameters: the other parameters the validator might need
 
-    .. php:method:: getInvalidDetails()
+      :returns: boolean $ true if the value is valid, false else
 
-        Gets the details if the validation failed.
+   .. php:method:: ValidatorInterface::getInvalidDetails()
 
-        :returns: mixed the details
+      Gets the details if the validation failed.
+
+      :returns: mixed $ the details

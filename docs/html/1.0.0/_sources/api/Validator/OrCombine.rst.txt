@@ -2,34 +2,30 @@
 Valdi\\Validator\\OrCombine
 ---------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: OrCombine
 
-    Validator to combine other validators with a logical "or".
+      Validator to combine other validators with a logical "or".
 
-    .. php:attr:: invalidDetails
+   .. php:attr:: $invalidDetails
 
-        protected
+      Holds the invalid validators.
 
-        Holds the invalid validators.
+   .. php:method:: OrCombine::checkParameters()
 
-    .. php:method:: checkParameters($parameters)
+      Checks whether the given parameters fulfil:
+      - At least three given
+      - The first one is a Validator or a subclass of it
 
-        Checks whether the given parameters fulfil:
-        - At least three given
-        - The first one is a Validator or a subclass of it
+      :param array $parameters: the validation parameters
 
-        :type $parameters: array
-        :param $parameters: the validation parameters
+      :throws: ValidationException $ thrown if the amount of parameters is less than three or the first parameter is not a Validator
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: OrCombine::isValid()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-        :param $value:
-        :param $parameters:
+   .. php:method:: OrCombine::getInvalidDetails()
 
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
+      {@inheritdoc}

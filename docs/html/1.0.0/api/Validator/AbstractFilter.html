@@ -173,70 +173,45 @@
 <li class="toctree-l1"><a class="reference internal" href="Url.html">Valdi\Validator\Url</a></li>
 </ul>
 </div>
-<dl class="class">
-<dt id="AbstractFilter">
-<em class="property">class </em><code class="descname">AbstractFilter</code><a class="headerlink" href="#AbstractFilter" title="Permalink to this definition">¶</a></dt>
-<dd><p>Base validator for PHPs filter_var function.</p>
+<span class="target" id="namespace-Valdi\Validator"></span><dl class="class">
+<dt id="Valdi\Validator\AbstractFilter">
+<em class="property">class </em><code class="descclassname">Valdi\Validator\</code><code class="descname">AbstractFilter</code><a class="headerlink" href="#Valdi\Validator\AbstractFilter" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Base validator for PHPs filter_var function.</div></blockquote>
 <dl class="method">
-<dt id="AbstractFilter::getFilter">
-<code class="descname">getFilter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AbstractFilter::getFilter" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractFilter::getFilter">
+<code class="descname">getFilter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractFilter::getFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the filter to use within the validation.
 See <a class="reference external" href="http://php.net/manual/de/filter.filters.validate.php">http://php.net/manual/de/filter.filters.validate.php</a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string the filter to use</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string $ the filter to use</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractFilter::getFlags">
-<code class="descname">getFlags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AbstractFilter::getFlags" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractFilter::getFlags">
+<code class="descname">getFlags</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractFilter::getFlags" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the flags to use within the validation.
 See <a class="reference external" href="http://php.net/manual/de/filter.filters.validate.php">http://php.net/manual/de/filter.filters.validate.php</a> .</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string|null the flags to use</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">string|null $ the flags to use</td>
 </tr>
 </tbody>
 </table>
 </dd></dl>
 
 <dl class="method">
-<dt id="AbstractFilter::isValid">
-<code class="descname">isValid</code><span class="sig-paren">(</span><em>$value</em>, <em>$parameters</em><span class="sig-paren">)</span><a class="headerlink" href="#AbstractFilter::isValid" title="Permalink to this definition">¶</a></dt>
+<dt id="Valdi\Validator\AbstractFilter::isValid">
+<code class="descname">isValid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Valdi\Validator\AbstractFilter::isValid" title="Permalink to this definition">¶</a></dt>
 <dd><p><a class="reference external" href="mailto:{&#37;&#52;&#48;inheritdoc">{<span>&#64;</span>inheritdoc</a>}</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$value</strong> – </li>
-<li><strong>$parameters</strong> – </li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="method">
-<dt id="AbstractFilter::getInvalidDetails">
-<code class="descname">getInvalidDetails</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AbstractFilter::getInvalidDetails" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gets the details if the validation failed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">mixed the details</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </dd></dl>
@@ -262,7 +237,7 @@ See <a class="reference external" href="http://php.net/manual/de/filter.filters.
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Philip Lehmann-Böhm.
+        &copy; Copyright 2020, Philip Lehmann-Böhm.
 
     </p>
   </div>

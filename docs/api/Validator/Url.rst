@@ -2,30 +2,16 @@
 Valdi\\Validator\\Url
 ---------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Url
 
-    Validator for Urls.
+      Validator for Urls.
 
-    .. php:method:: getFilter()
+   .. php:method:: Url::getFilter()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-    .. php:method:: getInvalidDetails()
+   .. php:method:: Url::getInvalidDetails()
 
-        {@inheritdoc}
-
-    .. php:method:: getFlags()
-
-        Gets the flags to use within the validation.
-        See http://php.net/manual/de/filter.filters.validate.php .
-
-        :returns: string|null the flags to use
-
-    .. php:method:: isValid($value, $parameters)
-
-        {@inheritdoc}
-
-        :param $value:
-        :param $parameters:
+      {@inheritdoc}

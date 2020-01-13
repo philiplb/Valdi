@@ -2,19 +2,16 @@
 Valdi\\Validator\\Required
 --------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: Required
 
-    Validator for required values.
+      Validator for required values.
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: Required::isValid()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-        :param $value:
-        :param $parameters:
+   .. php:method:: Required::getInvalidDetails()
 
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
+      {@inheritdoc}

@@ -2,21 +2,18 @@
 Valdi\\Validator\\DateTime
 --------------------------
 
-.. php:namespace: Valdi\\Validator
+.. php:namespace:: Valdi\Validator
 
 .. php:class:: DateTime
 
-    Validator for date time with an optional given format.
-    For the format, see:
-    http://php.net/manual/en/datetime.createfromformat.php
+      Validator for date time with an optional given format.
+      For the format, see:
+      http://php.net/manual/en/datetime.createfromformat.php
 
-    .. php:method:: isValid($value, $parameters)
+   .. php:method:: DateTime::isValid()
 
-        {@inheritdoc}
+      {@inheritdoc}
 
-        :param $value:
-        :param $parameters:
+   .. php:method:: DateTime::getInvalidDetails()
 
-    .. php:method:: getInvalidDetails()
-
-        {@inheritdoc}
+      {@inheritdoc}

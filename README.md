@@ -54,3 +54,14 @@ Find out more and get started with the documentation. This documentation is avai
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/e6f291e0-1be6-4897-a634-8de87ac41734/mini.png)](https://insight.sensiolabs.com/projects/e6f291e0-1be6-4897-a634-8de87ac41734)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/philiplb/Valdi/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/philiplb/Valdi/?branch=master)
+
+## How to Generate the Documentation
+
+Clone `https://github.com/avalanche123/doxphp` somewhere once and then execute:
+
+```bash
+export DOXPHPPATH="<doxphpRepo>/bin"
+php generateAPIDocs.php
+cd docs
+make clean && make html
+```

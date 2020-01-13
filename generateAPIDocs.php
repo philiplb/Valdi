@@ -85,7 +85,8 @@ function genAPIDoc($doxphpPath, $baseDir, $targetDir, $baseNamespace, $classHier
     $fullClassname = $baseNamespace.'\\\\'.str_replace('/', '\\\\', $fileWithoutExtension);
 
     $headlineSeparator = '';
-    for ($i = 0; $i < strlen($fullClassname); ++$i) {
+    $fullClassnameLength = strlen($fullClassname);
+    for ($i = 0; $i < $fullClassnameLength; ++$i) {
         $headlineSeparator .= '-';
     }
 

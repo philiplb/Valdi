@@ -102,7 +102,7 @@ function genAPIDoc($doxphpPath, $baseDir, $targetDir, $baseNamespace, $classHier
         mkdir($targetClassDir, 0755, true);
     }
 
-    file_put_contents($targetFile, $headline."\n".$doc);
+    file_put_contents($targetFile, $headline."\n".$doc."\n");
 
 }
 

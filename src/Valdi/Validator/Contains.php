@@ -23,11 +23,9 @@ class Contains implements ValidatorInterface
      * Throws an exception if the parameters don't fulfill the expected
      * parameter count.
      *
-     * @param integer $parameterAmount
-     * the amount of expected parameters
+     * @param integer $parameterAmount the amount of expected parameters
      *
-     * @throws ValidationException
-     * thrown if less than one parameter is given
+     * @throws ValidationException - thrown if less than one parameter is given
      */
     protected function validateParameterCount($parameterAmount)
     {
@@ -40,11 +38,9 @@ class Contains implements ValidatorInterface
      * Adjusts value and parameters to be case insensitive if the second
      * parameter says so or is not given.
      *
-     * @param mixed $value
-     * the value to validate
+     * @param mixed $value the value to validate
      *
-     * @param array $parameters
-     * the other parameters the validator need
+     * @param array $parameters - the other parameters the validator need
      */
     protected function adjustCaseInsensitive(&$value, &$parameters)
     {

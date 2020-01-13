@@ -25,8 +25,7 @@ class RulesBuilder
     /**
      * Creates and returns an instance.
      *
-     * @return RulesBuilder
-     * the new instance
+     * @return RulesBuilder - the new instance
      */
     public static function create() : RulesBuilder
     {
@@ -49,14 +48,10 @@ class RulesBuilder
      * Example for a rule with two parameters:
      * field('myField', 'between', 3, 7)
      *
-     * @param string $field
-     * the field for the rule
-     * @param string $rule
-     * the rule to add
+     * @param string $field the field for the rule
+     * @param string $rule the rule to add
      *
-     * @return RulesBuilder
-     * the instance of the called RulesBuilder in order to chain the rules
-     * creation
+     * @return RulesBuilder - the instance of the called RulesBuilder in order to chain the rules creation
      */
     public function field(string $field, string $rule) : RulesBuilder
     {
@@ -80,12 +75,9 @@ class RulesBuilder
      * Example for a rule with two parameters:
      * rule('between', 3, 7)
      *
-     * @param string $rule
-     * the rule to add
+     * @param string $rule the rule to add
      *
-     * @return RulesBuilder
-     * the instance of the called RulesBuilder in order to chain the rules
-     * creation
+     * @return RulesBuilder - the instance of the called RulesBuilder in order to chain the rules creation
      */
     public function rule(string $rule) : RulesBuilder
     {
@@ -102,8 +94,7 @@ class RulesBuilder
     /**
      * Gets the created rules. Afterwards, the RulesBuilder is emptied and ready to be used again.
      *
-     * @return array
-     * the created rules
+     * @return array - the created rules
      */
     public function build() : array
     {

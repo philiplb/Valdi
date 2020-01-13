@@ -21,8 +21,7 @@ abstract class AbstractFilter implements ValidatorInterface
      * Gets the filter to use within the validation.
      * See http://php.net/manual/de/filter.filters.validate.php .
      *
-     * @return string
-     * the filter to use
+     * @return string - the filter to use
      */
     abstract protected function getFilter();
 
@@ -30,8 +29,7 @@ abstract class AbstractFilter implements ValidatorInterface
      * Gets the flags to use within the validation.
      * See http://php.net/manual/de/filter.filters.validate.php .
      *
-     * @return string|null
-     * the flags to use
+     * @return string|null - the flags to use
      */
     protected function getFlags()
     {

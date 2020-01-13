@@ -30,21 +30,17 @@ abstract class AbstractComparator extends AbstractParametrizedValidator
     /**
      * Performs the comparison.
      *
-     * @param mixed $value
-     * the first value to compare
-     * @param mixed $parameters
-     * the values to compare
+     * @param mixed $value the first value to compare
+     * @param mixed $parameters the values to compare
      *
-     * @return boolean
-     * true if value compares to the parameters
+     * @return boolean - true if value compares to the parameters
      */
     abstract protected function isValidComparison($value, $parameters);
 
     /**
      * Checks whether all given parameters are numeric.
      *
-     * @return boolean
-     * true if all values are numeric
+     * @return boolean - true if all values are numeric
      */
     protected function isAllNumeric()
     {

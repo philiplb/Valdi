@@ -40,26 +40,20 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator
     /**
      * Compares date times.
      *
-     * @param \DateTime $date
-     * the first date to compare
-     * @param \DateTime[] $datetimes
-     * the date times to compare to
-     * @param array $parameters
-     * the original validator parameters
+     * @param \DateTime $date the first date to compare
+     * @param \DateTime[] $datetimes the date times to compare to
+     * @param array $parameters the original validator parameters
      *
-     * @return boolean
-     * true if the dates compare
+     * @return boolean - true if the dates compare
      */
     abstract protected function isValidComparison(\DateTime $date, array $datetimes, array $parameters);
 
     /**
      * Gets a date time format from the parameters if given or a default one.
      *
-     * @param string[] $parameters
-     * the parameters
+     * @param string[] $parameters the parameters
      *
-     * @return string
-     * the date time format
+     * @return string - the date time format
      */
     protected function getDateTimeFormat($parameters)
     {
@@ -74,16 +68,12 @@ abstract class AbstractDateTimeComparator extends AbstractParametrizedValidator
     /**
      * Interprets the given parameters as date times and returns them.
      *
-     * @param array $parameters
-     * the parameters
-     * @param string $format
-     * the date time format
+     * @param array $parameters the parameters
+     * @param string $format the date time format
      *
-     * @return \DateTime[]
-     * the date times
+     * @return \DateTime[] - the date times
      *
-     * @throws ValidationException
-     * thrown if one of the parameters is not a date in the given format
+     * @throws ValidationException - thrown if one of the parameters is not a date in the given format
      */
     protected function getDateTimes(array $parameters, $format)
     {

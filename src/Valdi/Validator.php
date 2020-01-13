@@ -28,9 +28,7 @@ class Validator
     /**
      * Creates instances of the available validators.
      *
-     * @param array $validators
-     * the validators to load, key = name, value = classname within the
-     * namespace "\Valdi\Validator"
+     * @param array $validators the validators to load, key = name, value = classname within the namespace "\Valdi\Validator"
      */
     protected function createValidators(array $validators)
     {
@@ -44,18 +42,13 @@ class Validator
     /**
      * Validates a single rule.
      *
-     * @param string $validator
-     * the validator to use
-     * @param string[] $parameters
-     * the validation parameters, depending on the validator
-     * @param null|string $value
-     * the value to validate
+     * @param string $validator the validator to use
+     * @param string[] $parameters the validation parameters, depending on the validator
+     * @param null|string $value the value to validate
      *
-     * @return boolean
-     * true if the value is valid
+     * @return boolean - true if the value is valid
      *
-     * @throws ValidationException
-     * thrown if the validator is not available
+     * @throws ValidatorException - thrown if the validator is not available
      */
     protected function isValidRule(string $validator, array $parameters, $value)
     {
@@ -112,10 +105,8 @@ class Validator
     /**
      * Adds additional validator. It can override existing validators as well.
      *
-     * @param string $name
-     * the name of the new validator.
-     * @param ValidatorInterface $validator
-     * the validator to add
+     * @param string $name the name of the new validator.
+     * @param ValidatorInterface $validator the validator to add
      */
     public function addValidator(string $name, ValidatorInterface $validator)
     {
@@ -125,13 +116,12 @@ class Validator
     /**
      * Validates a value via the given rules.
      *
-     * @param array $rules
-     * the validation rules
-     * @param null|string $value
-     * the value to validate
+     * @param array $rules the validation rules
+     * @param null|string $value the value to validate
      *
-     * @return string[]
-     * the fields where the validation failed
+     * @return string[] - the fields where the validation failed
+     *
+     * @throws ValidatorException - thrown if a validator is not available
      */
     public function isValidValue(array $rules, $value)
     {
@@ -150,23 +140,12 @@ class Validator
     /**
      * Performs the actual validation.
      *
-     * @param array $rules
-     * the validation rules: an array with a field name as key and an array
-     * of rules to use for this field; each rule is an array with the validator
-     * name as first element and parameters as following elements; example:
-     * array('a' => array(array('required')), 'b' => array(array('min', 1)))
-     * @param array $data
-     * the data to validate as a map
+     * @param array $rules the validation rules: an array with a field name as key and an array of rules to use for this field; each rule is an array with the validator name as first element and parameters as following elements; example: array('a' => array(array('required')), 'b' => array(array('min', 1)))
+     * @param array $data the data to validate as a map
      *
-     * @return array<string,boolean|array>
-     * the validation result having the keys "valid" (true or false) and
-     * the key "errors" containing all failed fields as keys with arrays of the
-     * failed validator names; example where the field "b" from the above sample
-     * failed due to the min validator:
-     * array('valid' => false, errors => array('b' => array('min')))
-     * the "or" validator doesn't return a single string on validation error;
-     * instead, it returns an array listing all failed validators of it:
-     * array('or' => array('url', 'email')
+     * @return array<string,boolean|array> - the validation result having the keys "valid" (true or false) and the key "errors" containing all failed fields as keys with arrays of the failed validator names; example where the field "b" from the above sample failed due to the min validator: array('valid' => false, errors => array('b' => array('min'))) the "or" validator doesn't return a single string on validation error; instead, it returns an array listing all failed validators of it: array('or' => array('url', 'email')
+     *
+     * @throws ValidatorException - thrown if a validator is not available
      */
     public function isValid(array $rules, array $data)
     {

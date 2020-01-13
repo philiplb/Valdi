@@ -20,22 +20,18 @@ interface ValidatorInterface
     /**
      * Validates the given value.
      *
-     * @param mixed $value
-     * the value to validate
+     * @param mixed $value the value to validate
      *
-     * @param array $parameters
-     * the other parameters the validator might need
+     * @param array $parameters the other parameters the validator might need
      *
-     * @return boolean
-     * true if the value is valid, false else
+     * @return boolean - true if the value is valid, false else
      */
     public function isValid($value, array $parameters);
 
     /**
      * Gets the details if the validation failed.
      *
-     * @return mixed
-     * the details
+     * @return mixed - the details
      */
     public function getInvalidDetails();
 

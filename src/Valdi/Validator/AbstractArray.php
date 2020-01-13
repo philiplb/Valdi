@@ -30,15 +30,11 @@ abstract class AbstractArray implements ValidatorInterface
     /**
      * Checks whether the given values are of the expected array data.
      *
-     * @param mixed $values
-     * the potential array values to check
-     * @param Validator $validator
-     * the validator to check with
-     * @param array $rules
-     * the rules which the array data must fulfill
+     * @param mixed $values the potential array values to check
+     * @param Validator $validator the validator to check with
+     * @param array $rules the rules which the array data must fulfill
      *
-     * @return boolean
-     * true if all the $values are valid, else false with the invalid details set
+     * @return boolean - true if all the $values are valid, else false with the invalid details set
      */
     abstract protected function isValidArray($values, Validator $validator, array $rules);
 

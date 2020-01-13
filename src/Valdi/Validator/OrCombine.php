@@ -30,11 +30,9 @@ class OrCombine implements ValidatorInterface
      * - At least three given
      * - The first one is a Validator or a subclass of it
      *
-     * @param array $parameters
-     * the validation parameters
+     * @param array $parameters the validation parameters
      *
-     * @throws ValidationException
-     * thrown if the amount of parameters is less than three or the first parameter is not a Validator
+     * @throws ValidationException - thrown if the amount of parameters is less than three or the first parameter is not a Validator
      */
     protected function checkParameters($parameters)
     {

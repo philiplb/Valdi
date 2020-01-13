@@ -13,6 +13,14 @@ Reasons to use Valdi:
 * Well tested
 * Extensible
 
+.. image:: ../valdi/valdi.png
+    :align: center
+    :width: 300px
+    :height: 300px
+    :alt: Valdi
+
+(Big thanks to `Jamie Thormann <https://www.linkedin.com/in/jamie-thormann-937916109/>`_ for this awesome mascot!)
+
 Requirements:
 
 * PHP >= 5.5

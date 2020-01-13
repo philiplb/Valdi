@@ -5,6 +5,7 @@ Valdi Changelog
 
 Released: Upcoming
 
+- Valdi itself entered the 1.0!
 - Attention: The minimum required PHP version is now 7.0
 
 ## 0.12.0
@@ -14,7 +15,7 @@ Released: 2019-09-09
 - Attention: Renamed the RuleBuilder function "addFieldRule" to "field"
 - Attention: Renamed the RuleBuilder function "addRule" to "rule"
 - Added examples to all validators to the manual
-  
+
 ## 0.11.0
 
 Released: 2019-07-30

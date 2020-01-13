@@ -12,6 +12,10 @@ Reasons to use Valdi:
 * Well tested
 * Extensible
 
+[![Valdi](valdi/valdi.png)
+
+(Big thanks to [Jamie Thormann](https://www.linkedin.com/in/jamie-thormann-937916109/) for this awesome mascot!)
+
 ## Documentation
 
 Find out more and get started with the documentation. This documentation is available for each version:

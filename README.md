@@ -28,6 +28,8 @@ Find out more and get started with the documentation. This documentation is avai
 
 ## Package
 
+Valdi uses [Semantic Versioning](https://semver.org/).
+
 [![Total Downloads](https://poser.pugx.org/philiplb/valdi/downloads.svg)](https://packagist.org/packages/philiplb/valdi)
 [![Latest Stable Version](https://poser.pugx.org/philiplb/valdi/v/stable.svg)](https://packagist.org/packages/philiplb/valdi)
 [![Latest Unstable Version](https://poser.pugx.org/philiplb/valdi/v/unstable.svg)](https://packagist.org/packages/philiplb/valdi) [![License](https://poser.pugx.org/philiplb/valdi/license.svg)](https://packagist.org/packages/philiplb/valdi)

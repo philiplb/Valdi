@@ -1,9 +1,13 @@
 Valdi Changelog
 ===============
 
-## 1.0.0
+## 1.1.0
 
 Released: Upcoming
+
+## 1.0.0
+
+Released: 2020-01-14
 
 - Valdi itself entered the 1.0!
 - Attention: The minimum required PHP version is now 7.0

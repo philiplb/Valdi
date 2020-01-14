@@ -20,7 +20,7 @@ Reasons to use Valdi:
 
 Find out more and get started with the documentation. This documentation is available for each version:
 
-* [1.0.0](https://philiplb.github.io/Valdi/docs/html/1.0.0) (Upcoming)
+* [1.0.0](https://philiplb.github.io/Valdi/docs/html/1.0.0)
 * [0.12.0](https://philiplb.github.io/Valdi/docs/html/0.12.0)
 * [0.11.0](https://philiplb.github.io/Valdi/docs/html/0.11.0)
 * [0.10.0](https://philiplb.github.io/Valdi/docs/html/0.10.0)
@@ -36,10 +36,9 @@ Valdi uses [Semantic Versioning](https://semver.org/).
 
 ### Stable
 
-
 ```json
 "require": {
-    "philiplb/valdi": "0.12.0"
+    "philiplb/valdi": "^1.0"
 }
 ```
 
@@ -47,7 +46,7 @@ Valdi uses [Semantic Versioning](https://semver.org/).
 
 ```json
 "require": {
-    "philiplb/valdi": "1.0.x-dev"
+    "philiplb/valdi": "1.1.x-dev"
 }
 ```
 

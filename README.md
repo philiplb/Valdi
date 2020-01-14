@@ -63,6 +63,13 @@ Valdi uses [Semantic Versioning](https://semver.org/).
 
 ## How to Generate the Documentation
 
+Upfront, install Sphinx and the PHP extension:
+
+```bash
+pip install Sphinx
+pip install tk.phpautodoc
+```
+
 Clone `https://github.com/avalanche123/doxphp` somewhere once and then execute:
 
 ```bash

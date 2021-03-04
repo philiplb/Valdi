@@ -5,6 +5,12 @@ Valdi Changelog
 
 Released: Upcoming
 
+## 1.0.1
+
+Released: 2021-03-04
+
+- Checking if the input is actually a string, thanks to https://github.com/j-koenig for the fix!
+
 ## 1.0.0
 
 Released: 2020-01-14

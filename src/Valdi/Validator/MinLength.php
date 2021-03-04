@@ -27,7 +27,8 @@ class MinLength extends AbstractComparator
      */
     protected function isValidComparison($value, $parameters)
     {
-        $length = strlen($value);
-        return is_numeric($parameters[0]) && $length >= $parameters[0];
+        return is_string($value) 
+            && is_numeric($parameters[0]) 
+            && strlen($value) >= $parameters[0];
     }
 }

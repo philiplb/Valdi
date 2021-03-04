@@ -27,6 +27,8 @@ class MaxLength extends AbstractComparator
      */
     protected function isValidComparison($value, $parameters)
     {
-        return is_numeric($parameters[0]) && strlen($value) <= $parameters[0];
+        return is_string($value) 
+            && is_numeric($parameters[0]) 
+            && strlen($value) <= $parameters[0];
     }
 }

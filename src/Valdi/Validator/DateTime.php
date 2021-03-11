@@ -28,8 +28,11 @@ class DateTime implements ValidatorInterface
         if (count($parameters) > 0) {
             $format = $parameters[0];
         }
-        return in_array($value, ['', null], true) ||
-            \DateTime::createFromFormat($format, $value) !== false;
+        if (in_array($value, ['', null], true)) {
+            return true;
+        }
+        $dateTime = \DateTime::createFromFormat($format, $value);
+        return $dateTime && $dateTime->format($format) === $value;
     }
 
     /**

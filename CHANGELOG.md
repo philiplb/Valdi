@@ -5,6 +5,12 @@ Valdi Changelog
 
 Released: Upcoming
 
+## 1.0.2
+
+Released: 2021-03-11
+
+- The dateTime validator don't accept invalid dates like 2021-02-30 anymore
+
 ## 1.0.1
 
 Released: 2021-03-04
